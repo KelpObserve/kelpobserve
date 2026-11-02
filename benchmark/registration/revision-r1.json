@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r1",
+  "parent": "sesimbra-habitat-v1 (registration/experiment.json; results in docs/results.md, executed 2026-09-20)",
+  "kind": "Exploratory re-analysis. Every July and September cover value has been seen, so nothing here is a confirmatory test and nothing replaces a v1 result.",
+  "registered_on": "2026-10-02",
+  "registered_before": "Any revised model score, injection result, multi-year window count, ACOLITE variant or water-only screen value was computed.",
+  "trigger": "External review of 2026-10-02 (exploratory audit script and JSON kept outside the repository) and its verification the same day.",
+  "v1_untouched": "No v1 output, lock, registration block or report conclusion is changed. Outputs go to out/r1/ and .cache/acolite-r1/. The v1 input lock no longer verifies (the coastal library and runner changed after 2026-09-20), so v1 cannot be re-run under its own lock; r1 records its own provenance instead.",
+  "known_before_registration": [
+    "QAA over the registered PNeo reference region, current library: automatic reference 655 nm with bbp(555) 0.126 (8 Jul) and 0.120 (3 Sep); forced 560 nm gives 0.062 and 0.069; the bound is 0.02. Every fit carries a_cdm_443_not_computable, the as-run v1 fits included.",
+    "The reference region is not masked in v1: 6.3% (8 Jul) and 9.7% (3 Sep) of its pixels exceed the PNeo cloud/glint mask (rhot 826 nm > 0.1). Mean NIR rhos falls from 0.033 to 0.027 and from 0.031 to 0.019 when they are removed; the medians are 0.023 and 0.011.",
+    "Model units in v1 check only finite reflectance. July: every 10 m cell is at least 93% water with at most 1.4% masked pixels; one native window (july-shallow-T3-Q2) holds one masked pixel. September: cell 9-10 (shallow T3 Q4) is 9% water and 48% masked; cells 12-16 and 12-19 are 62% water; native windows of september-shallow-T2-Q4 (centre rhot 0.152), september-deep-T1-Q5 (one masked pixel) and september-shallow-T3-Q4 (three non-water pixels) are affected. All were scored in v1.",
+    "The 9 June 2026 screen value falls from 0.0354 (rectangle) to 0.0312 over bathymetric water. The registered screen's 10th percentile exceeds 0.02 on every screened-out June and July date.",
+    "E5s (coastal-validation) endmembers and Sesimbra winter IOPs, used below for the injection signal."
+  ],
+  "errata": [
+    {
+      "recorded_on": "2026-10-02",
+      "after": "r1 qc stage",
+      "item": "known_before_registration, third entry, September grid figures",
+      "correction": "The pre-registration check built the September 10 m grid from all 30 events rather than the 22 eligible ones v1 used, so its cell indices pointed at neighbouring cells. On v1's own cells (reproduced exactly by r1 under v1's rule): cell 9-10 (shallow T3 Q4) is 23% water and fails; cell 12-19 is 90% valid and passes; every other September cell is at least 97% valid. July figures and all native-window figures were unaffected. No design choice depended on the wrong figures."
+    },
+    {
+      "recorded_on": "2026-10-02",
+      "after": "r1 radiometry stage",
+      "item": "Q2_radiometry.improvement_rule applied to V1_pleiades_neo",
+      "correction": "Design flaw, recorded not repaired: V1_pleiades_neo takes its glint reference from the 826 nm band, so it sets offshore NIR to zero and removes the NIR depth slope by construction. Two of the four checks (M1 NIR, M3 ratio) therefore pass automatically for PNeo, and the NIR negative controls in Q3 become constants under V1. For PNeo the informative evidence is M4, M5 and the M2 QAA plausibility. The follow-on was run as registered, because the rule as written was met, and is reported with this limit. The Sentinel-2 variant takes its reference from SWIR, so its checks are informative."
+    }
+  ],
+  "defects": {
+    "D1_informational_flag_fatal": "reference_qc.require_no_qa_flags treats a_cdm_443_not_computable as a failure. The library marks it 'not an error'; it fires for any band set without a band within 15 nm of 411 nm, which includes both sensors here, so the v1 rule could never pass.",
+    "D2_screen_not_water_only": "The glint screen takes the median 1610 nm reflectance over a rectangle that includes land.",
+    "D3_mask_not_propagated": "Model units and the QAA reference fit use every finite pixel; the registered valid-water definition (water, finite RGB, rhot at ACOLITE's l2w_mask_wave not above l2w_mask_threshold) is applied only in scene-qc. Sentinel-2 was rejected on that definition while Pleiades Neo units then used pixels it excludes."
+  },
+  "definitions": {
+    "water": "Lidar or DTM depth present, nearest-neighbour resampled to the scene grid (v1 scene-qc definition).",
+    "valid_pixel": "water AND finite blue, green and red rhos AND rhot at ACOLITE's l2w_mask_wave <= l2w_mask_threshold (PNeo: 826 nm, 0.1; Sentinel-2: 1610/1614 nm, 0.0215), thresholds read from the pinned ACOLITE defaults as in v1.",
+    "native_unit": "Mean of the 3 x 3 PNeo pixels centred on the quadrat; kept only when all nine pixels are valid (v1 required all nine finite).",
+    "grid_unit": "10 m cell on the v1 common grid; reflectance is the mean over valid PNeo pixels with fractional overlap; kept only when the valid fraction is >= 0.8 (v1 applied 0.8 to finite pixels).",
+    "sentinel2_unit": "10 m Sentinel-2 pixel containing quadrats; kept only when that pixel is valid. Depth is the area-weighted lidar mean, as for grid units.",
+    "depth": "Lidar depth plus the acquisition water level (v1 registered values and amendment modelled-water-levels).",
+    "eligible_events": "The v1 eligible set (join class and depth check), unchanged."
+  },
+  "Q1_qc": {
+    "question": "Which observations survive correct, consistent QC?",
+    "outputs": [
+      "Usable units and quadrats by sensor, date, scale and depth stratum, with exclusion reasons, for PNeo 8 Jul and 3 Sep and Sentinel-2 2 Jul and 31 Aug.",
+      "The same table for the v1 units, so the change is visible."
+    ],
+    "qaa_flag_classes": {
+      "informational": ["a_cdm_443_not_computable"],
+      "band_limited": "a_below_pure_water_floor at a wavelength above 700 nm: reported, not fatal, because no predictor or attenuation product here uses those bands. At 700 nm or below it is fatal.",
+      "fatal": "Every other flag, including red_reference_selected and bbp_555_implausible."
+    },
+    "qaa_variants": {
+      "auto_unmasked": "v1 as run (automatic reference, finite pixels).",
+      "auto_masked": "Automatic reference over valid pixels.",
+      "forced560_unmasked": "RetrievalConfig force_ref_wavelength_nm = 560, finite pixels.",
+      "forced560_masked": "Forced 560 nm over valid pixels."
+    },
+    "qaa_verdict": "Available when >= 1000 pixels and no fatal flag. If any masked variant is available for July, the corrected-predictor families are run as a separately labelled diagnostic in Q3 for that variant; otherwise the corrected branch stays unavailable.",
+    "water_only_screen": {
+      "candidates": "The 23 dates in registration/glint-screen.json.",
+      "measure": "Median L2A B11 (offset-corrected as in v1) over the same rectangle, (a) all pixels (v1), (b) water pixels, (c) water pixels at least one 20 m pixel from non-water.",
+      "rule": "A screened-out date whose (b) value is <= 0.02 is processed with the registered ACOLITE settings and judged by the registered scene checks. Any scene so admitted is exploratory."
+    }
+  },
+  "Q2_radiometry": {
+    "question": "Can summer radiometry be improved without reading any label?",
+    "variants": {
+      "V0": "Registered ACOLITE settings (existing outputs reused).",
+      "V1_sentinel2": "V0 plus dsf_residual_glint_correction=True, default (SWIR 1500-2400 nm) method.",
+      "V1_pleiades_neo": "V0 plus dsf_residual_glint_correction=True, dsf_residual_glint_correction_method=alternative, dsf_residual_glint_wave_range=800,900, glint_mask_rhos_wave=800, glint_mask_rhos_threshold=0.1: the pinned ACOLITE's own defaults for the WorldView-2 and GeoEye-1 VNIR sensors."
+    },
+    "scenes": {
+      "sentinel2": ["s2-20260528-S2C-R037", "s2-20260602-S2B-R037", "s2-20260702-S2B-R037", "s2-20260709-S2A-R037", "s2-20260705-S2B-R080", "s2-20260831-S2B-R037"],
+      "sentinel2_note": "All four processed summer R037 scenes, one R080 scene as the severe case, and 31 Aug as the clean control. Limited by disk (about 1.7 GB per run).",
+      "pleiades_neo": ["pneo-20260708", "pneo-20260903"]
+    },
+    "measures": {
+      "M1_offshore": "Median NIR (PNeo 826, S2 865/864 nm) and green rhos over valid pixels of the registered PNeo reference region.",
+      "M2_qaa": "The four Q1 QAA variants on that region (masked variants on V1 use the same rhot mask).",
+      "M3_common_mode": "Over valid habitat-AOI water with lidar depth 5-25 m: least-squares slope of rhos on depth at green and NIR; the ratio |NIR slope| / |green slope|. NIR cannot see a 5 m bottom, so a smaller ratio means less depth-correlated common-mode signal.",
+      "M4_contrast": "Median absolute deviation of green rhos over valid habitat water 5-20 m deep, divided by the same over the reference region.",
+      "M5_land": "Median |V1 - V0| green rhos over stable land (non-water eroded by 30 m)."
+    },
+    "improvement_rule": "V1 improves a scene when M1 NIR falls by >= 0.002, the M3 ratio falls, M4 is at least 0.9 of its V0 value, and M5 <= 0.002. Assessed per scene, never against labels.",
+    "follow_on": "If V1 improves a PNeo date, Q1's QAA variants and Q3's July comparison are repeated with V1 reflectance for that date, labelled exploratory.",
+    "reflectance_conversion_check": {
+      "question": "Is the July PNeo REFLECTANCE (Rayleigh-corrected) to TOA conversion consistent with the September BASIC product?",
+      "measure": "Over stable land on the 10 m grid: median PNeo/S2 rhos ratio and correlation at green, red and NIR, for PNeo 8 Jul against S2 2 Jul (R037, clean), and PNeo 3 Sep against S2 3 Sep (same minute) and S2 31 Aug.",
+      "rule": "Consistent when the July ratio is within 0.05 of the September same-minute ratio at red and NIR. Green is reported. Different days carry different aerosol, so this checks for gross error only."
+    }
+  },
+  "Q3_spectral_beyond_depth": {
+    "question": "Is there local spectral information beyond depth, under consistent QC?",
+    "families": "The five v1 families with v1 hyperparameters, plus two negative controls: nir_ridge (NIR only) and nir_depth_ridge (NIR and depth). NIR at these depths carries no seabed signal, so any skill they show is a confound (adjacency, glint, position), not cover.",
+    "sensors_and_scales": ["PNeo native", "PNeo 10 m grid", "Sentinel-2 10 m (2 Jul for July, 31 Aug for September)"],
+    "design": "July leave-one-transect-out exactly as v1, on QC-consistent units; every family on the same units; paired differences against depth-only and against the training mean. September: refit on all July units and apply once; reported as exploratory transfer, not a holdout.",
+    "sensitivities": {
+      "scope": "PNeo, July leave-one-transect-out, both scales.",
+      "displacement": "Every July position shifted jointly by 2, 5, 10 and 20 m in each of 8 compass directions; predictors and depth re-read at the shifted positions; QC applied; eligibility fixed.",
+      "reversed_order": "Within each transect and stratum, quadrat k takes the cover of quadrat 6 - k; positions unchanged.",
+      "extraction_scale": "Native windows of 1, 3, 5 and 7 pixels (1.2-8.4 m)."
+    },
+    "reported": "Per scenario: support, MAE of each family, and the paired differences spectral_depth_ridge - depth_ridge, spectral_ridge - training_mean, nir_depth_ridge - depth_ridge."
+  },
+  "Q4_windows": {
+    "question": "What can fixed campaign schedules support at this site?",
+    "method": "oceanstream.coastal.acquire.usability.screen_usability over the v1 screen rectangle, with the water geometry from lidar or DTM, default UsabilityThresholds (glint angle >= 20 deg, water B11 <= 0.02, red haze, tile cloud <= 60%).",
+    "pre_run_clarification": "Added 2026-10-02 before any window was screened, from geometry alone: screen_usability reads at 4x decimation (80 m for B11), which leaves fewer than the library's 200 water pixels in the 620 m rectangle, so every scene would read no_water. r1 calls the same steps as usability.assess (overpasses, item_tile_angles, measure_over_water, classify) with decimate=1. The library's winter figures for Sesimbra (25-33 usable dates per October-April season) were screened over the whole 36 x 45 km site, not the quadrat area, so they are not comparable with these counts.",
+    "years": "2017-2026",
+    "windows": {
+      "june": "2 June +/- h",
+      "july": "7 July - h to 8 July + h",
+      "september": "1 September - h to 2 September + h",
+      "h_days": [3, 7, 14]
+    },
+    "tiers": {
+      "usable": "Library verdict usable.",
+      "likely_pass": "Usable and water B11 <= 0.012, the screen value at which the v1 calibration (ACOLITE reads 0.69-0.85 of the screen) puts ACOLITE 1614 nm below its 0.01 limit."
+    },
+    "reported": "Per year, campaign and h: overpasses, usable, likely_pass, by orbit; the share of years with at least one likely_pass overpass. No ACOLITE run and no quadrat-cell check, so this bounds availability from above."
+  },
+  "injection_recovery": {
+    "question": "Could this pipeline detect a realistically sized cover signal if one were present?",
+    "base": "July QC-consistent PNeo units and the real 8 July V0 reflectance, depth and masks.",
+    "synthetic_target": "Within-stratum permutation of the observed July cover over quadrats, one permutation per draw, so the real reflectance acts as noise with respect to the target and the depth-cover structure is kept.",
+    "signal": "rhos change = pi * (Rrs(rho_mix, z) - Rrs(rho_background, z)) from oceanstream.coastal.inversion.lee.forward_model, rho_mix = c rho_kelp + (1 - c) rho_background, at 486/563/655 nm, solar zenith 20.83 deg, z = lidar depth at the pixel plus the acquisition water level.",
+    "endmembers": "E5s taxon-balanced Pleiades Neo medians: kelp; background understory (mean of turf, coralline crust and red foliose: realistic for Sesimbra) or bare (rock and sand: optimistic bound).",
+    "water": "E5s Sesimbra forced-560 QAA IOPs: the median (registered E5s value) and 2026-02-22 (the more attenuating date). Summer water was likely less clear (sonde chlorophyll), so both are optimistic.",
+    "field": "Each quadrat paints a disc of radius 2.5 m (half the quadrat spacing) with its synthetic cover at its true position; other pixels take the synthetic stratum mean of the nearest quadrat.",
+    "positional_error": "True positions = recorded positions plus one offset per transect, magnitude d in {0, 5, 10, 20} m, uniform random direction per draw.",
+    "pipeline": "Inject into the real rasters, extract at the recorded positions with the Q3 QC rules, run the v1 July leave-one-transect-out on both scales.",
+    "draws": 100,
+    "null": "The same draws with zero signal give the rate at which spectral_depth_ridge beats depth_ridge by chance.",
+    "recovered": "spectral_depth_ridge MAE at least 2 pp below depth_ridge MAE in >= 80% of draws.",
+    "interpretation": {
+      "understory_recovered_at_d_le_10": "The v1 negative result carries information about cover at this site.",
+      "only_bare_recovered": "The v1 negative result is what the physics predicts for kelp over understory and says little about the sensor.",
+      "nothing_recovered_at_d_0": "The design cannot detect even an optimistic signal; v1's negative result is inconclusive.",
+      "recovery_lost_with_d": "Positional error alone could explain the v1 result at the offsets where recovery is lost."
+    }
+  },
+  "interpretation_limits": [
+    "All model results are exploratory: labels were seen in v1 and in the audit.",
+    "Thresholds above are fixed here and not revised after results are seen. Any later change is recorded as a deviation, with the original result kept.",
+    "Agreement, plausibility and recovery are not accuracy. A passing injection shows the pipeline could detect a signal of that size, not that kelp produces it at Sesimbra (E5s spectra are Australian and New Zealand kelps)."
+  ]
+}

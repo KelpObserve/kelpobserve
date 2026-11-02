@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r1-injection",
+  "created_at": "2026-10-02T10:40:39.381957+00:00",
+  "exploratory": true,
+  "outputs": {
+    "draws.csv": "b563adafcfc8aa917e13dd78e0b524735539fee44cba3a30c4467586a10723e9",
+    "injection.json": "4507857cc18b085e60c79ab5330b5144eafd416cb56d0d4517ae32d49f6fcb0e"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "8668a1acbe7806bc7fe4f2004584c874e797c67141b6a8638139922b51d6603c"
+  },
+  "revision_runner_sha256": "6444af77b08256deaa2b205b873705190f61e2f469deab4df77d962368b6c33d",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  }
+}

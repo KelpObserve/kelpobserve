@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r6",
+  "title": "Does glint correction or multi-date combination move this design into the recovery envelope?",
+  "parents": [
+    "revision-r4.json",
+    "revision-r5.json"
+  ],
+  "registered_on": "2026-10-02",
+  "registered_before": "Any r6 simulation, ACOLITE run or diagnostic was computed.",
+  "design_source": "The user's specification of 2026-10-02 (paired PNeo V0/V1; Sentinel-2 dates and their combination on fixed cells; matched spatial windows; unchanged criterion), implemented as below.",
+  "kind": "Simulation on real geometry and reflectance, plus label-free diagnostics. No model is fitted to observed cover. Exploratory.",
+  "unchanged_from_r4": "Synthetic cover (July cover permuted within strata), the disc field on a 1 m grid, per-transect position errors, the forward-model signal with E5s endmembers and median Sesimbra IOPs, area aggregation and the Gaussian PSF (sigma 0.5 pixel), the four models, leave-one-transect-out, and the recovery criterion: a model's MAE at least 2 points below depth_ridge's in at least 80% of draws. 100 draws; draw i uses seed 42 + i everywhere.",
+  "A_pneo_paired": {
+    "scene": "Pleiades Neo, 8 July: V0 (v1 processing) and V1 (r1's NIR-referenced glint correction).",
+    "identical_units": "A pixel is valid only if valid in both versions, so V0 and V1 have the same native units and the same 10 m cells.",
+    "identical_draws": "The same permutation, offsets and field per draw in both versions.",
+    "conditions": "Both versions x native and 10 m x understory and bare x patch radius 1.25, 2.5, 5, 10, 25 m x position error 0, 2, 5, 10, 20 m; a null per version and scale; the ideal-background noise ladder (sigma 0, 0.0005, 0.001, 0.002, 0.004) on the common units, R 10 m, no position error.",
+    "reported": "Each condition overall and by stratum (shallow, deep), and the paired V1 minus V0 difference in the share of draws meeting the 2-point gain.",
+    "injection_point": "The simulation adds the signal to each version's output reflectance. A1 below tests whether that equals adding it before correction."
+  },
+  "A1_correction_preserves_signal": {
+    "why": "Injecting only after correction cannot show that correction preserves a seabed signal.",
+    "method": "One deterministic pattern: draw 0 of condition bare, R = 10 m, no position error, its fine-grid signal aggregated to the PNeo grid (no PSF) at blue, green and red. Added to a copy of the July product's RGB band file as reflectance (DN = reflectance x 10000, rounded; the product's gain), written as a GeoTIFF under the original file name (ACOLITE reads bands with GDAL, which identifies the format by content). The copy is processed with the registered V0 settings and with the V1 settings, into .cache/acolite-r6/.",
+    "measures": "Over valid pixels where the injected pattern is at least 0.0005 in magnitude: the response of each version (injected minus uninjected output rhos), the least-squares slope of the V1 response on the V0 response and their correlation, per band and per stratum; the slope of the V0 response on the injected product reflectance; ACOLITE's aerosol optical thickness (ac_aot_550) with and without injection.",
+    "criterion": "V1 preserves the injected signal if, at blue and green in both strata, the slope of its response on V0's lies in 0.95-1.05 with correlation at least 0.99, and the aerosol estimate changes by less than 0.001.",
+    "consequence": "If it fails, the V1 recovery results in A are reported as not validated."
+  },
+  "B_sentinel2_dates": {
+    "scenes": "2 July (v1 mask) and 9 July (r3 mask), both R037 with r1's SWIR glint correction (V1). 9 July was not accepted under r3's rules; it is used for its observation conditions.",
+    "common_cells": "10 m cells valid on both dates.",
+    "union_cells": "Cells valid on at least one date.",
+    "same_habitat": "Per draw, one synthetic cover field. Each date receives its signal under its own conditions: its acquisition water level, its solar zenith and its valid-pixel mask.",
+    "combination": "Per pixel, the mean of the dates on which it is valid (injected reflectance, background included); depth = lidar + the mean water level of the dates used.",
+    "configurations": {
+      "S1_2jul_common": "2 July alone on the common cells.",
+      "S2_9jul_common": "9 July alone on the common cells.",
+      "S3_combined_common": "The combination on the common cells: any gain over S1 and S2 comes from reduced variation.",
+      "S4_combined_union": "The combination on the union cells: any further gain over S3 comes from coverage."
+    },
+    "conditions": "Each configuration x understory and bare x every R and position error above; a null per configuration; ideal background with independent noise per date (sigma 0, 0.0005, 0.001) x both contrasts, R 10 m, no position error.",
+    "reported": "As in A, plus the two gains: S3 against the better of S1 and S2 (variation), and S4 against S3 (coverage)."
+  },
+  "C_background_bias": {
+    "note": "The user's specification names 'the background-bias diagnostic above', which this session cannot see. This is the interpretation registered; an amendment can add the intended one before interpretation.",
+    "measure": "For PNeo V0 and V1 (native and 10 m) and Sentinel-2 2 July and 9 July units: the real unit rhos minus the forward-model rhos of each assumed background substrate (understory, bare) at the unit's depth and the assumed IOPs, at blue and green; and the bottom-reflectance bias after inversion (inverted real unit minus the background endmember). Median and robust SD by stratum. This is the gap that made r4's oracle fail."
+  },
+  "D_matched_windows": {
+    "replaces": "r5's comparison of habitat bins with the whole offshore region (registration erratum).",
+    "windows": "Square windows of 100 m and 300 m on a regular grid over r3's study window. In each window, each class (offshore; habitat 5-10, 10-14, 14-20, 20-30 m) is used if its unit-scale valid pixels fill at least 25% of the window (50% offshore).",
+    "per_window": "Least squares on x and y (habitat classes also on depth): 'broad' = SD of the fitted x-y plane over the class pixels; 'local' = robust SD of the residuals; 'local after NIR' = the same with NIR added as a predictor.",
+    "scenes_and_scales": "r5's scenes and unit scales (PNeo native and 10 m, V0 and V1; Sentinel-2 V1 dates).",
+    "reported": "Per class: number of windows, median and interquartile range of broad and local SD, and the SD between window means.",
+    "decisions": "r5's D1 and D3 with their thresholds unchanged (0.8 and 1.5; cross-date r from r5's M5), but with sizes from matched windows: the median local SD of the class against that of offshore windows of the same size."
+  },
+  "limits": [
+    "One injected pattern for A1; it tests the correction's response, not ACOLITE's absolute calibration.",
+    "Two July Sentinel-2 dates, one of them not accepted radiometrically.",
+    "E5s spectra, two strata, the disc model, and real seabed structure counted as noise, as in r4."
+  ],
+  "errata": [
+    {
+      "recorded_on": "2026-10-02",
+      "after": "r6 run",
+      "status": "Recorded, not repaired.",
+      "items": [
+        "D: the offshore reference region is narrow (three parts, 0.287 km2), so at 300 m only 1-2 windows meet the 50% rule. The 300 m comparisons rest on those 1-2 windows; the 100 m windows (23-29 offshore) carry the comparison.",
+        "C: r5's robust SD needs 20 values and a stratum has 7-15 units, so the first bias run left the spreads empty. The stage was rerun with the same estimator allowed down to 5 values; medians were unaffected.",
+        "A1: the first run stopped at the comparison because the ACOLITE output grid matched the product grid only to floating point (pixel 1.1999999999999977 m against 1.2 m). The comparison now uses a 1e-6 tolerance; the second run reused the same injected product (verified identical) and the complete ACOLITE outputs.",
+        "B: with two dates, independent noise can fall by at most a factor of sqrt(2); the design cannot test larger combinations."
+      ]
+    },
+    {
+      "recorded_on": "2026-10-02",
+      "after": "E_offset_control run and review",
+      "status": "Recorded, not repaired; the formal classification stands as computed.",
+      "items": [
+        "E_offset_control's outcome rule names everything that neither recovers nor rises by 0.10 'barely_changes', so that category also holds substantial deterioration. Of 48 combinations, by median paired change over the reference set: 2 rise by at least 0.10, 8 fall by at least 0.10 (all the pooled additive ridge with bare substrate) and 38 change by less than 0.10. Reports state the direction.",
+        "Per-stratum results in r4-r6 are errors of models fitted on both strata, scored separately on each stratum's units; no model was trained on one stratum alone."
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "E_offset_control",
+      "registered_on": "2026-10-02",
+      "registered_before": "Any offset-control computation. r6's A, B, C and D results were known.",
+      "source": "The user's specification of 2026-10-02, clarifying 'the background-bias diagnostic': remove the systematic background offset in a diagnostic simulation, keep the measured spatial variation, and test whether recovery improves.",
+      "kind": "An intentionally favourable simulation control, not a proposed operational correction. r6's existing results are retained unchanged.",
+      "model_background": "For each scene (or Sentinel-2 combination), scale and background substrate (understory, bare): forward-model rhos of the substrate on the 1 m grid at lidar depth plus the scene's acquisition level, with the assumed water (E5s median); area-averaged to the sensor grid over fine cells with lidar, passed through the injection's PSF (sigma 0.5 pixel, normalised over defined cells), then extracted with the real units' footprints and validity. For a Sentinel-2 combination, each date's model background is combined exactly as its reflectance is.",
+      "offset": "On the uninjected background: e_i = y_i - m_i per unit and band (blue, green, red); b_s = median of e_i over the units of depth stratum s with both defined, separately per scene or configuration, scale, band and substrate. No cover is read.",
+      "adjusted_background": "y_i* = y_i - b_s = m_i + (e_i - b_s). The injected unit is y_i* + delta_i, delta_i being r6's synthetic signal with the same footprint. Within-stratum differences and covariance are kept; the offset is fixed before any injection.",
+      "scope": "Every real-background condition of r6 A (PNeo V0 and V1, native and 10 m) and B (S1-S4), both contrasts, every patch radius and position error; nulls with each substrate's offset. A condition uses the offset of its own background substrate.",
+      "unchanged": "Draws (seed 42 + i), synthetic signal, models, leave-one-transect-out and the recovery criterion.",
+      "outcomes": {
+        "reference_set": "Patch radius 5, 10 and 25 m with no position error.",
+        "recovery_appears": "After offset removal, a model meets the criterion (share >= 0.8) in at least one reference condition it did not meet in r6, while its offset-removed null share stays below 0.2.",
+        "improves_but_fails": "Not the above, but the median paired increase in share over the reference set is at least 0.10.",
+        "barely_changes": "Otherwise.",
+        "classified_per": "Sensor setting (PNeo version and scale; Sentinel-2 configuration), contrast and model."
+      },
+      "reported": "The offsets b_s; every condition before and after, paired; the classification; the null shares."
+    }
+  ]
+}

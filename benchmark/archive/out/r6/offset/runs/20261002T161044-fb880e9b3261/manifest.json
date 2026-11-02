@@ -1,0 +1,30 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r6-offset",
+  "created_at": "2026-10-02T16:10:44.567097+00:00",
+  "exploratory": true,
+  "outputs": {
+    "draws.csv": "9f3f77760f683c63ab9e353fa123814e73d120424051c519ab74434c2792ad4b",
+    "offset.json": "7cc80e9983185006cde04f56d2b13d9a485cc38a34b90cd58226107e401c0296"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "a4436947e4eb86881177826e9a1bd9011222285afdb6052166afefefff131959"
+  },
+  "revision_runner_sha256": "2b33b0df5af6714b082e2c10529f75acae381e13505a62d366571b650d16bb9f",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  },
+  "registration_r6": {
+    "path": "$REG/revision-r6.json",
+    "sha256": "740d9f0fe8dc4b1527b8909062203ba823cb95b5aea7da785758835064be91ec"
+  },
+  "r6_runner_sha256": "8d331bc9dc667dc78ccd2bc59e0c5034a4706f0d3ee7cffeaceb476e7e25d6ad"
+}

@@ -1,0 +1,7 @@
+# Pleiades Neo overrides. ACOLITE's PNEO3 defaults (fixed DSF, 1st-percentile
+# spectrum) are restated. The PAN band is skipped: quantitative features use
+# native 1.2 m multispectral data only, never pansharpened products.
+dsf_aot_estimate=fixed
+dsf_spectrum_option=percentile
+dsf_percentile=1
+pleiades_skip_pan=True

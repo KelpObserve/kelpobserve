@@ -1,0 +1,291 @@
+{
+  "checks": {
+    "status": "approved",
+    "approved_on": "2026-09-19",
+    "note": "Approved and registered before any per-scene quality metric was computed.",
+    "valid_water_min_fraction": 0.8,
+    "quadrat_cell_min_fraction": 0.8,
+    "sentinel2_max_median_rhos_1614": 0.01,
+    "bands_nm": {
+      "sentinel2": {
+        "blue": 490,
+        "green": 560,
+        "red": 665,
+        "glint": 1614,
+        "nir": 835
+      },
+      "pleiades_neo": {
+        "blue": 490,
+        "green": 560,
+        "red": 655,
+        "nir": 825
+      }
+    },
+    "definitions": {
+      "completion": "ACOLITE wrote blue, green and red rhos.",
+      "water": "Habitat-AOI pixels with lidar or DTM depth, resampled by nearest neighbour to the scene grid. Scene-independent.",
+      "valid_water": "Water pixels with finite blue, green and red rhos, and rhot at ACOLITE's l2w_mask_wave not above l2w_mask_threshold, both read from the pinned ACOLITE sensor defaults.",
+      "quadrat_cells": "Distinct native pixels containing the campaign's quadrats; the fraction that is valid water.",
+      "glint": "Sentinel-2 only: median rhos at 1614 nm over water pixels with finite rhos, before the cloud mask.",
+      "nir_residual": "Median rhos at NIR over valid water and over quadrat cells. Reported, never a pass/fail criterion.",
+      "ranking": "Among passing Sentinel-2 scenes: sentinel2.ranking, with valid-water fraction as the third key. A group of tied scenes is decided only once every member is processed."
+    }
+  },
+  "scenes": {
+    "s2-20260602-S2A-R080": {
+      "id": "s2-20260602-S2A-R080",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.1099434345960617,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 560.0,
+        "red": 665.0,
+        "glint": 1614.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2A_MSI",
+        "rhot_nm": 1614.0,
+        "threshold": 0.0215
+      }
+    },
+    "s2-20260602-S2B-R037": {
+      "id": "s2-20260602-S2B-R037",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.03103668335825205,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    "s2-20260709-S2A-R037": {
+      "id": "s2-20260709-S2A-R037",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.0295224841684103,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 560.0,
+        "red": 665.0,
+        "glint": 1614.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2A_MSI",
+        "rhot_nm": 1614.0,
+        "threshold": 0.0215
+      }
+    },
+    "s2-20260705-S2B-R080": {
+      "id": "s2-20260705-S2B-R080",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.1127048060297966,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    "s2-20260903-S2B-R080": {
+      "id": "s2-20260903-S2B-R080",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "passed": false,
+      "reasons": [
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 18568,
+        "valid_water_fraction": 0.9184804115552038,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 10,
+        "quadrat_cell_fraction": 0.5882352941176471,
+        "median_rhos_glint_band": 0.015458181034773588,
+        "median_rhos_nir_valid_water": 0.018945937976241112,
+        "median_rhos_nir_quadrat_cells": 0.02443696092814207
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    "pneo-20260708": {
+      "id": "pneo-20260708",
+      "campaign": "july",
+      "sensor": "pleiades_neo",
+      "status": "reused",
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "water_pixels": 1412964,
+        "valid_water_pixels": 1283868,
+        "valid_water_fraction": 0.908634614894647,
+        "quadrat_cells": 30,
+        "valid_quadrat_cells": 30,
+        "quadrat_cell_fraction": 1.0,
+        "median_rhos_nir_valid_water": 0.037570398300886154,
+        "median_rhos_nir_quadrat_cells": 0.012966533191502094
+      },
+      "bands_used_nm": {
+        "blue": 486.0,
+        "green": 563.0,
+        "red": 655.0,
+        "nir": 826.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "PNEO3",
+        "rhot_nm": 826.0,
+        "threshold": 0.1
+      }
+    },
+    "pneo-20260903": {
+      "id": "pneo-20260903",
+      "campaign": "september",
+      "sensor": "pleiades_neo",
+      "status": "reused",
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "water_pixels": 1412964,
+        "valid_water_pixels": 1251711,
+        "valid_water_fraction": 0.8858760732757522,
+        "quadrat_cells": 30,
+        "valid_quadrat_cells": 25,
+        "quadrat_cell_fraction": 0.8333333333333334,
+        "median_rhos_nir_valid_water": 0.011448889039456844,
+        "median_rhos_nir_quadrat_cells": 0.0152141647413373
+      },
+      "bands_used_nm": {
+        "blue": 486.0,
+        "green": 563.0,
+        "red": 655.0,
+        "nir": 826.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "PNEO3",
+        "rhot_nm": 826.0,
+        "threshold": 0.1
+      }
+    }
+  },
+  "sentinel2_selection": {
+    "june": {
+      "status": "undetermined",
+      "reason": "not processed",
+      "waiting_for": [
+        "S2C_MSIL1C_20260531T113321_N0512_R080_T29SMC_20260531T150805.SAFE"
+      ]
+    },
+    "july": {
+      "status": "undetermined",
+      "reason": "not processed",
+      "waiting_for": [
+        "S2C_MSIL1C_20260710T113321_N0512_R080_T29SMC_20260710T150752.SAFE"
+      ]
+    },
+    "september": {
+      "status": "undetermined",
+      "reason": "not processed",
+      "waiting_for": [
+        "S2A_MSIL1C_20260831T113331_N0512_R080_T29SMC_20260831T182653.SAFE"
+      ]
+    }
+  }
+}

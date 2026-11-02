@@ -1,0 +1,276 @@
+{
+  "experiment_id": "sesimbra-habitat-v1",
+  "created_at": "2026-09-19T22:28:14.756706+00:00",
+  "amendment": "glint-window-and-screen",
+  "window_days": 7,
+  "window_amended": true,
+  "screen_glint_max": 0.02,
+  "bounds_epsg32629": [
+    482049.2,
+    4250919.7,
+    482671.3,
+    4251554.9
+  ],
+  "collection": "sentinel-2-l2a (Planetary Computer)",
+  "definition": "Median Sentinel-2 L2A reflectance at 1610 nm over the quadrat area plus 250 m. Calibrated against ACOLITE rhos at 1614 nm on four processed scenes, where ACOLITE reads 0.69 to 0.85 of the screen value, so the 0.02 screen limit sits safely above the 0.01 ACOLITE limit.",
+  "scenes": [
+    {
+      "key": "2026-05-26T11:33|Sentinel-2B",
+      "campaign": "june",
+      "sensing_utc": "2026-05-26T11:33:09.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 5.776159,
+      "b11_median": 0.1313,
+      "b11_p10": 0.1168,
+      "screened_out": true
+    },
+    {
+      "key": "2026-05-30T11:21|Sentinel-2A",
+      "campaign": "june",
+      "sensing_utc": "2026-05-30T11:21:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 12.372623,
+      "b11_median": 0.0379,
+      "b11_p10": 0.0284,
+      "screened_out": true
+    },
+    {
+      "key": "2026-05-31T11:33|Sentinel-2C",
+      "campaign": "june",
+      "sensing_utc": "2026-05-31T11:33:21.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 39.04897,
+      "b11_median": 0.1481,
+      "b11_p10": 0.1298,
+      "screened_out": true
+    },
+    {
+      "key": "2026-06-02T11:21|Sentinel-2B",
+      "campaign": "june",
+      "sensing_utc": "2026-06-02T11:21:09.025000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 17.042984,
+      "b11_median": 0.0406,
+      "b11_p10": 0.0334,
+      "screened_out": true
+    },
+    {
+      "key": "2026-06-02T11:39|Sentinel-2A",
+      "campaign": "june",
+      "sensing_utc": "2026-06-02T11:39:11.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 17.013864,
+      "b11_median": 0.1296,
+      "b11_p10": 0.1039,
+      "screened_out": true
+    },
+    {
+      "key": "2026-06-05T11:33|Sentinel-2B",
+      "campaign": "june",
+      "sensing_utc": "2026-06-05T11:33:19.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 4.001326,
+      "b11_median": 0.111,
+      "b11_p10": 0.084,
+      "screened_out": true
+    },
+    {
+      "key": "2026-06-07T11:21|Sentinel-2C",
+      "campaign": "june",
+      "sensing_utc": "2026-06-07T11:21:11.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 20.356941,
+      "b11_median": 0.0392,
+      "b11_p10": 0.0319,
+      "screened_out": true
+    },
+    {
+      "key": "2026-06-09T11:21|Sentinel-2A",
+      "campaign": "june",
+      "sensing_utc": "2026-06-09T11:21:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 0.023357,
+      "b11_median": 0.0354,
+      "b11_p10": 0.0252,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-02T11:21|Sentinel-2B",
+      "campaign": "july",
+      "sensing_utc": "2026-07-02T11:21:09.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 16.174003,
+      "b11_median": 0.0122,
+      "b11_p10": 0.0057,
+      "screened_out": false
+    },
+    {
+      "key": "2026-07-02T11:33|Sentinel-2A",
+      "campaign": "july",
+      "sensing_utc": "2026-07-02T11:33:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 33.282739,
+      "b11_median": 0.2173,
+      "b11_p10": 0.1646,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-05T11:33|Sentinel-2B",
+      "campaign": "july",
+      "sensing_utc": "2026-07-05T11:33:19.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 44.060034,
+      "b11_median": 0.1626,
+      "b11_p10": 0.1369,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-09T11:21|Sentinel-2A",
+      "campaign": "july",
+      "sensing_utc": "2026-07-09T11:21:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 50.571048,
+      "b11_median": 0.0431,
+      "b11_p10": 0.0378,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-10T11:33|Sentinel-2C",
+      "campaign": "july",
+      "sensing_utc": "2026-07-10T11:33:21.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 4.762239,
+      "b11_median": 0.1278,
+      "b11_p10": 0.0879,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-12T11:21|Sentinel-2B",
+      "campaign": "july",
+      "sensing_utc": "2026-07-12T11:21:09.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 62.775809,
+      "b11_median": 0.2183,
+      "b11_p10": 0.1166,
+      "screened_out": true
+    },
+    {
+      "key": "2026-07-12T11:39|Sentinel-2A",
+      "campaign": "july",
+      "sensing_utc": "2026-07-12T11:39:11.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 77.371114,
+      "b11_median": 0.3398,
+      "b11_p10": 0.2926,
+      "screened_out": true
+    },
+    {
+      "key": "2026-08-28T11:21|Sentinel-2A",
+      "campaign": "september",
+      "sensing_utc": "2026-08-28T11:21:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 11.66141,
+      "b11_median": 0.0158,
+      "b11_p10": 0.0075,
+      "screened_out": false
+    },
+    {
+      "key": "2026-08-29T11:33|Sentinel-2C",
+      "campaign": "september",
+      "sensing_utc": "2026-08-29T11:33:21.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 1.114352,
+      "b11_median": 0.0377,
+      "b11_p10": 0.0322,
+      "screened_out": true
+    },
+    {
+      "key": "2026-08-31T11:21|Sentinel-2B",
+      "campaign": "september",
+      "sensing_utc": "2026-08-31T11:21:09.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 0.262565,
+      "b11_median": 0.0089,
+      "b11_p10": 0.0046,
+      "screened_out": false
+    },
+    {
+      "key": "2026-08-31T11:33|Sentinel-2A",
+      "campaign": "september",
+      "sensing_utc": "2026-08-31T11:33:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 0.921556,
+      "b11_median": 0.0251,
+      "b11_p10": 0.0183,
+      "screened_out": true
+    },
+    {
+      "key": "2026-09-03T11:33|Sentinel-2B",
+      "campaign": "september",
+      "sensing_utc": "2026-09-03T11:33:19.024000+00:00",
+      "platform": "Sentinel-2B",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 0.306642,
+      "b11_median": 0.0179,
+      "b11_p10": 0.0129,
+      "screened_out": false
+    },
+    {
+      "key": "2026-09-05T11:21|Sentinel-2C",
+      "campaign": "september",
+      "sensing_utc": "2026-09-05T11:21:11.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 0.008847,
+      "b11_median": 0.033,
+      "b11_p10": 0.0222,
+      "screened_out": true
+    },
+    {
+      "key": "2026-09-07T11:21|Sentinel-2A",
+      "campaign": "september",
+      "sensing_utc": "2026-09-07T11:21:31.024000+00:00",
+      "platform": "Sentinel-2A",
+      "relative_orbit": 37,
+      "tile_cloud_pct": 8.557239,
+      "b11_median": 0.016,
+      "b11_p10": 0.0107,
+      "screened_out": false
+    },
+    {
+      "key": "2026-09-08T11:33|Sentinel-2C",
+      "campaign": "september",
+      "sensing_utc": "2026-09-08T11:33:21.025000+00:00",
+      "platform": "Sentinel-2C",
+      "relative_orbit": 80,
+      "tile_cloud_pct": 39.743394,
+      "b11_median": 0.0497,
+      "b11_p10": 0.0379,
+      "screened_out": true
+    }
+  ],
+  "runner_sha256": "1c55251e5c77909c30342ad1192793f2a602b13424e75c9b554f705087f2cfe0",
+  "git": {
+    "commit": "d91bedf8dde7a9f73c5ac968acf2799c0857b7d0",
+    "uncommitted_changes": true
+  }
+}

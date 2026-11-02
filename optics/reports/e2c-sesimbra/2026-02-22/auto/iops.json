@@ -1,0 +1,118 @@
+{
+  "schema_version": "2.0",
+  "oceanstream:product": "iops",
+  "oceanstream:title": "Scene-mean inherent optical properties",
+  "oceanstream:status": "diagnostic_only",
+  "oceanstream:caveat": null,
+  "oceanstream:provenance": {
+    "campaign_id": "e2c-sesimbra",
+    "aoi": "sesimbra",
+    "sensor": "sentinel2",
+    "acquisition_date": "2026-02-22",
+    "solar_zenith_deg": 51.9865319225185,
+    "solar_zenith_source": "acolite_metadata"
+  },
+  "oceanstream:qc_passed": false,
+  "oceanstream:qc": {
+    "passed": false,
+    "flags": [
+      "dive_reef:bbp_555_implausible(0.02829)",
+      "dive_reef:local_qaa_comparison_unavailable",
+      "dive_reef:qaa_model_uncertainty_missing",
+      "dive_reef:reference_independence_unverified",
+      "dive_reef:reference_uncertainty_assumed",
+      "dive_reef:tide_correction_missing"
+    ],
+    "summary": "dive_reef:bbp_555_implausible(0.02829); dive_reef:local_qaa_comparison_unavailable; dive_reef:qaa_model_uncertainty_missing; dive_reef:reference_independence_unverified; dive_reef:reference_uncertainty_assumed; dive_reef:tide_correction_missing",
+    "evidence": {
+      "products": {
+        "dive_reef": {
+          "passed": false,
+          "flags": [
+            "bbp_555_implausible(0.02829)",
+            "local_qaa_comparison_unavailable",
+            "qaa_model_uncertainty_missing",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "tide_correction_missing"
+          ],
+          "summary": "bbp_555_implausible(0.02829); local_qaa_comparison_unavailable; qaa_model_uncertainty_missing; reference_independence_unverified; reference_uncertainty_assumed; tide_correction_missing",
+          "evidence": {}
+        }
+      }
+    }
+  },
+  "oceanstream:generated": "2026-09-24T14:40:45.372359+00:00",
+  "iops": {
+    "wavelengths_nm": [
+      442.0,
+      492.0,
+      559.0,
+      665.0,
+      704.0,
+      739.0,
+      780.0,
+      833.0,
+      864.0,
+      1610.0,
+      2186.0
+    ],
+    "a": [
+      0.2524819076061249,
+      0.2223987877368927,
+      0.21217398345470428,
+      0.47170689702033997,
+      0.6240000128746033,
+      0.6886587738990784,
+      0.6939468383789062,
+      0.7588995695114136,
+      1.0148757696151733,
+      1.641816258430481,
+      1.3386043310165405
+    ],
+    "bb": [
+      0.0391237847507,
+      0.03400151804089546,
+      0.02895716018974781,
+      0.023456674069166183,
+      0.021919138729572296,
+      0.0206979438662529,
+      0.019425705075263977,
+      0.017989564687013626,
+      0.017240744084119797,
+      0.008438993245363235,
+      0.0059566805139184
+    ],
+    "kd": [
+      0.4760836362838745,
+      0.41564202308654785,
+      0.38200142979621887,
+      0.6920552253723145,
+      0.877763569355011,
+      0.9541546106338501,
+      0.9555022120475769,
+      1.0313478708267212,
+      1.3507407903671265,
+      2.1038529872894287,
+      1.711450219154358
+    ],
+    "a_cdm_443": null,
+    "bbp_555": 0.02828748875184363,
+    "y": 1.1367486024787943,
+    "n_deep_pixels": 5000,
+    "ref_wavelength_nm": 665.0,
+    "qa_flags": [
+      "red_reference_selected(665nm)",
+      "a_cdm_443_not_computable(no_411nm_band)",
+      "bbp_555_implausible(0.02829)",
+      "a_below_pure_water_floor(704nm: 0.5418 < 0.6240)"
+    ],
+    "a_floor_violations": [
+      {
+        "wavelength_nm": 704.0,
+        "a_retrieved": 0.54184,
+        "a_pure_water": 0.624
+      }
+    ]
+  }
+}

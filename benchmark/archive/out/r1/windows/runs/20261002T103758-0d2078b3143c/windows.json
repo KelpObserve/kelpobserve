@@ -1,0 +1,1619 @@
+{
+  "registration": {
+    "question": "What can fixed campaign schedules support at this site?",
+    "method": "oceanstream.coastal.acquire.usability.screen_usability over the v1 screen rectangle, with the water geometry from lidar or DTM, default UsabilityThresholds (glint angle >= 20 deg, water B11 <= 0.02, red haze, tile cloud <= 60%).",
+    "pre_run_clarification": "Added 2026-10-02 before any window was screened, from geometry alone: screen_usability reads at 4x decimation (80 m for B11), which leaves fewer than the library's 200 water pixels in the 620 m rectangle, so every scene would read no_water. r1 calls the same steps as usability.assess (overpasses, item_tile_angles, measure_over_water, classify) with decimate=1. The library's winter figures for Sesimbra (25-33 usable dates per October-April season) were screened over the whole 36 x 45 km site, not the quadrat area, so they are not comparable with these counts.",
+    "years": "2017-2026",
+    "windows": {
+      "june": "2 June +/- h",
+      "july": "7 July - h to 8 July + h",
+      "september": "1 September - h to 2 September + h",
+      "h_days": [
+        3,
+        7,
+        14
+      ]
+    },
+    "tiers": {
+      "usable": "Library verdict usable.",
+      "likely_pass": "Usable and water B11 <= 0.012, the screen value at which the v1 calibration (ACOLITE reads 0.69-0.85 of the screen) puts ACOLITE 1614 nm below its 0.01 limit."
+    },
+    "reported": "Per year, campaign and h: overpasses, usable, likely_pass, by orbit; the share of years with at least one likely_pass overpass. No ACOLITE run and no quadrat-cell check, so this bounds availability from above."
+  },
+  "bbox_lonlat": [
+    -9.205596729444492,
+    38.406329556310205,
+    -9.198487300933497,
+    38.41206639746034
+  ],
+  "likely_pass_max_b11": 0.012,
+  "summary": {
+    "july +/-3 d": {
+      "years": 9,
+      "years_with_usable": 1,
+      "years_with_likely_pass": 1,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 0,
+      "2026_usable": 0
+    },
+    "june +/-3 d": {
+      "years": 9,
+      "years_with_usable": 1,
+      "years_with_likely_pass": 1,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 0,
+      "2026_usable": 0
+    },
+    "september +/-3 d": {
+      "years": 9,
+      "years_with_usable": 7,
+      "years_with_likely_pass": 5,
+      "median_likely_pass": 1.0,
+      "2026_likely_pass": 1,
+      "2026_usable": 2
+    },
+    "july +/-7 d": {
+      "years": 9,
+      "years_with_usable": 2,
+      "years_with_likely_pass": 2,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 1,
+      "2026_usable": 1
+    },
+    "june +/-7 d": {
+      "years": 9,
+      "years_with_usable": 3,
+      "years_with_likely_pass": 2,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 0,
+      "2026_usable": 0
+    },
+    "september +/-7 d": {
+      "years": 9,
+      "years_with_usable": 9,
+      "years_with_likely_pass": 7,
+      "median_likely_pass": 2.0,
+      "2026_likely_pass": 2,
+      "2026_usable": 4
+    },
+    "july +/-14 d": {
+      "years": 9,
+      "years_with_usable": 5,
+      "years_with_likely_pass": 4,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 1,
+      "2026_usable": 2
+    },
+    "june +/-14 d": {
+      "years": 9,
+      "years_with_usable": 5,
+      "years_with_likely_pass": 4,
+      "median_likely_pass": 0.0,
+      "2026_likely_pass": 1,
+      "2026_usable": 1
+    },
+    "september +/-14 d": {
+      "years": 9,
+      "years_with_usable": 9,
+      "years_with_likely_pass": 8,
+      "median_likely_pass": 4.0,
+      "2026_likely_pass": 5,
+      "2026_usable": 9
+    }
+  },
+  "table": [
+    {
+      "h_days": 3,
+      "year": 2017,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2017,
+      "campaign": "june",
+      "overpasses": 1,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2017,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 2,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2018,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2018,
+      "campaign": "june",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 1,
+        "glint_geometry": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2018,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 1,
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2019,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 1,
+        "glint_geometry": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2019,
+      "campaign": "june",
+      "overpasses": 3,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 1,
+        "glint_geometry": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2019,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 2,
+      "likely_pass": 2,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2020,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2020,
+      "campaign": "june",
+      "overpasses": 2,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2020,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 1
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2021,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1,
+        "glint_measured": 1,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2021,
+      "campaign": "june",
+      "overpasses": 2,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2021,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 1
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2022,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2022,
+      "campaign": "june",
+      "overpasses": 2,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2022,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2023,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2023,
+      "campaign": "june",
+      "overpasses": 2,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2023,
+      "campaign": "september",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2024,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2024,
+      "campaign": "june",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 1,
+        "glint_measured": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2024,
+      "campaign": "september",
+      "overpasses": 4,
+      "usable": 1,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "usable": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2025,
+      "campaign": "july",
+      "overpasses": 5,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 3,
+        "glint_measured": 1,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2025,
+      "campaign": "june",
+      "overpasses": 4,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2025,
+      "campaign": "september",
+      "overpasses": 6,
+      "usable": 2,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 3,
+        "usable": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2026,
+      "campaign": "july",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2026,
+      "campaign": "june",
+      "overpasses": 5,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 3,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 3,
+      "year": 2026,
+      "campaign": "september",
+      "overpasses": 5,
+      "usable": 2,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 3,
+        "usable": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2017,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 3,
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2017,
+      "campaign": "june",
+      "overpasses": 3,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2017,
+      "campaign": "september",
+      "overpasses": 5,
+      "usable": 3,
+      "likely_pass": 2,
+      "likely_pass_by_orbit": {
+        "R037": 2,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 3,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2018,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 3,
+        "tile_cloudy": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2018,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 2,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2018,
+      "campaign": "september",
+      "overpasses": 6,
+      "usable": 3,
+      "likely_pass": 3,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 2
+      },
+      "verdicts": {
+        "usable": 3,
+        "tile_cloudy": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2019,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 3,
+        "glint_geometry": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2019,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 3,
+        "usable": 1,
+        "tile_cloudy": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2019,
+      "campaign": "september",
+      "overpasses": 6,
+      "usable": 4,
+      "likely_pass": 4,
+      "likely_pass_by_orbit": {
+        "R037": 3,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 4,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2020,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 3,
+        "glint_measured": 1,
+        "tile_cloudy": 1,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2020,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 2,
+        "usable": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2020,
+      "campaign": "september",
+      "overpasses": 7,
+      "usable": 4,
+      "likely_pass": 3,
+      "likely_pass_by_orbit": {
+        "R037": 2,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 4,
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2021,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "tile_cloudy": 2,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2021,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 3,
+        "tile_cloudy": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2021,
+      "campaign": "september",
+      "overpasses": 7,
+      "usable": 3,
+      "likely_pass": 2,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 3,
+        "tile_cloudy": 2,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2022,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 4,
+        "glint_geometry": 1,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2022,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "tile_cloudy": 2,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2022,
+      "campaign": "september",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 4,
+        "tile_cloudy": 1,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2023,
+      "campaign": "july",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 3,
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2023,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 1,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 3,
+        "glint_measured": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2023,
+      "campaign": "september",
+      "overpasses": 7,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 4,
+        "tile_cloudy": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2024,
+      "campaign": "july",
+      "overpasses": 7,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 3,
+        "glint_geometry": 3,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2024,
+      "campaign": "june",
+      "overpasses": 6,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 2,
+        "glint_measured": 2,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2024,
+      "campaign": "september",
+      "overpasses": 6,
+      "usable": 2,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 2,
+        "glint_measured": 2,
+        "tile_cloudy": 1,
+        "no_water": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2025,
+      "campaign": "july",
+      "overpasses": 10,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 4,
+        "glint_geometry": 3,
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2025,
+      "campaign": "june",
+      "overpasses": 9,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 5,
+        "glint_measured": 3,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2025,
+      "campaign": "september",
+      "overpasses": 9,
+      "usable": 4,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 4,
+        "tile_cloudy": 3,
+        "glint_measured": 2
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2026,
+      "campaign": "july",
+      "overpasses": 9,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 5,
+        "tile_cloudy": 2,
+        "usable": 1,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2026,
+      "campaign": "june",
+      "overpasses": 8,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 4,
+        "glint_measured": 4
+      }
+    },
+    {
+      "h_days": 7,
+      "year": 2026,
+      "campaign": "september",
+      "overpasses": 8,
+      "usable": 4,
+      "likely_pass": 2,
+      "likely_pass_by_orbit": {
+        "R037": 2,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 4,
+        "glint_measured": 4
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2017,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 1,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 6,
+        "glint_measured": 4,
+        "tile_cloudy": 1,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2017,
+      "campaign": "june",
+      "overpasses": 5,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 2,
+        "tile_cloudy": 2,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2017,
+      "campaign": "september",
+      "overpasses": 11,
+      "usable": 7,
+      "likely_pass": 4,
+      "likely_pass_by_orbit": {
+        "R037": 4,
+        "R080": 0
+      },
+      "verdicts": {
+        "usable": 7,
+        "glint_measured": 4
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2018,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 5,
+        "glint_geometry": 4,
+        "tile_cloudy": 3
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2018,
+      "campaign": "june",
+      "overpasses": 11,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 5,
+        "glint_geometry": 3,
+        "glint_measured": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2018,
+      "campaign": "september",
+      "overpasses": 12,
+      "usable": 8,
+      "likely_pass": 7,
+      "likely_pass_by_orbit": {
+        "R037": 4,
+        "R080": 3
+      },
+      "verdicts": {
+        "usable": 8,
+        "glint_measured": 2,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2019,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 6,
+        "glint_geometry": 3,
+        "glint_measured": 3
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2019,
+      "campaign": "june",
+      "overpasses": 10,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 5,
+        "glint_measured": 2,
+        "tile_cloudy": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2019,
+      "campaign": "september",
+      "overpasses": 12,
+      "usable": 7,
+      "likely_pass": 6,
+      "likely_pass_by_orbit": {
+        "R037": 5,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 7,
+        "glint_measured": 5
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2020,
+      "campaign": "july",
+      "overpasses": 11,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 6,
+        "glint_measured": 3,
+        "tile_cloudy": 1,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2020,
+      "campaign": "june",
+      "overpasses": 12,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 5,
+        "glint_geometry": 5,
+        "usable": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2020,
+      "campaign": "september",
+      "overpasses": 12,
+      "usable": 6,
+      "likely_pass": 5,
+      "likely_pass_by_orbit": {
+        "R037": 4,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 6,
+        "glint_measured": 4,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2021,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 5,
+        "glint_geometry": 5,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2021,
+      "campaign": "june",
+      "overpasses": 12,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 6,
+        "tile_cloudy": 5,
+        "glint_geometry": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2021,
+      "campaign": "september",
+      "overpasses": 12,
+      "usable": 5,
+      "likely_pass": 4,
+      "likely_pass_by_orbit": {
+        "R037": 3,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 5,
+        "glint_measured": 4,
+        "tile_cloudy": 3
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2022,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 2,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 5,
+        "glint_geometry": 4,
+        "usable": 2,
+        "glint_measured": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2022,
+      "campaign": "june",
+      "overpasses": 12,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "tile_cloudy": 5,
+        "glint_measured": 4,
+        "glint_geometry": 3
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2022,
+      "campaign": "september",
+      "overpasses": 11,
+      "usable": 2,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 8,
+        "usable": 2,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2023,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 6,
+        "glint_measured": 5,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2023,
+      "campaign": "june",
+      "overpasses": 12,
+      "usable": 2,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 4,
+        "glint_geometry": 3,
+        "tile_cloudy": 3,
+        "usable": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2023,
+      "campaign": "september",
+      "overpasses": 12,
+      "usable": 4,
+      "likely_pass": 4,
+      "likely_pass_by_orbit": {
+        "R037": 3,
+        "R080": 1
+      },
+      "verdicts": {
+        "glint_measured": 6,
+        "usable": 4,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2024,
+      "campaign": "july",
+      "overpasses": 12,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 5,
+        "glint_geometry": 4,
+        "tile_cloudy": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2024,
+      "campaign": "june",
+      "overpasses": 11,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 4,
+        "glint_measured": 4,
+        "tile_cloudy": 3
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2024,
+      "campaign": "september",
+      "overpasses": 10,
+      "usable": 4,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_measured": 4,
+        "usable": 4,
+        "tile_cloudy": 1,
+        "no_water": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2025,
+      "campaign": "july",
+      "overpasses": 18,
+      "usable": 0,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 7,
+        "glint_measured": 6,
+        "tile_cloudy": 5
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2025,
+      "campaign": "june",
+      "overpasses": 16,
+      "usable": 1,
+      "likely_pass": 0,
+      "likely_pass_by_orbit": {
+        "R037": 0,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 8,
+        "glint_measured": 5,
+        "tile_cloudy": 2,
+        "usable": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2025,
+      "campaign": "september",
+      "overpasses": 18,
+      "usable": 10,
+      "likely_pass": 5,
+      "likely_pass_by_orbit": {
+        "R037": 4,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 10,
+        "glint_measured": 4,
+        "tile_cloudy": 4
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2026,
+      "campaign": "july",
+      "overpasses": 17,
+      "usable": 2,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 8,
+        "glint_measured": 5,
+        "usable": 2,
+        "tile_cloudy": 2
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2026,
+      "campaign": "june",
+      "overpasses": 16,
+      "usable": 1,
+      "likely_pass": 1,
+      "likely_pass_by_orbit": {
+        "R037": 1,
+        "R080": 0
+      },
+      "verdicts": {
+        "glint_geometry": 8,
+        "glint_measured": 6,
+        "usable": 1,
+        "tile_cloudy": 1
+      }
+    },
+    {
+      "h_days": 14,
+      "year": 2026,
+      "campaign": "september",
+      "overpasses": 17,
+      "usable": 9,
+      "likely_pass": 5,
+      "likely_pass_by_orbit": {
+        "R037": 4,
+        "R080": 1
+      },
+      "verdicts": {
+        "usable": 9,
+        "glint_measured": 8
+      }
+    }
+  ]
+}

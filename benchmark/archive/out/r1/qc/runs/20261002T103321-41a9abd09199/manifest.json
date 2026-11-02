@@ -1,0 +1,30 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r1-qc",
+  "created_at": "2026-10-02T10:33:24.585658+00:00",
+  "exploratory": true,
+  "outputs": {
+    "qc.json": "18e6c03cac9b16677cd60e7968ca12f03988b28cd706dad0649926c2a7ff4654",
+    "units-pleiades_neo-july-grid.csv": "5b53f0f07fae81c213bf79d2bf12e6d77c2d9403e1b1730af5ca04da91edd1cc",
+    "units-pleiades_neo-july-native.csv": "2065946a19c5c4bf78afe0ceb488cba4dcf1a26c1b61833014417b7237263bcf",
+    "units-pleiades_neo-september-grid.csv": "fb1506902452a2d900e2d975f16a7df8a3f9b76fd9cdf61993c98d37388addd9",
+    "units-pleiades_neo-september-native.csv": "d6fbe70b3456f9e09052a0e37ea62af38ce2cf290b6233fe1aa2db084b908fe7",
+    "units-sentinel2-july-grid.csv": "d572d7786f0d773f74bd3b4f9b3453bb86af200132f851ea09640a24c99a03ca",
+    "units-sentinel2-september-grid.csv": "a3f15004457468ed21edf37f544fec83537f9f6339ce6ad98a708c230dd9b4f1"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "803192216c35d2ae4af1199e081df5b6a965d781ea3899fac3d1b46b2e1ee7c4"
+  },
+  "revision_runner_sha256": "6444af77b08256deaa2b205b873705190f61e2f469deab4df77d962368b6c33d",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  }
+}

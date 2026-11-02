@@ -1,0 +1,7 @@
+campaign,date,min_m,max_m,source,station,datum
+june,2026-06-02,0.806,2.8,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+july,2026-07-06,0.799,2.845,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+july,2026-07-07,0.931,2.744,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+july,2026-07-08,1.003,2.673,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+september,2026-09-01,0.488,3.03,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+september,2026-09-02,0.601,2.887,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT

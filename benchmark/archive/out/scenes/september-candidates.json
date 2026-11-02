@@ -1,0 +1,129 @@
+{
+  "campaign": "september",
+  "window": [
+    "2026-08-26",
+    "2026-09-08"
+  ],
+  "searched_at": "2026-09-19T22:30:27.368024+00:00",
+  "candidates": [
+    {
+      "rank_pre_qc": 1,
+      "name": "S2B_MSIL1C_20260903T113319_N0512_R080_T29SMC_20260903T153653.SAFE",
+      "product_id": "1ddd37be-89c5-4c82-8e68-9002ef6f38c3",
+      "sensing_utc": "2026-09-03T11:33:19.024000+00:00",
+      "tile_cloud_pct": 100.0,
+      "size_mb": 586,
+      "online": true,
+      "max_offset_days": 2,
+      "pneo_offset_s": 40.876,
+      "screen_b11_median": 0.0179,
+      "screened_out": false
+    },
+    {
+      "rank_pre_qc": 2,
+      "name": "S2A_MSIL1C_20260831T113331_N0512_R080_T29SMC_20260831T182653.SAFE",
+      "product_id": "a7e992fd-fd8f-4158-91ec-5a8d7022b3a0",
+      "sensing_utc": "2026-08-31T11:33:31.024000+00:00",
+      "tile_cloud_pct": 100.0,
+      "size_mb": 238,
+      "online": true,
+      "max_offset_days": 2,
+      "pneo_offset_s": 259228.876,
+      "screen_b11_median": 0.0251,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 3,
+      "name": "S2B_MSIL1C_20260831T112109_N0512_R037_T29SMC_20260831T134650.SAFE",
+      "product_id": "07c80ba5-9ac5-4acb-bdfe-9f6bc7dc2578",
+      "sensing_utc": "2026-08-31T11:21:09.024000+00:00",
+      "tile_cloud_pct": 100.0,
+      "size_mb": 651,
+      "online": true,
+      "max_offset_days": 2,
+      "pneo_offset_s": 259970.876,
+      "screen_b11_median": 0.0089,
+      "screened_out": false
+    },
+    {
+      "rank_pre_qc": 4,
+      "name": "S2C_MSIL1C_20260905T112111_N0512_R037_T29SMC_20260905T134900.SAFE",
+      "product_id": "df4a1cab-cc18-4221-9aa8-f96f6481720a",
+      "sensing_utc": "2026-09-05T11:21:11.025000+00:00",
+      "tile_cloud_pct": 100.0,
+      "size_mb": 511,
+      "online": true,
+      "max_offset_days": 4,
+      "pneo_offset_s": 172031.125,
+      "screen_b11_median": 0.033,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 5,
+      "name": "S2C_MSIL1C_20260829T113321_N0512_R080_T29SMC_20260829T150726.SAFE",
+      "product_id": "a81a801a-c1c2-4e6f-980a-6279f07af689",
+      "sensing_utc": "2026-08-29T11:33:21.025000+00:00",
+      "tile_cloud_pct": 0.086032070824,
+      "size_mb": 630,
+      "online": true,
+      "max_offset_days": 4,
+      "pneo_offset_s": 432038.875,
+      "screen_b11_median": 0.0377,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 6,
+      "name": "S2A_MSIL1C_20260828T112131_N0512_R037_T29SMC_20260828T195439.SAFE",
+      "product_id": "e3bfe3ce-7b1e-4918-9a1b-4c9f19f8117e",
+      "sensing_utc": "2026-08-28T11:21:31.024000+00:00",
+      "tile_cloud_pct": 6.256255145937,
+      "size_mb": 572,
+      "online": true,
+      "max_offset_days": 5,
+      "pneo_offset_s": 519148.876,
+      "screen_b11_median": 0.0158,
+      "screened_out": false
+    },
+    {
+      "rank_pre_qc": 7,
+      "name": "S2A_MSIL1C_20260907T112131_N0512_R037_T29SMC_20260907T181110.SAFE",
+      "product_id": "3185a470-4910-4502-8001-4a30324305c8",
+      "sensing_utc": "2026-09-07T11:21:31.024000+00:00",
+      "tile_cloud_pct": 2.883044181302,
+      "size_mb": 653,
+      "online": true,
+      "max_offset_days": 6,
+      "pneo_offset_s": 344851.124,
+      "screen_b11_median": 0.016,
+      "screened_out": false
+    },
+    {
+      "rank_pre_qc": 8,
+      "name": "S2C_MSIL1C_20260908T113321_N0512_R080_T29SMC_20260908T140218.SAFE",
+      "product_id": "2d39710d-db8f-44f5-bfef-d6c2676ff81d",
+      "sensing_utc": "2026-09-08T11:33:21.025000+00:00",
+      "tile_cloud_pct": 40.778975706954,
+      "size_mb": 571,
+      "online": true,
+      "max_offset_days": 7,
+      "pneo_offset_s": 431961.125,
+      "screen_b11_median": 0.0497,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 9,
+      "name": "S2C_MSIL1C_20260826T112111_N0512_R037_T29SMC_20260826T135003.SAFE",
+      "product_id": "20933b14-28f3-45e5-b762-a2f21bc220aa",
+      "sensing_utc": "2026-08-26T11:21:11.025000+00:00",
+      "tile_cloud_pct": 58.757661319404,
+      "size_mb": 624,
+      "online": true,
+      "max_offset_days": 7,
+      "pneo_offset_s": 691968.875,
+      "screen_b11_median": null,
+      "screened_out": false
+    }
+  ],
+  "window_days": 7,
+  "window_amended": true
+}

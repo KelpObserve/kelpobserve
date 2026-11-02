@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r4",
+  "title": "Detectability envelope: when can a cover-related signal be recovered from these units?",
+  "parents": ["revision-r1.json", "revision-r3.json"],
+  "registered_on": "2026-10-02",
+  "registered_before": "Any r4 simulation was run.",
+  "kind": "Simulation on real sampling geometries and real reflectance. No model is fitted to observed cover: the targets are July cover values permuted within depth strata. Exploratory, and descriptive of this design only.",
+  "why": "r1 and r3 injection tests did not recover injected signals, but their models could not test the physics: the 10 m forest barely splits, the additive ridge cannot follow a depth-dependent response, only one patch radius was tried, and only the 14-cell 2 July Sentinel-2 geometry. A second review (2026-10-02) asked for an idealised positive control, a depth-aware model, a range of patch sizes and position errors, both Sentinel-2 geometries, fine-resolution reflectance and the sensor's spatial response.",
+  "known_before_registration": [
+    "r1 PNeo injection (registered ridge and forest, 2.5 m discs, real 8 July background): no condition recovered.",
+    "r3 Sentinel-2 injection (2 July, 14 cells): no condition distinguishable from the null.",
+    "Signal sizes at the quadrats for 100% kelp (E5s, median water): understory +0.002/+0.004 shallow and +0.0001/+0.0003 deep at blue/green; bare -0.023/-0.025 shallow and -0.0014/-0.0015 deep."
+  ],
+  "geometries": {
+    "G1_pneo_native": "8 July Pleiades Neo, r1 native units (3 x 3 pixels, all valid), v1-eligible July events: 29 units.",
+    "G2_pneo_10m": "8 July Pleiades Neo on v1's 10 m grid, r1 rules: 18 cells.",
+    "G3_s2_2jul": "2 July Sentinel-2 R037, ACOLITE with r1's SWIR glint correction, v1's mask (threshold 0.0215): 14 cells.",
+    "G4_s2_9jul": "9 July Sentinel-2 R037, same processing, r3's glint-tolerant mask (threshold 0.0546): 17 cells. Its radiometry was not accepted under r3's rules; it is used here for its sampling geometry and its real reflectance.",
+    "depth_predictor": "As r1: lidar of the containing cell (native) or area-weighted lidar (10 m), plus the registered acquisition level."
+  },
+  "synthetic_cover": {
+    "target": "Each draw permutes the observed July cover of the v1-eligible quadrats within each depth stratum. Cells take the mean of their quadrats, as in v1.",
+    "field": "On a 1 m grid covering the quadrats plus 60 m: each quadrat paints a disc of radius R at its true position with its synthetic cover; elsewhere the cover is the synthetic stratum mean of the nearest quadrat. Overlapping discs take the nearest quadrat.",
+    "patch_radius_m": [1.25, 2.5, 5, 10, 25],
+    "patch_note": "1.25 m is about the quadrat scale; 25 m, wider than the transect spacing along its length, approximates continuous beds.",
+    "position_error_m": [0, 2, 5, 10, 20],
+    "position_model": "True position = recorded position plus one offset per transect, of the given magnitude in a random direction (r1's model)."
+  },
+  "radiometry": {
+    "signal": "rhos change = pi x (Rrs(mixed bottom) - Rrs(background bottom)) from oceanstream.coastal.inversion.lee.forward_model at each 1 m cell, with depth = lidar (nearest) + acquisition level. Bands: blue, green, red at the E5s centres (Sentinel-2 B2-B4; within 10 nm of the PNeo bands). Endmembers: E5s taxon-balanced medians; kelp against understory (turf, coralline crust, red foliose) or against bare (rock and sand).",
+    "aggregation": "The 1 m signal is area-averaged to each sensor grid (1.2 m PNeo, 10 m Sentinel-2) and then convolved with a Gaussian point-spread function of sigma 0.5 pixel (nominal: Sentinel-2's 10 m MTF at Nyquist is about 0.3). Sensitivity: box average only.",
+    "backgrounds": {
+      "real": "The scene's own rhos at blue, green and red: real residuals, glint and common-mode signal included.",
+      "ideal": "Forward-model rhos of the background substrate at each sensor pixel's depth, plus independent Gaussian noise of sigma per pixel and band: 0, 0.0005, 0.001, 0.002, 0.004."
+    },
+    "water": {
+      "truth": "E5s Sesimbra median IOPs (main). Sensitivity: the more attenuating E5s date (2026-02-22) as truth.",
+      "assumed_by_models": "E5s median IOPs, always. The sensitivity is therefore an IOP mismatch."
+    },
+    "masks": "Each geometry keeps its real valid-pixel mask, so the sampling is the real one in every background."
+  },
+  "models": {
+    "training_mean": "As v1.",
+    "depth_ridge": "As v1: the baseline every model must beat.",
+    "spectral_depth_ridge": "As v1: blue, green, red and depth, ridge alpha 1, standardised on training data.",
+    "corrected_depth_ridge": "Depth-aware: Lee bottom reflectance at blue and green from each unit's rhos, its depth and the assumed IOPs (the same closed form as oceanstream.coastal.inversion.lee.invert_scene, without its clipping of values outside -0.05 to 1.5, so no unit drops out), plus depth; ridge as above. Red is excluded: its two-way attenuation (about 1 per m) multiplies residuals by up to e^17 at the deep stratum.",
+    "oracle_unmixing": "No fitting: cover = mean over blue and green of (bottom reflectance - background endmember) / (kelp - background endmember), clipped to 0-100%, using the true endmembers and the assumed IOPs. An upper reference for what the physics allows, not a usable method.",
+    "not_used": "The registered forest: at 10 m it cannot split (r3 review), and r1 already tested it natively.",
+    "evaluation": "v1's leave-one-transect-out for the fitted models, every model on the same complete units; the oracle on the same units. MAE in percentage points, overall and per depth stratum."
+  },
+  "conditions": {
+    "A_positive_control_and_noise": "Ideal background, every geometry, both contrasts, R = 10 m, no position error, sigma 0 to 0.004.",
+    "B_envelope": "Real background, every geometry, both contrasts, every R and position error.",
+    "B_null": "Real background, every geometry, no signal.",
+    "C_psf": "Real background, box aggregation only, every geometry, bare, R = 2.5 and 10 m, no position error.",
+    "C_iop_mismatch": "Real background, truth water 2026-02-22, every geometry, both contrasts, R = 10 m, no position error.",
+    "draws": 100,
+    "seeds": "Draw i uses seed 42 + i in every condition, so conditions share permutations and offset directions."
+  },
+  "criteria": {
+    "recovered": "A model's MAE is at least 2 points below depth_ridge's in at least 80% of draws (r1's criterion).",
+    "also_reported": "Share of draws meeting the 2-point gain, median gain, and the same per stratum; for the null, the share of draws meeting it by chance.",
+    "pipeline_check": "G1 under ideal background, sigma 0, bare, R = 10 m, no position error: corrected_depth_ridge and oracle_unmixing must each meet the 2-point gain in at least 95% of draws. If either fails, the pipeline is treated as faulty, the envelope is not interpreted, and the failure is reported."
+  },
+  "interpretation": {
+    "envelope": "For each geometry, contrast and model: the set of (R, position error) conditions recovered on the real background, and the largest sigma recovered on the ideal background.",
+    "oracle_vs_models": "Oracle recovers but fitted models do not: model capacity or sample size limits. Oracle fails too: the signal is below the residual radiometric error or lost to support and position at that condition.",
+    "limits": [
+      "One kelp spectrum class (E5s, Australian and New Zealand kelps), two background classes, two water cases.",
+      "A disc-and-stratum-mean cover model; real beds have other shapes.",
+      "Two depth strata (about 7-9 m and 17 m), so depth enters only as these two.",
+      "Recovery here means detectable by these models on these units, not accuracy of a cover map."
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r2",
+  "title": "Glint-tolerant Sentinel-2 admission mask: moderate-glint radiometry",
+  "created_on": "2026-10-02",
+  "status": "draft_protocol_not_executed",
+  "status_note": "A concrete protocol prepared after reading r1. No r2 masks, corrected products or results have been computed. Implementation, input inventory and a verified content lock are required before execution; this file is not an execution record or an already-frozen input lock.",
+  "parent": "registration/revision-r1.json",
+  "kind": "Exploratory method assessment on previously inspected scenes. Pre-specifying the new analysis does not make these scenes an independent validation set.",
+  "question": "Can a mask that separates clouds and land from moderate glint admit additional campaign-window Sentinel-2 water whose corrected radiometry passes predefined consistency checks?",
+  "scope": {
+    "sensor": "Sentinel-2 only",
+    "fixed_fieldwork": "CCMAR dates are a constraint, set in advance by dive-centre availability. No rescheduling is assumed or recommended by this experiment.",
+    "excluded": [
+      "Cover, presence, biomass, canopy-height or habitat-model fitting and threshold selection using field targets.",
+      "PNeo correction or resolution of the PNeo/Sentinel-2 land gain discrepancy.",
+      "An increase in ACOLITE's 0.05 pre-correction rhos SWIR application limit.",
+      "Re-estimating the 2017-2025 availability fractions under r2 without actually processing those scenes.",
+      "Claims of radiometric accuracy, signal preservation, bottom reflectance accuracy or kelp detection from internal consistency alone."
+    ],
+    "preservation": "Do not modify v1/r1 registrations, locks, outputs or reported results. Use out/r2/ and, if new processing is needed, .cache/acolite-r2/. Preserve failed scenes and all variants."
+  },
+  "known_before_protocol": [
+    "r1 reproduces v1 units and July scores under v1 rules. Consistent masking changes scores but leaves depth-only best on PNeo and the 14 surviving 2 July Sentinel-2 cells.",
+    "The review's july-shallow-T3-Q2 lookup used September predictions; that unit was scored in July. The PNeo reference NIR medians reported in the r1 review check are 0.023 in July and 0.011 in September; the approximately 0.03 values were unmasked means. Means, medians and masks must be identified explicitly.",
+    "r1's Sentinel-2 glint correction improves its registered diagnostics on 28 May, 2 July and 31 August. On 2 June R037, 9 July R037 and 5 July R080, its rhot SWIR mask leaves no water to assess.",
+    "The analysis mask uses rhot SWIR <= 0.0215. ACOLITE separately applies correction where pre-correction rhos near 1600 nm <= 0.05. These are different quantities and different decisions; the analysis mask does not control where ACOLITE has corrected the image.",
+    "The default SWIR correction can set its reference-band residual to zero by construction. Zero SWIR, lower brightness, unchanged land or a larger habitat/reference contrast ratio cannot independently validate that correction.",
+    "r1's NIR controls show no convincing visible-band information beyond the confounds. They do not prove that every visible-band pixel contains zero seabed signal.",
+    "r1 injection recovery is conditional on its models, endmembers, water, 2.5 m patch radius and position-error model. Failure to meet its 80% recovery criterion demonstrates poor power under those assumptions, not universal sensor incapacity.",
+    "Within a week of fixed June and July survey dates, 2/9 years in 2017-2025 had a scene likely to pass r1's screen; September had 7/9. These are screen-based estimates under those rules, not verified quadrat coverage or probabilities under a glint-tolerant method."
+  ],
+  "scenes": [
+    {"id": "s2-20260528-S2C-R037", "role": "r1 assessable early-campaign control"},
+    {"id": "s2-20260602-S2B-R037", "role": "June rescue candidate"},
+    {"id": "s2-20260702-S2B-R037", "role": "July partial-coverage control"},
+    {"id": "s2-20260709-S2A-R037", "role": "July rescue candidate"},
+    {"id": "s2-20260705-S2B-R080", "role": "severe-glint stress case; may be outside the application limit"},
+    {"id": "s2-20260831-S2B-R037", "role": "September low-glint control"}
+  ],
+  "inputs_and_lock": {
+    "scene_identity": "Resolve each scene to the exact v1/r1 L1C product, granule, sensing time, processing baseline and existing output paths. Obtain the corresponding L2A SCL for that acquisition and tile, not a nearby date. Record its separate product identity and processor baseline.",
+    "allowed_field_information": "Geometry, event IDs, campaign, stratum and frozen eligibility only. Create a geometry-only inventory from the existing inventory without opening target files. Do not read cover or species columns in the r2 runner.",
+    "geometry": "Use the r1 habitat AOI, pneo_reference.geojson, lidar/DTM water support and registered quadrat geometry. Freeze their exact bytes. Do not redraw regions based on corrected images.",
+    "acolite_commit": "64a02ff386e2985eef68ae00198b38e04f3c4a1f",
+    "baseline_settings": ["registration/acolite/common.txt", "registration/acolite/sentinel2.txt"],
+    "required_content_lock": [
+      "This registration, the r2 runner and imported benchmark helpers, tests, and exact effective settings per variant.",
+      "Every consumed raster, SCL, product metadata file, geometry, geometry-only event inventory and water-level input, including reused V0/V1 output rasters.",
+      "ACOLITE source/configuration, sensor responses and LUT files actually used; imported coastal-library source and optical constants. Record SHA256 per file as well as Git revisions and dirty status.",
+      "Python version, dependency versions and a restorable snapshot of uncommitted source used in execution. A commit plus dirty=true is insufficient to reconstruct changed files."
+    ],
+    "lock_order": "Inventory metadata and implement with synthetic fixtures; then freeze sources and inputs before any r2 observational metrics. Verify the lock at each stage. Lock newly generated outputs in a child manifest before evaluation. Never silently update a failed lock.",
+    "missing_inputs": "Missing matching SCL, required TOA band, correction provenance or finite band support makes the affected scene not assessable, with a reason. No fallback that silently treats unknown pixels as clear."
+  },
+  "grids_and_masks": {
+    "crs": "EPSG:32629",
+    "assessment_grid": "The native 20 m B11 grid of the acquisition. Average continuous 10 m reflectance into its 20 m footprint using fractional area. Keep native 20 m SCL categorical; use nearest-neighbour only for reprojection. A 60 m B10 failure excludes every intersecting 20 m cell. Report 10 m quadrat coverage separately; four upsampled subcells are not four independent SWIR measurements.",
+    "water_geometry": "The finite lidar OR finite DTM water support used by r1, represented as a fixed geometry before reading r2 imagery. Retain cells with >= 80% water area and centre >= 20 m inside that geometry. This is a geometric proxy, not independently verified shoreline truth; record which source supplies support.",
+    "cloud_and_invalid": {
+      "scl_allowed": [5, 6, 7],
+      "scl_excluded": [0, 1, 2, 3, 4, 8, 9, 10, 11],
+      "note": "Geometric water, not SCL alone, determines water support. Classes 5 and 7 may retain misclassified glinted water but may also admit contamination. Report their area and results separately from class 6. Never reinterpret cloud classes as glint after seeing corrected outputs.",
+      "buffer_m": 60,
+      "buffer_applies_to_scl": [2, 3, 8, 9, 10, 11],
+      "cirrus": "Exclude rhot B10 > 0.005, following the pinned ACOLITE cirrus threshold, with the same 60 m buffer. Nonfinite B10 is unknown and excluded.",
+      "high_toa": "Exclude any required science/control band (B2, B3, B4, B8A, B11 or B12) with rhot > 0.3, preserving the pinned ACOLITE high-TOA safeguard on these bands. Keep saturation/defect flags. Do not equate a failed high-TOA check with proven cloud.",
+      "finite_support": "Require finite V0 rhos and rhot for B2, B3, B4, B8A, B11 and B12. Do not clip negative reflectance to zero."
+    },
+    "M0": "Reproduce r1's valid-water mask on its original grid, including rhot SWIR <= 0.0215, and report its original support. For the 20 m paired assessment, mark a 20 m cell M0 only when >= 80% of its area passes that original mask; report this aggregation separately. This is the historical comparator, not the new cloud definition.",
+    "M1_candidate": "Geometric water AND cloud/invalid checks above AND pre-correction V0 rhos B11 <= 0.05. No rhot B11 <= 0.0215 condition and no corrected NIR, visible, QAA or target-dependent filter. The 0.05 bound intentionally matches ACOLITE's existing correction domain.",
+    "support_sets": {
+      "common": "M1_candidate AND M0",
+      "new": "M1_candidate AND NOT M0",
+      "lost": "M0 AND NOT M1_candidate, separated by reason",
+      "outside_domain": "Passes geometric/cloud/finite checks but V0 rhos B11 > 0.05. Retain counts and maps; do not describe these cells as glint-corrected or rescued."
+    },
+    "matched_comparisons": "Fix each support set from V0 and auxiliary masks before evaluating corrections. Compare all variants on exactly those cells. A nonfinite corrected value is a failed cell, not permission to improve a score by dropping it. Report common and new support separately as well as their union.",
+    "diagnostic_sensitivity": "Recompute support and summaries with shoreline distances 0 and 40 m, and with SCL class 6 only. All other rules stay fixed. These are sensitivity analyses; none can replace a failed primary result. No threshold sweep or choice of the best mask."
+  },
+  "correction_variants": {
+    "G0": "V0 DSF without residual glint correction, frozen existing output where provenance permits.",
+    "G1_primary": {
+      "dsf_residual_glint_correction": true,
+      "dsf_residual_glint_correction_method": "default",
+      "glint_force_band": null,
+      "glint_mask_rhos_wave": 1600,
+      "glint_mask_rhos_threshold": 0.05,
+      "glint_write_rhog_ref": true,
+      "glint_write_rhog_all": true,
+      "note": "Same science settings as r1 Sentinel-2 V1. Extra diagnostic outputs must not alter reflectance. If rerun, compare with r1 on common support and record any discrepancy before assessment."
+    },
+    "G11_diagnostic": "G1 with glint_force_band=1600: estimate correction from B11 only.",
+    "G12_diagnostic": "G1 with glint_force_band=2200: estimate correction from B12 only.",
+    "use": "G11/G12 test dependence on the correction reference; never choose the better-looking variant. Keep DSF aerosol settings, extent, ancillary settings and all other inputs identical. Verify raw rhot and the atmospheric solution remain unchanged across variants.",
+    "application_evidence": "Save rhog reference and per-band correction, exact wavelength mapping, effective settings and an applied-pixel mask. Verify G0 rhos - G1 rhos agrees with saved rhog to float precision on attempted cells. Pixels skipped internally or lacking correction evidence cannot count as new corrected support. Do not apply correction twice."
+  },
+  "assessment": {
+    "threshold_status": "The numerical cutoffs below are pre-specified engineering screens, not externally validated accuracy tolerances. The 0.002 change threshold comes from r1; 0.003 is a conservative working reflectance scale informed by E5s. Conclusions must remain conditional on these screens.",
+    "regions": "Offshore reference polygon and habitat AOI, unchanged. Habitat common-mode measures use lidar depths 5-25 m. Report 5-10, 10-15 and 15-20 m separately, and quadrat shallow/deep support without reading cover.",
+    "minimum_support": "For a scene-wide radiometric assessment require at least 100 distinct admitted 20 m reference cells and 50 habitat cells, each region spanning at least four fixed 100 m blocks. For the new support set require at least 25 cells spanning three blocks per region; otherwise its verdict is not_assessable even if pooled measures pass. Blocks are indexed by floor(easting/100), floor(northing/100).",
+    "checks": {
+      "P1_application": "All evaluated corrected cells have finite science/control bands and verified correction-domain membership. Any skipped/nonfinite fraction is reported; a support set with > 1% such cells fails, and metrics on remaining cells are descriptive only.",
+      "P2_offshore_nir": "On the same reference cells, median(abs(G1 B8A)) <= 0.01. If median(abs(G0 B8A)) >= 0.012, require a reduction >= 0.002; otherwise allow an increase of at most 0.002. Report signed medians, means and 5th/95th percentiles too. B8A is not used as the correction reference, but this remains a consistency check, not in-situ validation.",
+      "P3_negative_visible": "For each of B2 and B3, at most 5% of evaluated G1 cells in each region may be below -0.003. Report the full negative fractions for every band, including B4 and B8A. Never remove negative pixels before computing this check.",
+      "P4_common_mode": "Fit the r1 OLS depth slopes on the fixed habitat support. Define NIR amplitude = abs(slope_B8A) * 20 m. If G0 amplitude >= 0.002, require G1 amplitude <= 0.75 * G0 amplitude; otherwise require G1 amplitude <= 0.002. Show absolute blue, green and NIR slopes and depth ranges. Do not use NIR/green slope as a pass criterion: a changing or near-zero denominator can manufacture improvement.",
+      "P5_reference_choice": "On identical cells, for B2 and B3 separately, require median(abs(G11-G12)) <= 0.003 and its 90th percentile <= 0.006 in each region. Report B4/B8A and G1 comparisons too. Agreement does not exclude shared atmospheric or adjacency bias.",
+      "P6_visual_contamination": "Before corrected metrics are shown, inspect uncorrected RGB, NIR/SWIR and cloud-mask panels for a deterministic sample from new support. Within each region/SCL stratum (habitat then reference, classes 5, 6, 7), sort centres by SHA256 of the UTF-8 string scene_id|20m_row|20m_col with decimal indices. Cycle those six strata, taking the first remaining centre whose axis-aligned 60 m square does not overlap any selected square, until 30 patches are selected or candidates are exhausted. Assign clear-water, cloud/shadow, foam/whitecap, land/mixed or uncertain, without cover or corrected panels. Require >= 90% clear-water and no more than 5% confirmed contamination; uncertainty is not clear-water. Store reviewer, decisions and panels. These balanced sample fractions are an audit, not area-weighted contamination estimates or independent ground truth. If fewer than 10 patches are available, or review is incomplete, the verdict remains not_assessable. For common-support-only controls, apply the same audit to common support. It cannot edit the mask."
+    },
+    "uncertainty": "Report point metrics plus descriptive 95% intervals from 1000 spatial-block bootstrap draws (100 m blocks, seed 20261002), resampling whole blocks and pairing variants. Resampled/upsampled pixels are not independent replicates. Point thresholds determine the registered engineering verdict; intervals crossing thresholds mark it fragile, not statistically established.",
+    "qaa_separate_endpoint": "Fit forced-560 QAA over the fixed admitted reference; automatic-reference QAA is diagnostic only. Use r1's informational/band-limited/fatal flag classes unchanged, including fatal pure-water-floor violations at <= 700 nm, and its >= 1000 original 10 m pixels requirement. Report native and 20 m counts, all flags, bbp(555), Kd near 490 and spectra. A fit passing these checks is plausible, not validated. Radiometry may improve while the optics branch remains unavailable; do not relax the red floor retrospectively.",
+    "non_decisive_diagnostics": [
+      "Residual SWIR, correction magnitude and reference-band zeroing: implementation diagnostics, not independent proof of glint removal.",
+      "Land change: a software side-effect diagnostic. Unchanged excluded land cannot earn a pass.",
+      "Absolute habitat and reference MAD per band: report both. An increasing ratio caused by a shrinking reference MAD is not evidence of preserved seabed contrast.",
+      "Relationships of remaining visible residuals with NIR, glint correction, depth and distance to shore: describe possible confounds, not inferred kelp."
+    ]
+  },
+  "outcomes": {
+    "per_scene": "Each required check is pass, fail or not_assessable, with its support. Candidate radiometric recovery requires all P1-P6 to pass on the scene and the adequately supported new subset where applicable. Low-glint controls may use the P2/P4 non-degradation conditions. Never turn missing support into a pass.",
+    "primary_endpoint": "Count previously r1-unassessable June/July scenes with candidate radiometric recovery on new support, and report additional admitted quadrat cells by campaign and stratum. Retain a table of all six scenes. New offshore water without new quadrat support is not a recovered campaign matchup.",
+    "control_requirement": "A general claim that the method is promising also requires the 2 July and 31 August controls to pass their applicable checks. Report 28 May regardless. A failed/not-assessable control limits the conclusion; do not select only successful scenes.",
+    "coverage": "Report counts and area fractions at every step, and overlap of units across dates. Keep v1's 80% coverage rule visible as a historical comparator; a date below that threshold remains partial support. This experiment does not authorize a cover fit on a new subset.",
+    "none_recovered": "This mask within ACOLITE's default correction domain did not yield sufficiently supported consistent radiometry. It does not establish that all glint correction, stronger-glint processing or Sentinel-2 seabed sensing is impossible.",
+    "some_recovered": "Report additional campaign-window water passing specified radiometric checks, with uncertainty and partial coverage. This is an original processing/observability result, not detected kelp.",
+    "next_gate": "Before habitat inference, independently specify an adequately powered recovery/model test with the actual admitted support, depth interactions and patch-size/position sensitivities. Before radiometric validation or general availability claims, test unseen dates and obtain an independent radiometric reference where feasible. These follow-ons need separate registrations."
+  },
+  "required_outputs": [
+    "Input lock, source snapshot, effective settings and per-stage manifests with hashes.",
+    "Reason-coded candidate mask, historical M0, common/new/lost/outside-domain masks and verified correction-application rasters.",
+    "Per-scene attrition by region, SCL class, bathymetric depth and eligible quadrat stratum, preserving denominators.",
+    "Paired G0/G1/G11/G12 metric tables, failed checks, bootstrap intervals and complete QAA flag records.",
+    "Fixed-stretch before/after panels plus the pre-correction visual-audit decisions; no automatic contrast stretches presented as evidence.",
+    "A report separating admission, correction application, radiometric consistency, QAA plausibility and campaign coverage. State explicitly whether any kelp model was run (none in this registration)."
+  ],
+  "implementation_checks_before_execution": [
+    "An otherwise valid water pixel can pass M1 with rhot B11 > 0.0215, but not when V0 rhos B11 > 0.05. Distinguish rhot from rhos in units and tests.",
+    "Cloud, shadow, cirrus, saturation, missing-SCL and mixed-shore fixtures remain excluded despite low corrected SWIR or positive QAA results.",
+    "Changing corrected visible/NIR values or target files cannot change admission. Changing V0 reflectance may change the registered pre-correction checks.",
+    "Mask reprojection preserves categories; B10 exclusions and coarse support are not counted as independent 10 m observations.",
+    "Comparisons keep identical support, retain negative values, and mark skipped correction/nonfinite outputs as failures.",
+    "No pass can be earned from zero reference SWIR, unchanged land or a vanishing contrast denominator.",
+    "A changed dependency file fails content-lock verification, including an uncommitted QAA change."
+  ],
+  "references": [
+    {"path": "docs/revision-r1.md", "role": "Known results and limitations motivating this protocol."},
+    {"path": "benchmark/revision.py", "role": "r1 masks, variants, radiometry and flag definitions."},
+    {"path": "$ACOLITE/acolite/acolite/acolite_l2r.py", "lines": "1842-2088", "role": "Pinned default SWIR glint implementation; application cutoff, band choice, correction diagnostics."},
+    {"path": "$ACOLITE/config/defaults.txt", "role": "Separate l2w, cirrus, high-TOA and glint-application settings."},
+    {"url": "https://step.esa.int/thirdparties/sen2cor/2.10.0/docs/S2-PDGS-MPC-L2A-ATBD-V2.10.0.pdf", "section": "3.8, Table 3-I", "role": "SCL class meanings and categorical cloud information. Use the actual product baseline in the input lock; SCL is not independent truth."}
+  ],
+  "amendments": []
+}

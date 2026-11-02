@@ -1,0 +1,24 @@
+# Environments, caches and local configuration
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.env
+kelpobserve.toml
+
+# Replay workspaces, new outputs and downloads (out/replay, out/kd490, .cache/cmems-kd490)
+/out/
+/.cache/
+
+# Imagery caches and run outputs, should the benchmark or optics modules be run in place
+/benchmark/.cache/
+/benchmark/out/
+/optics/.cache/
+/optics/out/
+
+# Build artefacts
+build/
+dist/
+*.egg-info/

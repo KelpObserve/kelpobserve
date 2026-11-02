@@ -1,0 +1,50 @@
+{
+  "workbook": {
+    "previous_rows": 211,
+    "current_rows_same_campaigns": 211,
+    "cells_differing_by_column": {
+      "Juvenile (< 30cm)": 132,
+      "Adult (>= 30cm)": 81
+    },
+    "events_only_previous": 0,
+    "events_only_current": 0,
+    "events_with_changed_cover_pct": [],
+    "events_with_changed_plant_rows": [],
+    "events_with_changed_juvenile_total": [
+      {
+        "campaign": "july",
+        "stratum": "deep",
+        "transect": 2,
+        "quadrat": 3,
+        "previous": 0.0,
+        "current": 1.0
+      },
+      {
+        "campaign": "june",
+        "stratum": "deep",
+        "transect": 1,
+        "quadrat": 3,
+        "previous": 3.0,
+        "current": 5.0
+      }
+    ],
+    "events_with_changed_adult_total": [
+      {
+        "campaign": "july",
+        "stratum": "deep",
+        "transect": 2,
+        "quadrat": 3,
+        "previous": 4.0,
+        "current": 3.0
+      },
+      {
+        "campaign": "june",
+        "stratum": "deep",
+        "transect": 1,
+        "quadrat": 3,
+        "previous": 7.0,
+        "current": 5.0
+      }
+    ]
+  }
+}

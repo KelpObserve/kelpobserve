@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "e5s-kelp-spectral-contrast-v1",
+  "registered_on": "2026-09-28",
+  "phase": "Phase 5: substrate spectra and detectability (E5s)",
+  "design": "proposals/e5s-kelp-spectral-libraries.md; feasibility in registration/evidence/e5s-feasibility.json",
+  "question": "In Sentinel-2 and Pléiades Neo bands, what reflectance contrast does kelp (order Laminariales) have against the substrates it replaces (sand, rock, turf, red foliose algae, coralline crust) and against other brown algae; how far below the surface does each contrast survive at Sesimbra's water clarity; and which normalised difference should the E4t-B flat test use?",
+  "kind": "Characterisation. There is no pass or fail; the decision rules below are fixed before any contrast is computed.",
+  "libraries": {
+    "rowan_phinn": {
+      "record": "UQ eSpace 10.48610/c5f745e",
+      "citation": "Rowan, Gillian, Phinn, Stuart, Smart, Joanna N. and Roelfsema, Chris (2025). Hyperspectral Reflectance Measurements of Kelps, Macroalgae, and Co-ocurring Materials Collected in Australia and New Zealand. The University of Queensland. (Dataset) doi: 10.48610/c5f745e",
+      "licence": "Permitted re-use with acknowledgement; not redistributed; the full citation goes in every output that relies on it",
+      "file": ".cache/spectra/rowan_phinn/spectra.csv (sha1 e39f8c71dc9baa2324e0a2d4c4b26f47d2977f3f, as in the dataset's bag manifest)",
+      "reader": "spectra.read_rows_csv; quantity reflectance",
+      "taxon_field": "target",
+      "geometry": "air (in situ, natural light, spectra affected by overlying water removed by the authors)"
+    },
+    "vahtmae": {
+      "record": "PANGAEA 10.1594/PANGAEA.971518, CC-BY-4.0",
+      "file": ".cache/spectra/pangaea_sav_spectra.tab",
+      "reader": "spectra.read_pangaea_wide(prefix 'Rrs_'), then as_reflectance (pi * Rrs)",
+      "taxon_field": "first word of 'Scientific name (Target in Latin)', else 'Description (Target description)'",
+      "geometry": "air"
+    },
+    "fuller": {
+      "record": "Zenodo 10.5281/zenodo.10826300, CC-BY-4.0 (Fuller, Martin, Asner 2024, Remote Sensing 16:1140)",
+      "file": ".cache/spectra/hawaii/ (RS_Algae_SpeciesData.csv, cp1252, and 618 ASD files)",
+      "reader": "spectra.read_asd_library, metadata from the species table joined on 'Spectral ID'",
+      "taxon_field": "Genus",
+      "geometry": "'ex-situ' rows: air. 'in-situ' rows: in situ, measurement geometry not stated in the data record (the paper was not reachable); treated as its own geometry"
+    },
+    "glovers": {
+      "record": "PANGAEA 10.1594/PANGAEA.824861, CC-BY-3.0 (Roelfsema and Phinn 2013)",
+      "file": ".cache/spectra/glovers_824861.tab",
+      "reader": "spectra.read_pangaea_long(wavelength 'Lambda [nm]', value 'Refl tot', spectrum 'Event' + 'Image no/name')",
+      "taxon_field": "Comment",
+      "geometry": "underwater contact (probe about 5 cm from the target, artificial light, 5-6 m)"
+    },
+    "vigo": {
+      "record": "Zenodo 10.5281/zenodo.13381713, CC-BY-4.0 (Ecotone AS)",
+      "file": ".cache/spectra/vigo/CSV_Files/*.csv",
+      "reader": "spectra.read_columns_csv",
+      "taxon_field": "file (seafloor zone 1, 2, 3; lab sediments; organisms)",
+      "geometry": "underwater imaging (estimated reflectance); lab sediments scanned in water"
+    },
+    "wallis": {
+      "record": "PANGAEA 10.1594/PANGAEA.873219, CC-BY-3.0 (Anstee et al. 2017)",
+      "file": ".cache/spectra/wallis/*/*/*_rawdata.txt with *_metadata.txt, except the WallisLake_200805_representative files, a subset of WallisLake_200805",
+      "reader": "spectra.read_columns_csv(delimiter tab, encoding latin-1), metadata joined on the spectrum name after 'xls_'",
+      "taxon_field": "Substrate Specification",
+      "geometry": "air; the 'submerged ...' targets through 5-10 cm of water"
+    }
+  },
+  "classes": {
+    "kelp": {
+      "rowan_phinn": ["ecklonia", "macrocystis", "undaria"],
+      "vahtmae": ["Chorda"]
+    },
+    "brown_other": {
+      "rowan_phinn": ["durvillaea", "phyllospora", "cystophora", "carpophyllum", "hormosira", "acrocarpia", "sargassum", "petalonia", "scytosiphon"],
+      "vahtmae": ["Fucus", "Pylaiella", "Dictyosiphon"],
+      "fuller": ["Sargassum", "Turbinaria", "Dictyota", "Padina", "Lobophora"],
+      "glovers": ["Dictyota sp. algae", "Hydroclathrus clathratus algae"],
+      "note": "Fuller's Chrysocystis is listed as brown but is not a brown alga (Phaeophyceae) and is excluded. Durvillaea is called bull kelp but belongs to Fucales."
+    },
+    "red_foliose": {
+      "rowan_phinn": ["frondose_rhodophyte"],
+      "vahtmae": ["Furcellaria"],
+      "fuller": ["Acanthophora", "Anfeltiopsis", "Dichotomaria", "Eucheuma", "Gracillaria", "Kappaphycus", "Red Branching"]
+    },
+    "turf": {
+      "rowan_phinn": ["filamentous_rhodophyte"],
+      "vahtmae": ["Ceramium", "Polysimphonia"],
+      "fuller": ["Turf", "Red Filamentous"],
+      "glovers": ["Turf algae", "Rubble and Turf algae"]
+    },
+    "coralline_crust": {
+      "fuller": ["RedCCA", "GreenCCA", "Ramicrusta"],
+      "glovers": ["Encrusting Algae"]
+    },
+    "sand": {
+      "rowan_phinn": ["sand"],
+      "vahtmae": ["Sand"],
+      "glovers": ["Sand"],
+      "vigo": ["Zone1_SeafloorSandSamples", "Zone2_SeafloorSandSamples", "Zone3_SeafloorSandSamples"]
+    },
+    "rock": {
+      "rowan_phinn": ["rock", "gravel"],
+      "vahtmae": ["Pebble", "Limestone plate", "Gravel"]
+    },
+    "sediment": {
+      "vigo": ["VigoSedimentSamplesScannedAtEcotoneLab"],
+      "note": "Reported for a Ria Formosa retest; not part of the kelp contrasts."
+    },
+    "sediment_film": {
+      "wallis": ["submerged sand with algae film"],
+      "note": "Two spectra: reported, below the minimum for scoring."
+    }
+  },
+  "bands": {
+    "sentinel2": "ESA COPE-GSEG-EOPG-TN-15-0007 v4.0, Sentinel-2A, from ACOLITE 64a02ff data/RSR/S2A_MSI_V4.txt: B1, B2, B3, B4, B5",
+    "pleiades_neo": "Airbus, PNEO3 (the Sesimbra 8 July 2026 platform), from ACOLITE 64a02ff data/RSR/PNEO3.txt: B1 (coastal blue), B2, B3, B4, B5 (red edge); in air only",
+    "min_coverage": 0.95,
+    "native_10m": "B2, B3, B4 (Sentinel-2); B1 is 60 m and B5 20 m"
+  },
+  "statistics": {
+    "support": "A class is scored only with at least 5 spectra; otherwise its band values are reported and it is not scored.",
+    "taxon_balance": "Every taxon (source and taxon field) in a class carries equal weight: class medians and quartiles are weighted so each taxon sums to one, and Monte Carlo draws pick a taxon uniformly, then a spectrum within it. Durvillaea (119 of 388 Rowan & Phinn spectra) does not dominate its class.",
+    "draws": "5000 per class, seed 42",
+    "separability": "Mann-Whitney AUC between kelp and each class, per band and per normalised difference ND(i,j) = (R_i - R_j) / (R_i + R_j) of two bands; each index is oriented so that kelp has the higher median in air.",
+    "contrast": "Delta rho_b = |taxon-balanced median(kelp) - median(class)| per band."
+  },
+  "water": {
+    "model": "Lee forward model and the library correction (inversion.lee.invert_scene) with known IOPs and depth, as in coastal_validation/e5b2_index.py; noise added to above-water Rrs as sigma / pi.",
+    "iops": {
+      "source": "Forced-560 QAA at Sesimbra, E2c (reports/e2c-sesimbra/<date>/forced_560/iops.json): 2025-12-24 and 2026-02-22, at 442, 492, 559, 665 and 704 nm for Sentinel-2 B1-B5.",
+      "primary": "per-band median of the two dates",
+      "sensitivity": "each date alone"
+    },
+    "solar_zenith_deg": 35.0,
+    "depths_m": [1, 3, 5, 8, 12, 16],
+    "sigma_rhos": [0.0015, 0.003, 0.006],
+    "primary_sigma_rhos": 0.003,
+    "sigma_basis": "Sesimbra's measured AC scatter over bottom-blind water is 0.0006-0.0037 (median, 100 m blocks) and 0.005-0.009 (90th percentile) in kelp_observe/outputs/diagnostics/ac_uncertainty.json; the grid is E5b-2's.",
+    "z_max": "detectability.z_max_from_k(k, sigma, Delta rho_b, t_aw = 0.52), with k the two-way bottom attenuation of the same forward model, (1/cos(theta_w) + Du_bottom) (a + bb), for each IOP set."
+  },
+  "analyses": {
+    "primary": "All geometries pooled.",
+    "sensitivity_air_only": "Only spectra measured in air (Rowan & Phinn, Vahtmäe, Fuller ex-situ, Wallis above water).",
+    "geometry": "Fuller genera with both ex-situ and in-situ spectra (Acanthophora, Dichotomaria, Dictyosphaeria, Eucheuma, Halimeda, Lobophora, Symploca, Turf): ratio of in-situ to ex-situ taxon medians per Sentinel-2 band. Descriptive only."
+  },
+  "decision_rules": {
+    "D1_flat_test_index": "For E4t-B: among normalised differences of B2, B3 and B4 (the 10 m bands), the index with the largest smaller-of-two AUC, in air and at 5 m after the forward model, noise and correction (primary IOPs, sigma 0.003), for kelp against bare substrate (rock and sand pooled, taxon-balanced). B1 and B5 indices are reported and not chosen. E4t-B re-checks it with its own water before registering.",
+    "D2_brown_against_red": "The plan and README say brown algae cannot be separated from red algae. That statement is revised if, for kelp against red foliose algae or against turf, some Sentinel-2 band or normalised difference reaches AUC >= 0.8 at 1 m or deeper (primary IOPs, sigma 0.003) in both the pooled and the air-only analysis. The revision states the deepest registered depth that reaches it, the band or index, and the source. Otherwise the statement stands, with this evidence.",
+    "D3_library_defaults": "No library default changes in this run. The CC-BY-only class medians (all sources except Rowan & Phinn) are compared with detectability.SUBSTRATE_ALBEDO (bare, brown, red) per band; a later library change cites this report, and cannot use Rowan & Phinn spectra as shipped defaults.",
+    "D4_detectability": "z_max per Sentinel-2 band for kelp against every scored class, for each IOP set and sigma, reported beside the current Baltic-based statement (brown against bare separable to about 20 m at 444 nm)."
+  },
+  "not_delivered": "E5g's predicted signal per 10 points of cover: E5g is not feasible (proposals/e5g-sesimbra-growth.md).",
+  "outputs": "reports/e5s-kelp-spectra.md and reports/e5s-kelp-spectra/results.json. Only derived statistics are published; no Rowan & Phinn spectrum is copied into the repository.",
+  "code": "coastal_validation/e5s.py (stages freeze, run); library sd-data-ingest 0cf34a7 (oceanstream/coastal/spectra.py)"
+}

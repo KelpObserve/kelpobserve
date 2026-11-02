@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this software, cite it and the field dataset it analyses as below."
+type: software
+title: "KelpObserve Sesimbra 2026: reproduction archive of the satellite kelp-cover benchmark, its revisions and the optics prerequisites"
+version: "1.0.0"
+doi: 10.5281/zenodo.23478585
+license: Apache-2.0
+repository-code: "https://github.com/KelpObserve/kelpobserve"
+abstract: "Code, registrations, input locks and archived runs behind the Sesimbra kelp-cover technical report of the AQUASERV Transnational Access project KelpObserve (PID 42082): the registered benchmark of Sentinel-2 and Pléiades Neo against CCMAR diver quadrats, its exploratory revisions r1 to r6, and the E2c and E5s optics analyses. A replay command reruns each experiment in an isolated workspace and compares every output with the archived run."
+authors:
+  - family-names: "Rusu"
+    given-names: "Andrei"
+    affiliation: "Pine View Software AS (Pineview), Norway"
+    orcid: "https://orcid.org/0009-0000-1219-4816"
+keywords:
+  - "kelp"
+  - "Saccorhiza polyschides"
+  - "satellite remote sensing"
+  - "Sentinel-2"
+  - "Pléiades Neo"
+  - "water-column correction"
+  - "pre-registration"
+  - "reproducibility"
+  - "Sesimbra"
+  - "AQUASERV"
+  - "KelpObserve"
+references:
+  - type: data
+    title: "KelpObserve Sesimbra 2026: diver quadrat surveys of Saccorhiza polyschides kelp and water-column sonde profiles, Arrábida coast, Portugal"
+    version: "1.0.0"
+    doi: 10.5281/zenodo.23282075
+    license: CC-BY-4.0
+    authors:
+      - family-names: "Rusu"
+        given-names: "Andrei"
+        orcid: "https://orcid.org/0009-0000-1219-4816"
+      - family-names: "Botezat"
+        given-names: "Oana"
+      - family-names: "Paulo"
+        given-names: "Diogo"
+        orcid: "https://orcid.org/0000-0001-9061-6850"
+      - family-names: "Encarnação"
+        given-names: "João"
+        orcid: "https://orcid.org/0000-0003-2105-6639"
+      - family-names: "Rosado"
+        given-names: "Guilherme"
+  - type: software
+    title: "KelpObserve Sesimbra 2026: processing software for the diver surveys of Saccorhiza polyschides kelp, Arrábida coast, Portugal"
+    version: "1.0.0"
+    doi: 10.5281/zenodo.23454705
+    repository-code: "https://github.com/KelpObserve/arrabida-dataset"
+    authors:
+      - family-names: "Rusu"
+        given-names: "Andrei"
+        orcid: "https://orcid.org/0009-0000-1219-4816"

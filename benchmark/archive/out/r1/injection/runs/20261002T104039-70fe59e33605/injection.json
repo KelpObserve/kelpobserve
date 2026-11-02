@@ -1,0 +1,553 @@
+{
+  "registration": {
+    "question": "Could this pipeline detect a realistically sized cover signal if one were present?",
+    "base": "July QC-consistent PNeo units and the real 8 July V0 reflectance, depth and masks.",
+    "synthetic_target": "Within-stratum permutation of the observed July cover over quadrats, one permutation per draw, so the real reflectance acts as noise with respect to the target and the depth-cover structure is kept.",
+    "signal": "rhos change = pi * (Rrs(rho_mix, z) - Rrs(rho_background, z)) from oceanstream.coastal.inversion.lee.forward_model, rho_mix = c rho_kelp + (1 - c) rho_background, at 486/563/655 nm, solar zenith 20.83 deg, z = lidar depth at the pixel plus the acquisition water level.",
+    "endmembers": "E5s taxon-balanced Pleiades Neo medians: kelp; background understory (mean of turf, coralline crust and red foliose: realistic for Sesimbra) or bare (rock and sand: optimistic bound).",
+    "water": "E5s Sesimbra forced-560 QAA IOPs: the median (registered E5s value) and 2026-02-22 (the more attenuating date). Summer water was likely less clear (sonde chlorophyll), so both are optimistic.",
+    "field": "Each quadrat paints a disc of radius 2.5 m (half the quadrat spacing) with its synthetic cover at its true position; other pixels take the synthetic stratum mean of the nearest quadrat.",
+    "positional_error": "True positions = recorded positions plus one offset per transect, magnitude d in {0, 5, 10, 20} m, uniform random direction per draw.",
+    "pipeline": "Inject into the real rasters, extract at the recorded positions with the Q3 QC rules, run the v1 July leave-one-transect-out on both scales.",
+    "draws": 100,
+    "null": "The same draws with zero signal give the rate at which spectral_depth_ridge beats depth_ridge by chance.",
+    "recovered": "spectral_depth_ridge MAE at least 2 pp below depth_ridge MAE in >= 80% of draws.",
+    "interpretation": {
+      "understory_recovered_at_d_le_10": "The v1 negative result carries information about cover at this site.",
+      "only_bare_recovered": "The v1 negative result is what the physics predicts for kelp over understory and says little about the sensor.",
+      "nothing_recovered_at_d_0": "The design cannot detect even an optimistic signal; v1's negative result is inconclusive.",
+      "recovery_lost_with_d": "Positional error alone could explain the v1 result at the offsets where recovery is lost."
+    }
+  },
+  "e5s": {
+    "path": "$E5S",
+    "sha256": "b7f07f6fb01d0e3dbc7222f17ad734cfde450c87781320211917df55626310ec",
+    "kelp": [
+      0.04191,
+      0.07268,
+      0.06599
+    ],
+    "background": {
+      "understory": [
+        0.02024,
+        0.0337,
+        0.04056
+      ],
+      "bare": [
+        0.25784,
+        0.30155,
+        0.31425
+      ]
+    },
+    "iops": {
+      "median": {
+        "a": [
+          0.08979,
+          0.09484,
+          0.4245
+        ],
+        "bb": [
+          0.01542,
+          0.01265,
+          0.00982
+        ]
+      },
+      "2026-02-22": {
+        "a": [
+          0.11081,
+          0.10406,
+          0.4245
+        ],
+        "bb": [
+          0.01694,
+          0.0142,
+          0.01134
+        ]
+      }
+    }
+  },
+  "signal_rhos_at_quadrats_100pct_kelp": {
+    "bands_nm": [
+      486,
+      563,
+      655
+    ],
+    "median_by_stratum": {
+      "understory/median": {
+        "shallow": [
+          0.00227,
+          0.00409,
+          3e-05
+        ],
+        "deep": [
+          0.00014,
+          0.00026,
+          0.0
+        ]
+      },
+      "understory/2026-02-22": {
+        "shallow": [
+          0.00163,
+          0.00346,
+          3e-05
+        ],
+        "deep": [
+          6e-05,
+          0.00016,
+          0.0
+        ]
+      },
+      "bare/median": {
+        "shallow": [
+          -0.02321,
+          -0.02474,
+          -0.00032
+        ],
+        "deep": [
+          -0.00141,
+          -0.00151,
+          -0.0
+        ]
+      },
+      "bare/2026-02-22": {
+        "shallow": [
+          -0.01651,
+          -0.02082,
+          -0.00031
+        ],
+        "deep": [
+          -0.00058,
+          -0.00096,
+          -0.0
+        ]
+      }
+    }
+  },
+  "conditions": [
+    {
+      "id": "null",
+      "amplitude": 0,
+      "displacement_m": 0
+    },
+    {
+      "id": "understory/median/d0",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "median",
+      "displacement_m": 0
+    },
+    {
+      "id": "understory/median/d5",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "median",
+      "displacement_m": 5
+    },
+    {
+      "id": "understory/median/d10",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "median",
+      "displacement_m": 10
+    },
+    {
+      "id": "understory/median/d20",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "median",
+      "displacement_m": 20
+    },
+    {
+      "id": "understory/2026-02-22/d0",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "2026-02-22",
+      "displacement_m": 0
+    },
+    {
+      "id": "understory/2026-02-22/d5",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "2026-02-22",
+      "displacement_m": 5
+    },
+    {
+      "id": "understory/2026-02-22/d10",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "2026-02-22",
+      "displacement_m": 10
+    },
+    {
+      "id": "understory/2026-02-22/d20",
+      "amplitude": 1,
+      "background": "understory",
+      "water": "2026-02-22",
+      "displacement_m": 20
+    },
+    {
+      "id": "bare/median/d0",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "median",
+      "displacement_m": 0
+    },
+    {
+      "id": "bare/median/d5",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "median",
+      "displacement_m": 5
+    },
+    {
+      "id": "bare/median/d10",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "median",
+      "displacement_m": 10
+    },
+    {
+      "id": "bare/median/d20",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "median",
+      "displacement_m": 20
+    },
+    {
+      "id": "bare/2026-02-22/d0",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "2026-02-22",
+      "displacement_m": 0
+    },
+    {
+      "id": "bare/2026-02-22/d5",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "2026-02-22",
+      "displacement_m": 5
+    },
+    {
+      "id": "bare/2026-02-22/d10",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "2026-02-22",
+      "displacement_m": 10
+    },
+    {
+      "id": "bare/2026-02-22/d20",
+      "amplitude": 1,
+      "background": "bare",
+      "water": "2026-02-22",
+      "displacement_m": 20
+    }
+  ],
+  "summary": {
+    "bare/2026-02-22/d0|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.32,
+      "share_gain_ge_2pp": 0.07,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.84
+    },
+    "bare/2026-02-22/d0|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": 1.09,
+      "share_gain_ge_2pp": 0.34,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.66,
+      "spectral_vs_mean_share_ge_2pp": 1.0
+    },
+    "bare/2026-02-22/d10|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.93,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.81
+    },
+    "bare/2026-02-22/d10|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.15,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.07,
+      "spectral_vs_mean_share_ge_2pp": 0.99
+    },
+    "bare/2026-02-22/d20|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.93,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.8
+    },
+    "bare/2026-02-22/d20|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.33,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.05,
+      "spectral_vs_mean_share_ge_2pp": 0.99
+    },
+    "bare/2026-02-22/d5|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.78,
+      "share_gain_ge_2pp": 0.07,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.82
+    },
+    "bare/2026-02-22/d5|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.28,
+      "share_gain_ge_2pp": 0.03,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.07,
+      "spectral_vs_mean_share_ge_2pp": 0.98
+    },
+    "bare/median/d0|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.1,
+      "share_gain_ge_2pp": 0.09,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.87
+    },
+    "bare/median/d0|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": 1.81,
+      "share_gain_ge_2pp": 0.46,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.7,
+      "spectral_vs_mean_share_ge_2pp": 1.0
+    },
+    "bare/median/d10|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.93,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.81
+    },
+    "bare/median/d10|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.06,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.07,
+      "spectral_vs_mean_share_ge_2pp": 0.99
+    },
+    "bare/median/d20|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.89,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.8
+    },
+    "bare/median/d20|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.27,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.08,
+      "spectral_vs_mean_share_ge_2pp": 0.99
+    },
+    "bare/median/d5|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -1.54,
+      "share_gain_ge_2pp": 0.07,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.84
+    },
+    "bare/median/d5|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.23,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.07,
+      "spectral_vs_mean_share_ge_2pp": 0.99
+    },
+    "null|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -2.9,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.49
+    },
+    "null|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.12,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.02,
+      "spectral_vs_mean_share_ge_2pp": 0.54
+    },
+    "understory/2026-02-22/d0|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.35,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.53
+    },
+    "understory/2026-02-22/d0|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.08,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.0,
+      "spectral_vs_mean_share_ge_2pp": 0.72
+    },
+    "understory/2026-02-22/d10|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.37,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.48
+    },
+    "understory/2026-02-22/d10|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.15,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.63
+    },
+    "understory/2026-02-22/d20|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.28,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.49
+    },
+    "understory/2026-02-22/d20|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.16,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.62
+    },
+    "understory/2026-02-22/d5|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.34,
+      "share_gain_ge_2pp": 0.03,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.51
+    },
+    "understory/2026-02-22/d5|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.12,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.61
+    },
+    "understory/median/d0|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.4,
+      "share_gain_ge_2pp": 0.02,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.57
+    },
+    "understory/median/d0|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.03,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.0,
+      "spectral_vs_mean_share_ge_2pp": 0.74
+    },
+    "understory/median/d10|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.41,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.52
+    },
+    "understory/median/d10|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.15,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.61
+    },
+    "understory/median/d20|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.37,
+      "share_gain_ge_2pp": 0.04,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.5
+    },
+    "understory/median/d20|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.14,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.6
+    },
+    "understory/median/d5|grid": {
+      "draws": 100,
+      "median_units": 18.0,
+      "median_gain_pp": -3.5,
+      "share_gain_ge_2pp": 0.03,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.55
+    },
+    "understory/median/d5|native": {
+      "draws": 100,
+      "median_units": 29.0,
+      "median_gain_pp": -1.14,
+      "share_gain_ge_2pp": 0.05,
+      "recovered": false,
+      "forest_share_gain_ge_2pp": 0.01,
+      "spectral_vs_mean_share_ge_2pp": 0.6
+    }
+  }
+}

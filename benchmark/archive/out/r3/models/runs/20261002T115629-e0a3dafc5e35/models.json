@@ -1,0 +1,18 @@
+{
+  "selection": {
+    "june": {
+      "selected": null,
+      "usable_in_rank_order": [],
+      "radiometrically_accepted": []
+    },
+    "july": {
+      "selected": null,
+      "usable_in_rank_order": [],
+      "radiometrically_accepted": [
+        "s2-20260702-S2B-R037"
+      ]
+    }
+  },
+  "july": {},
+  "june": {}
+}

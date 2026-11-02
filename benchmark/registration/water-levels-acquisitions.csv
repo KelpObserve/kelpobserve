@@ -1,0 +1,11 @@
+scene_id,datetime_utc,water_level_m,source,station,datum
+s2-20260602-S2A-R080,2026-06-02T11:39:11+00:00,1.628,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260602-S2B-R037,2026-06-02T11:21:09+00:00,1.487,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260528-S2C-R037,2026-05-28T11:21:11+00:00,2.667,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260709-S2A-R037,2026-07-09T11:21:31+00:00,2.175,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260702-S2B-R037,2026-07-02T11:21:09+00:00,1.393,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260705-S2B-R080,2026-07-05T11:33:19+00:00,0.927,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260831-S2B-R037,2026-08-31T11:21:09+00:00,0.987,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+s2-20260903-S2B-R080,2026-09-03T11:33:19+00:00,0.836,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+pneo-20260708,2026-07-08T11:38:15.600000+00:00,1.6,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT
+pneo-20260903,2026-09-03T11:33:59.900000+00:00,0.835,Copernicus Marine IBI analysis and forecast,"38.3880N 9.1936W, 2.5 km from the quadrats",LAT

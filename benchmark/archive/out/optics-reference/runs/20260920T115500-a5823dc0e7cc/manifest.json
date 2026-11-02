@@ -1,0 +1,15 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "optics-reference",
+  "created_at": "2026-09-20T11:55:00.672103+00:00",
+  "region": "$REG/pneo_reference.geojson",
+  "outputs": {
+    "reference_iops.json": "92b2394d8e7de13147c4305327263aff9788fbde914eba0d71955ebb38823df8"
+  },
+  "runner_sha256": "aa69aaad0cb02b5dda0773d740143ba66bd51e489243079a6ca3a26467176064",
+  "git": {
+    "commit": "4b2578612b901307a43cd68511d3423eeb368859",
+    "uncommitted_changes": true
+  }
+}

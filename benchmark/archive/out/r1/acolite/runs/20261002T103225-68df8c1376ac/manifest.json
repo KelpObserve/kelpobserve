@@ -1,0 +1,24 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r1-acolite",
+  "created_at": "2026-10-02T10:50:19.617454+00:00",
+  "exploratory": true,
+  "outputs": {
+    "acolite.json": "b70dc3d45d5831bd3c9502f1278b34f09fcee0eefeb7ff26eeae7296ab58ba53"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "803192216c35d2ae4af1199e081df5b6a965d781ea3899fac3d1b46b2e1ee7c4"
+  },
+  "revision_runner_sha256": "e3ca6bf0a25d3820b590b44b3f97b3ebfb12f0ca4e878d7d3fee6a7a28b2ffd8",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  }
+}

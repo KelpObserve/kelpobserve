@@ -1,0 +1,117 @@
+{
+  "rules": {
+    "status": "approved",
+    "approved_on": "2026-09-20",
+    "min_pixels": 1000,
+    "require_no_qa_flags": true,
+    "note": "Registered before the reference region's reflectance was inspected. A failure makes the corrected branch unavailable for that sensor and date."
+  },
+  "scenes": {
+    "pneo-20260708": {
+      "scene": "pneo-20260708",
+      "campaign": "july",
+      "solar_zenith_deg": 20.83,
+      "reference_pixels": 199238,
+      "reference_wavelength_nm": 655.0,
+      "wavelengths_nm": [
+        439.0,
+        486.0,
+        563.0,
+        655.0,
+        723.0,
+        826.0
+      ],
+      "a": [
+        0.88597,
+        0.65207,
+        0.59687,
+        0.55149,
+        0.624,
+        0.624
+      ],
+      "bb": [
+        0.15686,
+        0.14273,
+        0.12481,
+        0.10893,
+        0.09973,
+        0.08859
+      ],
+      "kd": [
+        1.6339,
+        1.31632,
+        1.18033,
+        1.06363,
+        1.10561,
+        1.05909
+      ],
+      "a_cdm_443": null,
+      "bbp_555": 0.125513,
+      "y": 0.8808,
+      "qa_flags": [
+        "red_reference_selected(655nm)",
+        "a_cdm_443_not_computable(no_411nm_band)",
+        "bbp_555_implausible(0.12551)",
+        "a_below_pure_water_floor(723nm: 0.4720 < 0.6240)",
+        "a_below_pure_water_floor(826nm: 0.4129 < 0.6240)"
+      ],
+      "corrected_branch_available": false,
+      "reasons": [
+        "qaa_plausibility_flags"
+      ]
+    },
+    "pneo-20260903": {
+      "scene": "pneo-20260903",
+      "campaign": "september",
+      "solar_zenith_deg": 33.55,
+      "reference_pixels": 199484,
+      "reference_wavelength_nm": 655.0,
+      "wavelengths_nm": [
+        439.0,
+        486.0,
+        563.0,
+        655.0,
+        723.0,
+        826.0
+      ],
+      "a": [
+        0.77823,
+        0.59716,
+        0.49168,
+        0.53915,
+        0.624,
+        0.624
+      ],
+      "bb": [
+        0.1478,
+        0.13534,
+        0.11946,
+        0.10528,
+        0.09701,
+        0.08693
+      ],
+      "kd": [
+        1.52652,
+        1.26258,
+        1.07222,
+        1.06897,
+        1.13393,
+        1.09182
+      ],
+      "a_cdm_443": null,
+      "bbp_555": 0.119981,
+      "y": 0.8151,
+      "qa_flags": [
+        "red_reference_selected(655nm)",
+        "a_cdm_443_not_computable(no_411nm_band)",
+        "bbp_555_implausible(0.11998)",
+        "a_below_pure_water_floor(723nm: 0.4962 < 0.6240)",
+        "a_below_pure_water_floor(826nm: 0.4280 < 0.6240)"
+      ],
+      "corrected_branch_available": false,
+      "reasons": [
+        "qaa_plausibility_flags"
+      ]
+    }
+  }
+}

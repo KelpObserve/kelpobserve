@@ -1,0 +1,66 @@
+{
+  "acolite": {
+    "commit": "64a02ff386e2985eef68ae00198b38e04f3c4a1f",
+    "describe": "20260421.0-86-g64a02ff",
+    "uncommitted_changes": false
+  },
+  "scenes": [
+    {
+      "id": "s2-20260530-S2A-R037",
+      "input": "$CACHE/l1c-r2/june/S2A_MSIL1C_20260530T112131_N0512_R037_T29SMC_20260530T181443.SAFE.zip",
+      "output_dir": "$CACHE/acolite-r1/V1/s2-20260530-S2A-R037",
+      "status": "ok",
+      "effective_settings": {
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "default",
+        "dsf_residual_glint_wave_range": "1500,2400",
+        "dsf_residual_glint_correction_glint_angle": "False",
+        "dsf_residual_glint_correction_glint_angle_threshold": "40.0",
+        "glint_force_band": "None",
+        "glint_mask_rhos_wave": "1600",
+        "glint_mask_rhos_threshold": "0.05",
+        "glint_write_rhog_ref": "False",
+        "glint_write_rhog_all": "False"
+      },
+      "elapsed_s": 174.5
+    },
+    {
+      "id": "s2-20260607-S2C-R037",
+      "input": "$CACHE/l1c-r2/june/S2C_MSIL1C_20260607T112111_N0512_R037_T29SMC_20260607T134901.SAFE.zip",
+      "output_dir": "$CACHE/acolite-r1/V1/s2-20260607-S2C-R037",
+      "status": "ok",
+      "effective_settings": {
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "default",
+        "dsf_residual_glint_wave_range": "1500,2400",
+        "dsf_residual_glint_correction_glint_angle": "False",
+        "dsf_residual_glint_correction_glint_angle_threshold": "40.0",
+        "glint_force_band": "None",
+        "glint_mask_rhos_wave": "1600",
+        "glint_mask_rhos_threshold": "0.05",
+        "glint_write_rhog_ref": "False",
+        "glint_write_rhog_all": "False"
+      },
+      "elapsed_s": 173.6
+    },
+    {
+      "id": "s2-20260609-S2A-R037",
+      "input": "$CACHE/l1c-r2/june/S2A_MSIL1C_20260609T112131_N0512_R037_T29SMC_20260609T181428.SAFE.zip",
+      "output_dir": "$CACHE/acolite-r1/V1/s2-20260609-S2A-R037",
+      "status": "ok",
+      "effective_settings": {
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "default",
+        "dsf_residual_glint_wave_range": "1500,2400",
+        "dsf_residual_glint_correction_glint_angle": "False",
+        "dsf_residual_glint_correction_glint_angle_threshold": "40.0",
+        "glint_force_band": "None",
+        "glint_mask_rhos_wave": "1600",
+        "glint_mask_rhos_threshold": "0.05",
+        "glint_write_rhog_ref": "False",
+        "glint_write_rhog_all": "False"
+      },
+      "elapsed_s": 178.9
+    }
+  ]
+}

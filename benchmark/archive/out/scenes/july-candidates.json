@@ -1,0 +1,103 @@
+{
+  "campaign": "july",
+  "window": [
+    "2026-07-01",
+    "2026-07-13"
+  ],
+  "searched_at": "2026-09-19T22:29:36.938199+00:00",
+  "candidates": [
+    {
+      "rank_pre_qc": 1,
+      "name": "S2A_MSIL1C_20260709T112131_N0512_R037_T29SMC_20260709T181510.SAFE",
+      "product_id": "286a9d7e-f143-4d58-9bc7-88e86571efd0",
+      "sensing_utc": "2026-07-09T11:21:31.024000+00:00",
+      "tile_cloud_pct": 23.874478175493,
+      "size_mb": 714,
+      "online": true,
+      "max_offset_days": 3,
+      "pneo_offset_s": 85395.424,
+      "screen_b11_median": 0.0431,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 2,
+      "name": "S2B_MSIL1C_20260705T113319_N0512_R080_T29SMC_20260705T140027.SAFE",
+      "product_id": "05382463-9dfd-465c-a4ec-ba2c965c2050",
+      "sensing_utc": "2026-07-05T11:33:19.024000+00:00",
+      "tile_cloud_pct": 44.389752480639,
+      "size_mb": 656,
+      "online": true,
+      "max_offset_days": 3,
+      "pneo_offset_s": 259496.576,
+      "screen_b11_median": 0.1626,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 3,
+      "name": "S2C_MSIL1C_20260710T113321_N0512_R080_T29SMC_20260710T150752.SAFE",
+      "product_id": "555902cb-6e12-4917-b9d9-9608c63aaae7",
+      "sensing_utc": "2026-07-10T11:33:21.025000+00:00",
+      "tile_cloud_pct": 0.499690363603,
+      "size_mb": 666,
+      "online": true,
+      "max_offset_days": 4,
+      "pneo_offset_s": 172505.425,
+      "screen_b11_median": 0.1278,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 4,
+      "name": "S2B_MSIL1C_20260712T112109_N0512_R037_T29SMC_20260712T134812.SAFE",
+      "product_id": "9c4a8d08-0970-4ba2-94c3-f3e133773663",
+      "sensing_utc": "2026-07-12T11:21:09.024000+00:00",
+      "tile_cloud_pct": 46.30778919218,
+      "size_mb": 671,
+      "online": true,
+      "max_offset_days": 6,
+      "pneo_offset_s": 344573.424,
+      "screen_b11_median": 0.2183,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 5,
+      "name": "S2A_MSIL1C_20260712T113911_N0512_R080_T29SMC_20260712T182546.SAFE",
+      "product_id": "2472e60b-5703-4abd-914f-4116ac63f32a",
+      "sensing_utc": "2026-07-12T11:39:11.024000+00:00",
+      "tile_cloud_pct": 47.563443942233,
+      "size_mb": 617,
+      "online": true,
+      "max_offset_days": 6,
+      "pneo_offset_s": 345655.424,
+      "screen_b11_median": 0.3398,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 6,
+      "name": "S2A_MSIL1C_20260702T113331_N0512_R080_T29SMC_20260702T182504.SAFE",
+      "product_id": "fbdf5982-bd68-433e-91f9-c4397f946636",
+      "sensing_utc": "2026-07-02T11:33:31.024000+00:00",
+      "tile_cloud_pct": 8.318795156412,
+      "size_mb": 741,
+      "online": true,
+      "max_offset_days": 6,
+      "pneo_offset_s": 518684.576,
+      "screen_b11_median": 0.2173,
+      "screened_out": true
+    },
+    {
+      "rank_pre_qc": 7,
+      "name": "S2B_MSIL1C_20260702T112109_N0512_R037_T29SMC_20260702T134728.SAFE",
+      "product_id": "f9b9ad99-fdea-4fe5-b8aa-2bb4bddac8b7",
+      "sensing_utc": "2026-07-02T11:21:09.024000+00:00",
+      "tile_cloud_pct": 8.143322788089,
+      "size_mb": 691,
+      "online": true,
+      "max_offset_days": 6,
+      "pneo_offset_s": 519426.576,
+      "screen_b11_median": 0.0122,
+      "screened_out": false
+    }
+  ],
+  "window_days": 7,
+  "window_amended": true
+}

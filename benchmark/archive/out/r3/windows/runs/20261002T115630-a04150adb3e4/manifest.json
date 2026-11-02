@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r2-windows",
+  "created_at": "2026-10-02T11:56:30.774159+00:00",
+  "exploratory": true,
+  "outputs": {
+    "windows.json": "434b1465df8f6327c43e76d948f9e4ed8aea463465fb90bafe2c7af07f78d949"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "a4436947e4eb86881177826e9a1bd9011222285afdb6052166afefefff131959"
+  },
+  "revision_runner_sha256": "a379659f6c038785d9f9abd0187dc4c74027a2494ae6d8bd2d165b334b2a62eb",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  },
+  "registration_r2": {
+    "path": "$REG/revision-r2.json",
+    "sha256": "68faf9845a21dbecc6a90770b619df18f11198d92c8ba7cba400d9527e4b4d17"
+  },
+  "r2_runner_sha256": "806076a21ed35617d706145762c0515e05bfdd50ac1c324722569da667a4948d"
+}

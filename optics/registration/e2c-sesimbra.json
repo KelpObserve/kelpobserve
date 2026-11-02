@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "e2c-sesimbra-qaa-reference-v1",
+  "registered_on": "2026-09-24",
+  "phase": "Follow-up to E2b (coastal-validation/reports/e2b-sesimbra.md)",
+  "question": "Should QAA use the 560 nm reference by default, with no offset subtraction? E2 found that forcing it gave plausible IOPs on every Key West preset and date, but Key West developed the idea and cannot confirm it.",
+  "why_e2c": "E2b could not assess its lidar criterion: the Sesimbra AOI had no attenuation regions, so the whole-scene fit fell back to the ~100 m coarse grid and gave no trustworthy blue k. The library now fits attenuation on fine depth only, and the AOI carries the lee_demo prototype's pre-registered regions (sd-data-ingest db605f7).",
+  "site": "sesimbra",
+  "dates": {
+    "rule": "From registration/evidence/sesimbra-usability-2025-10-01-2026-04-30.json: the usable overpass with the lowest median 1610 nm reflectance over water, then the next lowest at least 30 days away; ties by lower over-water red. Image quality only.",
+    "selected": [
+      {
+        "sensing_utc": "2025-12-24T11:24:09Z",
+        "tile": "T29SMC",
+        "relative_orbit": "R037",
+        "swir_glint": 0.0004,
+        "over_water_red": 0.0023
+      },
+      {
+        "sensing_utc": "2026-02-22T11:21:09Z",
+        "tile": "T29SMC",
+        "relative_orbit": "R037",
+        "swir_glint": 0.0008,
+        "over_water_red": 0.0051
+      }
+    ],
+    "reuse": "The same two dates as E2b, chosen on image quality only. E2b's QAA plausibility results on these dates are known (forced 560 plausible on both); the lidar comparison within the registered regions has not been seen."
+  },
+  "known_before_registration": "The prototype (kelp_observe outputs/diagnostics/reef_calibration.json, one summer scene, 2026-06-27) found lidar k / offshore QAA k of 0.76 at 444 nm and 0.63 at 489 nm in this region, with its own QAA settings. Criteria are kept as registered for E2b and are not tuned to that.",
+  "implementation": {
+    "acolite": "Commit 64a02ff, preset dsf_default with the E2 common settings, limit = the packaged Sesimbra AOI processing_bbox. The E2b ACOLITE outputs are reused unchanged.",
+    "library": "oceanstream.coastal.CoastalProcessor at sd-data-ingest db605f7 on the packaged Sesimbra AOI with its registered regions: attenuation region dive_reef (sesimbra_attenuation.geojson, the prototype's habitat rectangle) fitted on lidar depth only; deep-water reference from the eight patches in sesimbra_deepwater.geojson. Offset correction none; every other setting at its default. No tide model (k is a slope in depth).",
+    "variants": {
+      "auto": "RetrievalConfig() with qaa_force_ref_nm None",
+      "forced_560": "RetrievalConfig(qaa_force_ref_nm=560.0)"
+    }
+  },
+  "measures": {
+    "qaa": "report.json qaa: reference band, bbp(555), flags; iops.json: Kd at the band nearest 492 nm",
+    "agreement": "qc.json empirical_vs_qaa.dive_reef.per_band: ratio of lidar k (trustworthy fits only) to the QAA-modelled two-way k, at the bands nearest 443 and 492 nm"
+  },
+  "criteria": {
+    "C1_plausible": "forced_560: reference band 555-565 nm, 0 < bbp(555) < 0.02 m^-1, 0.01 <= Kd(492) <= 2.0 m^-1.",
+    "C2_agrees_with_lidar": "forced_560: at both 443 and 492 nm the lidar fit is trustworthy and the ratio lidar k / QAA k lies in [0.67, 1.5]."
+  },
+  "pass_rule": "C1 and C2 on both dates.",
+  "decision": {
+    "if_pass": "RetrievalConfig.qaa_force_ref_nm defaults to 560.0, and QAA-derived attenuation moves from experimental to consistency-checked for Sentinel-2, citing E2 and E2b.",
+    "if_fail": "QAA stays experimental everywhere (E2 D2); the forced reference stays an option."
+  },
+  "reported_not_scored": [
+    "The auto variant's reference band, bbp and agreement, which show whether E2's red-switch finding recurs",
+    "Agreement at 560 nm",
+    "The processor's own product verdicts and flags"
+  ],
+  "execution": [
+    "Freeze every input (registration/e2c-sesimbra-lock.json) and commit it before any processor run.",
+    "Run both variants on both dates; retain every output and failure; report."
+  ],
+  "limits": [
+    "Agreement between lidar k near shore and QAA k offshore can fail because the water masses differ, not because either is wrong; the criterion accepts that risk.",
+    "One site, one orbit, winter.",
+    "The attenuation region is a provisional rectangle around the dive area, about 2 km across, over rocky reef; substrate homogeneity is assumed, not verified."
+  ]
+}

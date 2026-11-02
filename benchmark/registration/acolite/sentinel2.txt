@@ -1,0 +1,4 @@
+# Sentinel-2 overrides. ACOLITE's S2 defaults already use tiled DSF with the
+# intercept spectrum; restated so the registration does not depend on defaults.
+dsf_aot_estimate=tiled
+dsf_spectrum_option=intercept

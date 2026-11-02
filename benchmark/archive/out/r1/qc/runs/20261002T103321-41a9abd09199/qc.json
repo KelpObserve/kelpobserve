@@ -1,0 +1,391 @@
+{
+  "support": {
+    "pleiades_neo/july/native": {
+      "scene": "pneo-20260708",
+      "by_stratum": {
+        "deep": {
+          "units": 15,
+          "kept": 15,
+          "quadrats": 15,
+          "quadrats_kept": 15,
+          "excluded": {},
+          "excluded_units": []
+        },
+        "shallow": {
+          "units": 15,
+          "kept": 14,
+          "quadrats": 15,
+          "quadrats_kept": 14,
+          "excluded": {
+            "masked": 1
+          },
+          "excluded_units": [
+            "july-shallow-T3-Q2"
+          ]
+        }
+      }
+    },
+    "pleiades_neo/july/grid": {
+      "scene": "pneo-20260708",
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "kept": 9,
+          "quadrats": 15,
+          "quadrats_kept": 15,
+          "excluded": {},
+          "excluded_units": []
+        },
+        "shallow": {
+          "units": 9,
+          "kept": 9,
+          "quadrats": 15,
+          "quadrats_kept": 15,
+          "excluded": {},
+          "excluded_units": []
+        }
+      }
+    },
+    "pleiades_neo/september/native": {
+      "scene": "pneo-20260903",
+      "by_stratum": {
+        "deep": {
+          "units": 11,
+          "kept": 10,
+          "quadrats": 11,
+          "quadrats_kept": 10,
+          "excluded": {
+            "masked": 1
+          },
+          "excluded_units": [
+            "september-deep-T1-Q5"
+          ]
+        },
+        "shallow": {
+          "units": 11,
+          "kept": 9,
+          "quadrats": 11,
+          "quadrats_kept": 9,
+          "excluded": {
+            "masked": 1,
+            "nonwater": 1
+          },
+          "excluded_units": [
+            "september-shallow-T2-Q4",
+            "september-shallow-T3-Q4"
+          ]
+        }
+      }
+    },
+    "pleiades_neo/september/grid": {
+      "scene": "pneo-20260903",
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "kept": 8,
+          "quadrats": 11,
+          "quadrats_kept": 11,
+          "excluded": {},
+          "excluded_units": []
+        },
+        "shallow": {
+          "units": 5,
+          "kept": 4,
+          "quadrats": 11,
+          "quadrats_kept": 10,
+          "excluded": {
+            "nonwater": 1
+          },
+          "excluded_units": [
+            "september-cell-9-10"
+          ]
+        }
+      }
+    },
+    "sentinel2/july/grid": {
+      "scene": "s2-20260702-S2B-R037",
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "kept": 9,
+          "quadrats": 15,
+          "quadrats_kept": 15,
+          "excluded": {},
+          "excluded_units": []
+        },
+        "shallow": {
+          "units": 9,
+          "kept": 5,
+          "quadrats": 15,
+          "quadrats_kept": 9,
+          "excluded": {
+            "masked": 4
+          },
+          "excluded_units": [
+            "july-cell-10-10",
+            "july-cell-10-16",
+            "july-cell-11-12",
+            "july-cell-11-13"
+          ]
+        }
+      }
+    },
+    "sentinel2/september/grid": {
+      "scene": "s2-20260831-S2B-R037",
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "kept": 8,
+          "quadrats": 11,
+          "quadrats_kept": 11,
+          "excluded": {},
+          "excluded_units": []
+        },
+        "shallow": {
+          "units": 5,
+          "kept": 4,
+          "quadrats": 11,
+          "quadrats_kept": 10,
+          "excluded": {
+            "nonwater": 1
+          },
+          "excluded_units": [
+            "september-cell-9-10"
+          ]
+        }
+      }
+    }
+  },
+  "v1_reproduction": {
+    "pleiades_neo/july/native": {
+      "v1_units": 30,
+      "reproduced_units": 30,
+      "shared": 30,
+      "max_abs_difference": {
+        "blue": 9.71445146547012e-17,
+        "green": 9.71445146547012e-17,
+        "red": 9.71445146547012e-17,
+        "depth": 3.552713678800501e-15
+      },
+      "v1_units_kept_in_r1": 29
+    },
+    "pleiades_neo/july/grid": {
+      "v1_units": 18,
+      "reproduced_units": 18,
+      "shared": 18,
+      "max_abs_difference": {
+        "blue": 9.71445146547012e-17,
+        "green": 9.71445146547012e-17,
+        "red": 9.367506770274758e-17,
+        "depth": 3.552713678800501e-15
+      },
+      "v1_units_kept_in_r1": 18
+    },
+    "pleiades_neo/september/native": {
+      "v1_units": 22,
+      "reproduced_units": 22,
+      "shared": 22,
+      "max_abs_difference": {
+        "blue": 9.020562075079397e-17,
+        "green": 9.194034422677078e-17,
+        "red": 9.71445146547012e-17,
+        "depth": 1.7763568394002505e-15
+      },
+      "v1_units_kept_in_r1": 19
+    },
+    "pleiades_neo/september/grid": {
+      "v1_units": 13,
+      "reproduced_units": 13,
+      "shared": 13,
+      "max_abs_difference": {
+        "blue": 9.367506770274758e-17,
+        "green": 9.367506770274758e-17,
+        "red": 9.71445146547012e-17,
+        "depth": 1.7763568394002505e-15
+      },
+      "v1_units_kept_in_r1": 12
+    }
+  },
+  "qaa": {
+    "pneo-20260708": {
+      "auto_unmasked": {
+        "pixels": 199238,
+        "reference_nm": 655.0,
+        "bbp_555": 0.12551,
+        "kd_490": 1.3163,
+        "mean_rhos_nir": 0.03317,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.4720 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.4129 < 2.8475)"
+          ],
+          "fatal": [
+            "red_reference_selected(655nm)",
+            "bbp_555_implausible(0.12551)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "auto_masked": {
+        "pixels": 186592,
+        "reference_nm": 655.0,
+        "bbp_555": 0.10107,
+        "kd_490": 1.1571,
+        "mean_rhos_nir": 0.02737,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.4587 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.4004 < 2.8475)"
+          ],
+          "fatal": [
+            "red_reference_selected(655nm)",
+            "bbp_555_implausible(0.10107)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "forced560_unmasked": {
+        "pixels": 199238,
+        "reference_nm": 563.0,
+        "bbp_555": 0.06217,
+        "kd_490": 0.6552,
+        "mean_rhos_nir": 0.03317,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.2345 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.2049 < 2.8475)"
+          ],
+          "fatal": [
+            "bbp_555_implausible(0.06217)",
+            "a_below_pure_water_floor(655nm: 0.2743 < 0.3750)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "forced560_masked": {
+        "pixels": 186592,
+        "reference_nm": 563.0,
+        "bbp_555": 0.04907,
+        "kd_490": 0.5657,
+        "mean_rhos_nir": 0.02737,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.2236 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.1949 < 2.8475)"
+          ],
+          "fatal": [
+            "bbp_555_implausible(0.04907)",
+            "a_below_pure_water_floor(655nm: 0.2648 < 0.3750)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      }
+    },
+    "pneo-20260903": {
+      "auto_unmasked": {
+        "pixels": 199484,
+        "reference_nm": 655.0,
+        "bbp_555": 0.11998,
+        "kd_490": 1.2626,
+        "mean_rhos_nir": 0.03136,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.4962 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.4280 < 2.8475)"
+          ],
+          "fatal": [
+            "red_reference_selected(655nm)",
+            "bbp_555_implausible(0.11998)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "auto_masked": {
+        "pixels": 180096,
+        "reference_nm": 655.0,
+        "bbp_555": 0.06676,
+        "kd_490": 0.8835,
+        "mean_rhos_nir": 0.01891,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.4649 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.3952 < 2.8475)"
+          ],
+          "fatal": [
+            "red_reference_selected(655nm)",
+            "bbp_555_implausible(0.06676)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "forced560_unmasked": {
+        "pixels": 199484,
+        "reference_nm": 563.0,
+        "bbp_555": 0.06882,
+        "kd_490": 0.7269,
+        "mean_rhos_nir": 0.03136,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.2852 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.2459 < 2.8475)"
+          ],
+          "fatal": [
+            "bbp_555_implausible(0.06882)",
+            "a_below_pure_water_floor(655nm: 0.3102 < 0.3750)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      },
+      "forced560_masked": {
+        "pixels": 180096,
+        "reference_nm": 563.0,
+        "bbp_555": 0.0395,
+        "kd_490": 0.5268,
+        "mean_rhos_nir": 0.01891,
+        "flags": {
+          "informational": [
+            "a_cdm_443_not_computable(no_411nm_band)"
+          ],
+          "band_limited": [
+            "a_below_pure_water_floor(723nm: 0.2761 < 1.5090)",
+            "a_below_pure_water_floor(826nm: 0.2344 < 2.8475)"
+          ],
+          "fatal": [
+            "bbp_555_implausible(0.03950)",
+            "a_below_pure_water_floor(655nm: 0.3058 < 0.3750)"
+          ]
+        },
+        "available": false,
+        "v1_rule_available": false
+      }
+    }
+  }
+}

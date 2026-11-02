@@ -1,0 +1,136 @@
+{
+  "schema_version": "2.0",
+  "oceanstream:product": "iops",
+  "oceanstream:title": "Scene-mean inherent optical properties",
+  "oceanstream:status": "diagnostic_only",
+  "oceanstream:caveat": null,
+  "oceanstream:provenance": {
+    "campaign_id": "e2c-sesimbra",
+    "aoi": "sesimbra",
+    "sensor": "sentinel2",
+    "acquisition_date": "2025-12-24",
+    "solar_zenith_deg": 63.7266785539466,
+    "solar_zenith_source": "acolite_metadata"
+  },
+  "oceanstream:qc_passed": false,
+  "oceanstream:qc": {
+    "passed": false,
+    "flags": [
+      "dive_reef:bbp_555_implausible(0.03385)",
+      "dive_reef:local_qaa_comparison_unavailable",
+      "dive_reef:qaa_model_uncertainty_missing",
+      "dive_reef:reference_independence_unverified",
+      "dive_reef:reference_uncertainty_assumed",
+      "dive_reef:tide_correction_missing"
+    ],
+    "summary": "dive_reef:bbp_555_implausible(0.03385); dive_reef:local_qaa_comparison_unavailable; dive_reef:qaa_model_uncertainty_missing; dive_reef:reference_independence_unverified; dive_reef:reference_uncertainty_assumed; dive_reef:tide_correction_missing",
+    "evidence": {
+      "products": {
+        "dive_reef": {
+          "passed": false,
+          "flags": [
+            "bbp_555_implausible(0.03385)",
+            "local_qaa_comparison_unavailable",
+            "qaa_model_uncertainty_missing",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "tide_correction_missing"
+          ],
+          "summary": "bbp_555_implausible(0.03385); local_qaa_comparison_unavailable; qaa_model_uncertainty_missing; reference_independence_unverified; reference_uncertainty_assumed; tide_correction_missing",
+          "evidence": {}
+        }
+      }
+    }
+  },
+  "oceanstream:generated": "2026-09-24T14:38:40.554373+00:00",
+  "iops": {
+    "wavelengths_nm": [
+      442.0,
+      492.0,
+      559.0,
+      665.0,
+      704.0,
+      739.0,
+      780.0,
+      833.0,
+      864.0,
+      1610.0,
+      2186.0
+    ],
+    "a": [
+      0.22414155304431915,
+      0.20824480056762695,
+      0.26541855931282043,
+      0.4623302221298218,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.7032163143157959,
+      0.8311017155647278,
+      0.6757122874259949
+    ],
+    "bb": [
+      0.04999978095293045,
+      0.042068757116794586,
+      0.034391116350889206,
+      0.026283200830221176,
+      0.02408577874302864,
+      0.02236669510602951,
+      0.02060285210609436,
+      0.01864803209900856,
+      0.017645196989178658,
+      0.006936667952686548,
+      0.00439491868019104
+    ],
+    "kd": [
+      0.49490270018577576,
+      0.44079896807670593,
+      0.4894914925098419,
+      0.7191202640533447,
+      0.9234438538551331,
+      0.9162625074386597,
+      0.9088941812515259,
+      0.9007280468940735,
+      1.0010221004486084,
+      1.124911904335022,
+      0.9093810319900513
+    ],
+    "a_cdm_443": null,
+    "bbp_555": 0.03385166905069037,
+    "y": 1.4896520441955534,
+    "n_deep_pixels": 5000,
+    "ref_wavelength_nm": 665.0,
+    "qa_flags": [
+      "red_reference_selected(665nm)",
+      "a_cdm_443_not_computable(no_411nm_band)",
+      "bbp_555_implausible(0.03385)",
+      "a_below_pure_water_floor(704nm: 0.4692 < 0.6240)",
+      "a_below_pure_water_floor(739nm: 0.5089 < 0.6240)",
+      "a_below_pure_water_floor(780nm: 0.5344 < 0.6240)",
+      "a_below_pure_water_floor(833nm: 0.5658 < 0.6240)"
+    ],
+    "a_floor_violations": [
+      {
+        "wavelength_nm": 704.0,
+        "a_retrieved": 0.46916,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 739.0,
+        "a_retrieved": 0.50885,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 780.0,
+        "a_retrieved": 0.53443,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 833.0,
+        "a_retrieved": 0.56579,
+        "a_pure_water": 0.624
+      }
+    ]
+  }
+}

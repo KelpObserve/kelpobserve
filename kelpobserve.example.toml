@@ -1,0 +1,14 @@
+# Copy to kelpobserve.toml (git-ignored) and point each path at your copies.
+# Relative paths resolve against the repository root.
+[paths]
+# CCMAR deliveries and Pleiades Neo archives, in the layout ccmar-diving/, pneo/ that
+# the registration names. Only v1's input lock reads them.
+data = "../kelpobserve-inputs/data"
+# The benchmark imagery cache (ACOLITE products, Level-1C archives, extracted Pleiades Neo).
+# The Sentinel-2 ACOLITE products the replays read are in doi:10.5281/zenodo.23844565.
+cache = "../kelpobserve-inputs/cache"
+# The optics cache holding the spectral libraries (E5s).
+optics_cache = "../kelpobserve-inputs/optics-cache"
+# ACOLITE checkout at revision 64a02ff: sensor defaults for the benchmark stages,
+# sensor response functions for E5s.
+acolite = "../acolite"

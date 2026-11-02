@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r5",
+  "title": "What is the reflectance variation that depth does not explain? A label-free diagnosis",
+  "parents": [
+    "revision-r3.json",
+    "revision-r4.json"
+  ],
+  "registered_on": "2026-10-02",
+  "registered_before": "Any r5 measure was computed.",
+  "kind": "Label-free diagnosis. No cover value is read. Exploratory and descriptive.",
+  "why": "r4 found that unit-level reflectance varies within each depth stratum by 0.0048 (PNeo native), 0.0023 (PNeo 10 m), 0.0006 (S2 2 July) and 0.0014 (S2 9 July) in green, at or above the noise that recovery tolerates. r3 found more small-scale variability and NIR overcorrection on glinted dates without identifying the cause. Before another correction is tried, the second review asked for the variation to be diagnosed by spatial scale, band relationships and distance to shore.",
+  "known_before_registration": [
+    "r3: offshore neighbouring-pixel scatter of corrected green (S2) 0.0009-0.0010 on clean dates and 0.0014-0.0029 on glinted dates; negative corrected NIR in 5-28% of offshore pixels on glinted dates.",
+    "r4: the within-stratum unit spreads above, and the noise tolerances of the recovery.",
+    "r1 and E2c: a depth-correlated NIR term near the cliffs (common mode)."
+  ],
+  "scenes": {
+    "pleiades_neo": {
+      "dates": [
+        "pneo-20260708",
+        "pneo-20260903"
+      ],
+      "versions": [
+        "V0",
+        "V1"
+      ],
+      "mask": "ACOLITE default (rhot 826 nm <= 0.1)"
+    },
+    "sentinel2": {
+      "V1": [
+        "s2-20260528-S2C-R037",
+        "s2-20260530-S2A-R037",
+        "s2-20260602-S2B-R037",
+        "s2-20260607-S2C-R037",
+        "s2-20260609-S2A-R037",
+        "s2-20260702-S2B-R037",
+        "s2-20260709-S2A-R037",
+        "s2-20260831-S2B-R037"
+      ],
+      "V0_also": [
+        "s2-20260528-S2C-R037",
+        "s2-20260602-S2B-R037",
+        "s2-20260702-S2B-R037",
+        "s2-20260709-S2A-R037",
+        "s2-20260831-S2B-R037"
+      ],
+      "mask": "Clean dates (2 July, 31 August): v1's threshold 0.0215. Glinted dates: r3's tolerant threshold. r3 did not accept the glinted dates; they are used here to diagnose them."
+    },
+    "window": "r3's study window: the habitat AOI and the PNeo reference region, padded by 500 m."
+  },
+  "regions": {
+    "offshore": "Valid pixels of the registered PNeo reference region (51-110 m deep, at least 1 km from land): no seabed signal.",
+    "habitat_bins": "Valid habitat-AOI pixels by lidar depth: 5-10 m (the shallow stratum), 10-14 m, 14-20 m (the deep stratum), 20-30 m."
+  },
+  "unit_scale": "Fields aggregated to each model unit's footprint before the unit-scale measures: PNeo 3 x 3 moving mean (native units, all nine pixels valid), PNeo 10 m cells on v1's grid (at least 80% valid), Sentinel-2 native 10 m pixels.",
+  "measures": {
+    "M1_scales": "Robust semivariance gamma(h) = 0.5 x median(squared difference) / 0.4549 of blue, green and NIR at lags along rows and columns, averaged over both directions: PNeo 1, 2, 4, 8, 17, 42, 83, 167 pixels (1.2-200 m); Sentinel-2 1, 2, 5, 10, 20 pixels (10-200 m). Per scene and region. sqrt(gamma) at the first lag is the pixel-scale (nugget) spread.",
+    "M2_band_coherence": "Within each region, after removing a linear depth trend in habitat bins: R-squared and slope of blue and green on NIR (both sensors) and on top-of-atmosphere 1610 nm (Sentinel-2), at pixel scale and at unit scale.",
+    "M3_shore_distance": "Habitat water 5-30 m: least squares of blue, green and NIR on depth and log10 distance to the nearest non-water pixel (m). Reported: the distance coefficient and the gain in R-squared from adding it.",
+    "M4_depth_bins": "At unit scale: robust SD (1.4826 x MAD) of blue and green after removing the depth trend within each bin, and again after also removing the part explained by NIR; the same offshore. Excess over offshore = sqrt(max(0, SD_bin^2 - SD_offshore^2)), an upper bound on what seabed and near-shore water add at that depth.",
+    "M5_cross_date": "At unit scale on a common grid, Pearson correlation between two dates of the M4 residuals (depth and NIR removed), per bin and offshore, over pixels valid on both. Seabed changes slowly, so a stable residual within a week is consistent with seabed or persistent adjacency; a date-specific one is not. Pairs: S2 2 Jul-9 Jul (7 d), 28 May-2 Jun (5 d), 30 May-7 Jun (8 d), 2 Jun-9 Jun (7 d), 2 Jul-31 Aug (60 d); PNeo 8 Jul-3 Sep (57 d, 10 m cells), V0 and V1.",
+    "M6_correction_scale": "Offshore, on scenes with both versions. Glint reference: Sentinel-2 top-of-atmosphere 1610 nm (V1 takes glint from SWIR); PNeo rhos 826 nm (V1 takes it from NIR). Fine scale: Sentinel-2 20 m (2 x 2 means, SWIR's native pixel), PNeo 1.2 m. High-pass = fine minus its 3 x 3 mean. Coarse scale: Sentinel-2 60 m, PNeo 12 m block means. Reported: (a) r_fine, the correlation of high-passed V0 green with the high-passed glint reference; (b) r_coarse, the same for coarse block means; (c) r_fine at shifts of one fine pixel in each of 8 directions, and the best shift; (d) the share of V1 green's fine-scale variance carried by the correction term V0 - V1."
+  },
+  "decision_rules": {
+    "D1_noise_floor": "If on a clean date the offshore unit-scale SD (M4) is at least 0.8 of the habitat bin's, the unit-level spread at that bin is mostly what water without seabed also shows (sensor, atmosphere, correction).",
+    "D2_common_mode": "If NIR explains at least half the unit-scale variance of green in a habitat bin (M2 R-squared >= 0.5) and NIR rises toward the shore (M3 distance coefficient negative with a gain in R-squared >= 0.05), a near-shore common mode (adjacency or surf) dominates there.",
+    "D3_seabed_candidate": "A habitat bin carries a candidate seabed signal if its NIR-removed unit-scale SD exceeds the offshore one by at least 1.5 times AND its residual correlates across a pair of dates at most 8 days apart with r >= 0.3, while offshore r < 0.2.",
+    "D4_per_pixel_glint": "On a glinted Sentinel-2 date, if r_fine < 0.3 while r_coarse > 0.7, the per-pixel glint subtraction injects fine-scale noise: a smoothed glint estimate is the warranted next variant. If the best shift improves r_fine by at least 0.1 over no shift, band-to-band misregistration or timing contributes.",
+    "otherwise": "Report as indeterminate; no rule is relaxed after the results."
+  },
+  "limits": [
+    "Variance is attributed by association; no measure here proves a physical cause.",
+    "Real seabed variation and persistent adjacency are both stable across a week; distance to shore (M3) is the only handle on separating them.",
+    "Glinted Sentinel-2 dates were not accepted in r3; their diagnosis is not an endorsement of their use.",
+    "Two PNeo dates, two months apart: their cross-date comparison mixes seasonal seabed change with radiometry."
+  ],
+  "errata": [
+    {
+      "recorded_on": "2026-10-02",
+      "after": "r5 run",
+      "status": "Recorded, not repaired. The registered decisions stand as computed.",
+      "items": [
+        "D1 and D3 compare habitat bins (about 2 km of water, detrended on depth) with the offshore region (5.7 km, not detrended), so the offshore spread includes larger-scale gradients. Their size criteria are biased toward finding the habitat no more variable than offshore water.",
+        "D4 infers injected noise from r_fine < 0.3 and r_coarse > 0.7, but its own measure (d) tests that premise directly. On 9 July D4 is met while the correction term carries only 8% of the corrected image's fine-scale variance: the fine-scale variation was already in the uncorrected visible bands, unmatched by the 20 m SWIR reference.",
+        "Under PNeo V1 the NIR band is zero by construction, so M2 and the NIR removal in M4 and M5 are void for V1, as for r1's NIR controls."
+      ]
+    }
+  ]
+}

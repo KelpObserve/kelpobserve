@@ -1,0 +1,276 @@
+{
+  "experiment_id": "e2c-sesimbra-qaa-reference-v1",
+  "ran_at": "2026-09-24T14:41:45.285242+00:00",
+  "input_lock": {
+    "path": "$REG/e2c-sesimbra-lock.json",
+    "sha256": "16cc74a01533810b80a45cb1247decb7b95a8b5abd7a285145bc60ea3d9a4b54",
+    "n_files": 122
+  },
+  "passed": false,
+  "decision": "QAA stays experimental everywhere (E2 D2); the forced reference stays an option.",
+  "dates": {
+    "2025-12-24": {
+      "auto": {
+        "status": "rejected",
+        "message": "Retrieval complete; inspect per-product rejection reasons.",
+        "qaa": {
+          "ref_wavelength_nm": 665.0,
+          "forced_ref_nm": null,
+          "bbp_555": 0.03385166905069037,
+          "qa_flags": [
+            "red_reference_selected(665nm)",
+            "a_cdm_443_not_computable(no_411nm_band)",
+            "bbp_555_implausible(0.03385)",
+            "a_below_pure_water_floor(704nm: 0.4692 < 0.6240)",
+            "a_below_pure_water_floor(739nm: 0.5089 < 0.6240)",
+            "a_below_pure_water_floor(780nm: 0.5344 < 0.6240)",
+            "a_below_pure_water_floor(833nm: 0.5658 < 0.6240)"
+          ]
+        },
+        "kd_492": 0.44079896807670593,
+        "agreement": {
+          "443": null,
+          "492": null,
+          "560": null
+        },
+        "lidar_fits": {
+          "442.0": {
+            "k_per_m": 0.03503446631379191,
+            "r_squared": 0.4580696176917399,
+            "n_pixels": 3344,
+            "trust_failures": [
+              "low_r_squared",
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "492.0": {
+            "k_per_m": -0.01887668462899991,
+            "r_squared": 0.6332392613426407,
+            "n_pixels": 3344,
+            "trust_failures": [
+              "k_nonpositive",
+              "scene_depth_gradient"
+            ]
+          },
+          "559.0": {
+            "k_per_m": -0.03236668450491787,
+            "r_squared": 0.9228009282434855,
+            "n_pixels": 692,
+            "trust_failures": [
+              "k_nonpositive",
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "665.0": {
+            "k_per_m": null,
+            "r_squared": null,
+            "n_pixels": 0,
+            "trust_failures": [
+              "no_fit",
+              "scene_depth_gradient"
+            ]
+          }
+        },
+        "C1_plausible": false,
+        "C2_agrees_with_lidar": false,
+        "passed": false
+      },
+      "forced_560": {
+        "status": "rejected",
+        "message": "Retrieval complete; inspect per-product rejection reasons.",
+        "qaa": {
+          "ref_wavelength_nm": 559.0,
+          "forced_ref_nm": 560.0,
+          "bbp_555": 0.010303339856670816,
+          "qa_flags": [
+            "a_cdm_443_not_computable(no_411nm_band)",
+            "a_below_pure_water_floor(665nm: 0.1459 < 0.4245)",
+            "a_below_pure_water_floor(704nm: 0.1473 < 0.6240)",
+            "a_below_pure_water_floor(739nm: 0.1591 < 0.6240)",
+            "a_below_pure_water_floor(780nm: 0.1665 < 0.6240)",
+            "a_below_pure_water_floor(833nm: 0.1756 < 0.6240)",
+            "a_below_pure_water_floor(864nm: 0.2178 < 0.6240)",
+            "a_below_pure_water_floor(1610nm: 0.2537 < 0.6240)",
+            "a_below_pure_water_floor(2186nm: 0.2059 < 0.6240)"
+          ]
+        },
+        "kd_492": 0.1343655288219452,
+        "agreement": {
+          "443": null,
+          "492": null,
+          "560": null
+        },
+        "lidar_fits": {
+          "442.0": {
+            "k_per_m": 0.03503446631379191,
+            "r_squared": 0.4580696176917399,
+            "n_pixels": 3344,
+            "trust_failures": [
+              "low_r_squared",
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "492.0": {
+            "k_per_m": -0.01887668462899991,
+            "r_squared": 0.6332392613426407,
+            "n_pixels": 3344,
+            "trust_failures": [
+              "k_nonpositive",
+              "scene_depth_gradient"
+            ]
+          },
+          "559.0": {
+            "k_per_m": -0.03236668450491787,
+            "r_squared": 0.9228009282434855,
+            "n_pixels": 692,
+            "trust_failures": [
+              "k_nonpositive",
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "665.0": {
+            "k_per_m": null,
+            "r_squared": null,
+            "n_pixels": 0,
+            "trust_failures": [
+              "no_fit",
+              "scene_depth_gradient"
+            ]
+          }
+        },
+        "C1_plausible": true,
+        "C2_agrees_with_lidar": false,
+        "passed": false
+      }
+    },
+    "2026-02-22": {
+      "auto": {
+        "status": "rejected",
+        "message": "Retrieval complete; inspect per-product rejection reasons.",
+        "qaa": {
+          "ref_wavelength_nm": 665.0,
+          "forced_ref_nm": null,
+          "bbp_555": 0.02828748875184363,
+          "qa_flags": [
+            "red_reference_selected(665nm)",
+            "a_cdm_443_not_computable(no_411nm_band)",
+            "bbp_555_implausible(0.02829)",
+            "a_below_pure_water_floor(704nm: 0.5418 < 0.6240)"
+          ]
+        },
+        "kd_492": 0.41564202308654785,
+        "agreement": {
+          "443": null,
+          "492": null,
+          "560": null
+        },
+        "lidar_fits": {
+          "442.0": {
+            "k_per_m": 0.14495123849882124,
+            "r_squared": 0.909726766254318,
+            "n_pixels": 3137,
+            "trust_failures": [
+              "scene_depth_gradient"
+            ]
+          },
+          "492.0": {
+            "k_per_m": 0.11047965746659515,
+            "r_squared": 0.9097069756622762,
+            "n_pixels": 3136,
+            "trust_failures": [
+              "scene_depth_gradient"
+            ]
+          },
+          "559.0": {
+            "k_per_m": 0.07129407212847758,
+            "r_squared": 0.8419913081137619,
+            "n_pixels": 1312,
+            "trust_failures": [
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "665.0": {
+            "k_per_m": null,
+            "r_squared": null,
+            "n_pixels": 0,
+            "trust_failures": [
+              "no_fit",
+              "scene_depth_gradient"
+            ]
+          }
+        },
+        "C1_plausible": false,
+        "C2_agrees_with_lidar": false,
+        "passed": false
+      },
+      "forced_560": {
+        "status": "rejected",
+        "message": "Retrieval complete; inspect per-product rejection reasons.",
+        "qaa": {
+          "ref_wavelength_nm": 559.0,
+          "forced_ref_nm": 560.0,
+          "bbp_555": 0.013410897116679215,
+          "qa_flags": [
+            "a_cdm_443_not_computable(no_411nm_band)",
+            "a_below_pure_water_floor(665nm: 0.2281 < 0.4245)",
+            "a_below_pure_water_floor(704nm: 0.2612 < 0.6240)",
+            "a_below_pure_water_floor(739nm: 0.3312 < 0.6240)",
+            "a_below_pure_water_floor(780nm: 0.3330 < 0.6240)",
+            "a_below_pure_water_floor(833nm: 0.3634 < 0.6240)",
+            "a_below_pure_water_floor(864nm: 0.4854 < 0.6240)"
+          ]
+        },
+        "kd_492": 0.19930000603199005,
+        "agreement": {
+          "443": null,
+          "492": null,
+          "560": null
+        },
+        "lidar_fits": {
+          "442.0": {
+            "k_per_m": 0.14495123849882124,
+            "r_squared": 0.909726766254318,
+            "n_pixels": 3137,
+            "trust_failures": [
+              "scene_depth_gradient"
+            ]
+          },
+          "492.0": {
+            "k_per_m": 0.11047965746659515,
+            "r_squared": 0.9097069756622762,
+            "n_pixels": 3136,
+            "trust_failures": [
+              "scene_depth_gradient"
+            ]
+          },
+          "559.0": {
+            "k_per_m": 0.07129407212847758,
+            "r_squared": 0.8419913081137619,
+            "n_pixels": 1312,
+            "trust_failures": [
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ]
+          },
+          "665.0": {
+            "k_per_m": null,
+            "r_squared": null,
+            "n_pixels": 0,
+            "trust_failures": [
+              "no_fit",
+              "scene_depth_gradient"
+            ]
+          }
+        },
+        "C1_plausible": true,
+        "C2_agrees_with_lidar": false,
+        "passed": false
+      }
+    }
+  }
+}

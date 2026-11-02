@@ -1,0 +1,24 @@
+{
+  "experiment_id": "sesimbra-habitat-v1",
+  "created_at": "2026-09-20T11:51:11.475157+00:00",
+  "amendment": "modelled-water-levels",
+  "dataset_id": "cmems_mod_ibi_phy_anfc_0.027deg-2D_PT1H-m",
+  "variable": "zos",
+  "cell": {
+    "latitude": 38.387954459999996,
+    "longitude": -9.19364882,
+    "distance_km": 2.47
+  },
+  "datum_proxy_model_metres": -2.151,
+  "datum_period": [
+    "2022-11-23",
+    "2026-09-29"
+  ],
+  "datum_uncertainty_m": 0.3,
+  "hours_used": 33768,
+  "runner_sha256": "d429e556518e7cd9e83a533fcd83ceddd54e035f1c713ba8eda673af7bf9f52a",
+  "git": {
+    "commit": "d483e87831c2a4755cf1e226845af406297dc5c6",
+    "uncommitted_changes": true
+  }
+}

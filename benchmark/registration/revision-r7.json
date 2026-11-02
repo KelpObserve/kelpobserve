@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "r7",
+  "title": "Copernicus Marine KD490 as the attenuation of the water-column-corrected branch",
+  "status": "draft",
+  "status_note": "Not registered. The fallback rule and the pass criteria are open decisions; no corrected-branch result with CMEMS attenuation may be computed before they are fixed here.",
+  "drafted_on": "2026-10-18",
+  "parents": ["v1", "r1", "r4", "r6"],
+  "kind": "exploratory",
+  "question": "With an attenuation taken from outside the image, does the water-column-corrected branch, unavailable in v1, predict July cover better than depth alone?",
+  "why": "In v1 the QAA fit over the Pleiades Neo deep-water reference raised plausibility flags on both dates (red_reference_selected(655nm), bbp_555_implausible; Kd(486) 1.32 and 1.26 m-1), so the registered rule left the corrected branch unavailable (archive/out/optics-reference/runs/20260920T115500-a5823dc0e7cc/reference_iops.json).",
+  "attenuation_source": {
+    "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+    "dataset": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+    "frozen_subset": "registration/evidence/cmems-kd490-subset.json",
+    "pixel": "the valid KD490 pixel nearest the quadrat cluster (38.409 N, 9.202 W), searched within 5 km and 3 days",
+    "code": "src/kelpobserve/attenuation/cmems.py"
+  },
+  "spectral_extension": {
+    "shape": "E5s median non-water absorption and particulate backscatter (forced-560 QAA, Sentinel-2, 24 December 2025 and 22 February 2026)",
+    "magnitude": "one factor on that shape, chosen so that the Lee et al. (2005) Kd(490) of the scaled IOPs equals the CMEMS value",
+    "library": "oceanstream.coastal at c3dc02a (pure-water optics and the Kd model)",
+    "code": "src/kelpobserve/attenuation/bands.py"
+  },
+  "fallback_rule": {
+    "code": "src/kelpobserve/attenuation/fallback.py: choose()",
+    "status": "open"
+  },
+  "open_decisions": [
+    "When CMEMS stands in: always when the in-scene QAA is flagged, or only when the CMEMS match passes thresholds on distance, day offset and uncertainty (3 September carries 84 %).",
+    "Which correction consumes the IOPs: the Lee inversion of the library, or the Lyzenga-style ratio of r1.",
+    "The pass criterion: for example, the r1 recovery rule (MAE at least 2 percentage points below depth-only, July leave-one-transect-out), and whether September is evaluated.",
+    "The scenes: Pleiades Neo 8 July and 3 September; whether the clean Sentinel-2 dates (2 July, 31 August) are added."
+  ],
+  "known_limits": [
+    "The pixel is 1 km across and lies 0.29 km from the reef, near cliffs and partly over optically shallow water: adjacency light and bottom reflectance can bias it.",
+    "A correct attenuation does not remove the radiometric residual of 0.01 to 0.04 that r1 to r6 found as large as the seabed contrast; the correction amplifies that residual by exp(K z).",
+    "Two winter dates compare CMEMS with the in-scene QAA that passed: 0.090 against 0.13 (24 December 2025) and 0.271 against 0.20 (22 February 2026)."
+  ]
+}

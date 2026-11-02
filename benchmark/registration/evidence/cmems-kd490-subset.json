@@ -1,0 +1,35 @@
+{
+  "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+  "product_doi": "10.48670/moi-00286",
+  "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+  "dataset_versions_listed": [
+    {
+      "label": "202603",
+      "part": "default",
+      "released_date": "2026-03-31T13:00:00.000Z",
+      "retired_date": "2026-11-24T13:00:00.000Z",
+      "arco_updated_date": "2026-10-18T13:32:06.804Z"
+    }
+  ],
+  "variables": [
+    "KD490",
+    "KD490_uncertainty",
+    "flags"
+  ],
+  "region": {
+    "minimum_longitude": -9.42,
+    "maximum_longitude": -8.98,
+    "minimum_latitude": 38.24,
+    "maximum_latitude": 38.56
+  },
+  "start": "2025-12-01",
+  "end": "2026-09-30",
+  "file": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D_2025-12-01_2026-09-30.nc",
+  "sha256": "cb3dfbcb1d97e12f3305a3ab9fb4ef2e0d74a4724c94ca9a42e557824b810462",
+  "bytes": 2813658,
+  "fetched_at": "2026-10-18T20:44:03+00:00",
+  "toolbox": "2.3.0",
+  "acknowledgement": "Generated using E.U. Copernicus Marine Service Information",
+  "data_sha256": "0f7abaf658602644e056a37ef384f0a326b233e664802a5ed7cbcb0230aeec39",
+  "catalogue_read_at": "2026-10-18T21:27:23+00:00"
+}

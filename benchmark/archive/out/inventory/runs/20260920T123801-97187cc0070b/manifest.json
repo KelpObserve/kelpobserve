@@ -1,0 +1,48 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "inventory",
+  "created_at": "2026-09-20T12:38:01.261873+00:00",
+  "inputs": {
+    "$DATA/ccmar-diving/sept/TNA_Aquaserv_KelpData2026.xlsx": "87f4b768cf6ec2ac10f7c2b585518ec79eadab52703df684b820207b76fcdf09",
+    "$DATA/ccmar-diving/sept/Transects kelp AQUASERV Jun-Sep 2026.gpkg": "70439b4957120af74c1b7bbabbdf0324b83609938abef5a07a945cdff40c8e0a",
+    "$DATA/ccmar-diving/kelp_data/TNA_Aquaserv_KelpData2026.xlsx": "5951304b554f5a8497f11cfce9b4f8a705a6b7090fdaf897c9c5f7ad5dab4654",
+    "$DATA/ccmar-diving/transects/TransectsArr\u00e1bida2026.gpkg": "8d3893bc57714d17bdc01eaade27683e5483f4d2ee9711e7aad3c2039b5f6ba5",
+    "$DATA/external/emodnet_hr_lidar_sesimbra.tif": "8a4eb09a8770671932c1f582b5447b3fafe800355bc97facc88bba22f9cdf4ca",
+    "$REG/experiment.json": "8024a35cf3d208d8c2356859ed085bb74435376b0035549f258c79b2e63948f9",
+    "$REG/water-levels.csv": "66964a6daf7a413b576717fac4897a6a2ce8645a2e486d93e6fa7d8a7cac2dbf"
+  },
+  "outputs": {
+    "events.gpkg": "981a547b625ab55ca03ed47f5eb29d606e53ba228c4b68d97ffe8864ea7b9016",
+    "events.csv": "4d9f187e6b1a8b60d2b541a3ea21f62bf720de899851344ca6159db68ee737f6",
+    "targets_development.csv": "8669eea54bf5593037e2e1cd6b998929f845f2b460e6f616a516b4b6b28b393f",
+    "targets_september.csv": "e850d8ca5fa40ecbcf8682771f3432cbb162637bfc49fd2aa6bd674244b58ec1",
+    "revisions.json": "fe497a2c8d0a02d7b5fa14764b6a44070148d0cdaaad4343eb008d4ee453d79d",
+    "reconciliation.json": "e4019904047849b1933d7421c9674011773bbbfe542a872ec46b8a5664889d43"
+  },
+  "runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "git": {
+    "commit": "HEAD",
+    "uncommitted_changes": true
+  },
+  "evaluation_targets": "targets_september.csv is opened only by the evaluation command.",
+  "summary": {
+    "events": 90,
+    "expected_events": 90,
+    "events_by_campaign": {
+      "july": 30,
+      "june": 30,
+      "september": 30
+    },
+    "join_class": {
+      "provisional": 9,
+      "reconciled_by_rule": 81
+    },
+    "depth_qc_status": {
+      "flag": 5,
+      "no_lidar": 4,
+      "pass": 81
+    },
+    "eligible_registered": 81
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "r4-envelope",
+  "created_at": "2026-10-02T14:13:28.007587+00:00",
+  "exploratory": true,
+  "draws": 100,
+  "outputs": {
+    "draws.csv": "0178f955a165bf9d54be30345f54c72b0b944bbf13f5fb6c136cd845d181c620",
+    "envelope.json": "21e872135ffb7e9d5ecbcac26ffde3526c1ca2e9d3547abe322ecd9dee9e9d32"
+  },
+  "registration": {
+    "path": "$REG/revision-r1.json",
+    "sha256": "a4436947e4eb86881177826e9a1bd9011222285afdb6052166afefefff131959"
+  },
+  "revision_runner_sha256": "2b33b0df5af6714b082e2c10529f75acae381e13505a62d366571b650d16bb9f",
+  "v1_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "benchmark_git": {
+    "commit": "e0af2093d75d457bfc57cb44ed4b956f5acaecd2",
+    "uncommitted_changes": true
+  },
+  "library_git": {
+    "commit": "c3dc02a782cb77ff604839199d3ebe4451a0a9bc",
+    "uncommitted_changes": false
+  },
+  "registration_r4": {
+    "path": "$REG/revision-r4.json",
+    "sha256": "bdf26b550b0b87da343d504427c9687ce51f7c0455d680e42ba219bea93b665f"
+  },
+  "r4_runner_sha256": "387cae1ef582e4f16b8a0b0120ba55ff319152fb599004387888b70fe23b6acb"
+}

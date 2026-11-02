@@ -1,0 +1,100 @@
+{
+  "runs": {
+    "V0": {
+      "output": "$CACHE/acolite-r6/V0-injected/pneo-20260708",
+      "elapsed_s": 0.0,
+      "effective_glint": {
+        "dsf_residual_glint_correction": "False",
+        "dsf_residual_glint_correction_method": "default",
+        "dsf_residual_glint_wave_range": "1500,2400",
+        "dsf_residual_glint_correction_glint_angle": "False",
+        "dsf_residual_glint_correction_glint_angle_threshold": "40.0",
+        "glint_force_band": "None",
+        "glint_mask_rhos_wave": "1600",
+        "glint_mask_rhos_threshold": "0.05",
+        "glint_write_rhog_ref": "False",
+        "glint_write_rhog_all": "False"
+      }
+    },
+    "V1": {
+      "output": "$CACHE/acolite-r6/V1-injected/pneo-20260708",
+      "elapsed_s": 0.0,
+      "effective_glint": {
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "alternative",
+        "dsf_residual_glint_wave_range": "800,900",
+        "dsf_residual_glint_correction_glint_angle": "False",
+        "dsf_residual_glint_correction_glint_angle_threshold": "40.0",
+        "glint_force_band": "None",
+        "glint_mask_rhos_wave": "800",
+        "glint_mask_rhos_threshold": "0.1",
+        "glint_write_rhog_ref": "False",
+        "glint_write_rhog_all": "False"
+      }
+    }
+  },
+  "injection_reused": true,
+  "aot": {
+    "V0": {
+      "injected": 0.078115806,
+      "original": 0.078115806
+    },
+    "V1": {
+      "injected": 0.078115806,
+      "original": 0.078115806
+    }
+  },
+  "bands": {
+    "blue": {
+      "determinism_max_abs_outside_V0": 0.0,
+      "determinism_max_abs_outside_V1": 0.0,
+      "shallow": {
+        "pixels": 6315,
+        "slope_v1_on_v0": 1.0,
+        "r_v1_v0": 1.0,
+        "slope_v0_on_injected": 1.0178,
+        "median_injected": -0.00651
+      },
+      "deep": {
+        "pixels": 3135,
+        "slope_v1_on_v0": 1.0,
+        "r_v1_v0": 1.0,
+        "slope_v0_on_injected": 1.0134,
+        "median_injected": -0.00059
+      }
+    },
+    "green": {
+      "determinism_max_abs_outside_V0": 0.0,
+      "determinism_max_abs_outside_V1": 0.0,
+      "shallow": {
+        "pixels": 6279,
+        "slope_v1_on_v0": 1.0,
+        "r_v1_v0": 1.0,
+        "slope_v0_on_injected": 1.0352,
+        "median_injected": -0.00693
+      },
+      "deep": {
+        "pixels": 3465,
+        "slope_v1_on_v0": 1.0,
+        "r_v1_v0": 1.0,
+        "slope_v0_on_injected": 1.0533,
+        "median_injected": -0.00061
+      }
+    },
+    "red": {
+      "determinism_max_abs_outside_V0": 0.0,
+      "determinism_max_abs_outside_V1": 0.0,
+      "shallow": {
+        "pixels": 50,
+        "slope_v1_on_v0": 1.0,
+        "r_v1_v0": 1.0,
+        "slope_v0_on_injected": 1.0776,
+        "median_injected": -0.00062
+      },
+      "deep": {
+        "pixels": 0
+      }
+    }
+  },
+  "criterion_met": true
+}

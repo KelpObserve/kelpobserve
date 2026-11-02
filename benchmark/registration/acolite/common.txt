@@ -1,0 +1,20 @@
+# ACOLITE settings shared by both sensors (Sesimbra habitat benchmark v1).
+# Pinned ACOLITE revision and the sensor files are recorded in experiment.json.
+# Carried over from the six-scene Sesimbra runs, except `glint_correction`,
+# which this ACOLITE revision reads only in its Earth Engine code.
+atmospheric_correction=True
+atmospheric_correction_method=dark_spectrum
+dsf_residual_glint_correction=False
+ancillary_data=False
+dem_pressure=False
+dem_pressure_resolved=False
+l2w_parameters=None
+l1r_export_geotiff=False
+l2r_export_geotiff=True
+l2r_export_geotiff_rgb=True
+# Disk: GeoTIFFs are what the library reads; netCDFs and extracted inputs are not kept.
+l1r_delete_netcdf=True
+l2r_delete_netcdf=True
+delete_extracted_input=True
+pans=False
+verbosity=3

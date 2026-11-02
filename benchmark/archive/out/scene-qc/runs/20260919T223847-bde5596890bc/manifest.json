@@ -1,0 +1,16 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "scene-qc",
+  "created_at": "2026-09-19T22:38:47.776105+00:00",
+  "prepare_run": "2026-09-19T22:38:46.131284+00:00",
+  "inventory_run": "$OUT/inventory/runs/20260919T190733-31c3ba3e0e11",
+  "outputs": {
+    "scene_qc.json": "d532b6ed1625bede295f238c51597942428f629311645bca98f49845c816280e"
+  },
+  "runner_sha256": "1c55251e5c77909c30342ad1192793f2a602b13424e75c9b554f705087f2cfe0",
+  "git": {
+    "commit": "71fad2bcb3dbe3305da5279cf8bfd9a9098e7b3f",
+    "uncommitted_changes": true
+  }
+}

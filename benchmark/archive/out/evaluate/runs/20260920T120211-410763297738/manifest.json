@@ -1,0 +1,21 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "evaluate",
+  "created_at": "2026-09-20T12:02:13.381720+00:00",
+  "lock": {
+    "path": "$REG/input-lock.json",
+    "sha256": "80ae86e05353f6dd04a58ff8d1b4eed51fdd628a0143e68898b84a4be2b06b2e",
+    "frozen_at": "2026-09-20T12:01:42.533411+00:00",
+    "n_files": 96
+  },
+  "fit_run": "$OUT/fit/runs/20260920T120144-86b851a1758d",
+  "outputs": {
+    "evaluation.json": "f913c6ce1ccf56815c81b59989b2e73b30d2a3b491b7c2b7eaf107217702c6df"
+  },
+  "runner_sha256": "6be57b8997fbeba5af33fd6bf2a5bff6ea6ef805d5b23915aa7a9b15c50decac",
+  "git": {
+    "commit": "6e310450fce31dd7ad96f42c0cfcc4b066b9d083",
+    "uncommitted_changes": true
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "plausible_survey_dates": {
+    "june": [
+      "2026-06-02"
+    ],
+    "july": [
+      "2026-07-06",
+      "2026-07-07",
+      "2026-07-08"
+    ],
+    "september": [
+      "2026-09-01",
+      "2026-09-02"
+    ]
+  },
+  "recorded_dates": {
+    "july": {
+      "workbook": [
+        "2026-07-06",
+        "2026-07-07"
+      ],
+      "transects": [
+        "2026-07-07"
+      ],
+      "previous_timed": [
+        "2026-07-07",
+        "2026-07-08"
+      ],
+      "previous_numbered": [
+        "2026-07-08"
+      ]
+    },
+    "june": {
+      "workbook": [
+        "2026-06-02"
+      ],
+      "transects": [
+        "2026-06-02"
+      ],
+      "previous_timed": [],
+      "previous_numbered": []
+    },
+    "september": {
+      "workbook": [
+        "2026-09-02"
+      ],
+      "transects": [
+        "2026-09-01"
+      ],
+      "previous_timed": [],
+      "previous_numbered": []
+    }
+  },
+  "depth_labels": {
+    "july/deep": {
+      "workbook_m": [
+        16
+      ],
+      "transects": [
+        "17m"
+      ]
+    },
+    "july/shallow": {
+      "workbook_m": [
+        7
+      ],
+      "transects": [
+        "7m"
+      ]
+    },
+    "june/deep": {
+      "workbook_m": [
+        15,
+        16
+      ],
+      "transects": [
+        "15m",
+        "16m"
+      ]
+    },
+    "june/shallow": {
+      "workbook_m": [
+        8
+      ],
+      "transects": [
+        "8m"
+      ]
+    },
+    "september/deep": {
+      "workbook_m": [
+        15
+      ],
+      "transects": [
+        "17m"
+      ]
+    },
+    "september/shallow": {
+      "workbook_m": [
+        6
+      ],
+      "transects": [
+        "7m"
+      ]
+    }
+  },
+  "quadrat_order": {
+    "assumption": "Workbook quadrat n is GeoPackage Qn in survey order, Q1 at tape 20 m, as the timed July GeoPackage records.",
+    "status": "assumed_pending_ccmar",
+    "evidence": [
+      {
+        "campaign": "july",
+        "stratum": "deep",
+        "transect": 1,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      },
+      {
+        "campaign": "july",
+        "stratum": "deep",
+        "transect": 2,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      },
+      {
+        "campaign": "july",
+        "stratum": "deep",
+        "transect": 3,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      },
+      {
+        "campaign": "july",
+        "stratum": "shallow",
+        "transect": 1,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      },
+      {
+        "campaign": "july",
+        "stratum": "shallow",
+        "transect": 2,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      },
+      {
+        "campaign": "july",
+        "stratum": "shallow",
+        "transect": 3,
+        "q_to_tape_m": {
+          "Q1": 20,
+          "Q2": 15,
+          "Q3": 10,
+          "Q4": 5,
+          "Q5": 0
+        },
+        "q_follows_survey_time": true,
+        "q1_is_tape_20m": true
+      }
+    ]
+  },
+  "ccmar_confirmation": {
+    "status": "not_sent",
+    "query": "ccmar-query.md",
+    "confirmed_campaigns": []
+  },
+  "water_levels": {
+    "path": null,
+    "status": "missing",
+    "required_source": "Instituto Hidrografico tide predictions for Sesimbra, metres above LAT",
+    "format": "CSV columns: campaign,date,min_m,max_m,source,station,datum (datum must be LAT)"
+  },
+  "depth_consistency": {
+    "tolerance_m": 3.0,
+    "tolerance_status": "proposed",
+    "label_source": "workbook",
+    "label_source_status": "proposed"
+  }
+}

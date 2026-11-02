@@ -1,0 +1,195 @@
+{
+  "note": "Radiometric comparison only. No field target is read, and neither correction is tuned.",
+  "grid": {
+    "crs": "EPSG:32629",
+    "pixel_m": 10,
+    "anchor": "Sentinel-2 tile T29SMC 10 m grid",
+    "clarification": "The plan anchors the common grid to the selected July Sentinel-2 scene. No July scene qualifies, so the tile grid is used instead. Every candidate scene shares that grid, so this changes no cell boundary.",
+    "min_valid_fraction": 0.8,
+    "aggregation": "Area-weighted average of PNeo pixels with fractional overlap; a cell below the valid fraction is missing, never partial."
+  },
+  "pairs": [
+    {
+      "sentinel2": "s2-20260903-S2B-R080",
+      "pneo": "pneo-20260903",
+      "note": "same datatake minute; this S2 scene failed the scene checks",
+      "bands": [
+        {
+          "role": "blue",
+          "sentinel2_nm": 492.0,
+          "pneo_nm": 486.0,
+          "water_in_habitat": {
+            "pixels": 18700,
+            "pneo_median": 0.02205,
+            "sentinel2_median": 0.03052,
+            "median_difference": -0.00879,
+            "robust_scatter": 0.00718,
+            "correlation": 0.372
+          },
+          "stable_land": {
+            "pixels": 25912,
+            "pneo_median": 0.02855,
+            "sentinel2_median": 0.05065,
+            "median_difference": -0.02153,
+            "robust_scatter": 0.00243,
+            "correlation": 0.922
+          }
+        },
+        {
+          "role": "green",
+          "sentinel2_nm": 559.0,
+          "pneo_nm": 563.0,
+          "water_in_habitat": {
+            "pixels": 18695,
+            "pneo_median": 0.02447,
+            "sentinel2_median": 0.03017,
+            "median_difference": -0.00607,
+            "robust_scatter": 0.00774,
+            "correlation": 0.398
+          },
+          "stable_land": {
+            "pixels": 25903,
+            "pneo_median": 0.05153,
+            "sentinel2_median": 0.07055,
+            "median_difference": -0.01868,
+            "robust_scatter": 0.00344,
+            "correlation": 0.913
+          }
+        },
+        {
+          "role": "red",
+          "sentinel2_nm": 665.0,
+          "pneo_nm": 655.0,
+          "water_in_habitat": {
+            "pixels": 18696,
+            "pneo_median": 0.01768,
+            "sentinel2_median": 0.02022,
+            "median_difference": -0.00332,
+            "robust_scatter": 0.00807,
+            "correlation": 0.358
+          },
+          "stable_land": {
+            "pixels": 25911,
+            "pneo_median": 0.05811,
+            "sentinel2_median": 0.07595,
+            "median_difference": -0.01602,
+            "robust_scatter": 0.00483,
+            "correlation": 0.911
+          }
+        },
+        {
+          "role": "nir",
+          "sentinel2_nm": 833.0,
+          "pneo_nm": 826.0,
+          "water_in_habitat": {
+            "pixels": 18696,
+            "pneo_median": 0.01914,
+            "sentinel2_median": 0.01949,
+            "median_difference": -0.00161,
+            "robust_scatter": 0.00815,
+            "correlation": 0.322
+          },
+          "stable_land": {
+            "pixels": 25922,
+            "pneo_median": 0.20506,
+            "sentinel2_median": 0.21357,
+            "median_difference": -0.00965,
+            "robust_scatter": 0.00858,
+            "correlation": 0.93
+          }
+        }
+      ]
+    },
+    {
+      "sentinel2": "s2-20260831-S2B-R037",
+      "pneo": "pneo-20260903",
+      "note": "the selected September S2 scene, three days earlier",
+      "bands": [
+        {
+          "role": "blue",
+          "sentinel2_nm": 492.0,
+          "pneo_nm": 486.0,
+          "water_in_habitat": {
+            "pixels": 18700,
+            "pneo_median": 0.02205,
+            "sentinel2_median": 0.02307,
+            "median_difference": -0.00123,
+            "robust_scatter": 0.00742,
+            "correlation": 0.077
+          },
+          "stable_land": {
+            "pixels": 25912,
+            "pneo_median": 0.02855,
+            "sentinel2_median": 0.04756,
+            "median_difference": -0.01818,
+            "robust_scatter": 0.00288,
+            "correlation": 0.895
+          }
+        },
+        {
+          "role": "green",
+          "sentinel2_nm": 559.0,
+          "pneo_nm": 563.0,
+          "water_in_habitat": {
+            "pixels": 18695,
+            "pneo_median": 0.02447,
+            "sentinel2_median": 0.01839,
+            "median_difference": 0.00566,
+            "robust_scatter": 0.00816,
+            "correlation": 0.08
+          },
+          "stable_land": {
+            "pixels": 25903,
+            "pneo_median": 0.05153,
+            "sentinel2_median": 0.06963,
+            "median_difference": -0.01736,
+            "robust_scatter": 0.00349,
+            "correlation": 0.879
+          }
+        },
+        {
+          "role": "red",
+          "sentinel2_nm": 665.0,
+          "pneo_nm": 655.0,
+          "water_in_habitat": {
+            "pixels": 18696,
+            "pneo_median": 0.01768,
+            "sentinel2_median": 0.00771,
+            "median_difference": 0.00939,
+            "robust_scatter": 0.00836,
+            "correlation": 0.149
+          },
+          "stable_land": {
+            "pixels": 25911,
+            "pneo_median": 0.05811,
+            "sentinel2_median": 0.07708,
+            "median_difference": -0.0157,
+            "robust_scatter": 0.00673,
+            "correlation": 0.883
+          }
+        },
+        {
+          "role": "nir",
+          "sentinel2_nm": 833.0,
+          "pneo_nm": 826.0,
+          "water_in_habitat": {
+            "pixels": 18696,
+            "pneo_median": 0.01914,
+            "sentinel2_median": 0.00592,
+            "median_difference": 0.01196,
+            "robust_scatter": 0.00817,
+            "correlation": 0.301
+          },
+          "stable_land": {
+            "pixels": 25922,
+            "pneo_median": 0.20506,
+            "sentinel2_median": 0.24078,
+            "median_difference": -0.03406,
+            "robust_scatter": 0.00885,
+            "correlation": 0.914
+          }
+        }
+      ]
+    }
+  ]
+}

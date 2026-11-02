@@ -1,0 +1,158 @@
+{
+  "schema_version": "2.0",
+  "oceanstream:product": "iops",
+  "oceanstream:title": "Scene-mean inherent optical properties",
+  "oceanstream:status": "diagnostic_only",
+  "oceanstream:caveat": null,
+  "oceanstream:provenance": {
+    "campaign_id": "e2c-sesimbra",
+    "aoi": "sesimbra",
+    "sensor": "sentinel2",
+    "acquisition_date": "2025-12-24",
+    "solar_zenith_deg": 63.7266785539466,
+    "solar_zenith_source": "acolite_metadata"
+  },
+  "oceanstream:qc_passed": false,
+  "oceanstream:qc": {
+    "passed": false,
+    "flags": [
+      "dive_reef:a_below_pure_water_floor(665.0nm)",
+      "dive_reef:local_qaa_comparison_unavailable",
+      "dive_reef:qaa_model_uncertainty_missing",
+      "dive_reef:reference_independence_unverified",
+      "dive_reef:reference_uncertainty_assumed",
+      "dive_reef:tide_correction_missing"
+    ],
+    "summary": "dive_reef:a_below_pure_water_floor(665.0nm); dive_reef:local_qaa_comparison_unavailable; dive_reef:qaa_model_uncertainty_missing; dive_reef:reference_independence_unverified; dive_reef:reference_uncertainty_assumed; dive_reef:tide_correction_missing",
+    "evidence": {
+      "products": {
+        "dive_reef": {
+          "passed": false,
+          "flags": [
+            "a_below_pure_water_floor(665.0nm)",
+            "local_qaa_comparison_unavailable",
+            "qaa_model_uncertainty_missing",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "tide_correction_missing"
+          ],
+          "summary": "a_below_pure_water_floor(665.0nm); local_qaa_comparison_unavailable; qaa_model_uncertainty_missing; reference_independence_unverified; reference_uncertainty_assumed; tide_correction_missing",
+          "evidence": {}
+        }
+      }
+    }
+  },
+  "oceanstream:generated": "2026-09-24T14:39:42.278558+00:00",
+  "iops": {
+    "wavelengths_nm": [
+      442.0,
+      492.0,
+      559.0,
+      665.0,
+      704.0,
+      739.0,
+      780.0,
+      833.0,
+      864.0,
+      1610.0,
+      2186.0
+    ],
+    "a": [
+      0.07595891505479813,
+      0.06876063346862793,
+      0.0856146439909935,
+      0.4244999885559082,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033,
+      0.6240000128746033
+    ],
+    "bb": [
+      0.016944333910942078,
+      0.01389074046164751,
+      0.011093358509242535,
+      0.0082953330129385,
+      0.0075620012357831,
+      0.006995072588324547,
+      0.006419230718165636,
+      0.005787559784948826,
+      0.005466017406433821,
+      0.002117777708917856,
+      0.0013393991393968463
+    ],
+    "kd": [
+      0.15477386116981506,
+      0.1343655288219452,
+      0.14969973266124725,
+      0.5942503213882446,
+      0.8544169664382935,
+      0.8520486354827881,
+      0.8496431112289429,
+      0.8470043540000916,
+      0.8456611037254333,
+      0.8316740989685059,
+      0.828422486782074
+    ],
+    "a_cdm_443": null,
+    "bbp_555": 0.010303339856670816,
+    "y": 1.4896520441955534,
+    "n_deep_pixels": 5000,
+    "ref_wavelength_nm": 559.0,
+    "qa_flags": [
+      "a_cdm_443_not_computable(no_411nm_band)",
+      "a_below_pure_water_floor(665nm: 0.1459 < 0.4245)",
+      "a_below_pure_water_floor(704nm: 0.1473 < 0.6240)",
+      "a_below_pure_water_floor(739nm: 0.1591 < 0.6240)",
+      "a_below_pure_water_floor(780nm: 0.1665 < 0.6240)",
+      "a_below_pure_water_floor(833nm: 0.1756 < 0.6240)",
+      "a_below_pure_water_floor(864nm: 0.2178 < 0.6240)",
+      "a_below_pure_water_floor(1610nm: 0.2537 < 0.6240)",
+      "a_below_pure_water_floor(2186nm: 0.2059 < 0.6240)"
+    ],
+    "a_floor_violations": [
+      {
+        "wavelength_nm": 665.0,
+        "a_retrieved": 0.14592,
+        "a_pure_water": 0.4245
+      },
+      {
+        "wavelength_nm": 704.0,
+        "a_retrieved": 0.1473,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 739.0,
+        "a_retrieved": 0.15914,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 780.0,
+        "a_retrieved": 0.16651,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 833.0,
+        "a_retrieved": 0.1756,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 864.0,
+        "a_retrieved": 0.21784,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 1610.0,
+        "a_retrieved": 0.25374,
+        "a_pure_water": 0.624
+      },
+      {
+        "wavelength_nm": 2186.0,
+        "a_retrieved": 0.20593,
+        "a_pure_water": 0.624
+      }
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "revision_id": "sesimbra-habitat-v1-r3",
+  "renamed": {
+    "on": "2026-10-02",
+    "from": "registration/revision-r2.json, revision_id sesimbra-habitat-v1-r2",
+    "reason": "r2 was already taken: a separate draft protocol (registration/revision-r2.json, not executed) was saved 22 minutes before this registration and was overwritten by it by mistake. The draft was restored to its path and this registration renumbered. This registration did not draw on that draft; its content was not seen before this one was written.",
+    "as_run_sha256": "68faf9845a21dbecc6a90770b619df18f11198d92c8ba7cba400d9527e4b4d17",
+    "changed_in_rename": "revision_id, this block, and the output paths out/r2/ and .cache/l1c-r2/ (now out/r3/ and .cache/l1c-r3/). Every other field is as registered and run. Run records under out/r3/ were written before the rename and carry the old path and hash."
+  },
+  "parent": "sesimbra-habitat-v1-r1 (registration/revision-r1.json, docs/revision-r1.md)",
+  "kind": "Exploratory. Every June, July and September cover value has been seen (v1, r1 and earlier kelp_observe diagnostics), so no result here is confirmatory and none replaces a v1 or r1 result.",
+  "registered_on": "2026-10-02",
+  "registered_before": "Any r2 mask, background, acceptability measure, selection, model score or injection result was computed, and before the three new scenes were downloaded.",
+  "question": "With a cloud and land mask that tolerates glint, and ACOLITE's SWIR residual glint correction, can glinted June and July Sentinel-2 scenes at Sesimbra be used, judged without labels? If so, which date would v1's ranking select, and how often do such scenes occur?",
+  "why": "r1 (Q2) found that the SWIR residual glint correction improves every scene with water left to judge, but v1's mask (top-of-atmosphere reflectance at 1610 nm <= 0.0215) removes every water pixel on glinted dates. The mask reads glint as cloud. r1 recorded this as needing a new registration.",
+  "v1_r1_untouched": "No v1 or r1 output, lock, registration or conclusion is changed. Outputs go to out/r3/; new L1C bundles to .cache/l1c-r3/ so v1's input folders are unchanged; ACOLITE output to .cache/acolite-r1/V1/ beside r1's.",
+  "known_before_registration": [
+    "Water-only 1610 nm screen values of every 7-day-window candidate (r1 screen).",
+    "r1 V1 measures under v1's mask: offshore NIR median 0.0029 (28 May), 0.0082 (2 Jul), 0.0030 (31 Aug); NIR/green depth-slope ratio 0.074, 0.165, 0.212; green slope +0.000157, +0.000141, +0.00019 per m. 2 Jun, 9 Jul and 5 Jul had no valid water under v1's mask.",
+    "2 July's four rejected shallow cells read 0.0219, 0.0246, 0.0874 and a fourth above 0.0215 at 1610 nm (scene-selection.md). Under the mask below, 2 July keeps v1's threshold exactly, so its cell result is known in advance and carries no information about the mask.",
+    "r1's radiometry.json holds unmasked QAA fits for the V1 2 June, 9 July and 5 July scenes. They were not inspected before this registration.",
+    "r1's injection test: on PNeo, the design did not recover even an optimistic signal. Any model result below is read in that light."
+  ],
+  "scenes": {
+    "rule": "Every June and July candidate in v1's 7-day windows whose r1 water-only 1610 nm screen value is at most 0.059, plus any candidate v1 processed in full without a screen value. 0.059 is ACOLITE's glint_mask_rhos_threshold (0.05, the largest surface reflectance at 1600 nm it glint-corrects) divided by 0.85, the upper end of v1's screen-to-ACOLITE calibration.",
+    "june": [
+      "s2-20260602-S2B-R037",
+      "s2-20260530-S2A-R037",
+      "s2-20260528-S2C-R037",
+      "s2-20260607-S2C-R037",
+      "s2-20260609-S2A-R037"
+    ],
+    "july": [
+      "s2-20260709-S2A-R037",
+      "s2-20260702-S2B-R037"
+    ],
+    "excluded_by_rule": "Every R080 candidate (screen 0.0998-0.348) and 12 July R037 (0.166).",
+    "controls": {
+      "clean": [
+        "s2-20260702-S2B-R037",
+        "s2-20260831-S2B-R037"
+      ],
+      "severe": "s2-20260705-S2B-R080 (V1 exists from r1): the mask should reject it on its cap."
+    },
+    "to_download": [
+      "S2A_MSIL1C_20260530T112131 (R037)",
+      "S2C_MSIL1C_20260607T112111 (R037)",
+      "S2A_MSIL1C_20260609T112131 (R037)"
+    ],
+    "download": "CDSE, tile T29SMC, product S2MSI1C, the latest processing baseline for the datatake, as v1's fetch.",
+    "processing": "r1 variant V1_sentinel2 unchanged: registered v1 ACOLITE settings plus dsf_residual_glint_correction=True (SWIR 1500-2400 nm), pinned ACOLITE 64a02ff, v1's Sentinel-2 limit."
+  },
+  "mask": {
+    "name": "glint-tolerant",
+    "background_water": "Water pixels (lidar or DTM, nearest-neighbour on the scene grid) inside the habitat AOI, at least 10 m deep (lidar where present, else DTM) and at least 100 m from any non-water pixel.",
+    "B": "Scene glint background: median top-of-atmosphere reflectance at ACOLITE's l2w_mask_wave (1610/1614 nm) over background water.",
+    "B_clean": "The larger B of the two clean controls (2 July and 31 August R037), so both keep v1's threshold exactly.",
+    "threshold": "T = 0.0215 + max(0, B - B_clean). v1's threshold, raised by the scene's glint above clean conditions.",
+    "cap": "B <= 0.05, ACOLITE's own limit for glint correction. A scene above it is rejected as beyond correctable glint.",
+    "valid_pixel": "water AND finite V1 blue, green and red rhos AND top-of-atmosphere 1610/1614 nm <= T.",
+    "unchanged": "Water, the 80% valid-water and 80% quadrat-cell scene checks, and the cell definition (distinct 10 m pixels holding the campaign's quadrats, all events, as v1's scene-qc). v1's glint check (median surface 1614 nm < 0.01) is replaced by the cap and the acceptability checks below."
+  },
+  "acceptability": {
+    "principle": "A scene is accepted only if its corrected water looks like the clean controls' on label-free measures, not merely because more pixels pass. Every check below must pass; a measure that cannot be computed counts as a failure.",
+    "A1_offshore_nir": "Median V1 rhos at the NIR role (833 nm) over valid pixels of the registered PNeo reference region (at least 1000) is at most the larger clean-control value plus 0.002.",
+    "A2_glint_leakage": "Over the same pixels, the least-squares slope of V1 green rhos on top-of-atmosphere 1610/1614 nm has magnitude at most 0.2 (uncorrected glint gives about 1). Applied only where B > B_clean; clean scenes have too little glint variation to fit.",
+    "A3_common_mode": "Over valid habitat water with lidar depth 5-25 m (at least 500 pixels): |NIR slope on depth| / |green slope on depth| is at most the larger clean-control value.",
+    "A4_offshore_noise": "Median absolute deviation of V1 green over the valid reference-region pixels is at most twice the larger clean-control value.",
+    "A5_seabed_contrast": "The green slope on depth over the A3 pixels has the sign of both clean controls and lies within 0.5 to 2 times their mean.",
+    "reported_not_scored": [
+      "Cross-date agreement with 2 July and with 31 August over habitat water 5-20 m valid in both: median difference and Spearman correlation at blue and green.",
+      "QAA over the valid reference region, automatic and forced 560 nm, with r1's flag classes and with E2c's criterion C1 (reference 555-565 nm, 0 < bbp(555) < 0.02, 0.01 <= Kd(492) <= 2).",
+      "B, its interquartile range over background water, and T, per scene."
+    ]
+  },
+  "selection": "Per campaign, among scenes that pass the scene checks and A1-A5: v1's ranking (smallest maximum offset from the plausible survey dates, then for July the time from the PNeo acquisition, then valid-water fraction, then name). June dates {2 June}; July dates {7, 8 July} as in the field-details-first-hand amendment, under which the ranking of these R037 candidates is the same as under v1's {6, 7, 8 July}. No label is read.",
+  "models": {
+    "status": "Exploratory, conditional on selection. Run after the selection is written.",
+    "july": "If a July scene is selected: r1's leave-one-transect-out on its 10 m units (v1 families plus r1's NIR controls, which are informative here because the glint reference is SWIR, not NIR), then the fit on all July units applied to 31 August under the same mask. Every other accepted July scene is reported the same way, labelled secondary.",
+    "june": "If a June scene is selected: the June Sentinel-2 supplement v1 registered, as leave-one-transect-out on its 10 m units with the same families and controls. No transfer.",
+    "depth_predictor": "Lidar plus the registered acquisition water level. New scenes have no registered level; they enter only leave-one-transect-out fits within one scene, where a constant level does not change a standardised ridge or a forest, so lidar depth alone is used.",
+    "units": "r1's grid units with this mask: 80% valid area, v1-eligible events."
+  },
+  "injection": {
+    "status": "Exploratory. Answers whether a Sentinel-2 comparison on these units could detect anything, whatever the model scores show.",
+    "scene": "The selected July scene; if none, 2 July R037 under v1's mask.",
+    "design": "r1's injection with these changes only: Sentinel-2 bands B2-B4 and E5s Sentinel-2 pooled endmembers (kelp; understory = mean of turf, coralline crust, red foliose; bare); the synthetic field computed on a 1 m grid and averaged to 10 m, because a 2.5 m disc at a 10 m pixel centre would mis-state its area; 10 m scale only; solar zenith from the scene; depth from lidar plus the scene's registered level, or lidar alone if it has none. 100 draws per condition; same conditions, criterion and null as r1."
+  },
+  "windows": {
+    "status": "Re-tally of r1's Q4 overpasses; no new reads.",
+    "correctable_tier": "Geometry at least 20 degrees from specular and water 1610 nm (r1 Q4 measure) at most G, where G is the largest r1 water-only screen value among scenes accepted here. If no glinted scene is accepted the tier is undefined and r1's Q4 stands.",
+    "reported": "Years in 2017-2025 with at least one correctable-tier overpass, by campaign and window, beside r1's likely-to-pass counts."
+  },
+  "interpretation": {
+    "none_accepted": "Glint-tolerant masking with ACOLITE's SWIR correction does not recover June or July Sentinel-2 at Sesimbra on these dates; scene-selection.md consequence 5 stands with this evidence.",
+    "some_accepted": "Those dates are usable for label-free radiometry. Their model results are exploratory, and per r1 a null result cannot be read as absence of signal unless the Sentinel-2 injection recovers the optimistic case.",
+    "always": "More valid pixels is not success. Acceptance is A1-A5; the reported cross-date agreement and QAA are context."
+  },
+  "limits": [
+    "One mask variant, chosen for its v1 equivalence on clean scenes, not for performance. Cloud shadows remain undetected, as in v1.",
+    "The background is a single scene-level value; glint that varies across the 2 km habitat AOI could admit or reject pixels unevenly. Its interquartile range is reported.",
+    "The clean controls fix the thresholds of A1, A3 and A4, and their values under v1's mask are known (r1). Under this mask they are unchanged by construction.",
+    "Accepting a scene says its water radiometry resembles clean scenes. It says nothing about kelp."
+  ],
+  "errata": [
+    {
+      "recorded_on": "2026-10-02",
+      "after": "r3 run and a second external review",
+      "status": "Recorded, not repaired. The registered outcome (no June or July scene accepted) stands as the result of these rules.",
+      "items": [
+        "A1 has no lower bound: a scene whose offshore NIR median is strongly negative (overcorrection) passes. After correction, 5-28% of offshore pixels on the glinted dates had negative NIR, against under 2% on the clean controls.",
+        "The cap compares a scene-median top-of-atmosphere 1610 nm value with ACOLITE's per-pixel surface-reflectance limit for glint correction; they are different quantities. ACOLITE did correct every valid offshore pixel on the scenes checked (28 May, 2 June, 9 July).",
+        "A3 and A5 partly require new scenes to reproduce a near-shore depth gradient whose cause E2c could not establish; A3 also improves when its green denominator grows. Neither is tied to the contamination level that would defeat the intended measurement.",
+        "A4 is the spread of all offshore pixels, so it measures spatial variability, including gradients and real water variation, not sensor or correction noise.",
+        "The limits for A1, A3 and A4 come from two clean dates with no allowance for their sampling uncertainty. A 100 m block bootstrap puts 28 May's A3 at 0.072-0.356 and 30 May's A4 at 0.00201-0.00313 (95%), spanning their limits.",
+        "The mask is a brightness threshold without separate cirrus or shadow screening, so admitted water is not verified clear water."
+      ],
+      "report_corrections": "docs/revision-r3.md: the 18% patch-area shortfall (wrong: 19-21 m2 per disc at the real coordinates), 'Sentinel-2 at 10 m could not have detected the signal' (beyond the evidence), 'twice the pixel noise' (A4 is not noise), and the endorsement of rescheduling surveys."
+    }
+  ]
+}

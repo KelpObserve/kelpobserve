@@ -1,0 +1,921 @@
+{
+  "experiment_id": "sesimbra-habitat-v1",
+  "exported_at": "2026-09-20T12:38:15.213045+00:00",
+  "amendment": {
+    "id": "glint-window-and-screen",
+    "approved_on": "2026-09-20",
+    "deviation_from": "sentinel2.window_days = 4, and processing every candidate in rank order.",
+    "changes": {
+      "sentinel2.window_days": 7,
+      "sentinel2.screen_glint_max": 0.02
+    },
+    "rationale": "Under the registered four-day window every Sentinel-2 candidate failed the approved checks on sun glint: both orbits covering Sesimbra view close to the specular direction in summer. Scenes are selected on image quality, never on cover-prediction error, so widening the window and pre-screening glint does not select for a result. June remains unavailable on any date.",
+    "evidence": "glint-screen.json",
+    "primary_result_retained": "The four-day outcome stays in the record: June, July and September Sentinel-2 all unavailable. Every result computed under this amendment is labelled with it.",
+    "screen_definition": "Median Sentinel-2 L2A reflectance at 1610 nm over the quadrat area plus 250 m. Calibrated against ACOLITE rhos at 1614 nm on four processed scenes, where ACOLITE reads 0.69 to 0.85 of the screen value, so the 0.02 screen limit sits safely above the 0.01 ACOLITE limit.",
+    "screened_out_handling": "Recorded with their screen value and never silently dropped. A screened-out candidate counts as a determined failure in the ranking, not as unprocessed.",
+    "unscreened_handling": "A candidate with no L2A product in the screen source cannot be screened, so it is processed in full rather than excluded. The screen only ever removes candidates it has measured."
+  },
+  "checks": {
+    "status": "approved",
+    "approved_on": "2026-09-19",
+    "note": "Approved and registered before any per-scene quality metric was computed.",
+    "valid_water_min_fraction": 0.8,
+    "quadrat_cell_min_fraction": 0.8,
+    "sentinel2_max_median_rhos_1614": 0.01,
+    "bands_nm": {
+      "sentinel2": {
+        "blue": 490,
+        "green": 560,
+        "red": 665,
+        "glint": 1614,
+        "nir": 835
+      },
+      "pleiades_neo": {
+        "blue": 490,
+        "green": 560,
+        "red": 655,
+        "nir": 825
+      }
+    },
+    "definitions": {
+      "completion": "ACOLITE wrote blue, green and red rhos.",
+      "water": "Habitat-AOI pixels with lidar or DTM depth, resampled by nearest neighbour to the scene grid. Scene-independent.",
+      "valid_water": "Water pixels with finite blue, green and red rhos, and rhot at ACOLITE's l2w_mask_wave not above l2w_mask_threshold, both read from the pinned ACOLITE sensor defaults.",
+      "quadrat_cells": "Distinct native pixels containing the campaign's quadrats; the fraction that is valid water.",
+      "glint": "Sentinel-2 only: median rhos at 1614 nm over water pixels with finite rhos, before the cloud mask.",
+      "nir_residual": "Median rhos at NIR over valid water and over quadrat cells. Reported, never a pass/fail criterion.",
+      "ranking": "Among passing Sentinel-2 scenes: sentinel2.ranking, with valid-water fraction as the third key. A group of tied scenes is decided only once every member is processed."
+    }
+  },
+  "acolite": {
+    "commit": "64a02ff386e2985eef68ae00198b38e04f3c4a1f",
+    "describe": "20260421.0-86-g64a02ff",
+    "uncommitted_changes": false
+  },
+  "screen": {
+    "definition": "Median Sentinel-2 L2A reflectance at 1610 nm over the quadrat area plus 250 m. Calibrated against ACOLITE rhos at 1614 nm on four processed scenes, where ACOLITE reads 0.69 to 0.85 of the screen value, so the 0.02 screen limit sits safely above the 0.01 ACOLITE limit.",
+    "screen_glint_max": 0.02,
+    "scenes": [
+      {
+        "key": "2026-05-26T11:33|Sentinel-2B",
+        "campaign": "june",
+        "sensing_utc": "2026-05-26T11:33:09.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 5.776159,
+        "b11_median": 0.1313,
+        "b11_p10": 0.1168,
+        "screened_out": true
+      },
+      {
+        "key": "2026-05-30T11:21|Sentinel-2A",
+        "campaign": "june",
+        "sensing_utc": "2026-05-30T11:21:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 12.372623,
+        "b11_median": 0.0379,
+        "b11_p10": 0.0284,
+        "screened_out": true
+      },
+      {
+        "key": "2026-05-31T11:33|Sentinel-2C",
+        "campaign": "june",
+        "sensing_utc": "2026-05-31T11:33:21.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 39.04897,
+        "b11_median": 0.1481,
+        "b11_p10": 0.1298,
+        "screened_out": true
+      },
+      {
+        "key": "2026-06-02T11:21|Sentinel-2B",
+        "campaign": "june",
+        "sensing_utc": "2026-06-02T11:21:09.025000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 17.042984,
+        "b11_median": 0.0406,
+        "b11_p10": 0.0334,
+        "screened_out": true
+      },
+      {
+        "key": "2026-06-02T11:39|Sentinel-2A",
+        "campaign": "june",
+        "sensing_utc": "2026-06-02T11:39:11.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 17.013864,
+        "b11_median": 0.1296,
+        "b11_p10": 0.1039,
+        "screened_out": true
+      },
+      {
+        "key": "2026-06-05T11:33|Sentinel-2B",
+        "campaign": "june",
+        "sensing_utc": "2026-06-05T11:33:19.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 4.001326,
+        "b11_median": 0.111,
+        "b11_p10": 0.084,
+        "screened_out": true
+      },
+      {
+        "key": "2026-06-07T11:21|Sentinel-2C",
+        "campaign": "june",
+        "sensing_utc": "2026-06-07T11:21:11.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 20.356941,
+        "b11_median": 0.0392,
+        "b11_p10": 0.0319,
+        "screened_out": true
+      },
+      {
+        "key": "2026-06-09T11:21|Sentinel-2A",
+        "campaign": "june",
+        "sensing_utc": "2026-06-09T11:21:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 0.023357,
+        "b11_median": 0.0354,
+        "b11_p10": 0.0252,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-02T11:21|Sentinel-2B",
+        "campaign": "july",
+        "sensing_utc": "2026-07-02T11:21:09.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 16.174003,
+        "b11_median": 0.0122,
+        "b11_p10": 0.0057,
+        "screened_out": false
+      },
+      {
+        "key": "2026-07-02T11:33|Sentinel-2A",
+        "campaign": "july",
+        "sensing_utc": "2026-07-02T11:33:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 33.282739,
+        "b11_median": 0.2173,
+        "b11_p10": 0.1646,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-05T11:33|Sentinel-2B",
+        "campaign": "july",
+        "sensing_utc": "2026-07-05T11:33:19.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 44.060034,
+        "b11_median": 0.1626,
+        "b11_p10": 0.1369,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-09T11:21|Sentinel-2A",
+        "campaign": "july",
+        "sensing_utc": "2026-07-09T11:21:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 50.571048,
+        "b11_median": 0.0431,
+        "b11_p10": 0.0378,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-10T11:33|Sentinel-2C",
+        "campaign": "july",
+        "sensing_utc": "2026-07-10T11:33:21.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 4.762239,
+        "b11_median": 0.1278,
+        "b11_p10": 0.0879,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-12T11:21|Sentinel-2B",
+        "campaign": "july",
+        "sensing_utc": "2026-07-12T11:21:09.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 62.775809,
+        "b11_median": 0.2183,
+        "b11_p10": 0.1166,
+        "screened_out": true
+      },
+      {
+        "key": "2026-07-12T11:39|Sentinel-2A",
+        "campaign": "july",
+        "sensing_utc": "2026-07-12T11:39:11.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 77.371114,
+        "b11_median": 0.3398,
+        "b11_p10": 0.2926,
+        "screened_out": true
+      },
+      {
+        "key": "2026-08-28T11:21|Sentinel-2A",
+        "campaign": "september",
+        "sensing_utc": "2026-08-28T11:21:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 11.66141,
+        "b11_median": 0.0158,
+        "b11_p10": 0.0075,
+        "screened_out": false
+      },
+      {
+        "key": "2026-08-29T11:33|Sentinel-2C",
+        "campaign": "september",
+        "sensing_utc": "2026-08-29T11:33:21.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 1.114352,
+        "b11_median": 0.0377,
+        "b11_p10": 0.0322,
+        "screened_out": true
+      },
+      {
+        "key": "2026-08-31T11:21|Sentinel-2B",
+        "campaign": "september",
+        "sensing_utc": "2026-08-31T11:21:09.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 0.262565,
+        "b11_median": 0.0089,
+        "b11_p10": 0.0046,
+        "screened_out": false
+      },
+      {
+        "key": "2026-08-31T11:33|Sentinel-2A",
+        "campaign": "september",
+        "sensing_utc": "2026-08-31T11:33:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 0.921556,
+        "b11_median": 0.0251,
+        "b11_p10": 0.0183,
+        "screened_out": true
+      },
+      {
+        "key": "2026-09-03T11:33|Sentinel-2B",
+        "campaign": "september",
+        "sensing_utc": "2026-09-03T11:33:19.024000+00:00",
+        "platform": "Sentinel-2B",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 0.306642,
+        "b11_median": 0.0179,
+        "b11_p10": 0.0129,
+        "screened_out": false
+      },
+      {
+        "key": "2026-09-05T11:21|Sentinel-2C",
+        "campaign": "september",
+        "sensing_utc": "2026-09-05T11:21:11.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 0.008847,
+        "b11_median": 0.033,
+        "b11_p10": 0.0222,
+        "screened_out": true
+      },
+      {
+        "key": "2026-09-07T11:21|Sentinel-2A",
+        "campaign": "september",
+        "sensing_utc": "2026-09-07T11:21:31.024000+00:00",
+        "platform": "Sentinel-2A",
+        "relative_orbit": 37,
+        "tile_cloud_pct": 8.557239,
+        "b11_median": 0.016,
+        "b11_p10": 0.0107,
+        "screened_out": false
+      },
+      {
+        "key": "2026-09-08T11:33|Sentinel-2C",
+        "campaign": "september",
+        "sensing_utc": "2026-09-08T11:33:21.025000+00:00",
+        "platform": "Sentinel-2C",
+        "relative_orbit": 80,
+        "tile_cloud_pct": 39.743394,
+        "b11_median": 0.0497,
+        "b11_p10": 0.0379,
+        "screened_out": true
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "s2-20260602-S2A-R080",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.0,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.0,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.1099434345960617,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 560.0,
+        "red": 665.0,
+        "glint": 1614.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2A_MSI",
+        "rhot_nm": 1614.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260602-S2B-R037",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.0,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.0,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.03103668335825205,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260528-S2C-R037",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "ok",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.0,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.0,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0588,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 6046,
+        "valid_water_fraction": 0.2990700435298773,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.02218107506632805,
+        "median_rhos_nir_valid_water": 0.020842213183641434,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 489.0,
+        "green": 561.0,
+        "red": 667.0,
+        "glint": 1612.0,
+        "nir": 835.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2C_MSI",
+        "rhot_nm": 1612.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260709-S2A-R037",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.0,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.0,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.0295224841684103,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 560.0,
+        "red": 665.0,
+        "glint": 1614.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2A_MSI",
+        "rhot_nm": 1614.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260702-S2B-R037",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "ok",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.7778,
+        "would_pass_at_relaxed_cell_fraction": true,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.8,
+        "would_pass_per_quadrat": true,
+        "nir_mask_cell_fraction": 0.6111,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "quadrat_cell_fraction_below_minimum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 19632,
+        "valid_water_fraction": 0.9711119905025722,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 14,
+        "quadrat_cell_fraction": 0.7777777777777778,
+        "median_rhos_glint_band": 0.004010289674624801,
+        "median_rhos_nir_valid_water": 0.011594980489462614,
+        "median_rhos_nir_quadrat_cells": 0.01594523247331381
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260705-S2B-R080",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.0,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.0,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "valid_water_fraction_below_minimum",
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 0,
+        "valid_water_fraction": 0.0,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "median_rhos_glint_band": 0.1127048060297966,
+        "median_rhos_nir_valid_water": null,
+        "median_rhos_nir_quadrat_cells": null
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260831-S2B-R037",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "ok",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.8235,
+        "would_pass_at_relaxed_cell_fraction": true,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.8333,
+        "would_pass_per_quadrat": true,
+        "nir_mask_cell_fraction": 0.8235,
+        "would_pass_with_nir_mask": true
+      },
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 19774,
+        "valid_water_fraction": 0.9781361297981797,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 14,
+        "quadrat_cell_fraction": 0.8235294117647058,
+        "median_rhos_glint_band": 0.0026710123056545854,
+        "median_rhos_nir_valid_water": 0.006025824695825577,
+        "median_rhos_nir_quadrat_cells": 0.008662629406899214
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "s2-20260903-S2B-R080",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.5882,
+        "would_pass_at_relaxed_cell_fraction": false,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.5,
+        "would_pass_per_quadrat": false,
+        "nir_mask_cell_fraction": 0.0,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": false,
+      "reasons": [
+        "quadrat_cell_fraction_below_minimum",
+        "glint_above_maximum"
+      ],
+      "metrics": {
+        "water_pixels": 20216,
+        "valid_water_pixels": 18568,
+        "valid_water_fraction": 0.9184804115552038,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 10,
+        "quadrat_cell_fraction": 0.5882352941176471,
+        "median_rhos_glint_band": 0.015458181034773588,
+        "median_rhos_nir_valid_water": 0.018945937976241112,
+        "median_rhos_nir_quadrat_cells": 0.02443696092814207
+      },
+      "bands_used_nm": {
+        "blue": 492.0,
+        "green": 559.0,
+        "red": 665.0,
+        "glint": 1610.0,
+        "nir": 833.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "S2B_MSI",
+        "rhot_nm": 1610.0,
+        "threshold": 0.0215
+      }
+    },
+    {
+      "id": "pneo-20260708",
+      "campaign": "july",
+      "sensor": "pleiades_neo",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 1.0,
+        "would_pass_at_relaxed_cell_fraction": true,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 1.0,
+        "would_pass_per_quadrat": true,
+        "nir_mask_cell_fraction": 0.8333,
+        "would_pass_with_nir_mask": true
+      },
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "water_pixels": 1412964,
+        "valid_water_pixels": 1283868,
+        "valid_water_fraction": 0.908634614894647,
+        "quadrat_cells": 30,
+        "valid_quadrat_cells": 30,
+        "quadrat_cell_fraction": 1.0,
+        "median_rhos_nir_valid_water": 0.037570398300886154,
+        "median_rhos_nir_quadrat_cells": 0.012966533191502094
+      },
+      "bands_used_nm": {
+        "blue": 486.0,
+        "green": 563.0,
+        "red": 655.0,
+        "nir": 826.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "PNEO3",
+        "rhot_nm": 826.0,
+        "threshold": 0.1
+      }
+    },
+    {
+      "id": "pneo-20260903",
+      "campaign": "september",
+      "sensor": "pleiades_neo",
+      "status": "reused",
+      "sensitivity": {
+        "note": "Labelled sensitivity; the registered verdict uses cells and the 1614 nm mask.",
+        "registered_cell_fraction": 0.8333,
+        "would_pass_at_relaxed_cell_fraction": true,
+        "relaxed_cell_fraction": 0.75,
+        "per_quadrat_fraction": 0.8333,
+        "would_pass_per_quadrat": true,
+        "nir_mask_cell_fraction": 0.6667,
+        "would_pass_with_nir_mask": false
+      },
+      "passed": true,
+      "reasons": [],
+      "metrics": {
+        "water_pixels": 1412964,
+        "valid_water_pixels": 1251711,
+        "valid_water_fraction": 0.8858760732757522,
+        "quadrat_cells": 30,
+        "valid_quadrat_cells": 25,
+        "quadrat_cell_fraction": 0.8333333333333334,
+        "median_rhos_nir_valid_water": 0.011448889039456844,
+        "median_rhos_nir_quadrat_cells": 0.0152141647413373
+      },
+      "bands_used_nm": {
+        "blue": 486.0,
+        "green": 563.0,
+        "red": 655.0,
+        "nir": 826.0
+      },
+      "cloud_mask": {
+        "acolite_sensor": "PNEO3",
+        "rhot_nm": 826.0,
+        "threshold": 0.1
+      }
+    },
+    {
+      "id": "S2C_MSIL1C_20260531T113321_N0512_R080_T29SMC_20260531T150805.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.1481
+    },
+    {
+      "id": "S2A_MSIL1C_20260530T112131_N0512_R037_T29SMC_20260530T181443.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0379
+    },
+    {
+      "id": "S2B_MSIL1C_20260605T113319_N0512_R080_T29SMC_20260605T135748.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.111
+    },
+    {
+      "id": "S2C_MSIL1C_20260607T112111_N0512_R037_T29SMC_20260607T134901.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0392
+    },
+    {
+      "id": "S2A_MSIL1C_20260609T112131_N0512_R037_T29SMC_20260609T181428.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0354
+    },
+    {
+      "id": "S2B_MSIL1C_20260526T113309_N0512_R080_T29SMC_20260526T135808.SAFE",
+      "campaign": "june",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.1313
+    },
+    {
+      "id": "S2C_MSIL1C_20260710T113321_N0512_R080_T29SMC_20260710T150752.SAFE",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.1278
+    },
+    {
+      "id": "S2B_MSIL1C_20260712T112109_N0512_R037_T29SMC_20260712T134812.SAFE",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.2183
+    },
+    {
+      "id": "S2A_MSIL1C_20260712T113911_N0512_R080_T29SMC_20260712T182546.SAFE",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.3398
+    },
+    {
+      "id": "S2A_MSIL1C_20260702T113331_N0512_R080_T29SMC_20260702T182504.SAFE",
+      "campaign": "july",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.2173
+    },
+    {
+      "id": "S2A_MSIL1C_20260831T113331_N0512_R080_T29SMC_20260831T182653.SAFE",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0251
+    },
+    {
+      "id": "S2C_MSIL1C_20260905T112111_N0512_R037_T29SMC_20260905T134900.SAFE",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.033
+    },
+    {
+      "id": "S2C_MSIL1C_20260829T113321_N0512_R080_T29SMC_20260829T150726.SAFE",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0377
+    },
+    {
+      "id": "S2C_MSIL1C_20260908T113321_N0512_R080_T29SMC_20260908T140218.SAFE",
+      "campaign": "september",
+      "sensor": "sentinel2",
+      "status": "screened_out",
+      "passed": false,
+      "reasons": [
+        "screened_out_glint"
+      ],
+      "screen_b11_median": 0.0497
+    }
+  ],
+  "sentinel2_selection": {
+    "june": {
+      "status": "unavailable",
+      "reason": "no candidate passed the registered checks"
+    },
+    "july": {
+      "status": "unavailable",
+      "reason": "no candidate passed the registered checks"
+    },
+    "september": {
+      "status": "selected",
+      "name": "S2B_MSIL1C_20260831T112109_N0512_R037_T29SMC_20260831T134650.SAFE"
+    }
+  },
+  "runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "git": {
+    "commit": "HEAD",
+    "uncommitted_changes": true
+  }
+}

@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kelpobserve"
+version = "1.0.0"
+description = "Reproduction archive of the KelpObserve Sesimbra analyses: the registered kelp-cover benchmark, its revisions, the optics prerequisites and their replay"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.12,<3.13"
+authors = [{ name = "Andrei Rusu" }]
+keywords = ["kelp", "Saccorhiza polyschides", "satellite remote sensing", "Sentinel-2", "Pléiades Neo", "water-column correction", "reproducibility", "Sesimbra", "AQUASERV", "KelpObserve"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.3",
+    "scipy>=1.16",
+    "scikit-learn>=1.8",
+    "joblib>=1.5",
+    "rasterio>=1.5",
+    "geopandas>=1.1",
+    "pyogrio>=0.11",
+    "shapely>=2.1",
+    "scikit-image>=0.26",
+    "pyproj>=3.7",
+    "openpyxl>=3.1",
+    "xarray>=2026.2",
+    "pyarrow>=22",
+    "cryptography>=48",
+]
+
+[project.optional-dependencies]
+acquire = ["requests>=2.34", "pystac-client>=0.9", "planetary-computer>=1.0", "copernicusmarine>=2.3"]
+reports = ["matplotlib>=3.10", "pillow>=12"]
+dev = ["pytest>=8", "ruff==0.17.1"]
+
+[project.scripts]
+kelpobserve = "kelpobserve.cli:main"
+
+[project.urls]
+Repository = "https://github.com/KelpObserve/kelpobserve"
+Archive = "https://doi.org/10.5281/zenodo.23478585"
+Dataset = "https://doi.org/10.5281/zenodo.23282075"
+Videos = "https://doi.org/10.5281/zenodo.23350632"
+"Dataset software" = "https://github.com/KelpObserve/arrabida-dataset"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kelpobserve"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/out", "/.cache", "/.venv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["benchmark", "optics"]
+
+[tool.ruff.lint.per-file-ignores]
+# Idioms of the coastal and storage modules that the rest of the package does not use.
+"src/kelpobserve/coastal/**" = ["B008", "FURB162", "ISC004", "PIE810", "RUF022", "RUF046", "RUF059"]
+"src/kelpobserve/storage/**" = ["BLE001", "PERF102", "S110", "SIM103", "TRY004", "UP007"]

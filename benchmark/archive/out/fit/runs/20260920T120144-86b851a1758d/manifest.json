@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.0",
+  "complete": true,
+  "stage": "fit",
+  "created_at": "2026-09-20T12:01:47.784918+00:00",
+  "lock": {
+    "path": "$REG/input-lock.json",
+    "sha256": "80ae86e05353f6dd04a58ff8d1b4eed51fdd628a0143e68898b84a4be2b06b2e",
+    "frozen_at": "2026-09-20T12:01:42.533411+00:00",
+    "n_files": 96
+  },
+  "targets_used": "$OUT/inventory/runs/20260920T115122-1f59c78deecc/targets_development.csv",
+  "outputs": {
+    "fit.json": "155d18c4a4451a035ec69a74078dc74d4f43cba48669048cc2c4585cf5bcdbb0"
+  },
+  "sealed": {
+    "common_grid_10m": "cf1fa700e4ef72c830eb1558fecc7fd2613f1556450edc52df055372a2f489e6",
+    "native_pneo": "6840711573972668970a77b8f4aa307c4fd7d354a755620730cbb1d4be422609"
+  },
+  "runner_sha256": "6be57b8997fbeba5af33fd6bf2a5bff6ea6ef805d5b23915aa7a9b15c50decac",
+  "git": {
+    "commit": "6e310450fce31dd7ad96f42c0cfcc4b066b9d083",
+    "uncommitted_changes": true
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "sesimbra-habitat-v1",
+  "status": "draft",
+  "status_note": "Pre-registration inputs only. Not frozen: model, metric and split choices are registered after the stage-0 work in the plan's section 7.",
+  "plan": "docs/plan.md",
+  "year": 2026,
+  "sources": {
+    "kelp_workbook": "$DATA/ccmar-diving/sept/TNA_Aquaserv_KelpData2026.xlsx",
+    "kelp_sheet": "Folha1",
+    "transects": {
+      "path": "$DATA/ccmar-diving/sept/Transects kelp AQUASERV Jun-Sep 2026.gpkg",
+      "layer": "transects"
+    },
+    "previous_workbook": "$DATA/ccmar-diving/kelp_data/TNA_Aquaserv_KelpData2026.xlsx",
+    "previous_transects": {
+      "path": "$DATA/ccmar-diving/transects/TransectsArr\u00e1bida2026.gpkg",
+      "timed_layer": "TransectsArr\u00e1bida2026",
+      "numbered_layer": "transects"
+    },
+    "previous_reference": "$DATA/ccmar-diving/transects/quadrats_with_cover.gpkg",
+    "lidar": "$DATA/external/emodnet_hr_lidar_sesimbra.tif",
+    "dtm": "$DATA/external/emodnet_dtm_sesimbra.tif",
+    "habitat_aoi": "inputs/habitat_aoi.geojson",
+    "processing_extent": "inputs/processing_extent.geojson",
+    "pneo": {
+      "july": {
+        "archive": "$DATA/pneo/WO_000598128_1_2_SAL26570282-2_ACQ_PNEO3_07337206462271.zip",
+        "ms_rgb": "000598128_1_2_STD_A/IMG_01_PNEO3_MS-FS/IMG_PNEO3_STD_202607081138158_MS-FS_ORT_PWOI_000598128_1_2_F_1_RGB_R1C1.JP2",
+        "acquired_utc": "2026-07-08T11:38:15.6Z",
+        "radiometric_processing": "REFLECTANCE",
+        "atmospheric_radiometric_setting": "RAYLEIGH"
+      },
+      "september": {
+        "archive": "$DATA/pneo/WO_000618890_1_2_SAL26589404-2_ACQ_PNEO3_07606107329314.zip",
+        "ms_rgb": "000618890_1_2_STD_A/IMG_01_PNEO3_MS-FS/IMG_PNEO3_STD_202609031134001_MS-FS_ORT_PWOI_000618890_1_2_F_1_RGB_R1C1.JP2",
+        "acquired_utc": "2026-09-03T11:33:59.9Z",
+        "radiometric_processing": "BASIC",
+        "atmospheric_radiometric_setting": "NONE"
+      }
+    }
+  },
+  "taxon_mapping": {
+    "target": "saccorhiza polyschides",
+    "absence": "EMPTY",
+    "note": "Only these two values occur. Any other value stops the inventory rather than silently counting as kelp."
+  },
+  "campaigns": {
+    "june": {
+      "month": 6,
+      "role": "sentinel2_supplementary",
+      "plausible_survey_dates": [
+        "2026-06-02"
+      ],
+      "strata": {
+        "workbook": {
+          "8": "shallow",
+          "15": "deep",
+          "16": "deep"
+        },
+        "transects": {
+          "8m": "shallow",
+          "15m": "deep",
+          "16m": "deep"
+        }
+      },
+      "pneo": null
+    },
+    "july": {
+      "month": 7,
+      "role": "development",
+      "plausible_survey_dates": [
+        "2026-07-07",
+        "2026-07-08"
+      ],
+      "strata": {
+        "workbook": {
+          "7": "shallow",
+          "16": "deep"
+        },
+        "transects": {
+          "7m": "shallow",
+          "17m": "deep"
+        }
+      },
+      "pneo": "july",
+      "survey_dates_by_stratum": {
+        "deep": "2026-07-07",
+        "shallow": "2026-07-08"
+      },
+      "dive_time_zone": "Europe/Lisbon, UTC+1 (WEST)"
+    },
+    "september": {
+      "month": 9,
+      "role": "evaluation",
+      "plausible_survey_dates": [
+        "2026-09-01",
+        "2026-09-02"
+      ],
+      "strata": {
+        "workbook": {
+          "6": "shallow",
+          "15": "deep"
+        },
+        "transects": {
+          "7m": "shallow",
+          "17m": "deep"
+        }
+      },
+      "pneo": "september",
+      "cover_scoring": "Visual estimate in the water during the transect dives, probably on 1 September. Photo quadrats were taken separately on 2 September."
+    }
+  },
+  "expected_events": 90,
+  "quadrat_order": {
+    "assumption": "Workbook quadrat n is GeoPackage Qn in survey order, Q1 at tape 20 m, as the timed July GeoPackage records.",
+    "status": "assumed_pending_ccmar"
+  },
+  "ccmar_confirmation": {
+    "status": "closed_unsent",
+    "query": "ccmar-query.md",
+    "confirmed_campaigns": [],
+    "responses": [
+      {
+        "received": "2026-09-23",
+        "channel": "informal, relayed by Andrei Rusu before the query was sent",
+        "question": "4. How were quadrat positions recorded?",
+        "answer": "GPS from a surface float dragged along by the divers, so positions can be slightly offset from the quadrats.",
+        "consequence": "Explains the depth-check flags as plausible position error. Join classes are unchanged: no corrected positions were supplied, and the flagged events stay provisional. Whether a GPS track or corrected positions exist remains open."
+      },
+      {
+        "received": "2026-09-23",
+        "channel": "informal, relayed by Andrei Rusu before the query was sent",
+        "question": "5. What quadrat size was used?",
+        "answer": "0.5 x 0.5 m.",
+        "consequence": "Each quadrat samples 0.25 m2: about 17% of a native 1.2 m PNeo pixel and 0.25% of a 10 m grid cell."
+      },
+      {
+        "received": "2026-09-23",
+        "channel": "informal, relayed by Andrei Rusu before the query was sent",
+        "question": "5. How was percentage cover estimated?",
+        "answer": "Visual estimate.",
+        "consequence": "Cover values are recorded in 5-point steps, with 1% used for trace cover. Reference cover therefore carries observer error and rounding that no model can remove, and September has no 1% values, so its eleven 5% values may be trace cover rounded up. No observer-error estimate was supplied."
+      },
+      {
+        "received": "2026-09-23",
+        "channel": "informal, relayed by Andrei Rusu before the query was sent",
+        "question": "5. When were the September sonde casts taken?",
+        "answer": "2 September 2026.",
+        "consequence": "The workbook value 46062 (9 February 2026) is a day-month swap of 2 September. Cast times remain open, so the casts stay excluded from acquisition matchups. The June sonde dates are not covered by this answer. The survey date itself (1 or 2 September) is not confirmed by it."
+      },
+      {
+        "received": "2026-09-23",
+        "channel": "first-hand, Andrei Rusu, present on both July dive days; not a CCMAR confirmation",
+        "question": "1. Which date is correct for each July transect and depth?",
+        "answer": "The dives were on 7 and 8 July. All three shallow transects were dived on 8 July, so the deep stratum was dived on 7 July.",
+        "consequence": "Rules out 6 July. Contradicts both dated sources, which put shallow T1-T2 on the earlier day and shallow T3 with the deep stratum on the later one; the eyewitness account is preferred but not a CCMAR confirmation. On the dive times of the timed GeoPackage, the shallow dives ran 12:32-13:51 UTC, 1-2 h after the 8 July PNeo acquisition at 11:38 UTC. Rechecked on 2026-09-23 with each stratum's own day, all 30 July events still pass the depth check. Plausible dates and join classes are unchanged pending an amendment."
+      },
+      {
+        "received": "2026-09-23",
+        "channel": "Andrei Rusu, present on 2 September only; the 1 September part is recollection, not first-hand",
+        "question": "1. Which date is correct for each September transect and depth?",
+        "answer": "Photo quadrats were taken on 2 September. The transects were probably surveyed on 1 September. Cover was scored visually in the water during the transect dives, as CCMAR always does, not from the photos.",
+        "consequence": "The workbook cover values date from the transect survey, probably 1 September as the GeoPackage records, not confirmed. The 2 September photos are an independent record from which cover could be re-scored. The plausible September dates are unchanged."
+      },
+      {
+        "received": "2026-09-24",
+        "channel": "first-hand, Andrei Rusu, from his own records of the July dives",
+        "question": "1. Are the July dive times local time?",
+        "answer": "Yes: local Lisbon time, UTC+1 (WEST).",
+        "consequence": "The 8 July shallow dives ran 12:32-13:51 UTC, 1 to 2.25 h after the PNeo acquisition at 11:38 UTC. The 7 July deep dives ran 12:37-13:28 UTC, the day before it."
+      }
+    ],
+    "closed_on": "2026-09-24",
+    "closed_reason": "No further answers are expected from CCMAR soon. The field details it asked about were answered first-hand by Andrei Rusu, who took part in the July dives and the 2 September survey; those answers are applied by the amendment field-details-first-hand. The remaining questions stay open in ccmar-query.md."
+  },
+  "water_levels": {
+    "path": "water-levels.csv",
+    "acquisition_path": "water-levels-acquisitions.csv",
+    "status": "modelled",
+    "source": {
+      "provider": "Copernicus Marine IBI analysis and forecast",
+      "dataset_id": "cmems_mod_ibi_phy_anfc_0.027deg-2D_PT1H-m",
+      "variable": "zos",
+      "cell": "nearest model water cell to the quadrats",
+      "datum_period": "2022-11-23/2026-09-29"
+    },
+    "datum": "LAT proxy: the lowest hourly sea level over the datum period. Levels are metres above it.",
+    "datum_uncertainty_m": 0.3,
+    "preferred_source": "Instituto Hidrografico predictions for Sesimbra, which replace these if obtained.",
+    "format": "CSV columns: campaign,date,min_m,max_m,source,station,datum (datum must be LAT)"
+  },
+  "depth_consistency": {
+    "tolerance_m": 3.0,
+    "tolerance_status": "proposed",
+    "label_source": "workbook",
+    "label_source_status": "proposed"
+  },
+  "amendments": [
+    {
+      "id": "glint-window-and-screen",
+      "approved_on": "2026-09-20",
+      "deviation_from": "sentinel2.window_days = 4, and processing every candidate in rank order.",
+      "changes": {
+        "sentinel2.window_days": 7,
+        "sentinel2.screen_glint_max": 0.02
+      },
+      "rationale": "Under the registered four-day window every Sentinel-2 candidate failed the approved checks on sun glint: both orbits covering Sesimbra view close to the specular direction in summer. Scenes are selected on image quality, never on cover-prediction error, so widening the window and pre-screening glint does not select for a result. June remains unavailable on any date.",
+      "evidence": "glint-screen.json",
+      "primary_result_retained": "The four-day outcome stays in the record: June, July and September Sentinel-2 all unavailable. Every result computed under this amendment is labelled with it.",
+      "screen_definition": "Median Sentinel-2 L2A reflectance at 1610 nm over the quadrat area plus 250 m. Calibrated against ACOLITE rhos at 1614 nm on four processed scenes, where ACOLITE reads 0.69 to 0.85 of the screen value, so the 0.02 screen limit sits safely above the 0.01 ACOLITE limit.",
+      "screened_out_handling": "Recorded with their screen value and never silently dropped. A screened-out candidate counts as a determined failure in the ranking, not as unprocessed.",
+      "unscreened_handling": "A candidate with no L2A product in the screen source cannot be screened, so it is processed in full rather than excluded. The screen only ever removes candidates it has measured."
+    },
+    {
+      "id": "modelled-water-levels",
+      "approved_on": "2026-09-20",
+      "deviation_from": "water_levels.required_source = Instituto Hidrografico tide predictions for Sesimbra.",
+      "changes": {
+        "water_levels.source": "Copernicus Marine IBI hourly sea level (zos)"
+      },
+      "rationale": "Instituto Hidrografico publishes tide tables through its shop and app, with no retrievable predictions for past dates. The Copernicus model is hourly, covers every survey and acquisition time, and is reproducible from the registration.",
+      "limits": [
+        "Chart datum is approximated by the model's 3.8-year lowest hourly level, so absolute level carries about 0.3 m of uncertainty. The 3 m depth-consistency tolerance absorbs it.",
+        "The model's largest daily range, 3.32 m, is slightly smaller than published spring ranges here, so extremes may be damped.",
+        "Modelled level includes meteorological surge, unlike an astronomical prediction.",
+        "The nearest model water cell is 2.5 km offshore of the quadrats."
+      ],
+      "replace_when": "Instituto Hidrografico predictions for these dates are obtained; the depth check and the corrected branch should then be rerun."
+    },
+    {
+      "id": "field-details-first-hand",
+      "approved_on": "2026-09-24",
+      "deviation_from": "Join classes and survey dates were to be settled only by CCMAR's answers to ccmar-query.md. july.plausible_survey_dates = ['2026-07-06', '2026-07-07', '2026-07-08'].",
+      "changes": {
+        "campaigns.july.plausible_survey_dates": [
+          "2026-07-07",
+          "2026-07-08"
+        ],
+        "campaigns.july.survey_dates_by_stratum": {
+          "deep": "2026-07-07",
+          "shallow": "2026-07-08"
+        },
+        "campaigns.july.dive_time_zone": "Europe/Lisbon, UTC+1 (WEST)",
+        "campaigns.september.cover_scoring": "visual, in the water, during the transect dives",
+        "ccmar_confirmation.status": "closed_unsent"
+      },
+      "rationale": "The query to CCMAR will not be answered soon. Andrei Rusu took part in the July dives and the 2 September survey, and answered the field questions from first-hand knowledge and his own records: July deep on 7 July and shallow on 8 July, dive times in local time, positions from a dragged surface float, 0.5 x 0.5 m quadrats, cover estimated visually in the water, and September sonde casts on 2 September. The answers are listed under ccmar_confirmation.responses.",
+      "limits": [
+        "These answers come from a participant, not from CCMAR. Join classes are unchanged: no event becomes confirmed, and the nine provisional events stay provisional.",
+        "The July dates by stratum contradict both dated CCMAR files, which put shallow transects 1-2 on the earlier day and shallow transect 3 with the deep transects on the later one. The participant's account is preferred.",
+        "The September transect date (1 September) is recollection, not first-hand, so September keeps both plausible dates.",
+        "Positions are float GPS and may be offset from the quadrats by 10-30 m, which the displacement scenarios should bound."
+      ],
+      "primary_result_retained": "The published results were produced under the original July dates (6-8 July) and are not rerun. Rechecked on 2026-09-24: all 30 July events pass the depth check with each stratum's own day, and July Sentinel-2 stays unavailable because narrowing the dates only removes candidates that already failed. No model uses survey dates, so no fitted parameter or metric changes."
+    }
+  ],
+  "sentinel2": {
+    "tile": "T29SMC",
+    "product_type": "S2MSI1C",
+    "window_days": 4,
+    "window_days_amended": 7,
+    "screen_glint_max": 0.02,
+    "ranking": [
+      "smallest maximum offset in days from the plausible survey dates",
+      "smallest time difference from the same campaign's PNeo acquisition",
+      "valid-water coverage over the habitat AOI (after processing)",
+      "acquisition identifier"
+    ],
+    "l1c_cache": ".cache/l1c"
+  },
+  "acolite": {
+    "path": "$ACOLITE",
+    "commit": "64a02ff386e2985eef68ae00198b38e04f3c4a1f",
+    "describe": "20260421.0-86-g64a02ff",
+    "python": "python",
+    "settings": {
+      "common": "acolite/common.txt",
+      "sentinel2": "acolite/sentinel2.txt",
+      "pleiades_neo": "acolite/pleiades_neo.txt"
+    },
+    "sentinel2_limit": "Bounds of sources.processing_extent, which contains the registered Sentinel-2 deep-water patches.",
+    "pleiades_neo_limit": "Bounds of the delivered multispectral product, padded by 0.005 degrees.",
+    "output_root": ".cache/acolite",
+    "pneo_extract_root": ".cache/pneo"
+  },
+  "scene_qc": {
+    "status": "approved",
+    "approved_on": "2026-09-19",
+    "note": "Approved and registered before any per-scene quality metric was computed.",
+    "valid_water_min_fraction": 0.8,
+    "quadrat_cell_min_fraction": 0.8,
+    "sentinel2_max_median_rhos_1614": 0.01,
+    "bands_nm": {
+      "sentinel2": {
+        "blue": 490,
+        "green": 560,
+        "red": 665,
+        "glint": 1614,
+        "nir": 835
+      },
+      "pleiades_neo": {
+        "blue": 490,
+        "green": 560,
+        "red": 655,
+        "nir": 825
+      }
+    },
+    "definitions": {
+      "completion": "ACOLITE wrote blue, green and red rhos.",
+      "water": "Habitat-AOI pixels with lidar or DTM depth, resampled by nearest neighbour to the scene grid. Scene-independent.",
+      "valid_water": "Water pixels with finite blue, green and red rhos, and rhot at ACOLITE's l2w_mask_wave not above l2w_mask_threshold, both read from the pinned ACOLITE sensor defaults.",
+      "quadrat_cells": "Distinct native pixels containing the campaign's quadrats; the fraction that is valid water.",
+      "glint": "Sentinel-2 only: median rhos at 1614 nm over water pixels with finite rhos, before the cloud mask.",
+      "nir_residual": "Median rhos at NIR over valid water and over quadrat cells. Reported, never a pass/fail criterion.",
+      "ranking": "Among passing Sentinel-2 scenes: sentinel2.ranking, with valid-water fraction as the third key. A group of tied scenes is decided only once every member is processed."
+    }
+  },
+  "pneo_reference_region": {
+    "path": "pneo_reference.geojson",
+    "rules": {
+      "min_dtm_depth_m": 50.0,
+      "min_distance_from_land_m": 1000.0,
+      "min_distance_from_habitat_m": 1000.0,
+      "min_inside_footprint_m": 100.0,
+      "working_resolution_m": 30.0
+    },
+    "provenance": "Geometry and depth rules only; reflectance inside the region not inspected before registration."
+  },
+  "known_prior_use": [
+    "2026-08-30: kelp_observe/tools/lee_demo/pneo_vs_c2.py correlated July PNeo brightness and red-edge NDVI with July cover (combined brightness r = -0.30, n = 30).",
+    "June-July Sentinel-2 per-quadrat diagnostics under kelp_observe/outputs/.",
+    "2026-09-19 plan review: summarised September cover values and stratum means; sampled PNeo reflectance at September quadrats by stratum; did not relate imagery to cover.",
+    "2026-09-19: no September field data or September PNeo order found in outputs or model artifacts of kelp_observe, sd-data-ingest, kelp-observe-classifier, kelpobserve-app or seaweed_watch."
+  ],
+  "common_grid": {
+    "crs": "EPSG:32629",
+    "pixel_m": 10,
+    "anchor": "Sentinel-2 tile T29SMC 10 m grid",
+    "clarification": "The plan anchors the common grid to the selected July Sentinel-2 scene. No July scene qualifies, so the tile grid is used instead. Every candidate scene shares that grid, so this changes no cell boundary.",
+    "min_valid_fraction": 0.8,
+    "aggregation": "Area-weighted average of PNeo pixels with fractional overlap; a cell below the valid fraction is missing, never partial."
+  },
+  "reference_qc": {
+    "status": "approved",
+    "approved_on": "2026-09-20",
+    "min_pixels": 1000,
+    "require_no_qa_flags": true,
+    "note": "Registered before the reference region's reflectance was inspected. A failure makes the corrected branch unavailable for that sensor and date."
+  },
+  "models": {
+    "status": "registered",
+    "registered_on": "2026-09-20",
+    "sensor": "pleiades_neo",
+    "scales": [
+      "common_grid_10m",
+      "native_pneo"
+    ],
+    "bands_nm": {
+      "blue": 490,
+      "green": 560,
+      "red": 655
+    },
+    "families": [
+      {
+        "id": "training_mean",
+        "kind": "mean",
+        "predictors": []
+      },
+      {
+        "id": "depth_ridge",
+        "kind": "ridge",
+        "predictors": [
+          "depth"
+        ]
+      },
+      {
+        "id": "spectral_ridge",
+        "kind": "ridge",
+        "predictors": [
+          "blue",
+          "green",
+          "red"
+        ]
+      },
+      {
+        "id": "spectral_depth_ridge",
+        "kind": "ridge",
+        "predictors": [
+          "blue",
+          "green",
+          "red",
+          "depth"
+        ]
+      },
+      {
+        "id": "spectral_depth_forest",
+        "kind": "forest",
+        "predictors": [
+          "blue",
+          "green",
+          "red",
+          "depth"
+        ]
+      }
+    ],
+    "ridge": {
+      "alpha": 1.0,
+      "standardize": "training data only"
+    },
+    "forest": {
+      "n_estimators": 300,
+      "max_depth": 3,
+      "min_samples_leaf": 5,
+      "random_state": 42
+    },
+    "depth_predictor": "Lidar depth above chart datum plus the acquisition water level.",
+    "native_footprint": "Mean of the 3 x 3 PNeo pixels (3.6 m) centred on the quadrat; every pixel must be finite.",
+    "corrected_variants": "Unavailable: the reference QC fails on both dates (see sesimbra-optics-readiness.md)."
+  },
+  "evaluation": {
+    "status": "registered",
+    "registered_on": "2026-09-20",
+    "development_campaign": "july",
+    "holdout_campaign": "september",
+    "cross_validation": "Leave-one-transect-out on July, holding both depth strata of a transect out together.",
+    "min_training_units": 8,
+    "min_training_units_per_stratum": 3,
+    "eligibility": "join class confirmed or reconciled_by_rule, and the depth check passed. Missing predictors or targets are reported, never imputed.",
+    "metrics": [
+      "mae_pp",
+      "rmse_pp",
+      "bias_pp",
+      "n",
+      "clipping_frequency",
+      "per_transect",
+      "paired_vs_depth_only"
+    ],
+    "bounded_predictions": "Report raw predictions and predictions clipped to 0-100, with how often clipping bites.",
+    "seed": 42,
+    "no_selection_on_holdout": "Every candidate is reported. September never selects a winner and never retunes a fit."
+  },
+  "selected_grid_scene": "s2-20260831-S2B-R037"
+}

@@ -1,0 +1,1714 @@
+{
+  "clean_background": 0.006500000134110451,
+  "base_threshold": 0.0215,
+  "scenes": {
+    "s2-20260602-S2B-R037": {
+      "scene": "s2-20260602-S2B-R037",
+      "campaign": "june",
+      "sensing_utc": "2026-06-02 11:30:43+00:00",
+      "background": {
+        "B": 0.037700001150369644,
+        "iqr": 0.005499999970197678,
+        "pixels": 18384
+      },
+      "threshold": 0.05270000101625919,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9847,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 1.0,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5144,
+        "A1_nir_median": 0.0036078960401937366,
+        "A2_glint_slope": 0.5075568347966514,
+        "A3_ratio": 0.17859216398292757,
+        "A4_green_mad": 0.0023642592132091522,
+        "A5_green_slope": 0.00037343162974156453,
+        "nir_slope": 6.669196285521738e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": -0.013480792753398418,
+            "spearman": 0.5781070528894228
+          },
+          "green": {
+            "median_difference": -0.010902798734605312,
+            "spearman": 0.46978495131993503
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3912,
+          "blue": {
+            "median_difference": 0.0009945807978510857,
+            "spearman": 0.5649346504306754
+          },
+          "green": {
+            "median_difference": -0.0018510166555643082,
+            "spearman": 0.5399725260323595
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": false,
+          "A3": true,
+          "A4": false,
+          "A5": false
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02755,
+          "kd_490": 0.3727,
+          "mean_rhos_nir": 0.00376,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.6356 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5266 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.4372 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.5999 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.4750 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 2.5344 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.8375 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02755)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02755,
+          "kd_490": 0.3727,
+          "mean_rhos_nir": 0.00376,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.6356 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5266 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.4372 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.5999 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.4750 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 2.5344 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.8375 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02755)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.00898,
+          "kd_490": 0.1238,
+          "mean_rhos_nir": 0.00376,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2145 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.1769 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1463 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.1999 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1579 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.8292 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.2735 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1568 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.00898,
+          "kd_490": 0.1238,
+          "mean_rhos_nir": 0.00376,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2145 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.1769 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1463 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.1999 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1579 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.8292 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.2735 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1568 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9847
+    },
+    "s2-20260530-S2A-R037": {
+      "scene": "s2-20260530-S2A-R037",
+      "campaign": "june",
+      "sensing_utc": "2026-05-30 11:31:03+00:00",
+      "background": {
+        "B": 0.03350000083446503,
+        "iqr": 0.0044999998062849045,
+        "pixels": 18384
+      },
+      "threshold": 0.048500000700354574,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9826,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 1.0,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5128,
+        "A1_nir_median": 0.004306312650442123,
+        "A2_glint_slope": 0.15503620068699636,
+        "A3_ratio": 0.08015158432163626,
+        "A4_green_mad": 0.002632938325405121,
+        "A5_green_slope": 0.0002647868396706883,
+        "nir_slope": 2.1223084707124754e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": -0.011538427323102951,
+            "spearman": 0.5324558404296998
+          },
+          "green": {
+            "median_difference": -0.007830359973013401,
+            "spearman": 0.37794787347473263
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3910,
+          "blue": {
+            "median_difference": 0.0028946110978722572,
+            "spearman": 0.5921431276297477
+          },
+          "green": {
+            "median_difference": 0.0012461519800126553,
+            "spearman": 0.48794391298630174
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": true,
+          "A3": true,
+          "A4": false,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02988,
+          "kd_490": 0.3917,
+          "mean_rhos_nir": 0.00454,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.4876 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.4870 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.4573 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.5407 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.4893 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 1.1600 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.9901 < 2004.6780)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02988)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02988,
+          "kd_490": 0.3917,
+          "mean_rhos_nir": 0.00454,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.4876 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.4870 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.4573 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.5407 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.4893 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 1.1600 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.9901 < 2004.6780)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02988)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00962,
+          "kd_490": 0.1276,
+          "mean_rhos_nir": 0.00454,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1621 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1613 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1508 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.1776 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1604 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 0.3746 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.3192 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1550 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00962,
+          "kd_490": 0.1276,
+          "mean_rhos_nir": 0.00454,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1621 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1613 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1508 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.1776 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1604 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 0.3746 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.3192 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1550 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9826
+    },
+    "s2-20260528-S2C-R037": {
+      "scene": "s2-20260528-S2C-R037",
+      "campaign": "june",
+      "sensing_utc": "2026-05-28 11:30:44+00:00",
+      "background": {
+        "B": 0.02319999970495701,
+        "iqr": 0.005899999290704727,
+        "pixels": 18384
+      },
+      "threshold": 0.038199999570846556,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9674,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 1.0,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 4898,
+        "A1_nir_median": 0.0033155549317598343,
+        "A2_glint_slope": 0.19047473536035764,
+        "A3_ratio": 0.22601832222503618,
+        "A4_green_mad": 0.0013393387198448181,
+        "A5_green_slope": 0.0002999570807615376,
+        "nir_slope": 6.77957961332424e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3710,
+          "blue": {
+            "median_difference": -0.008027950301766396,
+            "spearman": 0.38425047961462705
+          },
+          "green": {
+            "median_difference": -0.006661784835159779,
+            "spearman": 0.2501372367560666
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3736,
+          "blue": {
+            "median_difference": 0.006457130424678326,
+            "spearman": 0.2965538285440893
+          },
+          "green": {
+            "median_difference": 0.0024252282455563545,
+            "spearman": 0.24986692388480894
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": true,
+          "A3": false,
+          "A4": true,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 667.0,
+          "bbp_555": 0.02763,
+          "kd_490": 0.3521,
+          "mean_rhos_nir": 0.00441,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.5646 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.5665 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.6015 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.5338 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.6271 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.6066 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 30.7998 < 1946.7121)"
+            ],
+            "fatal": [
+              "red_reference_selected(667nm)",
+              "bbp_555_implausible(0.02763)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 667.0,
+          "bbp_555": 0.02763,
+          "kd_490": 0.3521,
+          "mean_rhos_nir": 0.00441,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.5646 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.5665 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.6015 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.5338 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.6271 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.6066 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 30.7998 < 1946.7121)"
+            ],
+            "fatal": [
+              "red_reference_selected(667nm)",
+              "bbp_555_implausible(0.02763)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 561.0,
+          "bbp_555": 0.0099,
+          "kd_490": 0.1274,
+          "mean_rhos_nir": 0.00441,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.2081 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.2081 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.2201 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.1946 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.2283 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.2179 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 11.0456 < 1946.7121)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(667nm: 0.1733 < 0.4303)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 561.0,
+          "bbp_555": 0.0099,
+          "kd_490": 0.1274,
+          "mean_rhos_nir": 0.00441,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.2081 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.2081 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.2201 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.1946 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.2283 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.2179 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 11.0456 < 1946.7121)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(667nm: 0.1733 < 0.4303)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9674
+    },
+    "s2-20260607-S2C-R037": {
+      "scene": "s2-20260607-S2C-R037",
+      "campaign": "june",
+      "sensing_utc": "2026-06-07 11:30:46+00:00",
+      "background": {
+        "B": 0.035100001841783524,
+        "iqr": 0.004399999976158142,
+        "pixels": 18384
+      },
+      "threshold": 0.05010000170767307,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9804,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 1.0,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5107,
+        "A1_nir_median": 0.002304613823071122,
+        "A2_glint_slope": 0.17667630842762946,
+        "A3_ratio": 0.17693867168259841,
+        "A4_green_mad": 0.002946294378489256,
+        "A5_green_slope": 0.00030448574109642463,
+        "nir_slope": 5.387530257589294e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": -0.014694287441670895,
+            "spearman": 0.2857320510242055
+          },
+          "green": {
+            "median_difference": -0.008730301167815924,
+            "spearman": 0.2801285530008049
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3909,
+          "blue": {
+            "median_difference": -0.00010643526911735535,
+            "spearman": 0.22873552428435018
+          },
+          "green": {
+            "median_difference": 0.0003864336758852005,
+            "spearman": 0.30305203587826374
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": true,
+          "A3": true,
+          "A4": false,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 667.0,
+          "bbp_555": 0.02936,
+          "kd_490": 0.4528,
+          "mean_rhos_nir": 0.00343,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.6391 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.5875 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.6239 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.7560 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.5722 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.4995 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 4.3431 < 1946.7121)"
+            ],
+            "fatal": [
+              "red_reference_selected(667nm)",
+              "bbp_555_implausible(0.02936)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 667.0,
+          "bbp_555": 0.02936,
+          "kd_490": 0.4528,
+          "mean_rhos_nir": 0.00343,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.6391 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.5875 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.6239 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.7560 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.5722 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.4995 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 4.3431 < 1946.7121)"
+            ],
+            "fatal": [
+              "red_reference_selected(667nm)",
+              "bbp_555_implausible(0.02936)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 561.0,
+          "bbp_555": 0.01035,
+          "kd_490": 0.1645,
+          "mean_rhos_nir": 0.00343,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.2314 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.2120 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.2243 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.2709 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.2047 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.1764 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 1.5320 < 1946.7121)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(667nm: 0.1764 < 0.4303)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 561.0,
+          "bbp_555": 0.01035,
+          "kd_490": 0.1645,
+          "mean_rhos_nir": 0.00343,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(707nm: 0.2314 < 0.7864)",
+              "a_below_pure_water_floor(741nm: 0.2120 < 2.4908)",
+              "a_below_pure_water_floor(785nm: 0.2243 < 2.1628)",
+              "a_below_pure_water_floor(835nm: 0.2709 < 3.3857)",
+              "a_below_pure_water_floor(866nm: 0.2047 < 5.1949)",
+              "a_below_pure_water_floor(1612nm: 0.1764 < 693.6322)",
+              "a_below_pure_water_floor(2191nm: 1.5320 < 1946.7121)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(667nm: 0.1764 < 0.4303)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9804
+    },
+    "s2-20260609-S2A-R037": {
+      "scene": "s2-20260609-S2A-R037",
+      "campaign": "june",
+      "sensing_utc": "2026-06-09 11:31:02+00:00",
+      "background": {
+        "B": 0.03139999881386757,
+        "iqr": 0.007699999958276749,
+        "pixels": 18384
+      },
+      "threshold": 0.046399998679757117,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9803,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 1.0,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5105,
+        "A1_nir_median": 0.0031998513732105494,
+        "A2_glint_slope": 0.19715760920579017,
+        "A3_ratio": 0.3706498729476229,
+        "A4_green_mad": 0.0025584730319678783,
+        "A5_green_slope": 0.00035042600858735965,
+        "nir_slope": 0.00012988535556044748
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": -0.01925600692629814,
+            "spearman": 0.2856988938344942
+          },
+          "green": {
+            "median_difference": -0.011883213184773922,
+            "spearman": 0.2422136772486843
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3904,
+          "blue": {
+            "median_difference": -0.0047481912188231945,
+            "spearman": 0.23849822776143265
+          },
+          "green": {
+            "median_difference": -0.0027848337776958942,
+            "spearman": 0.27123748477601317
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": true,
+          "A3": false,
+          "A4": false,
+          "A5": false
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02881,
+          "kd_490": 0.4446,
+          "mean_rhos_nir": 0.00409,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.4737 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.5266 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.5291 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.6155 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.6054 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 1.6164 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.8218 < 2004.6780)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02881)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02881,
+          "kd_490": 0.4446,
+          "mean_rhos_nir": 0.00409,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.4737 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.5266 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.5291 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.6155 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.6054 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 1.6164 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.8218 < 2004.6780)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02881)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.01091,
+          "kd_490": 0.1727,
+          "mean_rhos_nir": 0.00409,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1839 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.2037 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.2040 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2366 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.2323 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 0.6131 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.3113 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1853 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.01091,
+          "kd_490": 0.1727,
+          "mean_rhos_nir": 0.00409,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1839 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.2037 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.2040 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2366 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.2323 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 0.6131 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.3113 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1853 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9803
+    },
+    "s2-20260709-S2A-R037": {
+      "scene": "s2-20260709-S2A-R037",
+      "campaign": "july",
+      "sensing_utc": "2026-07-09 11:31:02+00:00",
+      "background": {
+        "B": 0.03959999978542328,
+        "iqr": 0.0027000010013580322,
+        "pixels": 18384
+      },
+      "threshold": 0.054599999651312826,
+      "within_cap": true,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.9852,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 17,
+        "quadrat_cell_fraction": 0.9444,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5142,
+        "A1_nir_median": 0.0018885976169258356,
+        "A2_glint_slope": -0.14452865308979823,
+        "A3_ratio": 0.3863916865680781,
+        "A4_green_mad": 0.0013607339933514595,
+        "A5_green_slope": 0.00022385997652464833,
+        "nir_slope": -8.649763388444924e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": -0.022151443175971508,
+            "spearman": 0.522206978060524
+          },
+          "green": {
+            "median_difference": -0.014954770915210247,
+            "spearman": 0.3893707159062218
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3912,
+          "blue": {
+            "median_difference": -0.007628308143466711,
+            "spearman": 0.5673797296620576
+          },
+          "green": {
+            "median_difference": -0.005860632751137018,
+            "spearman": 0.48892375792867404
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": true,
+          "A3": false,
+          "A4": true,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00637,
+          "kd_490": 0.1209,
+          "mean_rhos_nir": 0.00214,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2092 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1738 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1504 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2520 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1684 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 23.3815 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.0700 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1709 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00637,
+          "kd_490": 0.1209,
+          "mean_rhos_nir": 0.00214,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2092 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1738 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1504 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2520 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1684 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 23.3815 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.0700 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1709 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00637,
+          "kd_490": 0.1209,
+          "mean_rhos_nir": 0.00214,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2092 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1738 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1504 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2520 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1684 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 23.3815 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.0700 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1709 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 560.0,
+          "bbp_555": 0.00637,
+          "kd_490": 0.1209,
+          "mean_rhos_nir": 0.00214,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2092 < 0.7168)",
+              "a_below_pure_water_floor(740nm: 0.1738 < 2.4773)",
+              "a_below_pure_water_floor(783nm: 0.1504 < 2.2059)",
+              "a_below_pure_water_floor(833nm: 0.2520 < 3.2676)",
+              "a_below_pure_water_floor(865nm: 0.1684 < 5.1524)",
+              "a_below_pure_water_floor(1614nm: 23.3815 < 691.0038)",
+              "a_below_pure_water_floor(2202nm: 0.0700 < 2004.6780)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1709 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9852
+    },
+    "s2-20260702-S2B-R037": {
+      "scene": "s2-20260702-S2B-R037",
+      "campaign": "july",
+      "sensing_utc": "2026-07-02 11:30:44+00:00",
+      "background": {
+        "B": 0.006500000134110451,
+        "iqr": 0.0024999999441206455,
+        "pixels": 18384
+      },
+      "threshold": 0.0215,
+      "within_cap": true,
+      "glinted": false,
+      "checks": {
+        "valid_water_fraction": 0.9707,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 14,
+        "quadrat_cell_fraction": 0.7778,
+        "passed": false
+      },
+      "measures": {
+        "region_pixels": 2811,
+        "habitat_pixels_5_25m": 4976,
+        "A1_nir_median": 0.00821349211037159,
+        "A2_glint_slope": -0.08372125058965052,
+        "A3_ratio": 0.16508946450882464,
+        "A4_green_mad": 0.0011814255267381668,
+        "A5_green_slope": 0.00014143148739375697,
+        "nir_slope": -2.334884851852192e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3816,
+          "blue": {
+            "median_difference": 0.0,
+            "spearman": 1.0
+          },
+          "green": {
+            "median_difference": 0.0,
+            "spearman": 1.0
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3809,
+          "blue": {
+            "median_difference": 0.014474978670477867,
+            "spearman": 0.6178325469442024
+          },
+          "green": {
+            "median_difference": 0.009016004391014576,
+            "spearman": 0.5453716923438847
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": "not applicable",
+          "A3": true,
+          "A4": true,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": true
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.05529,
+          "kd_490": 0.5911,
+          "mean_rhos_nir": 0.00844,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5251 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5118 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.5012 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.5474 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.5865 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 2.3528 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 7.8318 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.05529)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2815,
+          "reference_nm": 665.0,
+          "bbp_555": 0.05512,
+          "kd_490": 0.589,
+          "mean_rhos_nir": 0.00845,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5256 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5123 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.5009 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.5449 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.5867 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 2.4764 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 7.6611 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.05512)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.01626,
+          "kd_490": 0.1682,
+          "mean_rhos_nir": 0.00844,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1575 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.1532 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1496 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.1630 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1744 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.6933 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 2.3053 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1436 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2815,
+          "reference_nm": 559.0,
+          "bbp_555": 0.01622,
+          "kd_490": 0.1676,
+          "mean_rhos_nir": 0.00845,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.1578 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.1534 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1496 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.1623 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1746 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.7300 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 2.2559 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1436 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9707
+    },
+    "s2-20260831-S2B-R037": {
+      "scene": "s2-20260831-S2B-R037",
+      "campaign": "september",
+      "sensing_utc": "2026-08-31 11:30:44+00:00",
+      "background": {
+        "B": 0.006500000134110451,
+        "iqr": 0.0017999997362494469,
+        "pixels": 18384
+      },
+      "threshold": 0.0215,
+      "within_cap": true,
+      "glinted": false,
+      "checks": {
+        "valid_water_fraction": 0.9777,
+        "quadrat_cells": 17,
+        "valid_quadrat_cells": 14,
+        "quadrat_cell_fraction": 0.8235,
+        "passed": true
+      },
+      "measures": {
+        "region_pixels": 2868,
+        "habitat_pixels_5_25m": 5072,
+        "A1_nir_median": 0.0030031822388991714,
+        "A2_glint_slope": 0.41893156852042895,
+        "A3_ratio": 0.21243414237391622,
+        "A4_green_mad": 0.00112815760076046,
+        "A5_green_slope": 0.0001900486867206432,
+        "nir_slope": 4.037282977278892e-05
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 3809,
+          "blue": {
+            "median_difference": -0.014474978670477867,
+            "spearman": 0.6178325469442024
+          },
+          "green": {
+            "median_difference": -0.009016004391014576,
+            "spearman": 0.5453716923438848
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 3912,
+          "blue": {
+            "median_difference": 0.0,
+            "spearman": 0.9999999999999998
+          },
+          "green": {
+            "median_difference": 0.0,
+            "spearman": 0.9999999999999998
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": true,
+          "A2": "not applicable",
+          "A3": true,
+          "A4": true,
+          "A5": true
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": true
+      },
+      "usable": true,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02379,
+          "kd_490": 0.3635,
+          "mean_rhos_nir": 0.00307,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5304 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5648 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.5763 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.6664 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.7463 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 15.7002 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.7686 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02379)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.02379,
+          "kd_490": 0.3635,
+          "mean_rhos_nir": 0.00307,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5304 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.5648 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.5763 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.6664 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.7463 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 15.7002 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.7686 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.02379)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.00926,
+          "kd_490": 0.1456,
+          "mean_rhos_nir": 0.00307,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2125 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.2254 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.2292 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.2640 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.2952 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 6.1254 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.2994 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1867 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        },
+        "forced560_masked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.00926,
+          "kd_490": 0.1456,
+          "mean_rhos_nir": 0.00307,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2125 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.2254 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.2292 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.2640 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.2952 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 6.1254 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.2994 < 2057.2914)"
+            ],
+            "fatal": [
+              "a_below_pure_water_floor(665nm: 0.1867 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": true
+        }
+      },
+      "valid_water_fraction": 0.9777
+    },
+    "s2-20260705-S2B-R080": {
+      "scene": "s2-20260705-S2B-R080",
+      "campaign": "july",
+      "sensing_utc": "2026-07-05 11:40:40+00:00",
+      "background": {
+        "B": 0.10649999976158142,
+        "iqr": 0.022100001573562622,
+        "pixels": 18384
+      },
+      "threshold": 0.12149999962747096,
+      "within_cap": false,
+      "glinted": true,
+      "checks": {
+        "valid_water_fraction": 0.7321,
+        "quadrat_cells": 18,
+        "valid_quadrat_cells": 0,
+        "quadrat_cell_fraction": 0.0,
+        "passed": false
+      },
+      "measures": {
+        "region_pixels": 1892,
+        "habitat_pixels_5_25m": 1304,
+        "A1_nir_median": 0.08465753123164177,
+        "A2_glint_slope": 0.5872463038294867,
+        "A3_ratio": 1.4745484466564196,
+        "A4_green_mad": 0.005972318351268768,
+        "A5_green_slope": -0.0007147169053461652,
+        "nir_slope": -0.0010538847025772713
+      },
+      "cross_date": {
+        "s2-20260702-S2B-R037": {
+          "pixels": 892,
+          "blue": {
+            "median_difference": 0.07299228943884373,
+            "spearman": -0.14104101997483004
+          },
+          "green": {
+            "median_difference": 0.08878079801797867,
+            "spearman": -0.10570764717867999
+          }
+        },
+        "s2-20260831-S2B-R037": {
+          "pixels": 892,
+          "blue": {
+            "median_difference": 0.08776563871651888,
+            "spearman": -0.18010559025628903
+          },
+          "green": {
+            "median_difference": 0.0976618742570281,
+            "spearman": -0.18750723627635843
+          }
+        }
+      },
+      "acceptability": {
+        "checks": {
+          "A1": false,
+          "A2": false,
+          "A3": false,
+          "A4": false,
+          "A5": false
+        },
+        "limits": {
+          "A1_max": 0.01021349211037159,
+          "A2_max_abs": 0.2,
+          "A3_max": 0.21243414237391622,
+          "A4_max": 0.0023628510534763336,
+          "A5_band": [
+            8.287004352860005e-05,
+            0.0003314801741144002
+          ]
+        },
+        "accepted": false
+      },
+      "usable": false,
+      "qaa": {
+        "auto_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 665.0,
+          "bbp_555": 0.55782,
+          "kd_490": 3.63,
+          "mean_rhos_nir": 0.10662,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5585 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.4939 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.4405 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.4997 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.3822 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.2418 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.1914 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.55782)",
+              "kd_490_out_of_range(3.630)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "auto_masked": {
+          "pixels": 1896,
+          "reference_nm": 665.0,
+          "bbp_555": 0.45487,
+          "kd_490": 3.0772,
+          "mean_rhos_nir": 0.09009,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.5413 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.4779 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.4282 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.4824 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.3736 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.2393 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.1855 < 2057.2914)"
+            ],
+            "fatal": [
+              "red_reference_selected(665nm)",
+              "bbp_555_implausible(0.45487)",
+              "kd_490_out_of_range(3.077)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_unmasked": {
+          "pixels": 2868,
+          "reference_nm": 559.0,
+          "bbp_555": 0.23429,
+          "kd_490": 1.5188,
+          "mean_rhos_nir": 0.10662,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2348 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.2076 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1852 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.2100 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1606 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.1016 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.0804 < 2057.2914)"
+            ],
+            "fatal": [
+              "bbp_555_implausible(0.23429)",
+              "a_below_pure_water_floor(665nm: 0.2513 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        },
+        "forced560_masked": {
+          "pixels": 1896,
+          "reference_nm": 559.0,
+          "bbp_555": 0.18557,
+          "kd_490": 1.2477,
+          "mean_rhos_nir": 0.09009,
+          "flags": {
+            "informational": [
+              "a_cdm_443_not_computable(no_411nm_band)"
+            ],
+            "band_limited": [
+              "a_below_pure_water_floor(704nm: 0.2211 < 0.7168)",
+              "a_below_pure_water_floor(739nm: 0.1952 < 2.4331)",
+              "a_below_pure_water_floor(780nm: 0.1749 < 2.2706)",
+              "a_below_pure_water_floor(833nm: 0.1970 < 3.2676)",
+              "a_below_pure_water_floor(864nm: 0.1525 < 5.1100)",
+              "a_below_pure_water_floor(1610nm: 0.0977 < 696.2606)",
+              "a_below_pure_water_floor(2186nm: 0.0757 < 2057.2914)"
+            ],
+            "fatal": [
+              "bbp_555_implausible(0.18557)",
+              "a_below_pure_water_floor(665nm: 0.2385 < 0.4245)"
+            ]
+          },
+          "available": false,
+          "v1_rule_available": false,
+          "e2c_c1": false
+        }
+      },
+      "valid_water_fraction": 0.7321
+    }
+  },
+  "selection": {
+    "june": {
+      "selected": null,
+      "usable_in_rank_order": [],
+      "radiometrically_accepted": []
+    },
+    "july": {
+      "selected": null,
+      "usable_in_rank_order": [],
+      "radiometrically_accepted": [
+        "s2-20260702-S2B-R037"
+      ]
+    }
+  }
+}

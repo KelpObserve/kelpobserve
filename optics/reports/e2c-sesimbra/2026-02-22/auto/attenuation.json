@@ -1,0 +1,3163 @@
+{
+  "schema_version": "2.0",
+  "oceanstream:product": "attenuation",
+  "oceanstream:title": "Empirical two-way attenuation k(lambda)",
+  "oceanstream:status": "diagnostic_only",
+  "oceanstream:caveat": null,
+  "oceanstream:provenance": {
+    "campaign_id": "e2c-sesimbra",
+    "aoi": "sesimbra",
+    "sensor": "sentinel2",
+    "acquisition_date": "2026-02-22",
+    "solar_zenith_deg": 51.9865319225185,
+    "solar_zenith_source": "acolite_metadata"
+  },
+  "oceanstream:qc_passed": false,
+  "oceanstream:qc": {
+    "passed": false,
+    "flags": [
+      "dive_reef:attenuation_model_uncertainty_missing",
+      "dive_reef:k_below_pure_water_floor",
+      "dive_reef:no_fit",
+      "dive_reef:quantile_unstable",
+      "dive_reef:reference_independence_unverified",
+      "dive_reef:reference_uncertainty_assumed",
+      "dive_reef:scene_depth_gradient",
+      "dive_reef:tide_correction_missing"
+    ],
+    "summary": "dive_reef:attenuation_model_uncertainty_missing; dive_reef:k_below_pure_water_floor; dive_reef:no_fit; dive_reef:quantile_unstable; dive_reef:reference_independence_unverified; dive_reef:reference_uncertainty_assumed; dive_reef:scene_depth_gradient; dive_reef:tide_correction_missing",
+    "evidence": {
+      "products": {
+        "dive_reef": {
+          "passed": false,
+          "flags": [
+            "attenuation_model_uncertainty_missing",
+            "k_below_pure_water_floor",
+            "no_fit",
+            "quantile_unstable",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "scene_depth_gradient",
+            "tide_correction_missing"
+          ],
+          "summary": "attenuation_model_uncertainty_missing; k_below_pure_water_floor; no_fit; quantile_unstable; reference_independence_unverified; reference_uncertainty_assumed; scene_depth_gradient; tide_correction_missing",
+          "evidence": {
+            "floors": {
+              "passed": false,
+              "summary": "1 band(s) below the pure-water floor (worst 559 nm at 0.49x). 5 band(s) carry no floor claim: 704, 739, 780, 833, 864. Unreliable fits: 442 nm (scene_depth_gradient); 492 nm (scene_depth_gradient); 559 nm (quantile_unstable, scene_depth_gradient); 665 nm (no_fit, scene_depth_gradient).",
+              "flags": [
+                "k_below_pure_water_floor",
+                "no_fit",
+                "quantile_unstable",
+                "scene_depth_gradient"
+              ],
+              "fit_failures": {
+                "442": [
+                  "scene_depth_gradient"
+                ],
+                "492": [
+                  "scene_depth_gradient"
+                ],
+                "559": [
+                  "quantile_unstable",
+                  "scene_depth_gradient"
+                ],
+                "665": [
+                  "no_fit",
+                  "scene_depth_gradient"
+                ]
+              },
+              "checks": {
+                "pure_water_floor": {
+                  "passed": false,
+                  "solar_zenith_deg": 51.9865319225185,
+                  "n_bands": 4,
+                  "n_violations": 1,
+                  "violating_bands_nm": [
+                    559.0
+                  ],
+                  "worst_band_nm": 559.0,
+                  "worst_ratio": 0.49441774702383745,
+                  "bands": {
+                    "442": {
+                      "wavelength_nm": 442.0,
+                      "k_per_m": 0.14495123849882124,
+                      "floor_per_m": 0.02685818223946018,
+                      "ratio": 5.396911719731284,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    },
+                    "492": {
+                      "wavelength_nm": 492.0,
+                      "k_per_m": 0.11047965746659515,
+                      "floor_per_m": 0.04411552011264882,
+                      "ratio": 2.504326304767251,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    },
+                    "559": {
+                      "wavelength_nm": 559.0,
+                      "k_per_m": 0.07129407212847758,
+                      "floor_per_m": 0.14419804417951093,
+                      "ratio": 0.49441774702383745,
+                      "violated": true,
+                      "shortfall_per_m": 0.07290397205103336
+                    },
+                    "665": {
+                      "wavelength_nm": 665.0,
+                      "k_per_m": null,
+                      "floor_per_m": 0.9684318818590322,
+                      "ratio": null,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    }
+                  },
+                  "skipped_bands": {
+                    "704": "no tabulated pure-water absorption above 700 nm",
+                    "739": "no tabulated pure-water absorption above 700 nm",
+                    "780": "no tabulated pure-water absorption above 700 nm",
+                    "833": "no tabulated pure-water absorption above 700 nm",
+                    "864": "no tabulated pure-water absorption above 700 nm"
+                  },
+                  "flags": [
+                    "k_below_pure_water_floor"
+                  ]
+                },
+                "lyzenga_ratio": {
+                  "passed": true,
+                  "solar_zenith_deg": 51.9865319225185,
+                  "n_pairs": 1,
+                  "below_pure_water_pairs": [],
+                  "near_unity_pairs": [],
+                  "pairs": {
+                    "442/559": {
+                      "wavelengths_nm": [
+                        442.0,
+                        559.0
+                      ],
+                      "observed": 2.0331457324755924,
+                      "expected_pure_water": 0.18625899118315817,
+                      "ratio_to_expected": 10.9156917449225,
+                      "below_pure_water": false,
+                      "near_unity": false
+                    }
+                  },
+                  "flags": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "oceanstream:generated": "2026-09-24T14:40:45.365480+00:00",
+  "attenuation": {
+    "regions": {
+      "dive_reef": {
+        "bands": {
+          "442.0": {
+            "wavelength_nm": 442.0,
+            "k_per_m": 0.14495123849882124,
+            "intercept": -2.178199410716415,
+            "r_squared": 0.909726766254318,
+            "n_bins": 12,
+            "n_pixels": 3137,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.02296900749206543,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.13028,
+              "0.80": 0.13479,
+              "0.85": 0.14436,
+              "0.90": 0.14495,
+              "0.95": 0.14179
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.01443929349349438,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.7208333015441895
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -3.4114272594451904
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.7775473594665527
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.802576780319214
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -3.808946371078491
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -3.9780242443084717
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.125021457672119
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.325462341308594
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.792875289916992
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -4.882772922515869
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -4.904200553894043
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -4.960513114929199
+              }
+            ],
+            "assessable": true
+          },
+          "492.0": {
+            "wavelength_nm": 492.0,
+            "k_per_m": 0.11047965746659515,
+            "intercept": -2.9506799731499105,
+            "r_squared": 0.9097069756622762,
+            "n_bins": 12,
+            "n_pixels": 3136,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.02322249673306942,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.08885,
+              "0.80": 0.09784,
+              "0.85": 0.1049,
+              "0.90": 0.11048,
+              "0.95": 0.10782
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.01100673870233902,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.809358835220337
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -4.218325614929199
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -4.017553329467773
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -4.104028701782227
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.327142238616943
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.5988593101501465
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.366484642028809
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.646978378295898
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.884406089782715
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 438,
+                "n_censored": 1,
+                "log_quantile": -5.0071940422058105
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -4.981983184814453
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.006427764892578
+              }
+            ],
+            "assessable": true
+          },
+          "559.0": {
+            "wavelength_nm": 559.0,
+            "k_per_m": 0.07129407212847758,
+            "intercept": -3.2200973587376747,
+            "r_squared": 0.8419913081137619,
+            "n_bins": 8,
+            "n_pixels": 1312,
+            "depth_range_m": [
+              1.0,
+              15.655832277933346
+            ],
+            "deep_water_reference": 0.020967481657862663,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.09377,
+              "0.80": 0.09992,
+              "0.85": 0.10252,
+              "0.90": 0.07129,
+              "0.95": 0.03502
+            },
+            "trust_failures": [
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.014390723809390365,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.774625539779663
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -4.013765811920166
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.925224542617798
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.971325635910034
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.106950283050537
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.297663688659668
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.190606117248535
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.435272693634033
+              }
+            ],
+            "assessable": true
+          },
+          "665.0": {
+            "wavelength_nm": 665.0,
+            "k_per_m": null,
+            "intercept": null,
+            "r_squared": null,
+            "n_bins": 0,
+            "n_pixels": 0,
+            "depth_range_m": [
+              1.0,
+              1.9241725824394924
+            ],
+            "deep_water_reference": 0.007636455353349447,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {},
+            "trust_failures": [
+              "no_fit",
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": null,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              }
+            ],
+            "assessable": true
+          },
+          "704.0": {
+            "wavelength_nm": 704.0,
+            "k_per_m": 0.1781714946239979,
+            "intercept": -2.0782054004135686,
+            "r_squared": 0.971008971479767,
+            "n_bins": 12,
+            "n_pixels": 3136,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.006145158316940069,
+            "frac_nonpositive_residual": 0.0002070822116380203,
+            "k_by_quantile": {
+              "0.75": 0.15663,
+              "0.80": 0.16276,
+              "0.85": 0.16664,
+              "0.90": 0.17817,
+              "0.95": 0.17807
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.009735503416023465,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.606126070022583
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 55,
+                "n_censored": 1,
+                "log_quantile": -3.9172914028167725
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.9888269901275635
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.98258900642395
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.214376926422119
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.445232391357422
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.497119903564453
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.907035827636719
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -5.107264518737793
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -5.385955333709717
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -5.333558082580566
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.485899448394775
+              }
+            ],
+            "assessable": false
+          },
+          "739.0": {
+            "wavelength_nm": 739.0,
+            "k_per_m": 0.1664977515494075,
+            "intercept": -2.1598960134810765,
+            "r_squared": 0.9719851398902846,
+            "n_bins": 12,
+            "n_pixels": 3137,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.004478431306779385,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.153,
+              "0.80": 0.15769,
+              "0.85": 0.1651,
+              "0.90": 0.1665,
+              "0.95": 0.16511
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.00893866763838608,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.6765639781951904
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -3.867123603820801
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.8995981216430664
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.9861741065979004
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.121901512145996
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.337698936462402
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.372316360473633
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.8010478019714355
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.966952800750732
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -5.173495292663574
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -5.295538902282715
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.391963005065918
+              }
+            ],
+            "assessable": false
+          },
+          "780.0": {
+            "wavelength_nm": 780.0,
+            "k_per_m": 0.16548918343924154,
+            "intercept": -2.0754320104639015,
+            "r_squared": 0.9788605846116937,
+            "n_bins": 12,
+            "n_pixels": 3137,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.004216478206217289,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.14206,
+              "0.80": 0.15363,
+              "0.85": 0.15993,
+              "0.90": 0.16549,
+              "0.95": 0.16019
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.007690519518960004,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.499035120010376
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -3.7727556228637695
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.7989838123321533
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.9232664108276367
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.010110378265381
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.27862548828125
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.350359916687012
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.75572395324707
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.897035598754883
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -5.05064058303833
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -5.12202787399292
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.248802185058594
+              }
+            ],
+            "assessable": false
+          },
+          "833.0": {
+            "wavelength_nm": 833.0,
+            "k_per_m": 0.14231732758608742,
+            "intercept": -2.5238629994970383,
+            "r_squared": 0.9562622500192408,
+            "n_bins": 12,
+            "n_pixels": 3137,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.0035372450947761536,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.12166,
+              "0.80": 0.12858,
+              "0.85": 0.13593,
+              "0.90": 0.14232,
+              "0.95": 0.12964
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.009624928080532813,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.7879252433776855
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -4.074129104614258
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.878092050552368
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -4.063019752502441
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.196730613708496
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.541598796844482
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.434669494628906
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.71562385559082
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.948380470275879
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -5.102781295776367
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -5.196081638336182
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.256634712219238
+              }
+            ],
+            "assessable": false
+          },
+          "864.0": {
+            "wavelength_nm": 864.0,
+            "k_per_m": 0.16533448729481742,
+            "intercept": -2.061168471277455,
+            "r_squared": 0.9808945837612638,
+            "n_bins": 12,
+            "n_pixels": 3137,
+            "depth_range_m": [
+              1.0,
+              20.0
+            ],
+            "deep_water_reference": 0.0024285251274704933,
+            "frac_nonpositive_residual": 0.0,
+            "k_by_quantile": {
+              "0.75": 0.14447,
+              "0.80": 0.14971,
+              "0.85": 0.15545,
+              "0.90": 0.16533,
+              "0.95": 0.16252
+            },
+            "trust_failures": [
+              "scene_depth_gradient"
+            ],
+            "solar_zenith_deg": 51.9865319225185,
+            "k_standard_error": 0.007296767975236479,
+            "bin_support": [
+              {
+                "depth_m": 1.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 2.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 3.5,
+                "n_total": 0,
+                "n_used": 0,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 4.5,
+                "n_total": 2,
+                "n_used": 2,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 5.5,
+                "n_total": 4,
+                "n_used": 4,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 6.5,
+                "n_total": 7,
+                "n_used": 7,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 7.5,
+                "n_total": 19,
+                "n_used": 19,
+                "n_censored": 0,
+                "log_quantile": null
+              },
+              {
+                "depth_m": 8.5,
+                "n_total": 28,
+                "n_used": 28,
+                "n_censored": 0,
+                "log_quantile": -3.389414072036743
+              },
+              {
+                "depth_m": 9.5,
+                "n_total": 56,
+                "n_used": 56,
+                "n_censored": 0,
+                "log_quantile": -3.8107361793518066
+              },
+              {
+                "depth_m": 10.5,
+                "n_total": 92,
+                "n_used": 92,
+                "n_censored": 0,
+                "log_quantile": -3.8392910957336426
+              },
+              {
+                "depth_m": 11.5,
+                "n_total": 174,
+                "n_used": 174,
+                "n_censored": 0,
+                "log_quantile": -3.900968074798584
+              },
+              {
+                "depth_m": 12.5,
+                "n_total": 205,
+                "n_used": 205,
+                "n_censored": 0,
+                "log_quantile": -4.03706169128418
+              },
+              {
+                "depth_m": 13.5,
+                "n_total": 223,
+                "n_used": 223,
+                "n_censored": 0,
+                "log_quantile": -4.2443718910217285
+              },
+              {
+                "depth_m": 14.5,
+                "n_total": 291,
+                "n_used": 291,
+                "n_censored": 0,
+                "log_quantile": -4.378172397613525
+              },
+              {
+                "depth_m": 15.5,
+                "n_total": 361,
+                "n_used": 361,
+                "n_censored": 0,
+                "log_quantile": -4.654068946838379
+              },
+              {
+                "depth_m": 16.5,
+                "n_total": 432,
+                "n_used": 432,
+                "n_censored": 0,
+                "log_quantile": -4.857741832733154
+              },
+              {
+                "depth_m": 17.5,
+                "n_total": 439,
+                "n_used": 439,
+                "n_censored": 0,
+                "log_quantile": -5.035172939300537
+              },
+              {
+                "depth_m": 18.5,
+                "n_total": 425,
+                "n_used": 425,
+                "n_censored": 0,
+                "log_quantile": -5.134700298309326
+              },
+              {
+                "depth_m": 19.5,
+                "n_total": 379,
+                "n_used": 379,
+                "n_censored": 0,
+                "log_quantile": -5.228516101837158
+              }
+            ],
+            "assessable": false
+          }
+        },
+        "k_by_band": {
+          "442.0": 0.14495123849882124,
+          "492.0": 0.11047965746659515,
+          "559.0": 0.07129407212847758,
+          "665.0": null,
+          "704.0": 0.1781714946239979,
+          "739.0": 0.1664977515494075,
+          "780.0": 0.16548918343924154,
+          "833.0": 0.14231732758608742,
+          "864.0": 0.16533448729481742
+        },
+        "lyzenga_ratios": {
+          "442/492": 1.312,
+          "442/559": 2.0331,
+          "442/704": 0.8135,
+          "442/739": 0.8706,
+          "442/780": 0.8759,
+          "442/833": 1.0185,
+          "442/864": 0.8767,
+          "492/559": 1.5496,
+          "492/704": 0.6201,
+          "492/739": 0.6636,
+          "492/780": 0.6676,
+          "492/833": 0.7763,
+          "492/864": 0.6682,
+          "559/704": 0.4001,
+          "559/739": 0.4282,
+          "559/780": 0.4308,
+          "559/833": 0.501,
+          "559/864": 0.4312,
+          "704/739": 1.0701,
+          "704/780": 1.0766,
+          "704/833": 1.2519,
+          "704/864": 1.0776,
+          "739/780": 1.0061,
+          "739/833": 1.1699,
+          "739/864": 1.007,
+          "780/833": 1.1628,
+          "780/864": 1.0009,
+          "833/864": 0.8608
+        },
+        "verdict": {
+          "passed": false,
+          "flags": [
+            "attenuation_model_uncertainty_missing",
+            "k_below_pure_water_floor",
+            "no_fit",
+            "quantile_unstable",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "scene_depth_gradient",
+            "tide_correction_missing"
+          ],
+          "summary": "attenuation_model_uncertainty_missing; k_below_pure_water_floor; no_fit; quantile_unstable; reference_independence_unverified; reference_uncertainty_assumed; scene_depth_gradient; tide_correction_missing",
+          "evidence": {
+            "floors": {
+              "passed": false,
+              "summary": "1 band(s) below the pure-water floor (worst 559 nm at 0.49x). 5 band(s) carry no floor claim: 704, 739, 780, 833, 864. Unreliable fits: 442 nm (scene_depth_gradient); 492 nm (scene_depth_gradient); 559 nm (quantile_unstable, scene_depth_gradient); 665 nm (no_fit, scene_depth_gradient).",
+              "flags": [
+                "k_below_pure_water_floor",
+                "no_fit",
+                "quantile_unstable",
+                "scene_depth_gradient"
+              ],
+              "fit_failures": {
+                "442": [
+                  "scene_depth_gradient"
+                ],
+                "492": [
+                  "scene_depth_gradient"
+                ],
+                "559": [
+                  "quantile_unstable",
+                  "scene_depth_gradient"
+                ],
+                "665": [
+                  "no_fit",
+                  "scene_depth_gradient"
+                ]
+              },
+              "checks": {
+                "pure_water_floor": {
+                  "passed": false,
+                  "solar_zenith_deg": 51.9865319225185,
+                  "n_bands": 4,
+                  "n_violations": 1,
+                  "violating_bands_nm": [
+                    559.0
+                  ],
+                  "worst_band_nm": 559.0,
+                  "worst_ratio": 0.49441774702383745,
+                  "bands": {
+                    "442": {
+                      "wavelength_nm": 442.0,
+                      "k_per_m": 0.14495123849882124,
+                      "floor_per_m": 0.02685818223946018,
+                      "ratio": 5.396911719731284,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    },
+                    "492": {
+                      "wavelength_nm": 492.0,
+                      "k_per_m": 0.11047965746659515,
+                      "floor_per_m": 0.04411552011264882,
+                      "ratio": 2.504326304767251,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    },
+                    "559": {
+                      "wavelength_nm": 559.0,
+                      "k_per_m": 0.07129407212847758,
+                      "floor_per_m": 0.14419804417951093,
+                      "ratio": 0.49441774702383745,
+                      "violated": true,
+                      "shortfall_per_m": 0.07290397205103336
+                    },
+                    "665": {
+                      "wavelength_nm": 665.0,
+                      "k_per_m": null,
+                      "floor_per_m": 0.9684318818590322,
+                      "ratio": null,
+                      "violated": false,
+                      "shortfall_per_m": 0.0
+                    }
+                  },
+                  "skipped_bands": {
+                    "704": "no tabulated pure-water absorption above 700 nm",
+                    "739": "no tabulated pure-water absorption above 700 nm",
+                    "780": "no tabulated pure-water absorption above 700 nm",
+                    "833": "no tabulated pure-water absorption above 700 nm",
+                    "864": "no tabulated pure-water absorption above 700 nm"
+                  },
+                  "flags": [
+                    "k_below_pure_water_floor"
+                  ]
+                },
+                "lyzenga_ratio": {
+                  "passed": true,
+                  "solar_zenith_deg": 51.9865319225185,
+                  "n_pairs": 1,
+                  "below_pure_water_pairs": [],
+                  "near_unity_pairs": [],
+                  "pairs": {
+                    "442/559": {
+                      "wavelengths_nm": [
+                        442.0,
+                        559.0
+                      ],
+                      "observed": 2.0331457324755924,
+                      "expected_pure_water": 0.18625899118315817,
+                      "ratio_to_expected": 10.9156917449225,
+                      "below_pure_water": false,
+                      "near_unity": false
+                    }
+                  },
+                  "flags": []
+                }
+              }
+            }
+          }
+        },
+        "depth_source": "independent_reference",
+        "epsilon_rhos": 0.000749,
+        "detectability_config": {
+          "t_aw": 0.52,
+          "contrast_pair": [
+            "bare",
+            "brown"
+          ],
+          "contrast_band_tolerance_nm": 15.0,
+          "fallback_epsilon_rhos": 0.001,
+          "min_epsilon_rhos": 1e-06,
+          "min_useful_z_max_m": 1.0,
+          "par_range_nm": [
+            400.0,
+            700.0
+          ],
+          "par_step_nm": 10.0,
+          "par_photon_weighted": true,
+          "par_max_depth_m": 40.0
+        },
+        "detectability_verdict": {
+          "passed": false,
+          "flags": [
+            "attenuation_error_unavailable",
+            "attenuation_model_uncertainty_missing",
+            "k_below_pure_water_floor",
+            "no_fit",
+            "no_usable_band",
+            "quantile_unstable",
+            "reference_independence_unverified",
+            "reference_uncertainty_assumed",
+            "scene_depth_gradient",
+            "tide_correction_missing"
+          ],
+          "summary": "attenuation_error_unavailable; attenuation_model_uncertainty_missing; k_below_pure_water_floor; no_fit; no_usable_band; quantile_unstable; reference_independence_unverified; reference_uncertainty_assumed; scene_depth_gradient; tide_correction_missing",
+          "evidence": {}
+        },
+        "solar_zenith_deg": 51.9865319225185
+      }
+    },
+    "bands": {
+      "442.0": {
+        "wavelength_nm": 442.0,
+        "k_per_m": 0.14495123849882124,
+        "intercept": -2.178199410716415,
+        "r_squared": 0.909726766254318,
+        "n_bins": 12,
+        "n_pixels": 3137,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.02296900749206543,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.13028,
+          "0.80": 0.13479,
+          "0.85": 0.14436,
+          "0.90": 0.14495,
+          "0.95": 0.14179
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.01443929349349438,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.7208333015441895
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -3.4114272594451904
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.7775473594665527
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.802576780319214
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -3.808946371078491
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -3.9780242443084717
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.125021457672119
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.325462341308594
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.792875289916992
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -4.882772922515869
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -4.904200553894043
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -4.960513114929199
+          }
+        ],
+        "assessable": true
+      },
+      "492.0": {
+        "wavelength_nm": 492.0,
+        "k_per_m": 0.11047965746659515,
+        "intercept": -2.9506799731499105,
+        "r_squared": 0.9097069756622762,
+        "n_bins": 12,
+        "n_pixels": 3136,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.02322249673306942,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.08885,
+          "0.80": 0.09784,
+          "0.85": 0.1049,
+          "0.90": 0.11048,
+          "0.95": 0.10782
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.01100673870233902,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.809358835220337
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -4.218325614929199
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -4.017553329467773
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -4.104028701782227
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.327142238616943
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.5988593101501465
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.366484642028809
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.646978378295898
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.884406089782715
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 438,
+            "n_censored": 1,
+            "log_quantile": -5.0071940422058105
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -4.981983184814453
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.006427764892578
+          }
+        ],
+        "assessable": true
+      },
+      "559.0": {
+        "wavelength_nm": 559.0,
+        "k_per_m": 0.07129407212847758,
+        "intercept": -3.2200973587376747,
+        "r_squared": 0.8419913081137619,
+        "n_bins": 8,
+        "n_pixels": 1312,
+        "depth_range_m": [
+          1.0,
+          15.655832277933346
+        ],
+        "deep_water_reference": 0.020967481657862663,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.09377,
+          "0.80": 0.09992,
+          "0.85": 0.10252,
+          "0.90": 0.07129,
+          "0.95": 0.03502
+        },
+        "trust_failures": [
+          "quantile_unstable",
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.014390723809390365,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.774625539779663
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -4.013765811920166
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.925224542617798
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.971325635910034
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.106950283050537
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.297663688659668
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.190606117248535
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.435272693634033
+          }
+        ],
+        "assessable": true
+      },
+      "665.0": {
+        "wavelength_nm": 665.0,
+        "k_per_m": null,
+        "intercept": null,
+        "r_squared": null,
+        "n_bins": 0,
+        "n_pixels": 0,
+        "depth_range_m": [
+          1.0,
+          1.9241725824394924
+        ],
+        "deep_water_reference": 0.007636455353349447,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {},
+        "trust_failures": [
+          "no_fit",
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": null,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          }
+        ],
+        "assessable": true
+      },
+      "704.0": {
+        "wavelength_nm": 704.0,
+        "k_per_m": 0.1781714946239979,
+        "intercept": -2.0782054004135686,
+        "r_squared": 0.971008971479767,
+        "n_bins": 12,
+        "n_pixels": 3136,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.006145158316940069,
+        "frac_nonpositive_residual": 0.0002070822116380203,
+        "k_by_quantile": {
+          "0.75": 0.15663,
+          "0.80": 0.16276,
+          "0.85": 0.16664,
+          "0.90": 0.17817,
+          "0.95": 0.17807
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.009735503416023465,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.606126070022583
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 55,
+            "n_censored": 1,
+            "log_quantile": -3.9172914028167725
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.9888269901275635
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.98258900642395
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.214376926422119
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.445232391357422
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.497119903564453
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.907035827636719
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -5.107264518737793
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -5.385955333709717
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -5.333558082580566
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.485899448394775
+          }
+        ],
+        "assessable": false
+      },
+      "739.0": {
+        "wavelength_nm": 739.0,
+        "k_per_m": 0.1664977515494075,
+        "intercept": -2.1598960134810765,
+        "r_squared": 0.9719851398902846,
+        "n_bins": 12,
+        "n_pixels": 3137,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.004478431306779385,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.153,
+          "0.80": 0.15769,
+          "0.85": 0.1651,
+          "0.90": 0.1665,
+          "0.95": 0.16511
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.00893866763838608,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.6765639781951904
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -3.867123603820801
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.8995981216430664
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.9861741065979004
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.121901512145996
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.337698936462402
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.372316360473633
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.8010478019714355
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.966952800750732
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -5.173495292663574
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -5.295538902282715
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.391963005065918
+          }
+        ],
+        "assessable": false
+      },
+      "780.0": {
+        "wavelength_nm": 780.0,
+        "k_per_m": 0.16548918343924154,
+        "intercept": -2.0754320104639015,
+        "r_squared": 0.9788605846116937,
+        "n_bins": 12,
+        "n_pixels": 3137,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.004216478206217289,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.14206,
+          "0.80": 0.15363,
+          "0.85": 0.15993,
+          "0.90": 0.16549,
+          "0.95": 0.16019
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.007690519518960004,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.499035120010376
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -3.7727556228637695
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.7989838123321533
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.9232664108276367
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.010110378265381
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.27862548828125
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.350359916687012
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.75572395324707
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.897035598754883
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -5.05064058303833
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -5.12202787399292
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.248802185058594
+          }
+        ],
+        "assessable": false
+      },
+      "833.0": {
+        "wavelength_nm": 833.0,
+        "k_per_m": 0.14231732758608742,
+        "intercept": -2.5238629994970383,
+        "r_squared": 0.9562622500192408,
+        "n_bins": 12,
+        "n_pixels": 3137,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.0035372450947761536,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.12166,
+          "0.80": 0.12858,
+          "0.85": 0.13593,
+          "0.90": 0.14232,
+          "0.95": 0.12964
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.009624928080532813,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.7879252433776855
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -4.074129104614258
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.878092050552368
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -4.063019752502441
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.196730613708496
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.541598796844482
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.434669494628906
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.71562385559082
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.948380470275879
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -5.102781295776367
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -5.196081638336182
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.256634712219238
+          }
+        ],
+        "assessable": false
+      },
+      "864.0": {
+        "wavelength_nm": 864.0,
+        "k_per_m": 0.16533448729481742,
+        "intercept": -2.061168471277455,
+        "r_squared": 0.9808945837612638,
+        "n_bins": 12,
+        "n_pixels": 3137,
+        "depth_range_m": [
+          1.0,
+          20.0
+        ],
+        "deep_water_reference": 0.0024285251274704933,
+        "frac_nonpositive_residual": 0.0,
+        "k_by_quantile": {
+          "0.75": 0.14447,
+          "0.80": 0.14971,
+          "0.85": 0.15545,
+          "0.90": 0.16533,
+          "0.95": 0.16252
+        },
+        "trust_failures": [
+          "scene_depth_gradient"
+        ],
+        "solar_zenith_deg": 51.9865319225185,
+        "k_standard_error": 0.007296767975236479,
+        "bin_support": [
+          {
+            "depth_m": 1.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 2.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 3.5,
+            "n_total": 0,
+            "n_used": 0,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 4.5,
+            "n_total": 2,
+            "n_used": 2,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 5.5,
+            "n_total": 4,
+            "n_used": 4,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 6.5,
+            "n_total": 7,
+            "n_used": 7,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 7.5,
+            "n_total": 19,
+            "n_used": 19,
+            "n_censored": 0,
+            "log_quantile": null
+          },
+          {
+            "depth_m": 8.5,
+            "n_total": 28,
+            "n_used": 28,
+            "n_censored": 0,
+            "log_quantile": -3.389414072036743
+          },
+          {
+            "depth_m": 9.5,
+            "n_total": 56,
+            "n_used": 56,
+            "n_censored": 0,
+            "log_quantile": -3.8107361793518066
+          },
+          {
+            "depth_m": 10.5,
+            "n_total": 92,
+            "n_used": 92,
+            "n_censored": 0,
+            "log_quantile": -3.8392910957336426
+          },
+          {
+            "depth_m": 11.5,
+            "n_total": 174,
+            "n_used": 174,
+            "n_censored": 0,
+            "log_quantile": -3.900968074798584
+          },
+          {
+            "depth_m": 12.5,
+            "n_total": 205,
+            "n_used": 205,
+            "n_censored": 0,
+            "log_quantile": -4.03706169128418
+          },
+          {
+            "depth_m": 13.5,
+            "n_total": 223,
+            "n_used": 223,
+            "n_censored": 0,
+            "log_quantile": -4.2443718910217285
+          },
+          {
+            "depth_m": 14.5,
+            "n_total": 291,
+            "n_used": 291,
+            "n_censored": 0,
+            "log_quantile": -4.378172397613525
+          },
+          {
+            "depth_m": 15.5,
+            "n_total": 361,
+            "n_used": 361,
+            "n_censored": 0,
+            "log_quantile": -4.654068946838379
+          },
+          {
+            "depth_m": 16.5,
+            "n_total": 432,
+            "n_used": 432,
+            "n_censored": 0,
+            "log_quantile": -4.857741832733154
+          },
+          {
+            "depth_m": 17.5,
+            "n_total": 439,
+            "n_used": 439,
+            "n_censored": 0,
+            "log_quantile": -5.035172939300537
+          },
+          {
+            "depth_m": 18.5,
+            "n_total": 425,
+            "n_used": 425,
+            "n_censored": 0,
+            "log_quantile": -5.134700298309326
+          },
+          {
+            "depth_m": 19.5,
+            "n_total": 379,
+            "n_used": 379,
+            "n_censored": 0,
+            "log_quantile": -5.228516101837158
+          }
+        ],
+        "assessable": false
+      }
+    },
+    "k_by_band": {
+      "442.0": 0.14495123849882124,
+      "492.0": 0.11047965746659515,
+      "559.0": 0.07129407212847758,
+      "665.0": null,
+      "704.0": 0.1781714946239979,
+      "739.0": 0.1664977515494075,
+      "780.0": 0.16548918343924154,
+      "833.0": 0.14231732758608742,
+      "864.0": 0.16533448729481742
+    },
+    "lyzenga_ratios": {
+      "442/492": 1.312,
+      "442/559": 2.0331,
+      "442/704": 0.8135,
+      "442/739": 0.8706,
+      "442/780": 0.8759,
+      "442/833": 1.0185,
+      "442/864": 0.8767,
+      "492/559": 1.5496,
+      "492/704": 0.6201,
+      "492/739": 0.6636,
+      "492/780": 0.6676,
+      "492/833": 0.7763,
+      "492/864": 0.6682,
+      "559/704": 0.4001,
+      "559/739": 0.4282,
+      "559/780": 0.4308,
+      "559/833": 0.501,
+      "559/864": 0.4312,
+      "704/739": 1.0701,
+      "704/780": 1.0766,
+      "704/833": 1.2519,
+      "704/864": 1.0776,
+      "739/780": 1.0061,
+      "739/833": 1.1699,
+      "739/864": 1.007,
+      "780/833": 1.1628,
+      "780/864": 1.0009,
+      "833/864": 0.8608
+    },
+    "verdict": {
+      "passed": false,
+      "flags": [
+        "attenuation_model_uncertainty_missing",
+        "k_below_pure_water_floor",
+        "no_fit",
+        "quantile_unstable",
+        "reference_independence_unverified",
+        "reference_uncertainty_assumed",
+        "scene_depth_gradient",
+        "tide_correction_missing"
+      ],
+      "summary": "attenuation_model_uncertainty_missing; k_below_pure_water_floor; no_fit; quantile_unstable; reference_independence_unverified; reference_uncertainty_assumed; scene_depth_gradient; tide_correction_missing",
+      "evidence": {
+        "floors": {
+          "passed": false,
+          "summary": "1 band(s) below the pure-water floor (worst 559 nm at 0.49x). 5 band(s) carry no floor claim: 704, 739, 780, 833, 864. Unreliable fits: 442 nm (scene_depth_gradient); 492 nm (scene_depth_gradient); 559 nm (quantile_unstable, scene_depth_gradient); 665 nm (no_fit, scene_depth_gradient).",
+          "flags": [
+            "k_below_pure_water_floor",
+            "no_fit",
+            "quantile_unstable",
+            "scene_depth_gradient"
+          ],
+          "fit_failures": {
+            "442": [
+              "scene_depth_gradient"
+            ],
+            "492": [
+              "scene_depth_gradient"
+            ],
+            "559": [
+              "quantile_unstable",
+              "scene_depth_gradient"
+            ],
+            "665": [
+              "no_fit",
+              "scene_depth_gradient"
+            ]
+          },
+          "checks": {
+            "pure_water_floor": {
+              "passed": false,
+              "solar_zenith_deg": 51.9865319225185,
+              "n_bands": 4,
+              "n_violations": 1,
+              "violating_bands_nm": [
+                559.0
+              ],
+              "worst_band_nm": 559.0,
+              "worst_ratio": 0.49441774702383745,
+              "bands": {
+                "442": {
+                  "wavelength_nm": 442.0,
+                  "k_per_m": 0.14495123849882124,
+                  "floor_per_m": 0.02685818223946018,
+                  "ratio": 5.396911719731284,
+                  "violated": false,
+                  "shortfall_per_m": 0.0
+                },
+                "492": {
+                  "wavelength_nm": 492.0,
+                  "k_per_m": 0.11047965746659515,
+                  "floor_per_m": 0.04411552011264882,
+                  "ratio": 2.504326304767251,
+                  "violated": false,
+                  "shortfall_per_m": 0.0
+                },
+                "559": {
+                  "wavelength_nm": 559.0,
+                  "k_per_m": 0.07129407212847758,
+                  "floor_per_m": 0.14419804417951093,
+                  "ratio": 0.49441774702383745,
+                  "violated": true,
+                  "shortfall_per_m": 0.07290397205103336
+                },
+                "665": {
+                  "wavelength_nm": 665.0,
+                  "k_per_m": null,
+                  "floor_per_m": 0.9684318818590322,
+                  "ratio": null,
+                  "violated": false,
+                  "shortfall_per_m": 0.0
+                }
+              },
+              "skipped_bands": {
+                "704": "no tabulated pure-water absorption above 700 nm",
+                "739": "no tabulated pure-water absorption above 700 nm",
+                "780": "no tabulated pure-water absorption above 700 nm",
+                "833": "no tabulated pure-water absorption above 700 nm",
+                "864": "no tabulated pure-water absorption above 700 nm"
+              },
+              "flags": [
+                "k_below_pure_water_floor"
+              ]
+            },
+            "lyzenga_ratio": {
+              "passed": true,
+              "solar_zenith_deg": 51.9865319225185,
+              "n_pairs": 1,
+              "below_pure_water_pairs": [],
+              "near_unity_pairs": [],
+              "pairs": {
+                "442/559": {
+                  "wavelengths_nm": [
+                    442.0,
+                    559.0
+                  ],
+                  "observed": 2.0331457324755924,
+                  "expected_pure_water": 0.18625899118315817,
+                  "ratio_to_expected": 10.9156917449225,
+                  "below_pure_water": false,
+                  "near_unity": false
+                }
+              },
+              "flags": []
+            }
+          }
+        }
+      }
+    },
+    "depth_source": "independent_reference",
+    "epsilon_rhos": 0.000749,
+    "detectability_config": {
+      "t_aw": 0.52,
+      "contrast_pair": [
+        "bare",
+        "brown"
+      ],
+      "contrast_band_tolerance_nm": 15.0,
+      "fallback_epsilon_rhos": 0.001,
+      "min_epsilon_rhos": 1e-06,
+      "min_useful_z_max_m": 1.0,
+      "par_range_nm": [
+        400.0,
+        700.0
+      ],
+      "par_step_nm": 10.0,
+      "par_photon_weighted": true,
+      "par_max_depth_m": 40.0
+    },
+    "detectability_verdict": {
+      "passed": false,
+      "flags": [
+        "attenuation_error_unavailable",
+        "attenuation_model_uncertainty_missing",
+        "k_below_pure_water_floor",
+        "no_fit",
+        "no_usable_band",
+        "quantile_unstable",
+        "reference_independence_unverified",
+        "reference_uncertainty_assumed",
+        "scene_depth_gradient",
+        "tide_correction_missing"
+      ],
+      "summary": "attenuation_error_unavailable; attenuation_model_uncertainty_missing; k_below_pure_water_floor; no_fit; no_usable_band; quantile_unstable; reference_independence_unverified; reference_uncertainty_assumed; scene_depth_gradient; tide_correction_missing",
+      "evidence": {}
+    },
+    "solar_zenith_deg": 51.9865319225185
+  }
+}
