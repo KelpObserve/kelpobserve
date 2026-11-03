@@ -1,0 +1,24 @@
+{
+  "focused_tests_passed": 4,
+  "ruff_passed": true,
+  "figures_visually_inspected": true,
+  "frozen_r7_code_hashes_verified": 8,
+  "consumed_inputs_verified": 108,
+  "consumed_inputs_matching_r7_lock": 45,
+  "original_water_floor_predictions_reproduced": 206,
+  "paired_grid_has_unique_scene_locations": true,
+  "paired_grid_core_bands_finite": true,
+  "source_r7_result_files_unchanged": true,
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "packages": {
+    "numpy": "2.0.2",
+    "scipy": "1.16.3",
+    "pandas": "2.3.3",
+    "rasterio": "1.5.0",
+    "pyproj": "3.7.2",
+    "geopandas": "1.1.1",
+    "matplotlib": "3.10.8",
+    "xarray": "2026.2.0"
+  }
+}

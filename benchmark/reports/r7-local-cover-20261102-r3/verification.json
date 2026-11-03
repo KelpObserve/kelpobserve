@@ -1,0 +1,17 @@
+{
+  "outputs_and_source_checksums_verified": true,
+  "input_files": 62,
+  "groups_recomputed": 12,
+  "retrieval_and_sensitivity_tables_identical_to_previous_run": true,
+  "scientific_protocol_unchanged_from_previous_run": true,
+  "spatial_fold_leakage_checks_passed": true,
+  "existing_files_unchanged_outside_explicit_edits": 320,
+  "repository_tests_passed": 69,
+  "positive_control_cases": 240,
+  "explicit_existing_edits": [
+    "src/kelpobserve/cli.py",
+    "benchmark/registration/revision-r7.json",
+    "README.md",
+    "benchmark/docs/plan.md"
+  ]
+}

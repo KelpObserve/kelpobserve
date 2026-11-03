@@ -1,0 +1,1 @@
+This run stopped after its first scene group while summarising an empty compatible subset. The exception was an object-dtype numpy.isfinite call. Its frozen records are retained. The corrected execution is in ../r7-local-cover-20261102-r2; retrieval, tolerance, sensitivity and evaluation rules are unchanged.

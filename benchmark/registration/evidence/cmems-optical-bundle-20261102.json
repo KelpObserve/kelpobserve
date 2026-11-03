@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "files": [
+    {
+      "file": "transp-2025-12-21-2025-12-27.nc",
+      "sha256": "6c3bd150037db75b01a4afdcfeb2e0cc612458d442195221ec0442bccc9ce478",
+      "bytes": 167628,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "KD490",
+          "KD490_uncertainty",
+          "SPM",
+          "SPM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2025-12-21T00:00:00",
+        "end_datetime": "2025-12-27T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:02+00:00"
+    },
+    {
+      "file": "transp-2026-02-19-2026-02-25.nc",
+      "sha256": "b8502e16e12f420a44735480897cd510a10dee0c53d9cd2084d93cb119f7ad8c",
+      "bytes": 167628,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "KD490",
+          "KD490_uncertainty",
+          "SPM",
+          "SPM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-02-19T00:00:00",
+        "end_datetime": "2026-02-25T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:06+00:00"
+    },
+    {
+      "file": "transp-2026-06-29-2026-07-12.nc",
+      "sha256": "09de1e6f1bc1d7305aacb357f6c250669e76deb9beef90aa61a3e194fc563115",
+      "bytes": 286162,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "KD490",
+          "KD490_uncertainty",
+          "SPM",
+          "SPM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-06-29T00:00:00",
+        "end_datetime": "2026-07-12T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:11+00:00"
+    },
+    {
+      "file": "transp-2026-08-28-2026-09-06.nc",
+      "sha256": "c2be47d8b0eba95ee2f467b5851e6b337c50243811f4b28bc9def8559aed22de",
+      "bytes": 218406,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "KD490",
+          "KD490_uncertainty",
+          "SPM",
+          "SPM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-08-28T00:00:00",
+        "end_datetime": "2026-09-06T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:17+00:00"
+    },
+    {
+      "file": "optics-2025-12-21-2025-12-27.nc",
+      "sha256": "e8fd494d95f58f91701009c4e2a69b6327d2db9aa82e6f126ccc1a53b8c6ace0",
+      "bytes": 167628,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "BBP",
+          "BBP_uncertainty",
+          "CDM",
+          "CDM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2025-12-21T00:00:00",
+        "end_datetime": "2025-12-27T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:22+00:00"
+    },
+    {
+      "file": "optics-2026-02-19-2026-02-25.nc",
+      "sha256": "fdcf32234d128f0937a6b4647e45aa9d9bf4f2d6ffca7b70da0d69787e5e8d54",
+      "bytes": 167628,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "BBP",
+          "BBP_uncertainty",
+          "CDM",
+          "CDM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-02-19T00:00:00",
+        "end_datetime": "2026-02-25T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:25+00:00"
+    },
+    {
+      "file": "optics-2026-06-29-2026-07-12.nc",
+      "sha256": "65a1579a3f3f1209db88fbcdeec6fe7539fbb070191907adf19b6a505996d205",
+      "bytes": 286162,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "BBP",
+          "BBP_uncertainty",
+          "CDM",
+          "CDM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-06-29T00:00:00",
+        "end_datetime": "2026-07-12T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:29+00:00"
+    },
+    {
+      "file": "optics-2026-08-28-2026-09-06.nc",
+      "sha256": "55cee9a9c119fdf80275379367cc9f1e30df25c5d44b91cd2fb68487764652fa",
+      "bytes": 218406,
+      "request": {
+        "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+        "dataset_version": "202603",
+        "dataset_part": "default",
+        "variables": [
+          "BBP",
+          "BBP_uncertainty",
+          "CDM",
+          "CDM_uncertainty",
+          "flags"
+        ],
+        "minimum_longitude": -9.42,
+        "maximum_longitude": -8.98,
+        "minimum_latitude": 38.24,
+        "maximum_latitude": 38.56,
+        "start_datetime": "2026-08-28T00:00:00",
+        "end_datetime": "2026-09-06T23:59:59",
+        "coordinates_selection_method": "inside",
+        "disable_progress_bar": true
+      },
+      "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+      "toolbox": "2.3.0",
+      "fetched_at": "2026-11-02T15:28:34+00:00"
+    }
+  ]
+}

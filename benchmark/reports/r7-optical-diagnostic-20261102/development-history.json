@@ -1,0 +1,11 @@
+{
+  "initial_run": "$TMP/sesimbra-optical-diagnostic/run-1",
+  "final_run": "$TMP/sesimbra-optical-diagnostic/run-2",
+  "refinement": "Retained unconstrained geometry stress results and added flags for perturbations moving targets onto modelled land, water-only stress results, original support flags and a footprint-geometry join. No radiometry or water closure calculation changed.",
+  "unchanged_tables_verified": [
+    "radiometry-summary.csv",
+    "deep-water-closure.csv",
+    "shore-associations.csv",
+    "original-footprint-water-floor.csv"
+  ]
+}

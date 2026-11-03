@@ -1,0 +1,11 @@
+{
+  "status": "criteria_not_met",
+  "scope": "July 2026 development optical comparison, conditional on tested water spectra and diagnostic tolerances",
+  "qualified_branch": null,
+  "cover_stage": "deferred",
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "prior_r7_verdict_unchanged": true,
+  "interpretation": "No consistent offshore optical closure across the relevant spatial reference areas. Atmospheric baseline and water-spectrum assumptions remain unresolved.",
+  "next_constraint": "Independent atmospheric or water-leaving-reflectance evidence and summer spectral water properties, qualified for date and location."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "r7-optical-diagnostic-20261102",
+  "status": "development_diagnostic",
+  "question": "Which radiometric, water-state and terrain assumptions can explain the rejected Sesimbra cover retrievals?",
+  "prior_information": "Existing r1-r7 results and the user discussion informed this design. This is a development diagnosis. No independent validation or cover claim is made.",
+  "label_policy": "Do not read cover target tables. Read quadrat geometry and recorded support only. Do not fit or select any correction against cover, and do not rescore cover.",
+  "scenes": [
+    "s2-20260702-S2B-R037",
+    "s2-20260831-S2B-R037",
+    "pneo-20260708",
+    "pneo-20260903"
+  ],
+  "radiometry": {
+    "variants": [
+      "V0",
+      "V1"
+    ],
+    "grid_m": 10,
+    "aggregation": "Registered r1 native valid-pixel mask; area-weighted means; at least 80 percent valid coverage in each variant; identical grid cells for V0/V1 differences.",
+    "regions": "Previously registered habitat AOI and deep-water reference polygon. No reflectance-driven region selection.",
+    "shore_bins_m": [
+      0,
+      50,
+      100,
+      200,
+      500,
+      1000,
+      100000
+    ],
+    "depth_bins_m": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      30,
+      50,
+      100000
+    ],
+    "block_m": 100,
+    "statistics": "Paired reflectance, correction magnitude, band residuals, depth-adjusted shore-distance associations. Block summaries describe spatial support; no pixel-wise significance or causal attribution.",
+    "bands": "Coastal blue, blue, green, red and NIR where present; SWIR top-of-atmosphere mask reference for S2. Actual raster centres retained. Primary water closure uses blue and green."
+  },
+  "terrain": {
+    "primary": "Unmasked 2011 coastal lidar elevations above LAT from the existing EMODnet HR_Lidar_Sul netCDF.",
+    "context": "Public Copernicus GLO-30 DSM subset fills missing coastal elevations. Its EGM2008 heights are approximately referenced to sea level; this differs from lidar LAT. A 5 m vertical stress bound is applied in the shadow sensitivity.",
+    "ray_step_m": 10,
+    "radius_m": 3000,
+    "azimuth_step_deg": 5,
+    "solar_angles": "ACOLITE image metadata. Azimuth is converted from true north to the projected grid using a geodesic direction.",
+    "sensitivities": "Quadrat positions shifted 20 m in each cardinal direction; all obstructing terrain raised 5 m. Solar elevation lowered 1 degree for the stress comparison.",
+    "outputs": "Direct-sun horizon clearance, direct-shadow flag, horizontal isotropic diffuse sky-view factor, maximum horizon, source coverage. Shadow absence does not exclude reflected land light or non-isotropic sky effects."
+  },
+  "water": {
+    "nominal": "Unchanged r7 KD490-scaled winter absorption and backscattering shape.",
+    "candidate": "Keep the winter spectral shapes, set particulate backscatter magnitude from the same-day fixed Copernicus BBP443, and solve the non-water absorption magnitude to reproduce KD490. No image reflectance enters this calculation.",
+    "candidate_stress_grid": "KD490 and BBP443 at nominal and plus/minus each provider percentage error (nine combinations). These are stress cases, not confidence intervals.",
+    "independent_checks": "Flag impossible KD490 for the fixed backscatter; flag non-water absorption at 443 below CDM443's provider-error lower bound. Report these conflicts instead of accepting inconsistent optical products.",
+    "closure": "Compare predicted water-column reflectance with matched deep-reference observations. Bound residual bottom influence using reflectance 0.6 and each cell's coarse depth. Also inspect the in-water bb/(a+bb) implied by the deep observed spectrum.",
+    "tolerance_rhos": 0.001,
+    "tolerance_status": "Existing diagnostic scale only. Not a calibrated sensor uncertainty or a habitat-accuracy requirement.",
+    "limitations": "KD490, BBP443 and CDM443 are correlated satellite products at a fixed neighbour; local representativeness is unestablished. Spectral shape, depth and radiometry remain assumptions. No unique IOP retrieval or field optical validation is claimed."
+  },
+  "preservation": "Write a new report directory with code, design, checksums, tables and figures. Preserve earlier registrations, predictions, masks, processing products and verdicts. No commit or publication.",
+  "recorded_at": "2026-11-02T21:52:52.666425+00:00"
+}

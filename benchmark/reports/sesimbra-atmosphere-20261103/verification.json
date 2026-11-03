@@ -1,0 +1,51 @@
+{
+  "pneo_control_max_absolute_rhos_error": {
+    "pneo-20260708": 3.1197166378005292e-09
+  },
+  "support_by_branch": {
+    "pneo_marine_control": {
+      "cells": 21153,
+      "complete_native_support_cells": 21150
+    },
+    "pneo_continental": {
+      "cells": 21153,
+      "complete_native_support_cells": 21150
+    },
+    "s2_radcor_fixed_no_glint_rhosu": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_fixed_no_glint_rhos": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_fixed_SWIR_rhosu": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_fixed_SWIR_rhos": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_auto_no_glint_rhosu": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_auto_no_glint_rhos": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_auto_SWIR_rhosu": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    },
+    "s2_radcor_auto_SWIR_rhos": {
+      "cells": 22572,
+      "complete_native_support_cells": 22572
+    }
+  },
+  "raster_grid_matches_original": true,
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "aerosol_estimation_not_spatially_held_out": true
+}

@@ -1,0 +1,208 @@
+{
+  "s2-20260702-S2B-R037": {
+    "sza": 21.6254226589792,
+    "saa": 130.034951296405,
+    "vza": 7.823660360232815,
+    "vaa": 104.4168840333491,
+    "isodate": "2026-07-02T11:30:44.433080+00:00",
+    "ac_model": "ACOLITE-LUT-202110-MOD2",
+    "ac_aot_550": null,
+    "ac_aot_550_mean": "0.080870785",
+    "adjacency_correction": "False",
+    "dsf_residual_glint_correction": "True",
+    "dsf_residual_glint_correction_method": "default",
+    "campaign": "july",
+    "date": "2026-07-02",
+    "water_level_m": 1.393,
+    "wavelengths": {
+      "coastal": 442.0,
+      "blue": 492.0,
+      "green": 559.0,
+      "red": 665.0,
+      "nir": 833.0,
+      "swir": 1610.0
+    },
+    "variants": {
+      "V0": {
+        "sza": 21.6254226589792,
+        "saa": 130.034951296405,
+        "vza": 7.823660360232815,
+        "vaa": 104.4168840333491,
+        "isodate": "2026-07-02T11:30:44.433080+00:00",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": null,
+        "ac_aot_550_mean": "0.080870785",
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "False",
+        "dsf_residual_glint_correction_method": "default"
+      },
+      "V1": {
+        "sza": 21.6254226589792,
+        "saa": 130.034951296405,
+        "vza": 7.823660360232815,
+        "vaa": 104.4168840333491,
+        "isodate": "2026-07-02T11:30:44.433080+00:00",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": null,
+        "ac_aot_550_mean": "0.080870785",
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "default"
+      }
+    }
+  },
+  "s2-20260831-S2B-R037": {
+    "sza": 33.4838767009657,
+    "saa": 148.568567457239,
+    "vza": 7.7760989801034,
+    "vaa": 104.5128048879837,
+    "isodate": "2026-08-31T11:30:44.596772+00:00",
+    "ac_model": "ACOLITE-LUT-202110-MOD2",
+    "ac_aot_550": null,
+    "ac_aot_550_mean": "0.10046422",
+    "adjacency_correction": "False",
+    "dsf_residual_glint_correction": "True",
+    "dsf_residual_glint_correction_method": "default",
+    "campaign": "september",
+    "date": "2026-08-31",
+    "water_level_m": 0.987,
+    "wavelengths": {
+      "coastal": 442.0,
+      "blue": 492.0,
+      "green": 559.0,
+      "red": 665.0,
+      "nir": 833.0,
+      "swir": 1610.0
+    },
+    "variants": {
+      "V0": {
+        "sza": 33.4838767009657,
+        "saa": 148.568567457239,
+        "vza": 7.7760989801034,
+        "vaa": 104.5128048879837,
+        "isodate": "2026-08-31T11:30:44.596772+00:00",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": null,
+        "ac_aot_550_mean": "0.10046422",
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "False",
+        "dsf_residual_glint_correction_method": "default"
+      },
+      "V1": {
+        "sza": 33.4838767009657,
+        "saa": 148.568567457239,
+        "vza": 7.7760989801034,
+        "vaa": 104.5128048879837,
+        "isodate": "2026-08-31T11:30:44.596772+00:00",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": null,
+        "ac_aot_550_mean": "0.10046422",
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "default"
+      }
+    }
+  },
+  "pneo-20260708": {
+    "sza": 20.8321083205022,
+    "saa": 134.8334300545286,
+    "vza": 14.04319716433526,
+    "vaa": 320.9235438614995,
+    "isodate": "2026-07-08T11:38:15.600000",
+    "ac_model": "ACOLITE-LUT-202110-MOD2",
+    "ac_aot_550": "0.078115806",
+    "ac_aot_550_mean": null,
+    "adjacency_correction": "False",
+    "dsf_residual_glint_correction": "True",
+    "dsf_residual_glint_correction_method": "alternative",
+    "campaign": "july",
+    "date": "2026-07-08",
+    "water_level_m": 1.6,
+    "wavelengths": {
+      "coastal": 439.0,
+      "blue": 486.0,
+      "green": 563.0,
+      "red": 655.0,
+      "nir": 826.0
+    },
+    "variants": {
+      "V0": {
+        "sza": 20.8321083205022,
+        "saa": 134.8334300545286,
+        "vza": 14.04319716433526,
+        "vaa": 320.9235438614995,
+        "isodate": "2026-07-08T11:38:15.600000",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": "0.078115806",
+        "ac_aot_550_mean": null,
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "False",
+        "dsf_residual_glint_correction_method": "default"
+      },
+      "V1": {
+        "sza": 20.8321083205022,
+        "saa": 134.8334300545286,
+        "vza": 14.04319716433526,
+        "vaa": 320.9235438614995,
+        "isodate": "2026-07-08T11:38:15.600000",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": "0.078115806",
+        "ac_aot_550_mean": null,
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "alternative"
+      }
+    }
+  },
+  "pneo-20260903": {
+    "sza": 33.54681443691902,
+    "saa": 151.0709419963491,
+    "vza": 14.10355850726491,
+    "vaa": 168.1100372562715,
+    "isodate": "2026-09-03T11:33:59.900000",
+    "ac_model": "ACOLITE-LUT-202110-MOD2",
+    "ac_aot_550": "0.410734",
+    "ac_aot_550_mean": null,
+    "adjacency_correction": "False",
+    "dsf_residual_glint_correction": "True",
+    "dsf_residual_glint_correction_method": "alternative",
+    "campaign": "september",
+    "date": "2026-09-03",
+    "water_level_m": 0.835,
+    "wavelengths": {
+      "coastal": 439.0,
+      "blue": 486.0,
+      "green": 563.0,
+      "red": 655.0,
+      "nir": 826.0
+    },
+    "variants": {
+      "V0": {
+        "sza": 33.54681443691902,
+        "saa": 151.0709419963491,
+        "vza": 14.10355850726491,
+        "vaa": 168.1100372562715,
+        "isodate": "2026-09-03T11:33:59.900000",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": "0.410734",
+        "ac_aot_550_mean": null,
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "False",
+        "dsf_residual_glint_correction_method": "default"
+      },
+      "V1": {
+        "sza": 33.54681443691902,
+        "saa": 151.0709419963491,
+        "vza": 14.10355850726491,
+        "vaa": 168.1100372562715,
+        "isodate": "2026-09-03T11:33:59.900000",
+        "ac_model": "ACOLITE-LUT-202110-MOD2",
+        "ac_aot_550": "0.410734",
+        "ac_aot_550_mean": null,
+        "adjacency_correction": "False",
+        "dsf_residual_glint_correction": "True",
+        "dsf_residual_glint_correction_method": "alternative"
+      }
+    }
+  }
+}

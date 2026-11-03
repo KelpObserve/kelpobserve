@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-11-03T08:38:55.098232+00:00",
+  "inputs_sha256": {
+    "benchmark/reports/r7-optical-diagnostic-20261102/paired-grid-cells.csv.gz": "d08667c76a92246c4cfaa3e8b87c6acfd8643382f2e35de201dd75d65edd986e",
+    "optics/reports/e5s-kelp-spectra/results.json": "eeb3f814001b3bc358d7e08fdb812e48ac9a571765a76564996c238d8a336968",
+    "benchmark/registration/evidence/cmems-optical-inputs-20261102.json": "aaf603e74a21f35509c236b50603df9f3736cbf173f5d0db1635247b86ef85e1",
+    "benchmark/registration/pneo-optical-repair-20261103.json": "e81232918573a1fee81bc32325561f6834b04d9a6de5fa6019a50c2f66bae0b9",
+    "benchmark/reports/r7-optical-diagnostic-20261102/scene-metadata.json": "e3871ad881f224e9f046a701e8ae1f32c6d64160f1edde6eabd4c22dcdf3258e",
+    "benchmark/reports/r7-optical-diagnostic-20261102/water-states.json": "46be8d980e93f44006882bfa6d28939bc8ed1e88e397eb75110d55aa5ffc7d76",
+    "benchmark/benchmark/revision.py": "98bb3ffcea58907820766078144dc96634ef4e30fc29de5fe1436cec3ee66e6d",
+    "benchmark/benchmark/run_benchmark.py": "904825da33b073bfbb4195622b99d4ade0b1e72b0740ea03a4d0cdc2dd0a2a23",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhos_439.tif": "26d8895047c84d533f72860032a413cb52b6f4a6bb63b7de84df1c0767b63193",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhos_486.tif": "8cb1c279d24166e1e20d835f3cd0e7df3bd275b3fa6cb1804a7a5ec059aa9b49",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhos_563.tif": "9e42d6ca22766fd8563497d196278707b588aa33d1e8441e0a4c3ce44829fbc1",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhos_655.tif": "2b7035e29cfbd253b574b6f46c1f08c2f67b66b5f19a74fd9ef275ce2f2b982c",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhos_826.tif": "a5100bae1ec18eeb727df90a006dd742a4e8b4e73e2bbf7277b03477dfca2e92",
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_826.tif": "5e03cfbe1634b52d14c11d691957544975a59d093e58658f0cf7269b931cc5ec",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhos_439.tif": "56a8dc3ec6ba92f26ba1d4803a455a92b44049fb88e5f4a3450968391a5977f6",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhos_486.tif": "588accc66f2d4332663bcb61a0745e7417fa49ee28a5cb1f63f74951d5b10f70",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhos_563.tif": "a5cacf20e4c952e44e379a57d31137061cd1f2fb103473d477b496af9ade0892",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhos_655.tif": "ee3cdf9ab544f6b09a853e8e0b5e41c71f60d9d2f524700e10c817329307da33",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhos_826.tif": "2ffd1cc5431d914b1584b4cd335612b4a3c278b5c63959e6cd9473f31a02df23",
+    "$CACHE/acolite/pneo-20260903/PNEO3_2026_09_03_11_33_59_L2R_rhot_826.tif": "508c14596130b74d2a161342e1b86e9508a16192cc7949edf9af076422f527a9"
+  },
+  "code_sha256": {
+    "pneo_optical_review.py": "9fadb49e8215c9608a25130e24a3a28d93fab7bc31fec67ae310b09493574547",
+    "optical_corrections.py": "ea1446fb1b52d65bd79d9ae7383f4f27b23740a877ef38c4365885a832915163",
+    "water_constraints.py": "f1fe7aa64dd6956530e91ba748ece0e75c86f2dea14dcbd6fa4779d3dc137344",
+    "pneo_optical_report.py": "a265e46afab4c3b485c5eb1fc2a3222ed47096210e2f1b9bc5a98cfbecc4a352"
+  },
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "spatial_splits_disjoint": true,
+  "legacy_glint_reproduced_within_rhos": 2e-07,
+  "legacy_glint_reproduction_max_abs_rhos": {
+    "pneo-20260708": 1.396656989713363e-09,
+    "pneo-20260903": 2.3055629731760785e-09
+  },
+  "absolute_radiometry_validated": false,
+  "historical_outputs_unchanged": true,
+  "frozen_r7_code_hashes_verified": 8
+}

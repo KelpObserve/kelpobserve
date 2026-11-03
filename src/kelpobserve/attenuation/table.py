@@ -13,7 +13,7 @@ import json
 from dataclasses import asdict
 from datetime import UTC, date, datetime
 
-from kelpobserve.attenuation import bands, cmems, fallback
+from kelpobserve.attenuation import bands, cmems, fallback, qualification
 from kelpobserve.config import ARCHIVE, BENCHMARK, OPTICS, REPO, Paths
 
 SEARCH_KM = 5.0
@@ -38,6 +38,7 @@ def build(paths: Paths) -> dict:
     scenes = []
     for scene_id, qaa in reference["scenes"].items():
         match = cmems.nearest_valid(subset, scene_date(scene_id), SEARCH_KM, SEARCH_DAYS)
+        audit = qualification.audit_match(subset, scene_date(scene_id), SEARCH_KM, SEARCH_DAYS)
         try:
             choice = asdict(fallback.choose(qaa, match))
         except NotImplementedError as missing:
@@ -47,13 +48,16 @@ def build(paths: Paths) -> dict:
             "qaa": {"wavelengths_nm": qaa["wavelengths_nm"], "kd": qaa["kd"], "qa_flags": qaa["qa_flags"],
                     "corrected_branch_available": qaa["corrected_branch_available"]},
             "cmems": match.to_json() if match else None,
+            "cmems_qualification": audit,
             "choice": choice,
+            "cmems_at_bands_status": "conditional diagnostic; candidate has not been accepted as reef water",
             "cmems_at_bands": bands.at_bands(match.kd490, qaa["wavelengths_nm"], qaa["solar_zenith_deg"], e5s)
             if match else None,
         })
     return {
         "created_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "subset": evidence,
+        "matchup_policy": qualification.POLICY,
         "search": {"max_km": SEARCH_KM, "max_days": SEARCH_DAYS},
         "spectral_shape": "E5s median IOPs (forced-560 QAA, Sentinel-2, 24 December 2025 and 22 February 2026)",
         "scenes": scenes,

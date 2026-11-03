@@ -1,0 +1,63 @@
+{
+  "source_run": "benchmark/reports/r7-local-cover-20261102-r3",
+  "created_at": "2026-11-02T21:07:29.095023+00:00",
+  "source_and_run_files_unchanged": true,
+  "frozen_code_hashes_verified": 8,
+  "predictions_residuals_compatibility_and_benthic_reflectance_recomputed": 206,
+  "unit_cover_means_and_event_memberships_verified": 228,
+  "primary_scored_quadrat_scene_rows": 91,
+  "unique_primary_scored_quadrats": 50,
+  "primary_unscored_quadrat_scene_rows": 13,
+  "all_variant_quadrat_scene_scale_rows": 312,
+  "primary_groups": [
+    {
+      "sensor": "pleiades_neo",
+      "campaign": "july",
+      "scale": "native",
+      "candidate_footprints": 30,
+      "scored_footprints": 29,
+      "scored_quadrats": 29,
+      "compatible_footprints": 0
+    },
+    {
+      "sensor": "pleiades_neo",
+      "campaign": "september",
+      "scale": "native",
+      "candidate_footprints": 22,
+      "scored_footprints": 18,
+      "scored_quadrats": 18,
+      "compatible_footprints": 0
+    },
+    {
+      "sensor": "sentinel2",
+      "campaign": "july",
+      "scale": "10m",
+      "candidate_footprints": 18,
+      "scored_footprints": 14,
+      "scored_quadrats": 24,
+      "compatible_footprints": 0
+    },
+    {
+      "sensor": "sentinel2",
+      "campaign": "september",
+      "scale": "10m",
+      "candidate_footprints": 13,
+      "scored_footprints": 12,
+      "scored_quadrats": 20,
+      "compatible_footprints": 0
+    }
+  ],
+  "inputs_sha256": {
+    "benchmark/reports/r7-local-cover-20261102-r3/units.csv": "1466f173c750ad6cc6dfe3b90c9364b31ff7c0ed9cba374820e0d7b780bd81eb",
+    "benchmark/reports/r7-local-cover-20261102-r3/scene-info.json": "d184257a26a15b942fc3c50756296081831e39c7acdc7294b625808edb3fb352",
+    "benchmark/reports/r7-local-cover-20261102-r3/registration.json": "88130ce1435d1e74535aa94d66c265f224ec42c49ec0b76b4a5c6909b8ae3f81",
+    "benchmark/reports/r7-local-cover-20261102-r3/freeze.json": "4fe39ba3fd33adc9579689d2b327b2426ea409ab8ad855e3079ff978dcf07570",
+    "benchmark/reports/r7-local-cover-20261102-r3/input-lock.json": "63e5f10f75dfcebb72d68ef34a7faf6ffbb24e3f3451b01ee163734bd552dac3",
+    "benchmark/archive/out/inventory/runs/20260920T123801-97187cc0070b/events.gpkg": "981a547b625ab55ca03ed47f5eb29d606e53ba228c4b68d97ffe8864ea7b9016",
+    "benchmark/archive/out/inventory/runs/20260920T123801-97187cc0070b/targets_development.csv": "8669eea54bf5593037e2e1cd6b998929f845f2b460e6f616a516b4b6b28b393f",
+    "benchmark/archive/out/inventory/runs/20260920T123801-97187cc0070b/targets_september.csv": "e850d8ca5fa40ecbcf8682771f3432cbb162637bfc49fd2aa6bd674244b58ec1",
+    "benchmark/registration/evidence/cmems-optical-inputs-20261102.json": "aaf603e74a21f35509c236b50603df9f3736cbf173f5d0db1635247b86ef85e1",
+    "optics/reports/e5s-kelp-spectra/results.json": "eeb3f814001b3bc358d7e08fdb812e48ac9a571765a76564996c238d8a336968"
+  },
+  "export_script_sha256": "4bd8efcc378c9e79133f38f856d8ab33db0c47ad0c35cbabe57034a04467e604"
+}

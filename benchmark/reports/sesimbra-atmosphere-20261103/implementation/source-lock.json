@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "src/kelpobserve/optical_corrections.py": "ea1446fb1b52d65bd79d9ae7383f4f27b23740a877ef38c4365885a832915163",
+    "src/kelpobserve/water_constraints.py": "50f53385e99394205b26bbb85090c5ea89917ecb39e8d86bff12fd16b0bfe1f3",
+    "src/kelpobserve/pneo_optical_review.py": "08bdf91832be418282561e68c1667548a4eaeb04cfd9edbf0c0b02c97bd08a0a",
+    "src/kelpobserve/pneo_optical_report.py": "a265e46afab4c3b485c5eb1fc2a3222ed47096210e2f1b9bc5a98cfbecc4a352",
+    "src/kelpobserve/local_cover.py": "ed619153590c97fe364a38e070392d4bf87b2420a7109d2c326e18cf042d0540",
+    "src/kelpobserve/config.py": "992634f4333a277c67a43373d590d92a97c0e51e96ce5778f938a1098d5f8711"
+  },
+  "acolite_head": "64a02ff386e2985eef68ae00198b38e04f3c4a1f"
+}

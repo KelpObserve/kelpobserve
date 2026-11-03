@@ -1,0 +1,37 @@
+{
+  "id": "pneo-optical-repair-20261103",
+  "status": "development",
+  "recorded_at": "2026-11-03T08:18:50.927975+00:00",
+  "purpose": "Repair unsafe glint assumptions and make the water constraints explicit, using no cover labels.",
+  "prior_information": "Prior r1-r7 and optical audit inspected. This is a development comparison on previously inspected scenes, not independent confirmation.",
+  "scenes": [
+    "pneo-20260708",
+    "pneo-20260903"
+  ],
+  "controls": "Original V0 and V1; same previously frozen deep-reference and habitat polygons and paired 10 m grid.",
+  "factorial": "LUT or empirical within-block spectral slopes; zero or training-reference fifth-percentile NIR baseline. No corrected reflectance clipping.",
+  "calibration": {
+    "block_m": 100,
+    "min_cells_per_block": 10,
+    "minimum_NIR_p95_p05": 0.002,
+    "minimum_blocks": 6,
+    "slope": "Median of per-block OLS slopes after block centering, equal block weight. Fit coastal, blue, green, red; NIR coefficient fixed to one.",
+    "NIR_baseline": "fifth percentile of training-reference cells; report p1/p10 sensitivity without selecting a quantile",
+    "slope_bounds": [
+      0,
+      3
+    ]
+  },
+  "holdout": "Split reference by median block easting, leaving 100 m between western and eastern sets. Calibrate west and score east; then reverse. Held-out cells and habitat never estimate slopes or baseline.",
+  "application": "Return corrected diagnostic values and separate qualification masks; flag NIR below/above the training p1-p99 envelope and unavailable/unstable calibration. No habitat-map release. No inference that low residual NIR validates correction.",
+  "comparison": "Negative and below-minus-0.001 reflectance fractions, within-block residual variation, remaining NIR-coherent slopes, training-support coverage, and fixed water-state closure. Metrics are descriptive; no threshold optimized against cover or real-data pass rate.",
+  "water": "Separate particle backscatter amplitude from absorption amplitude using qualified KD490 and BBP443; check non-water absorption against CDM443 lower bound. Keep winter shape explicit. Reject impossible KD and invalid spectral interpolation; never silently clamp to pure water. Provider +/- error grid is sensitivity, not confidence.",
+  "preservation": "Do not alter frozen r7 code, results or upstream ACOLITE. Add reusable correction/constraint modules, tests and a new evidence bundle. No cover score, commit or publication.",
+  "implementation_clarification": {
+    "recorded_at": "2026-11-03T08:25:46.827648+00:00",
+    "before_empirical_calibration": true,
+    "reason": "Legacy reproduction on averaged NIR differed by up to 0.000475 because native negative NIR is floored before subtraction. Apply every correction at native resolution before area averaging. The first attempt stopped at this check before any empirical fit or score.",
+    "calibration_grid": "10 m paired reference grid as recorded",
+    "application_grid": "Native 1.2 m V0 pixels, followed by the same masked area means on the 10 m evaluation grid."
+  }
+}

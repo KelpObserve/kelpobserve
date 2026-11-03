@@ -1,0 +1,22 @@
+{
+  "historical_file_hashes_verified": 35,
+  "historical_outputs_unchanged": true,
+  "frozen_r7_code_hashes_verified": 8,
+  "legacy_native_correction_max_abs_rhos": {
+    "pneo-20260708": 1.396656989713363e-09,
+    "pneo-20260903": 2.3055629731760785e-09
+  },
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "pytest_suite_passed": 85,
+  "new_tests_passed": 16,
+  "ruff_new_modules_and_tests_passed": true,
+  "git_diff_check_passed": true,
+  "cli_help_passed": true,
+  "installed_cli_run_completed": true,
+  "rerun_diagnostics_identical_after_import_sorting": true,
+  "report_reviewed_against_tables": true,
+  "installed_code_matches_execution_hashes": true,
+  "consumed_input_hashes_verified": 20,
+  "installed_registration_matches_executed_design": true
+}

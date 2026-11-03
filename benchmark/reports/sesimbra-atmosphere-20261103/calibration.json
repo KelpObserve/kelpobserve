@@ -1,0 +1,92 @@
+{
+  "pneo_marine_control_west_to_east": {
+    "slopes": [
+      0.7114571907543883,
+      0.8055838031406972,
+      0.8882778273213615,
+      0.952095225392753
+    ],
+    "nir_p05": 0.024142722226679326,
+    "nir_p01": 0.004044656166806817,
+    "nir_p99": 0.06423498094081878,
+    "informative_blocks": 24,
+    "training_cells": 1315,
+    "test_cells": 1176,
+    "disjoint": true
+  },
+  "pneo_marine_control_east_to_west": {
+    "slopes": [
+      0.6726289357923814,
+      0.7811808616228711,
+      0.8429452426197168,
+      0.9820964150344913
+    ],
+    "nir_p05": 0.0037309567211195826,
+    "nir_p01": 0.0036365465936250983,
+    "nir_p99": 0.01125892371870577,
+    "informative_blocks": 16,
+    "training_cells": 1174,
+    "test_cells": 1315,
+    "disjoint": true
+  },
+  "pneo_marine_control_full_reference_preview": {
+    "slopes": [
+      0.7096314071734707,
+      0.8055838031406972,
+      0.883310736768165,
+      0.9535183159950592
+    ],
+    "nir_p05": 0.0038084818166680633,
+    "nir_p01": 0.0036657999805174766,
+    "nir_p99": 0.06242077130824329,
+    "informative_blocks": 42,
+    "training_cells": 2588,
+    "test_cells": 21153,
+    "disjoint": null
+  },
+  "pneo_continental_west_to_east": {
+    "slopes": [
+      0.7252486818330537,
+      0.8169614947946113,
+      0.8963153855924861,
+      0.9565434871158907
+    ],
+    "nir_p05": 0.0266535434871912,
+    "nir_p01": 0.006235464094206691,
+    "nir_p99": 0.06738641619682312,
+    "informative_blocks": 24,
+    "training_cells": 1315,
+    "test_cells": 1176,
+    "disjoint": true
+  },
+  "pneo_continental_east_to_west": {
+    "slopes": [
+      0.6858620758334906,
+      0.7922896463034748,
+      0.8508216862264221,
+      0.9868901380327268
+    ],
+    "nir_p05": 0.005916780279949308,
+    "nir_p01": 0.005820869710296392,
+    "nir_p99": 0.01356460436247289,
+    "informative_blocks": 16,
+    "training_cells": 1174,
+    "test_cells": 1315,
+    "disjoint": true
+  },
+  "pneo_continental_full_reference_preview": {
+    "slopes": [
+      0.7234118550215398,
+      0.8169614947946113,
+      0.8912843259875707,
+      0.9579760378220921
+    ],
+    "nir_p05": 0.005995536362752319,
+    "nir_p01": 0.005850588162429631,
+    "nir_p99": 0.06554319061338904,
+    "informative_blocks": 42,
+    "training_cells": 2588,
+    "test_cells": 21153,
+    "disjoint": null
+  }
+}

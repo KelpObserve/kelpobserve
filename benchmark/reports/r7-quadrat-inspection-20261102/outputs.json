@@ -1,0 +1,14 @@
+{
+  "sha256": {
+    "unscored-quadrats-primary.csv": "c6d5fd329bca3d32a4703882e98ef3a51fdd83eb9efaf7046cffebfa1faf6bc7",
+    "export_quadrats.py": "4bd8efcc378c9e79133f38f856d8ab33db0c47ad0c35cbabe57034a04467e604",
+    "scored-quadrats-primary.geojson": "266dca12f300cc83e1f85e3c287c62a5d52c9504d8ae6a849d396571e52fb9b4",
+    "scored-quadrats-primary.csv": "3ae5d771d0cbcee8ac630e2de329fdbd5f6bac3d5829cbeecd998e022139dd91",
+    "optical-inputs-by-scene.csv": "531041b62dc5470cfd872a87dd7b3ace4911cb64cbcbed0b1d37ef45ba9a4ad5",
+    "all-quadrat-associations.csv": "b543456209ba89ce0d00cfab7fd78a4aefcbbf6cfb21995c9cf736706da9cbfd",
+    "copernicus-context-by-scene.csv": "8ca18f51d4fb9ca853b38657c62dbdd9f94fec800b80d286a46c3073824adbee",
+    "README.txt": "faa7798b3a6dfebe91d0f2d2cc265421bbd86b866e78afd546a8568d4058108e",
+    "verification.json": "b0f58752fa50ae0f7a9f0ae8f34e2481248800de451c09876d2043dca4528603",
+    "footprints-all.csv": "264b52358b2f23ea9b3275776e8c3f6efc27eef477bd3d26c99945bc441061e9"
+  }
+}

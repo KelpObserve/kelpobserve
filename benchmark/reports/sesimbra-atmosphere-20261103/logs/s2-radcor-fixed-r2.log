@@ -1,0 +1,95 @@
+Matplotlib is building the font cache; this may take a moment.
+Running RAdCor on scene $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+
+Scene from S2B_MSI.
+Scene dimensions: 1196x1592 (pixels)
+Got spatial resolution of 10.0 m from global attributes.
+
+uoz, uwv, pressure, wind: 0.30, 1.50, 1013.25, 2.00
+Using LUTs ACOLITE-LUT-202110-MOD1 (M) for RAdCor
+
+User supplied model and aot: radcor_force_model=M radcor_force_aot=0.080870785
+
+Performing RAdCor correction
+taer_550: 0.080870785
+Aerosol model: M
+Aerosol LUT: ACOLITE-LUT-202110-MOD2
+Reading raa from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing raa to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Reading sza from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing sza to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Reading vza from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing vza to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Reading lon from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing lon to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Reading lat from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing lat to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Loading TOA data for band 1 (rhot_442)
+Computing fft of TOA array
+PSF cov: 0.6415587012782544
+Writing band 1
+Loading TOA data for band 2 (rhot_492)
+Computing fft of TOA array
+PSF cov: 0.6858996520187177
+Writing band 2
+Loading TOA data for band 3 (rhot_559)
+Computing fft of TOA array
+PSF cov: 0.7447086699203467
+Writing band 3
+Loading TOA data for band 4 (rhot_665)
+Computing fft of TOA array
+PSF cov: 0.8148658436858894
+Writing band 4
+Loading TOA data for band 5 (rhot_704)
+Computing fft of TOA array
+PSF cov: 0.834760934259926
+Writing band 5
+Loading TOA data for band 6 (rhot_739)
+Computing fft of TOA array
+PSF cov: 0.8501288623025292
+Writing band 6
+Loading TOA data for band 7 (rhot_780)
+Computing fft of TOA array
+PSF cov: 0.8648577114039646
+Writing band 7
+Loading TOA data for band 8 (rhot_833)
+Computing fft of TOA array
+PSF cov: 0.87997985557285
+Writing band 8
+Loading TOA data for band 8A (rhot_864)
+Computing fft of TOA array
+PSF cov: 0.8874536178234744
+Writing band 8A
+Loading TOA data for band 11 (rhot_1610)
+Computing fft of TOA array
+PSF cov: 0.9446041928713211
+Writing band 11
+Loading TOA data for band 12 (rhot_2186)
+Computing fft of TOA array
+PSF cov: 0.9565916869236439
+Writing band 12
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhos_1610.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R_rhosu_1610.tif
+Creating new file: $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/glint/s2-20260702-S2B-R037_L2R_GC.nc
+Per-pixel geometry found, not yet implemented.
+Proceeding with scene average geometry values.
+Traceback (most recent call last):
+  File "$TMP/sesimbra-atmosphere-20261103/process.py", line 133, in <module>
+    (pack if a.action=='pack' else process)(a.target)
+  File "$TMP/sesimbra-atmosphere-20261103/process.py", line 122, in process
+    ac.glint.default(str(result),settings={'output':str(glint),'glint_write_rhog_ref':True},new_file=True)
+  File "$ACOLITE/acolite/glint/default.py", line 92, in default
+    if setu['dsf_interface_reflectance']: romix_par = 'romix+rsky_t'
+       ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'dsf_interface_reflectance'

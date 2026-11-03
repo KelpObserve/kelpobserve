@@ -1,0 +1,36 @@
+{
+  "id": "sesimbra-atmosphere-20261103",
+  "recorded_at": "2026-11-03T09:55:42.338365+00:00",
+  "status": "development_before_processing",
+  "prior_information": "All earlier r7 and glint-review results inspected. July scenes are development data. No cover labels will be read or scored.",
+  "scenes": [
+    "s2-20260702-S2B-R037",
+    "pneo-20260708"
+  ],
+  "input": "Repack immutable cached TOA reflectance and geometry GeoTIFFs into L1R NetCDF. Verify every array exactly; preserve native resolution and projection. PNeo uses full delivered footprint; S2 uses existing grid extent covering all evaluation cells plus 5.1 km on every side. No reflectance resampling in packaging.",
+  "calibration": "Original offshore/habitat masks and evaluation grid. West/east 100m block split with centre-column purge as in preceding glint review. No habitat pixels used for glint slopes.",
+  "processing": {
+    "S2": [
+      "RAdCor at fixed marine aerosol/AOT 0.080870785",
+      "RAdCor automatic C/M aerosol estimation"
+    ],
+    "S2_controls": "Each RAdCor run writes rhosu (homogeneous-surface comparator) and rhos (adjacency corrected) using identical aerosol and geometry. Both retained before and after the same standard SWIR glint function.",
+    "PNeo": [
+      "DSF fixed original marine aerosol/AOT 0.078115806, no glint: source reconstruction control",
+      "DSF original percentile selection with continental aerosol only, no glint: aerosol-family sensitivity"
+    ],
+    "PNeo_glint": "Uncorrected; empirical zero and empirical training-p05 baseline, slopes fitted on train reference only, native subtraction before 10m means. Full-reference previews reported separately.",
+    "PNeo_adjacency": "Unavailable in pinned checkout: no PNEO3 coefficient files; original Pleiades coefficients will not be substituted."
+  },
+  "radcor": {
+    "kernel_radius_km": 5,
+    "edge_extend": false,
+    "crop_centre": false,
+    "residual_glint_during_atmosphere": false,
+    "write_rhosu": true
+  },
+  "water": "Three pre-existing winter spectral shapes (Dec24, Feb22, median), each with KD490/BBP443 nominal and +/- producer errors: 27 externally specified states per scene. CDM error-lower-bound conflicts retained and flagged. No optical state selected using image fit. Not a probability distribution; summer shape and reef representativeness remain unvalidated.",
+  "evaluation": "Paired blue/green/coastal/red diagnostics, retained negative reflectance, coverage, block summaries, shore-distance groups, both-band finite-depth water closure at +/-0.001 and +/-0.002 rhos. Compare all eligible support and common support. Report held-out regions separately. No threshold tuned for a favourable result.",
+  "stop": "No cover/classifier run or physical-validation claim from this development comparison. If image/water closure remains inconsistent, document causes and next independent constraint. Qualifying shallow-bottom tests remains conditional.",
+  "preservation": "Pinned upstream ACOLITE and all prior benchmark files unchanged. New cache/evidence directory only. No commit or publication."
+}

@@ -1,0 +1,16 @@
+{
+  "initial_implementation": {
+    "status": "aborted_before_calibration",
+    "reason": "Averaging NIR before nonlinear correction failed V1 reproduction by 0.000475. No empirical fit or evaluation ran. Native correction before aggregation was recorded before run-2."
+  },
+  "native_application_clarification": {
+    "recorded_at": "2026-11-03T08:25:46.827648+00:00",
+    "before_empirical_calibration": true,
+    "reason": "Legacy reproduction on averaged NIR differed by up to 0.000475 because native negative NIR is floored before subtraction. Apply every correction at native resolution before area averaging. The first attempt stopped at this check before any empirical fit or score.",
+    "calibration_grid": "10 m paired reference grid as recorded",
+    "application_grid": "Native 1.2 m V0 pixels, followed by the same masked area means on the 10 m evaluation grid."
+  },
+  "post_run_changes": "Import sorting only; repeated diagnostics and report match the installed CLI run exactly.",
+  "original_installed_provenance_sha256": "6b1d99b0a848ecb1afe7b9c377ef549b87ea6b5ebfb02a6af04c2787172036cb",
+  "new_cover_scores": false
+}

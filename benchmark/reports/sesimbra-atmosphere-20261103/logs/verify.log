@@ -1,0 +1,61 @@
+Analysis parity passed
+Frozen source and previous outputs unchanged
+Packed native inputs passed
+Exact native export and glint checks passed
+{
+  "style_cleanup_numerical_parity": {
+    "csv_files": 7,
+    "json_files": 3,
+    "exact": true
+  },
+  "frozen_r7_sources_unchanged": 8,
+  "previous_output_manifests": {
+    "r7-local-cover-20261102-r3": 11,
+    "r7-optical-diagnostic-20261102": 21,
+    "pneo-optical-repair-20261103": 14
+  },
+  "packed_inputs": {
+    "pneo-20260708": {
+      "source_arrays_exact": 6,
+      "hashes_unchanged": true
+    },
+    "s2-20260702-S2B-R037": {
+      "source_arrays_exact": 16,
+      "hashes_unchanged": true
+    }
+  },
+  "exported_rasters": {
+    "s2_radcor_fixed": 12,
+    "s2_radcor_fixed/glint": 12,
+    "s2_radcor_auto": 12,
+    "s2_radcor_auto/glint": 12,
+    "pneo_marine_control": 5,
+    "pneo_continental": 5
+  },
+  "glint_applied": {
+    "s2_radcor_fixed": true,
+    "s2_radcor_auto": true
+  },
+  "pneo_control_native_max_errors": {
+    "439": 0.0,
+    "486": 0.0,
+    "563": 0.0,
+    "655": 0.0,
+    "826": 0.0
+  },
+  "common_support_independently_recomputed": true,
+  "archived_controls_exact": true,
+  "glint_calibration_test_blocks_disjoint": true,
+  "cover_targets_read": false,
+  "cover_scores_computed": false,
+  "acolite_source_unchanged": "64a02ff386e2985eef68ae00198b38e04f3c4a1f",
+  "python": "3.12.0 (v3.12.0:0fb18b02c8, Oct  2 2023, 09:45:56) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "runtime_packages": {
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "netCDF4": "1.7.4",
+    "rasterio": "1.5.1",
+    "scipy": "1.18.1",
+    "GDAL": "3.13.0"
+  }
+}

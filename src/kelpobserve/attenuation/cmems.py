@@ -40,6 +40,7 @@ class Match:
     kd490: float
     uncertainty_pct: float
     valid_within_radius: int
+    flags: int = 0
 
     def to_json(self) -> dict:
         return asdict(self)
@@ -136,7 +137,8 @@ def open_subset(path: Path, record: dict | None = None):
 
     if record and not matches(path, record):
         raise SystemExit(f"The subset at {path} is not the one recorded in the evidence file.")
-    return xr.open_dataset(path).load()
+    with xr.open_dataset(path) as dataset:
+        return dataset.load()
 
 
 def distances_km(latitudes: np.ndarray, longitudes: np.ndarray, site: tuple[float, float] = SITE) -> np.ndarray:
@@ -147,26 +149,103 @@ def distances_km(latitudes: np.ndarray, longitudes: np.ndarray, site: tuple[floa
     return 6371.0 * 2 * np.arcsin(np.sqrt(h))
 
 
+def validate_subset(dataset) -> None:
+    """Require the reviewed L3 LAND flag schema and decoded physical units.
+
+    An unfamiliar flag definition must be reviewed before this selector can use it.
+    Unknown flag values are rejected per pixel by quality_masks().
+    """
+    for name in VARIABLES:
+        if name not in dataset or set(dataset[name].dims) != {"time", "latitude", "longitude"}:
+            raise ValueError(f"{name} must have time, latitude and longitude dimensions")
+    for name, limit in (("latitude", 90), ("longitude", 180)):
+        values = np.asarray(dataset[name].values)
+        if (values.ndim != 1 or not np.all(np.isfinite(values)) or not values.size
+                or len(np.unique(values)) != len(values) or np.any(np.abs(values) > limit)):
+            raise ValueError(f"Invalid {name} coordinates")
+    days = dataset.time.values.astype("datetime64[D]")
+    if days.ndim != 1 or np.isnat(days).any() or len(np.unique(days)) != len(days):
+        raise ValueError("Expected at most one daily record per date")
+    attrs = dataset.flags.attrs
+    try:
+        masks = np.asarray(attrs.get("flag_masks", []), dtype=float).reshape(-1)
+    except (ValueError, TypeError) as error:
+        raise ValueError("Unsupported flag schema; expected LAND mask 1") from error
+    if masks.tolist() != [1.0] or str(attrs.get("flag_meanings", "")).upper().split() != ["LAND"]:
+        raise ValueError("Unsupported flag schema; expected LAND mask 1")
+    if dataset.KD490.attrs.get("units") != "m-1" or dataset.KD490_uncertainty.attrs.get("units") != "%":
+        raise ValueError("Expected decoded KD490 in m-1 and uncertainty in percent")
+
+
+def _outside_valid_range(variable, values: np.ndarray) -> np.ndarray:
+    """CF valid_min/max retain packed units after xarray decodes the data."""
+    outside = np.zeros(values.shape, dtype=bool)
+    scale = variable.encoding.get("scale_factor", 1.0)
+    offset = variable.encoding.get("add_offset", 0.0)
+    for name, compare in (("valid_min", np.less), ("valid_max", np.greater)):
+        if name in variable.attrs:
+            outside |= compare(values, float(variable.attrs[name]) * scale + offset)
+    return outside
+
+
+def quality_masks(dataset, index: int) -> tuple[np.ndarray, dict[str, np.ndarray]]:
+    """Product checks; reason masks may overlap. Caller first validates the schema.
+
+    Uncertainty must be finite, nonnegative and uncensored. The product caps its
+    error bars at 327.67%; a capped value cannot provide a quantified upper error.
+    No application-specific uncertainty cutoff is imposed here.
+    """
+    def grid(name):
+        return dataset[name].isel(time=index).transpose("latitude", "longitude").values
+
+    kd, uncertainty, flags = (grid(name) for name in VARIABLES)
+    reasons = {
+        "land": flags == 1,
+        "invalid_or_unknown_flags": ~np.isin(flags, [0, 1]),
+        "invalid_kd490": ~np.isfinite(kd) | (kd <= 0) | _outside_valid_range(dataset.KD490, kd),
+        "invalid_uncertainty": (~np.isfinite(uncertainty) | (uncertainty < 0)
+                                | _outside_valid_range(dataset.KD490_uncertainty, uncertainty)),
+        "censored_uncertainty": uncertainty >= 327.665,
+    }
+    usable = ~np.logical_or.reduce(list(reasons.values()))
+    return usable, reasons
+
+
+def search_geometry(dataset, max_km: float, max_days: int, site: tuple[float, float]) -> np.ndarray:
+    validate_subset(dataset)
+    if not np.isfinite(max_km) or max_km <= 0:
+        raise ValueError("max_km must be finite and positive")
+    if isinstance(max_days, bool) or not isinstance(max_days, int) or max_days < 0:
+        raise ValueError("max_days must be a nonnegative integer")
+    if (len(site) != 2 or not np.all(np.isfinite(site)) or abs(site[0]) > 90 or abs(site[1]) > 180):
+        raise ValueError("Invalid site latitude/longitude")
+    return distances_km(dataset.latitude.values, dataset.longitude.values, site)
+
+
 def nearest_valid(dataset, when: date, max_km: float, max_days: int, site: tuple[float, float] = SITE) -> Match | None:
-    """The valid KD490 pixel nearest the site, on the day itself or the closest day within max_days."""
-    distance = distances_km(dataset.latitude.values, dataset.longitude.values, site)
+    """Nearest product-valid water pixel, preferring the target day then closest day.
+
+    Equidistant dates prefer the earlier day; spatial ties follow latitude/longitude
+    array order. This is a candidate for input qualification, not reef validation.
+    """
+    distance = search_geometry(dataset, max_km, max_days, site)
     days = dataset.time.values.astype("datetime64[D]")
     for offset in sorted(range(-max_days, max_days + 1), key=lambda d: (abs(d), d)):
         day = np.datetime64(when + timedelta(days=offset), "D")
         index = np.flatnonzero(days == day)
         if index.size == 0:
             continue
-        kd = dataset.KD490.isel(time=int(index[0])).values
-        usable = np.isfinite(kd) & (distance <= max_km)
+        usable, _ = quality_masks(dataset, int(index[0]))
+        usable &= distance <= max_km
         if not usable.any():
             continue
         row, column = np.unravel_index(np.where(usable, distance, np.inf).argmin(), distance.shape)
-        uncertainty = dataset.KD490_uncertainty.isel(time=int(index[0])).values[row, column]
+        pixel = dataset.isel(time=int(index[0]), latitude=row, longitude=column)
         return Match(
             date=str(day), day_offset=offset, distance_km=round(float(distance[row, column]), 3),
             latitude=float(dataset.latitude.values[row]), longitude=float(dataset.longitude.values[column]),
-            kd490=float(kd[row, column]), uncertainty_pct=float(uncertainty),
-            valid_within_radius=int(usable.sum()),
+            kd490=float(pixel.KD490.values), uncertainty_pct=float(pixel.KD490_uncertainty.values),
+            valid_within_radius=int(usable.sum()), flags=int(pixel.flags.values),
         )
     return None
 

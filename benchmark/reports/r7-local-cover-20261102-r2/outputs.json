@@ -1,0 +1,13 @@
+{
+  "cover-diagnostics.png": "e9d4ef853510a368f0db7baf557d7301f6dc41c447564f3ba46dfb978cc810bb",
+  "freeze.json": "df12108d558bee5e787d0e1c13341353774f48c2aed510df0c68bdb74fcefe74",
+  "input-lock.json": "fcb119948d61452cb2a0ebf35e242229d8577658ec474b2ce2e9940ffc5fbeaf",
+  "positive-control.json": "e7b3bc22b39dbf7bb33ca85d99d01ea48a51902d2a348bb42310385b9515d04b",
+  "registration.json": "13092db9c5cb431d6283dd5049c4e383e4a99ff31cb8fd1274066dfbfa575e23",
+  "report.md": "ac66029348904ab6ea3776450c2187a44a82b0c8b03b5858d595df11073ea1d3",
+  "results.json": "d4f2dd6b41b73540d28d10e43eae1afec4cd8f2cee49b786525f004d53d97b4b",
+  "scene-info.json": "d184257a26a15b942fc3c50756296081831e39c7acdc7294b625808edb3fb352",
+  "sensitivity.csv.gz": "f63f057db48cc2e2e35c84f006413185f52c33b4e63bafb3932d64e92ca63545",
+  "support-before-scoring.csv": "1b6dfc552b03a11be00e78a54177954fc6e5d64b414edd96cd7b7eba381b7b0c",
+  "units.csv": "1466f173c750ad6cc6dfe3b90c9364b31ff7c0ed9cba374820e0d7b780bd81eb"
+}

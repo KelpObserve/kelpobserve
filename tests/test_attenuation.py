@@ -17,8 +17,10 @@ def subset(values: dict[str, np.ndarray]) -> xr.Dataset:
     times = pd.to_datetime(list(values))
     kd = np.stack(list(values.values()))
     return xr.Dataset(
-        {"KD490": (("time", "latitude", "longitude"), kd),
-         "KD490_uncertainty": (("time", "latitude", "longitude"), np.full_like(kd, 30.0))},
+        {"KD490": (("time", "latitude", "longitude"), kd, {"units": "m-1"}),
+         "KD490_uncertainty": (("time", "latitude", "longitude"), np.full_like(kd, 30.0), {"units": "%"}),
+         "flags": (("time", "latitude", "longitude"), np.zeros_like(kd),
+                   {"flag_masks": 1, "flag_meanings": "LAND"})},
         coords={"time": times, "latitude": latitudes, "longitude": longitudes},
     )
 

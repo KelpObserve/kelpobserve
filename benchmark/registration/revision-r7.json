@@ -1,40 +1,235 @@
 {
   "schema_version": "1.0",
   "revision_id": "r7",
-  "title": "Copernicus Marine KD490 as the attenuation of the water-column-corrected branch",
-  "status": "draft",
-  "status_note": "Not registered. The fallback rule and the pass criteria are open decisions; no corrected-branch result with CMEMS attenuation may be computed before they are fixed here.",
+  "title": "Same-campaign kelp-cover retrieval from Sentinel-2 and Pleiades Neo with the physics pipeline",
+  "status": "frozen_development",
+  "status_note": "User authorised execution on 2026-11-02. This local development protocol and code hashes were fixed before new real-cover scores. Prior label use is disclosed. Continuous accuracy, spectral compatibility and coverage are reported; no application release threshold was supplied.",
   "drafted_on": "2026-10-18",
-  "parents": ["v1", "r1", "r4", "r6"],
+  "parents": [
+    "v1",
+    "r1",
+    "r4",
+    "r6"
+  ],
   "kind": "exploratory",
-  "question": "With an attenuation taken from outside the image, does the water-column-corrected branch, unavailable in v1, predict July cover better than depth alone?",
+  "question": "How accurately can the physics pipeline estimate the kelp percentage cover observed by divers in each matched Sesimbra campaign, first from Sentinel-2 and separately from Pleiades Neo? Does the imagery add information beyond depth alone?",
   "why": "In v1 the QAA fit over the Pleiades Neo deep-water reference raised plausibility flags on both dates (red_reference_selected(655nm), bbp_555_implausible; Kd(486) 1.32 and 1.26 m-1), so the registered rule left the corrected branch unavailable (archive/out/optics-reference/runs/20260920T115500-a5823dc0e7cc/reference_iops.json).",
   "attenuation_source": {
     "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
     "dataset": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
     "frozen_subset": "registration/evidence/cmems-kd490-subset.json",
-    "pixel": "the valid KD490 pixel nearest the quadrat cluster (38.409 N, 9.202 W), searched within 5 km and 3 days",
-    "code": "src/kelpobserve/attenuation/cmems.py"
+    "pixel": "nearest product-valid water pixel within 5 km and +/-3 days; nearest day first, then nearest pixel; earlier day wins date ties",
+    "code": "src/kelpobserve/attenuation/cmems.py",
+    "quality_checks": "reviewed LAND=1 schema; flags=0; positive finite in-range KD490; finite nonnegative in-range uncensored uncertainty; expected physical units",
+    "qualification_evidence": "registration/evidence/cmems-matchup-qualification-20261102.json",
+    "qualification_status": "Product-qualified candidate used conditionally for this development test; reef representativeness unestablished."
   },
   "spectral_extension": {
     "shape": "E5s median non-water absorption and particulate backscatter (forced-560 QAA, Sentinel-2, 24 December 2025 and 22 February 2026)",
     "magnitude": "one factor on that shape, chosen so that the Lee et al. (2005) Kd(490) of the scaled IOPs equals the CMEMS value",
-    "library": "oceanstream.coastal at c3dc02a (pure-water optics and the Kd model)",
+    "library": "Repository-pinned kelpobserve.coastal; source hashes recorded under execution_code_sha256.",
     "code": "src/kelpobserve/attenuation/bands.py"
   },
   "fallback_rule": {
-    "code": "src/kelpobserve/attenuation/fallback.py: choose()",
-    "status": "open"
+    "status": "fixed_for_r7",
+    "rule": "Only the product-qualified same-day fixed KD490 neighbour. Missing source or metadata stops that run; no pixel/date fallback selected by performance. BBP/CDM not jointly fitted.",
+    "note": "This experiment consumes the fixed qualified same-day source record directly; the older general-purpose choose() stub remains unchanged."
   },
-  "open_decisions": [
-    "When CMEMS stands in: always when the in-scene QAA is flagged, or only when the CMEMS match passes thresholds on distance, day offset and uncertainty (3 September carries 84 %).",
-    "Which correction consumes the IOPs: the Lee inversion of the library, or the Lyzenga-style ratio of r1.",
-    "The pass criterion: for example, the r1 recovery rule (MAE at least 2 percentage points below depth-only, July leave-one-transect-out), and whether September is evaluated.",
-    "The scenes: Pleiades Neo 8 July and 3 September; whether the clean Sentinel-2 dates (2 July, 31 August) are added."
-  ],
+  "open_decisions": [],
   "known_limits": [
-    "The pixel is 1 km across and lies 0.29 km from the reef, near cliffs and partly over optically shallow water: adjacency light and bottom reflectance can bias it.",
+    "The product grid is nominally 1 km. The selected water pixel is 0.891 km from the reef; only one eligible pixel lies within 1 km. Coastal adjacency and shallow-bottom contributions remain possible, and the daily bin does not establish coincidence with an image overpass.",
     "A correct attenuation does not remove the radiometric residual of 0.01 to 0.04 that r1 to r6 found as large as the seabed contrast; the correction amplifies that residual by exp(K z).",
-    "Two winter dates compare CMEMS with the in-scene QAA that passed: 0.090 against 0.13 (24 December 2025) and 0.271 against 0.20 (22 February 2026)."
+    "Repaired winter CMEMS candidates are 0.0880 m-1 (24 December 2025) and 0.2412 m-1 (22 February 2026); the earlier 0.090/0.271 values came from a LAND-flagged pixel. Winter QAA is another remote retrieval, not independent in-water validation.",
+    "The fixed water pixel varies across the +/-3-day windows. Spatial and temporal neighbours are correlated, and agreement cannot rule out shared retrieval bias."
+  ],
+  "amendments": [
+    {
+      "date": "2026-11-02",
+      "kind": "development input repair and qualification; no habitat scoring",
+      "change": "Exclude LAND and invalid product values; require reviewed quality metadata; audit seven frozen-subset dates with spatial, fixed-pixel temporal and uncertainty diagnostics.",
+      "history": "All seven previous finite-only candidates carried LAND=1. Historical output files and the frozen subset are retained.",
+      "outcome": "Seven same-day candidates at 0.891 km; all candidate_only for reef application. No uncertainty cap adopted. Fallback choice and r7 outcome criteria remain open.",
+      "report": "docs/cmems-matchup-qualification.md"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "User-directed priority and evaluation scope; no new cover scores",
+      "previous_question": "With an attenuation taken from outside the image, does the water-column-corrected branch, unavailable in v1, predict July cover better than depth alone?",
+      "change": "Prioritise direct physics-based cover estimates against campaign-matched field observations, Sentinel-2 first and Pleiades Neo separately. July and September each use their own labels. Transfer is deferred.",
+      "history": "v1-r6 outputs and their registered decisions remain unchanged. Existing corrected-reflectance regressions and simulation oracles do not constitute the proposed direct field-cover retrieval.",
+      "status": "Draft; implementation choices and numerical criteria remain open."
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "Pre-score development freeze after user authorisation",
+      "change": "Fix direct spectral cover retrieval, separate campaigns, V1 primary/V0 sensitivity, fixed water source, borrowed endmembers, residual tolerances, sensitivity grid, spatially purged baselines and continuous evaluation.",
+      "criteria": "No application-derived cover-error or coverage requirement was provided. No map-ready decision is made. The 0.001 rhos compatibility tolerance and 0.0005/0.002 sensitivities are diagnostic and do not establish kelp-cover accuracy.",
+      "implementation_validation": "19 focused tests before scoring, including agreement with the library forward model, exact-input recovery, ambiguity, incompatible spectra and spatial leakage checks.",
+      "provenance": "Registration/code hashes and input checksums stored in each new run. No commit implied; prior outputs unchanged."
+    }
+  ],
+  "local_cover_evaluation": {
+    "priority": "Establish local cover retrieval on existing campaign matchups before spatial or temporal transfer.",
+    "target": "Observed Saccorhiza polyschides percentage cover; occurrence is secondary. Spectral mixture fraction is a candidate estimate whose relationship to diver cover must be evaluated.",
+    "campaigns": "July and September evaluated separately against their own observations. June remains in the inventory with its scene and reference eligibility; no transfer prediction fills an unavailable campaign.",
+    "scene_order": [
+      {
+        "sensor": "Sentinel-2",
+        "campaign": "July",
+        "candidate": "2026-07-02",
+        "date_offset": "5 days before deep dives on 7 July; 6 days before shallow dives on 8 July",
+        "status": "r1 partial-support diagnostic: 14 of 18 cells; v1 scene unavailable under its coverage rule. Any new supported-subset analysis must be declared explicitly."
+      },
+      {
+        "sensor": "Sentinel-2",
+        "campaign": "September",
+        "candidate": "2026-08-31",
+        "date_offset": "1-2 days before plausible survey dates 1-2 September",
+        "status": "Existing clean candidate; use September observations independently of July."
+      },
+      {
+        "sensor": "Pleiades Neo",
+        "campaign": "July",
+        "candidate": "2026-07-08",
+        "date_offset": "Same day as shallow dives; one day after deep dives",
+        "status": "Native multispectral and common 10 m support; quantify existing radiometric limits."
+      },
+      {
+        "sensor": "Pleiades Neo",
+        "campaign": "September",
+        "candidate": "2026-09-03",
+        "date_offset": "1-2 days after plausible survey dates 1-2 September",
+        "status": "Native multispectral and common 10 m support; September assessed against its own observations."
+      }
+    ],
+    "primary_method": {
+      "retrieval": "Fixed Lee model in observation space for two-endmember spectral cover, 0.1 percentage-point search grid; blue/green effective benthic reflectance retained as an unclipped diagnostic. The exact implementation and sensitivity rules are in execution_protocol.",
+      "calibration": "No endmember, water parameter, offset, mask or acceptance threshold selected using evaluation cover. The r4 true-endmember oracle is a simulation control and cannot serve as the real-data method unchanged.",
+      "interpretation": "Kelp is a three-dimensional canopy. Effective benthic reflectance and spectral mixture fraction are distinct from measured planar cover until the field comparison supports that interpretation.",
+      "secondary": "Corrected-reflectance-plus-cover-regression may be reported as a separate calibrated branch; it does not replace the direct physical retrieval test."
+    },
+    "water_inputs": "Use frozen, product-qualified Copernicus data as candidate constraints with explicit assumptions. KD490-scaled winter spectral shape is an existing candidate, not measured summer IOPs. BBP443 and CDM443 require mutual consistency checks before joint use. A production OceanStream deployment is not a prerequisite for this local test.",
+    "evaluation": {
+      "reference": "Compare with campaign-specific diver observations at the declared sampling footprint. Multiple quadrats in an S2 cell form a sampled mean; they do not establish complete-pixel truth.",
+      "spatial_independence": "Any fitted cover calibration or baseline uses within-campaign leave-one-transect-out evaluation with shared image cells excluded from training when represented in held-out data. Report the resulting sample counts and limited spatial replication.",
+      "controls": "Compare direct retrieval, raw-spectral and depth-only fitted baselines on identical eligible units; retain a training-mean baseline. All are scored against diver cover. Depth-only controls the information available from bathymetry.",
+      "metrics": "Cover MAE and signed bias in percentage points, paired differences against depth-only, shallow/deep results, uncertainty or sensitivity ranges, counts and coverage of accepted retrievals, with every rejection reason.",
+      "depth": "Retain both observed depth strata, including deeper transects. Report depth-stratified retrieval support and performance; do not select a 10 m cutoff from the scores.",
+      "availability": "Separate scene unavailable, retrieval unreliable or ambiguous, and a supported retrieval with poor cover accuracy. Missing or rejected retrievals are never zero cover.",
+      "transfer": "July-to-September prediction and other-site transfer are outside the primary comparison.",
+      "evidence_status": "Development analysis: these field labels have already been inspected and used in prior experiments.",
+      "claim_separation": "Report absolute local cover accuracy and added information beyond depth as separate findings. Adequate absolute agreement without improvement over depth does not establish optical kelp detection.",
+      "application_threshold": "Unspecified by intended use; no map-ready binary verdict. Continuous metrics and predeclared spectral compatibility are the outputs."
+    }
+  },
+  "frozen_at": "2026-11-02T16:47:23+00:00",
+  "execution_protocol": {
+    "scenes": [
+      {
+        "id": "s2-20260702-S2B-R037",
+        "date": "2026-07-02",
+        "sensor": "sentinel2",
+        "campaign": "july"
+      },
+      {
+        "id": "s2-20260831-S2B-R037",
+        "date": "2026-08-31",
+        "sensor": "sentinel2",
+        "campaign": "september"
+      },
+      {
+        "id": "pneo-20260708",
+        "date": "2026-07-08",
+        "sensor": "pleiades_neo",
+        "campaign": "july"
+      },
+      {
+        "id": "pneo-20260903",
+        "date": "2026-09-03",
+        "sensor": "pleiades_neo",
+        "campaign": "september"
+      }
+    ],
+    "primary_radiometry": "V1",
+    "radiometry_variants": [
+      "V1",
+      "V0"
+    ],
+    "primary_background": "understory",
+    "backgrounds": [
+      "understory",
+      "bare"
+    ],
+    "spectral_quantiles": [
+      "median",
+      "p25",
+      "p75"
+    ],
+    "water_shapes": [
+      "median",
+      "2025-12-24",
+      "2026-02-22"
+    ],
+    "water_magnitude_scenarios": "KD490 * (1 + step * provider_percentage_error/100), step=-1,0,+1; no confidence-level interpretation",
+    "depth_shifts_m": [
+      -2.0,
+      0.0,
+      2.0
+    ],
+    "depth_scenario_basis": "Declared sensitivity bracket given prior 1-4 m depth-label/lidar residuals; no calibrated depth distribution. Canopy-height effects are only approximated by effective-depth perturbation.",
+    "fraction_grid_size": 1001,
+    "primary_rhos_tolerance": 0.001,
+    "rhos_tolerances": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "tolerance_basis": "Diagnostic reflectance compatibility: earlier r3 clean-scene adjacent-pixel scales were about 0.0009-0.0010 rhos. This fixed tolerance is not validated sensor error, a probability, or an application cover threshold.",
+    "min_training_units": 8,
+    "min_training_per_stratum": 3,
+    "ridge_alpha": 1.0,
+    "seed": 42,
+    "bootstrap_draws": 2000,
+    "comparison": "Equal-unit MAE/bias/RMSE on identical units with baseline predictions; supplementary equal-transect paired differences with descriptive bootstrap and leave-one-group-out range.",
+    "primary_spectra": "E5s sensor-convolved pooled taxon-balanced kelp median; equal mean of turf/coralline_crust/red_foliose medians. Fixed before scoring. Spectral quartiles applied coherently per class are stress scenarios, not measured joint draws.",
+    "bands": "Blue and green only, actual raster centres for water coefficients and sensor-convolved E5s endmembers. Centre-band approximation retained explicitly. No red/NIR seabed information assumed at these depths.",
+    "selection": "Unchanged r1 pixel/area masks. Supported-subset analysis allowed despite v1 whole-scene coverage failure. Mixed-transect and mixed-stratum cells excluded; all exclusions reported.",
+    "fallback": "Only the product-qualified same-day fixed KD490 neighbour. Missing source or metadata stops that run; no pixel/date fallback selected by performance. BBP/CDM not jointly fitted.",
+    "application_verdict": "Continuous development results only. No application cover-error or minimum-coverage threshold has been specified; no map-ready claim. A close best fit must not be presented as a valid retrieval when nominal reflectance compatibility fails.",
+    "registration_policy": "Protocol and code locked in run files before any new real-cover score. Subsequent corrections retain failed runs and an explicit amendment. Old registrations and outputs unchanged."
+  },
+  "execution_code_sha256": {
+    "src/kelpobserve/local_cover.py": "ed619153590c97fe364a38e070392d4bf87b2420a7109d2c326e18cf042d0540",
+    "src/kelpobserve/cover_retrieval.py": "fc1d24c6288e9841c103fd0e5278b85e7a3f75e3390b350da226326e5850b7e9",
+    "src/kelpobserve/attenuation/bands.py": "26cc7c0c4d737a0ebcb4b6b093900edf64227512412ebe382a02e55509b0b30a",
+    "benchmark/benchmark/revision.py": "98bb3ffcea58907820766078144dc96634ef4e30fc29de5fe1436cec3ee66e6d",
+    "benchmark/benchmark/run_benchmark.py": "904825da33b073bfbb4195622b99d4ade0b1e72b0740ea03a4d0cdc2dd0a2a23",
+    "src/kelpobserve/coastal/inversion/lee.py": "b7b348df58b1574eee461604208c0af6b545be03bce56d5167a742ad15e9434a",
+    "src/kelpobserve/coastal/optics/water.py": "3eaafa4e1c099059131490929a58b491ed41d21ae99360a6be2ddfb9524bfbaf",
+    "src/kelpobserve/coastal/optics/qaa.py": "560bd7b5b67d9b42b3eccf4236f4e83c3aac057eab28c774e298c1f83aefe516"
+  },
+  "execution_input_sha256": {
+    "benchmark/registration/evidence/cmems-optical-inputs-20261102.json": "aaf603e74a21f35509c236b50603df9f3736cbf173f5d0db1635247b86ef85e1",
+    "optics/reports/e5s-kelp-spectra/results.json": "eeb3f814001b3bc358d7e08fdb812e48ac9a571765a76564996c238d8a336968",
+    "benchmark/registration/experiment.json": "d8f1e30ccdbc8aba1bcd975a61b3f6bba96596c3d4fb41ace30a938b453e643c"
+  },
+  "implementation_corrections": [
+    {
+      "recorded_at": "2026-11-02T16:50:00+00:00",
+      "failed_run": "benchmark/reports/r7-local-cover-20261102",
+      "failure": "Summary of an empty compatible subset passed an object-dtype array to numpy.isfinite. Run stopped after the first group; no completed result table was emitted.",
+      "repair": "Coerce scoring arrays to float; handle empty compatible comparisons. Added regression test. Import-order and immediate-lambda lint fixes have no scientific effect.",
+      "method_change": false,
+      "protocol_preserved": true
+    },
+    {
+      "recorded_at": "2026-11-02T16:54:37+00:00",
+      "previous_run": "benchmark/reports/r7-local-cover-20261102-r2",
+      "repair": "Suppress a degenerate bootstrap interval when only one transect contributes; report matched-unit counts in the table and identify incompatible primary estimates explicitly.",
+      "reason": "Post-run review found that September 10 m baseline comparison has only four matched cells from one transect. A resampling interval cannot be estimated from one cluster.",
+      "method_change": false,
+      "retrieval_predictions_unchanged": true,
+      "verification": "The next run will be compared with the retained previous unit predictions and sensitivity table."
+    }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "sha256": {
+    "spatial-blocks.csv": "165bde704d498aae369907501e1e079c64af51a86c5b9ecf5f01a0f85ef20d10",
+    "quadrat-geometry.csv": "072e08d61e11ad84632d7dc9ce8cea08b624816bf06926be03ea0e3ec8d0ca02",
+    "terrain-context.tif": "250eaa57bfb4325718f1f2b0a47ca2a4909596bacaf970d2f4d58d48f2e20c58",
+    "provenance.json": "daf2c20175be017c79dc2dd9aa3766878b13bb4d2a16dde7dcc677f07b0a8836",
+    "copdem30-context.tif": "ac8cfe10d4d38116f655552e66f1722103c3ccf442afbd7556999ae8d6db1df2",
+    "paired-grid-cells.csv.gz": "d08667c76a92246c4cfaa3e8b87c6acfd8643382f2e35de201dd75d65edd986e",
+    "report.md": "cea5b611b4fd5fa16a77356db21dab2a94657873e71873bb17f37b3ca27ca178",
+    "water-states.json": "46be8d980e93f44006882bfa6d28939bc8ed1e88e397eb75110d55aa5ffc7d76",
+    "deep-water-closure.csv": "eddd00d119c0382b719c32d87d217af32d039b8aaec7f1d3da5438c4ba2ef9f8",
+    "paired-radiometry.png": "851864aedd28220f4349dc4641d2cdb5c94d8b0edf320ec985b9806ed6e7dc71",
+    "scene-metadata.json": "e3871ad881f224e9f046a701e8ae1f32c6d64160f1edde6eabd4c22dcdf3258e",
+    "diagnose.py": "6c2757d0f9f5bd31bd38de74f39a314e0c387d04aa2b4a8e06fb38dd82b2ce15",
+    "footprint-radiometry-and-geometry.csv": "f7ed680926491d4165632c53273239965179c6faccd2e01b8e7469998e8bb5c1",
+    "original-footprint-water-floor.csv": "4facacaacaa0be5f39c328d3e58dd308d200dc04171fd633f4313ebfabaf4450",
+    "shore-associations.csv": "40ebe6082ec25a302552cdd1bad7b1b908cdccdd6005333f94ab0c909f021755",
+    "terrain-and-quadrats.png": "34f593dc05f35c4aa856aba0e2307889a8539dabd1ef9dcbf8e4c4e9751e9b16",
+    "radiometry-summary.csv": "a8098e2831ee6d588f3818bf3dbe84c8f6fbeccf1634e81e090480f43af1c7ec",
+    "verification.json": "0336149a25352982a520ae835ca6ce9e1f321ea6acb5488bed88a8984f272150",
+    "test_diagnose.py": "e6e4fb2793121f857114d33070b2bd63cc220366e4d4ffc194c099d7fb246d76",
+    "design.json": "0117ae6bab8f7391cf3682fb3b1d4891191e8f08980387a9d29f39d4e7b1aa20",
+    "development-history.json": "59ea4d5a60bbb2c10e58cf2bbff5ea3d366492580ef58d35bdc0990e79b13733"
+  }
+}

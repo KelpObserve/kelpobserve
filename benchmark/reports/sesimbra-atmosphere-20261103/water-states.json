@@ -1,0 +1,2034 @@
+{
+  "s2-20260702-S2B-R037": [
+    {
+      "state": "median_k-1_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04370534929095553,
+        0.07390777769992118
+      ],
+      "bb": [
+        0.004422623883276419,
+        0.003325391104682919
+      ],
+      "kd": [
+        0.06092160489607476,
+        0.0925457276582696
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.03548752894614139,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.3747842801649101,
+      "backscatter_scale": 0.20643968707808444,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k-1_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04203945952958692,
+        0.07315110982296255
+      ],
+      "bb": [
+        0.005128485548390732,
+        0.0039238869541955365
+      ],
+      "kd": [
+        0.06094287711202608,
+        0.0935918750260874
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.03334752664227896,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.35218368646841564,
+      "backscatter_scale": 0.2573740006727513,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k-1_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.040405223321662444,
+        0.07240881938419833
+      ],
+      "bb": [
+        0.005834347213505044,
+        0.004522382803708154
+      ],
+      "kd": [
+        0.06096467418751154,
+        0.09464474490841178
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.031248186499182942,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.3300125264097469,
+      "backscatter_scale": 0.3083083142674181,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+0_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.05287238966809829,
+        0.07807156160748786
+      ],
+      "bb": [
+        0.004422623883276419,
+        0.003325391104682919
+      ],
+      "kd": [
+        0.07164504381565799,
+        0.09730280011013388
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.04726351075574726,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.49915058564778575,
+      "backscatter_scale": 0.20643968707808444,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+0_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.051118526431113545,
+        0.07727493508226402
+      ],
+      "bb": [
+        0.005128485548390732,
+        0.0039238869541955365
+      ],
+      "kd": [
+        0.07166483983629035,
+        0.09833020566547226
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.04501049770839924,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.4753564839385911,
+      "backscatter_scale": 0.2573740006727513,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+0_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04939515526711895,
+        0.07649215843634707
+      ],
+      "bb": [
+        0.005834347213505044,
+        0.004522382803708154
+      ],
+      "kd": [
+        0.07168510576204704,
+        0.09936361188544905
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.04279665478380583,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.45197605843330557,
+      "backscatter_scale": 0.3083083142674181,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.06208660854650343,
+        0.08225677457789898
+      ],
+      "bb": [
+        0.004422623883276419,
+        0.003325391104682919
+      ],
+      "kd": [
+        0.08236999258648824,
+        0.10207801563020551
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.05910009807703556,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6241569467711766,
+      "backscatter_scale": 0.20643968707808444,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.060251803572821575,
+        0.08142338330780174
+      ],
+      "bb": [
+        0.005128485548390732,
+        0.0039238869541955365
+      ],
+      "kd": [
+        0.08238852371945073,
+        0.10308941857998816
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.05674310725935288,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.5992647344026805,
+      "backscatter_scale": 0.2573740006727513,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.05844614406049875,
+        0.08060323026923752
+      ],
+      "bb": [
+        0.005834347213505044,
+        0.004522382803708154
+      ],
+      "kd": [
+        0.08240746943341984,
+        0.10410607346248996
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.0544235567068677,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.5747679291886956,
+      "backscatter_scale": 0.3083083142674181,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k-1_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.043814871938661085,
+        0.0741270965169425
+      ],
+      "bb": [
+        0.004364768640371816,
+        0.003216601632293584
+      ],
+      "kd": [
+        0.060886568670380704,
+        0.09244790799138033
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.03617372793942353,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.526478206884227,
+      "backscatter_scale": 0.2273669865437058,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k-1_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04217967168317194,
+        0.07337437050715488
+      ],
+      "bb": [
+        0.005056355835654735,
+        0.003788256145332072
+      ],
+      "kd": [
+        0.060906875480661364,
+        0.09341513149895424
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.03404098727635645,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.49543795905793336,
+      "backscatter_scale": 0.28346463694031365,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k-1_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.040574903868110884,
+        0.07263565335614444
+      ],
+      "bb": [
+        0.005747943030937652,
+        0.004359910658370559
+      ],
+      "kd": [
+        0.060927712118831176,
+        0.09438914010716094
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.03194793869562578,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.4649753961296674,
+      "backscatter_scale": 0.33956228733692145,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+0_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.05298146077082845,
+        0.0783467202675131
+      ],
+      "bb": [
+        0.004364768640371816,
+        0.003216601632293584
+      ],
+      "kd": [
+        0.07160142805438134,
+        0.09726365982554674
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.04812942368882991,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.7004833100005401,
+      "backscatter_scale": 0.2273669865437058,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+0_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.05126015737099246,
+        0.07755435869868199
+      ],
+      "bb": [
+        0.005056355835654735,
+        0.003788256145332072
+      ],
+      "kd": [
+        0.07162022128962593,
+        0.0982116398178105
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.04588438138163699,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6678086061312161,
+      "backscatter_scale": 0.28346463694031365,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+0_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04956815851576231,
+        0.07677548678829225
+      ],
+      "bb": [
+        0.005747943030937652,
+        0.004359910658370559
+      ],
+      "kd": [
+        0.07163948788142822,
+        0.09916570654140952
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.04367756007745805,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6356901768367939,
+      "backscatter_scale": 0.33956228733692145,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.06219463431741265,
+        0.082587788196607
+      ],
+      "bb": [
+        0.004364768640371816,
+        0.003216601632293584
+      ],
+      "kd": [
+        0.08231783655134048,
+        0.10209760707487583
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.06014587842746749,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.8753727091384329,
+      "backscatter_scale": 0.2273669865437058,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.060394133552782725,
+        0.08175896998206114
+      ],
+      "bb": [
+        0.005056355835654735,
+        0.003788256145332072
+      ],
+      "kd": [
+        0.0823353357256517,
+        0.10302907605816455
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.057797541468908906,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.8411946384355109,
+      "backscatter_scale": 0.28346463694031365,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.058621633206559234,
+        0.08094304110210823
+      ],
+      "bb": [
+        0.005747943030937652,
+        0.004359910658370559
+      ],
+      "kd": [
+        0.0823532515462152,
+        0.10396590640628635
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.05548572458226069,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.8075480866848752,
+      "backscatter_scale": 0.33956228733692145,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k-1_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04360862011779368,
+        0.07376865701498775
+      ],
+      "bb": [
+        0.0044705137567945166,
+        0.003415402620881168
+      ],
+      "kd": [
+        0.06094333380399396,
+        0.09267471891468405
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.03506584180930404,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.2906008668615399,
+      "backscatter_scale": 0.1891491605997543,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k-1_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04191774463664398,
+        0.07300648681499733
+      ],
+      "bb": [
+        0.0051881911627206095,
+        0.0040361067718016385
+      ],
+      "kd": [
+        0.06096573422834354,
+        0.09378377093381245
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.03291201165408672,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.27275144765801723,
+      "backscatter_scale": 0.2358174286954709,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k-1_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.04025954453720414,
+        0.07225904519939425
+      ],
+      "bb": [
+        0.0059058685686467025,
+        0.004656810922722109
+      ],
+      "kd": [
+        0.06098865324851045,
+        0.09489951581384871
+      ],
+      "kd490_target": 0.06015692694987838,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.030799803264188325,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.2552469601731673,
+      "backscatter_scale": 0.28248569679118746,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+0_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.052774002344896626,
+        0.07789999683444616
+      ],
+      "bb": [
+        0.0044705137567945166,
+        0.003415402620881168
+      ],
+      "kd": [
+        0.07167155414490542,
+        0.0973988114634309
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.046740667569628316,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.3873535558418307,
+      "backscatter_scale": 0.1891491605997543,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+0_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.050993620353022684,
+        0.07709748114719803
+      ],
+      "bb": [
+        0.0051881911627206095,
+        0.0040361067718016385
+      ],
+      "kd": [
+        0.07169251419710213,
+        0.0984894613190961
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.044472824393324985,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.36855927745194433,
+      "backscatter_scale": 0.2358174286954709,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+0_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.049244724743297746,
+        0.0763091580971056
+      ],
+      "bb": [
+        0.0059058685686467025,
+        0.004656810922722109
+      ],
+      "kd": [
+        0.071713938637646,
+        0.0995860614552855
+      ],
+      "kd490_target": 0.0710151419043541,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.042245088439645216,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.3500973793233162,
+      "backscatter_scale": 0.28248569679118746,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.06198704398877894,
+        0.08205281936367423
+      ],
+      "bb": [
+        0.0044705137567945166,
+        0.003415402620881168
+      ],
+      "kd": [
+        0.08240125833776143,
+        0.10214104671919515
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.0032777551761447297,
+      "a_nonwater443": 0.05847620169682162,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.48460935277925615,
+      "backscatter_scale": 0.1891491605997543,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.06012428950085577,
+        0.08121317388036041
+      ],
+      "bb": [
+        0.0051881911627206095,
+        0.0040361067718016385
+      ],
+      "kd": [
+        0.08242098380306329,
+        0.10321604518975873
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00408646697178483,
+      "a_nonwater443": 0.056103432777653575,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.4649455241302203,
+      "backscatter_scale": 0.2358174286954709,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        492.0,
+        559.0
+      ],
+      "a": [
+        0.05829163973413133,
+        0.08038709824392914
+      ],
+      "bb": [
+        0.0059058685686467025,
+        0.004656810922722109
+      ],
+      "kd": [
+        0.08244111903043436,
+        0.10429622447675321
+      ],
+      "kd490_target": 0.08187335685882982,
+      "bbp443_target": 0.00489517876742493,
+      "a_nonwater443": 0.05376901112713724,
+      "cdm443_lower": 0.02329258955523023,
+      "cdm443_nominal": 0.03673909977078438,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.44559949049014386,
+      "backscatter_scale": 0.28248569679118746,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "r7_nominal",
+      "a": [
+        0.046123,
+        0.075006
+      ],
+      "bb": [
+        0.00721,
+        0.005689
+      ],
+      "kd490_target": 0.0710151419043541,
+      "valid_solution": true,
+      "candidate": false,
+      "shape": "r7"
+    }
+  ],
+  "pneo-20260708": [
+    {
+      "state": "median_k-1_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.039718455317227536,
+        0.07500849786050265
+      ],
+      "bb": [
+        0.0020766693899837993,
+        0.0012277985804367904
+      ],
+      "kd": [
+        0.049596672281006726,
+        0.08676651879453318
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.03182605817799516,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.33611543713931663,
+      "backscatter_scale": 0.030479377837943907,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "median_k-1_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.0394615066122542,
+        0.07489997461026639
+      ],
+      "bb": [
+        0.0021809461149197903,
+        0.0013140072991210255
+      ],
+      "kd": [
+        0.0495926628013604,
+        0.0869222029281969
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.03150709729162121,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.3327468868414966,
+      "backscatter_scale": 0.037871990149982784,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "median_k-1_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.039205288312707816,
+        0.07479175984950444
+      ],
+      "bb": [
+        0.0022852228398557817,
+        0.0014002160178052609
+      ],
+      "kd": [
+        0.04958864018089245,
+        0.08707803484435676
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.031189043087234296,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.32938791202458323,
+      "backscatter_scale": 0.045264602462021665,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "median_k+0_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06559482608673516,
+        0.08593748020550793
+      ],
+      "bb": [
+        0.0020766693899837993,
+        0.0012277985804367904
+      ],
+      "kd": [
+        0.07888498932499013,
+        0.09896603392122308
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.0639474504910629,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6753499021317501,
+      "backscatter_scale": 0.030479377837943907,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+0_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06530463541370045,
+        0.08581491708525697
+      ],
+      "bb": [
+        0.0021809461149197903,
+        0.0013140072991210255
+      ],
+      "kd": [
+        0.07888151178204687,
+        0.09911549002958263
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.06358722499664676,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6715455557421579,
+      "backscatter_scale": 0.037871990149982784,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+0_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06501507939111263,
+        0.085692622012005
+      ],
+      "bb": [
+        0.0022852228398557817,
+        0.0014002160178052609
+      ],
+      "kd": [
+        0.07887802708439004,
+        0.09926504726203787
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.06322778731966329,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.6677495295032827,
+      "backscatter_scale": 0.045264602462021665,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b-1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09161920800402795,
+        0.0969289756144748
+      ],
+      "bb": [
+        0.0020766693899837993,
+        0.0012277985804367904
+      ],
+      "kd": [
+        0.10816469156351498,
+        0.11122049197148108
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.09625257506655119,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.0165247660688062,
+      "backscatter_scale": 0.030479377837943907,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b+0",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.0913032874594967,
+        0.09679554538639681
+      ],
+      "bb": [
+        0.0021809461149197903,
+        0.0013140072991210255
+      ],
+      "kd": [
+        0.108161454696987,
+        0.11136628965348495
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.09586041003533266,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.0123831057927652,
+      "backscatter_scale": 0.037871990149982784,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "median_k+1_b+1",
+      "shape": "median",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09098789632180265,
+        0.0966623387552841
+      ],
+      "bb": [
+        0.0022852228398557817,
+        0.0014002160178052609
+      ],
+      "kd": [
+        0.10815821545590716,
+        0.11151214486592535
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.09546890217837022,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.0082483859430607,
+      "backscatter_scale": 0.045264602462021665,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k-1_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.03977823671559109,
+        0.07515430598982561
+      ],
+      "bb": [
+        0.0020691734171757632,
+        0.0012115126329031501
+      ],
+      "kd": [
+        0.04964384761999666,
+        0.08687702837912523
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.03231349139836271,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.47029570847847774,
+      "backscatter_scale": 0.03356914742909433,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2025-12-24_k-1_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.039525792519950795,
+        0.07504650093382226
+      ],
+      "bb": [
+        0.0021716320334493654,
+        0.0012937712809235238
+      ],
+      "kd": [
+        0.04964007113254552,
+        0.08702097345848811
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.031996062874582315,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.4656758031069974,
+      "backscatter_scale": 0.04171116705654325,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2025-12-24_k-1_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.03927405193450435,
+        0.07493899635110235
+      ],
+      "bb": [
+        0.0022740906497229676,
+        0.0013760299289438975
+      ],
+      "kd": [
+        0.04963628080288201,
+        0.08716506781243417
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.031679519084731274,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.46106877429425824,
+      "backscatter_scale": 0.049853186683992176,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2025-12-24_k+0_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06569690567761928,
+        0.08622274648970335
+      ],
+      "bb": [
+        0.0020691734171757632,
+        0.0012115126329031501
+      ],
+      "kd": [
+        0.07897683178314961,
+        0.09923013360060132
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.06490415883716735,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.9446254812648286,
+      "backscatter_scale": 0.03356914742909433,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+0_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06541181897663399,
+        0.08610100161184002
+      ],
+      "bb": [
+        0.0021716320334493654,
+        0.0012937712809235238
+      ],
+      "kd": [
+        0.07897362466145698,
+        0.0993676306106289
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.06454568495578675,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.9394081952112558,
+      "backscatter_scale": 0.04171116705654325,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+0_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06512734355196696,
+        0.08597951777653129
+      ],
+      "bb": [
+        0.0022740906497229676,
+        0.0013760299289438975
+      ],
+      "kd": [
+        0.07897040992605388,
+        0.09950523173463832
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.06418797970582123,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.9342020959419107,
+      "backscatter_scale": 0.049853186683992176,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b-1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09176321408332598,
+        0.09735423569012139
+      ],
+      "bb": [
+        0.0020691734171757632,
+        0.0012115126329031501
+      ],
+      "kd": [
+        0.10830101997290335,
+        0.11163863488726761
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.09768047114904885,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.4216571591481166,
+      "backscatter_scale": 0.03356914742909433,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b+0",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09145286421870269,
+        0.09722170230209284
+      ],
+      "bb": [
+        0.0021716320334493654,
+        0.0012937712809235238
+      ],
+      "kd": [
+        0.10829807298289279,
+        0.11177225151654627
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.09729023084610607,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.41597753952773,
+      "backscatter_scale": 0.04171116705654325,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2025-12-24_k+1_b+1",
+      "shape": "2025-12-24",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09114302420321353,
+        0.09708938664263722
+      ],
+      "bb": [
+        0.0022740906497229676,
+        0.0013760299289438975
+      ],
+      "kd": [
+        0.10829512335528284,
+        0.11190592988594247
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.09690063163795093,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 1.4103072505031509,
+      "backscatter_scale": 0.049853186683992176,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k-1_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.03967992814444281,
+        0.07492365305212702
+      ],
+      "bb": [
+        0.0020828742068966567,
+        0.001241283426881062
+      ],
+      "kd": [
+        0.04957005886044753,
+        0.08671506505349263
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.03155129268412446,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.2614747723574102,
+      "backscatter_scale": 0.027926552375896672,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2026-02-22_k-1_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.039419152955847435,
+        0.07481421219217367
+      ],
+      "bb": [
+        0.002188655877443671,
+        0.0013307628239360928
+      ],
+      "kd": [
+        0.04956576021831306,
+        0.08688013269304663
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.031229893567154027,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.25881124405804506,
+      "backscatter_scale": 0.03469999033859161,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2026-02-22_k-1_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.03915913101749659,
+        0.07470508745261109
+      ],
+      "bb": [
+        0.0022944375479906857,
+        0.0014202422209911238
+      ],
+      "kd": [
+        0.04956144911701043,
+        0.08704534734148991
+      ],
+      "kd490_target": 0.04981526571085909,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.030909422812903806,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": true,
+      "input_constraints_consistent": false,
+      "cdm_check_available": true,
+      "absorption_scale": 0.25615540937153325,
+      "backscatter_scale": 0.041473428301286565,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "input_conflict"
+    },
+    {
+      "state": "2026-02-22_k+0_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06553230580441756,
+        0.08577325288632115
+      ],
+      "bb": [
+        0.0020828742068966567,
+        0.001241283426881062
+      ],
+      "kd": [
+        0.07883374606446998,
+        0.09882758759031601
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.06341372329440137,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.5255280355306151,
+      "backscatter_scale": 0.027926552375896672,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+0_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06523777932336852,
+        0.0856496474484777
+      ],
+      "bb": [
+        0.002188655877443671,
+        0.0013307628239360928
+      ],
+      "kd": [
+        0.07882994352789817,
+        0.09898658289166846
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.06305072652525534,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.5225197753452347,
+      "backscatter_scale": 0.03469999033859161,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+0_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.06494390742394926,
+        0.08552631672226174
+      ],
+      "bb": [
+        0.0022944375479906857,
+        0.0014202422209911238
+      ],
+      "kd": [
+        0.07882613437688088,
+        0.0991456772074073
+      ],
+      "kd490_target": 0.07842453569173813,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.06268853651214666,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": true,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.5195182009826297,
+      "backscatter_scale": 0.041473428301286565,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b-1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09153306407651389,
+        0.09668512437250201
+      ],
+      "bb": [
+        0.0020828742068966567,
+        0.001241283426881062
+      ],
+      "kd": [
+        0.10808893040457869,
+        0.1109948205829705
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.00048393765698842394,
+      "a_nonwater443": 0.09545902942273764,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.7910968415036995,
+      "backscatter_scale": 0.027926552375896672,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b+0",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09121241117525629,
+        0.09655055432598345
+      ],
+      "bb": [
+        0.002188655877443671,
+        0.0013307628239360928
+      ],
+      "kd": [
+        0.10808534555317184,
+        0.11115032060964788
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0006013141828589141,
+      "a_nonwater443": 0.09506383247216384,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.7878217290155313,
+      "backscatter_scale": 0.03469999033859161,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "2026-02-22_k+1_b+1",
+      "shape": "2026-02-22",
+      "wavelengths_nm": [
+        486.0,
+        563.0
+      ],
+      "a": [
+        0.09089230435977058,
+        0.09641621345807963
+      ],
+      "bb": [
+        0.0022944375479906857,
+        0.0014202422209911238
+      ],
+      "kd": [
+        0.1080817587388945,
+        0.11130587495795384
+      ],
+      "kd490_target": 0.10703380567261715,
+      "bbp443_target": 0.0007186907087294044,
+      "a_nonwater443": 0.09466930855910494,
+      "cdm443_lower": 0.034248497081283955,
+      "cdm443_nominal": 0.07953668385744095,
+      "cdm_nominal_conflict": false,
+      "cdm_conflict": false,
+      "input_constraints_consistent": true,
+      "cdm_check_available": true,
+      "absorption_scale": 0.78455219418571,
+      "backscatter_scale": 0.041473428301286565,
+      "invalid_reference_wavelengths_nm": [
+        704.0
+      ],
+      "spectral_shape": "winter_E5s_assumed",
+      "field_validated": false,
+      "status": "conditional_unvalidated"
+    },
+    {
+      "state": "r7_nominal",
+      "a": [
+        0.049606,
+        0.079185
+      ],
+      "bb": [
+        0.008216,
+        0.006304
+      ],
+      "kd490_target": 0.07842453569173813,
+      "valid_solution": true,
+      "candidate": false,
+      "shape": "r7"
+    }
+  ]
+}

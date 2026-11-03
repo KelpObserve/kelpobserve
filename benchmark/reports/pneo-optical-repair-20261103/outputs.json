@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "calibration.json": "c6532b9df3f8f39a07e882602c9669e9e61f7d7bf0ab1cbb9dddb7001d648a9c",
+    "candidate-grid-diagnostics.csv.gz": "cfd25cd0278a74a941e3fa5dbd3bac8705382146d32e74cc3a807077080d8211",
+    "decision.json": "030c53f65ce31a53b2bfbf8b1df6b0d7bae70d5f2e6aaa744803379e73284bbc",
+    "design-initial.json": "857e8e41db540da55a830821d3d9d2a15fd0dd3daac0a10ca2411908e6d64f1d",
+    "design.json": "e81232918573a1fee81bc32325561f6834b04d9a6de5fa6019a50c2f66bae0b9",
+    "development-history.json": "d156ed7ed5335ce0337921bdd85d18ed0dfa80f39459af9613f5ffcaf714af20",
+    "evaluation.csv": "0b347cd5b2347effb97b516b43c9b761bd94fa9738f1beab089b111299d614c2",
+    "first-installed-provenance.json": "6b1d99b0a848ecb1afe7b9c377ef549b87ea6b5ebfb02a6af04c2787172036cb",
+    "provenance.json": "b7022dd49917229864ff58cda82f3aff12ba590df96ece549e02f8b463a24c14",
+    "report.md": "fbbed882af46166c7f2b1eca1f43ee70f787be50728c411bb61d381afa4e2a74",
+    "spatial-assignments.csv": "e3cfede99c56d5a1bcb65a26c2e9d950ceae45a31fcc2a8c5e513a76cfa82ef9",
+    "verification.json": "b4bb9505ab02f1dbe8f4e7c8b3d3e79dc7fc336ce5f9bcfcf5c46ff5fe679f20",
+    "water-closure.csv": "591b58347d28ea044aa1b3aa59e8f81113b42f18e0f54239f706dc449945cb4b",
+    "water-states.json": "561a189a5fb5c4d5edadaa22173cd3ea0cb8145553463165f2d91fd0655eda48"
+  }
+}

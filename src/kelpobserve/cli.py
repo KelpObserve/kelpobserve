@@ -12,9 +12,24 @@ import argparse
 import json
 import os
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 
 from kelpobserve import config, replay
+
+
+def load_credentials(env_file: Path | None) -> None:
+    from kelpobserve.attenuation import cmems
+
+    if env_file:
+        for line in env_file.read_text().splitlines():
+            key, sep, value = line.partition("=")
+            if sep and key.strip() in cmems.CREDENTIALS:
+                os.environ[key.strip()] = value.strip().strip("'\"")
+
+
+def new_output(output: Path | None, name: str) -> Path:
+    return output or config.REPO / "out" / name / datetime.now(UTC).strftime("%Y%m%dT%H%M%S%fZ")
 
 
 def summary(report: dict) -> dict:
@@ -31,15 +46,19 @@ def summary(report: dict) -> dict:
 
 
 def kd490_command(args) -> int:
-    from kelpobserve.attenuation import cmems, table
+    from kelpobserve.attenuation import cmems, qualification, table
 
     paths = config.load()
+    if args.action == "qualify":
+        record = qualification.build()
+        folder = qualification.write(record)
+        print(json.dumps({"written": str(folder), "targets": [
+            {"date": target["target_date"], "candidate": target["candidate"],
+             "qualification": target["qualification"]} for target in record["targets"]
+        ]}, indent=2))
+        return 0
     if args.action == "fetch":
-        if args.env_file:
-            for line in args.env_file.read_text().splitlines():
-                key, sep, value = line.partition("=")
-                if sep and key.strip() in cmems.CREDENTIALS:
-                    os.environ[key.strip()] = value.strip().strip("'\"")
+        load_credentials(args.env_file)
         recorded = json.loads(table.EVIDENCE.read_text()) if table.EVIDENCE.is_file() else None
         local = table.SUBSETS / recorded["file"] if recorded else None
         if local and local.is_file():
@@ -63,6 +82,32 @@ def kd490_command(args) -> int:
     return 0
 
 
+def optics_command(args) -> int:
+    from kelpobserve.attenuation import optical_bundle
+
+    if args.action == "fetch":
+        load_credentials(args.env_file)
+        print(optical_bundle.fetch(args.destination, args.version, args.part))
+        return 0
+    record = optical_bundle.audit(args.manifest)
+    folder = new_output(args.output, "optical-inputs")
+    folder.mkdir(parents=True, exist_ok=False)
+    (folder / "qualification.json").write_text(json.dumps(record, indent=2, allow_nan=False) + "\n")
+    (folder / "qualification.md").write_text(optical_bundle.markdown(record))
+    print(json.dumps({"written": str(folder), "dates": len(record["targets"]),
+                      "scope": record["scope"]}, indent=2))
+    return 0
+
+
+def r7_command(args) -> int:
+    if args.command == "local-cover":
+        from kelpobserve.local_cover import run
+    else:
+        from kelpobserve.pneo_optical_review import run
+    print(json.dumps({"report": str(run(new_output(args.output, args.command)) / "report.md")}, indent=2))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="kelpobserve", description=__doc__.split("\n\n")[0])
     commands = parser.add_subparsers(dest="command", required=True)
@@ -76,9 +121,27 @@ def main(argv: list[str] | None = None) -> int:
     kd490_commands = kd490.add_subparsers(dest="action", required=True)
     fetcher = kd490_commands.add_parser("fetch", help="freeze the KD490 subset for the Sesimbra reef")
     fetcher.add_argument("--env-file", type=Path, help="file holding COPERNICUSMARINE_SERVICE_USERNAME and _PASSWORD")
+    kd490_commands.add_parser("qualify", help="audit frozen KD490 input quality and space/time support")
     kd490_commands.add_parser("table", help="in-scene QAA, nearest CMEMS pixel and implied IOPs per scene")
+    optical = commands.add_parser("optics-inputs", help="freeze and qualify Atlantic optical inputs")
+    optical_commands = optical.add_subparsers(dest="action", required=True)
+    optical_fetch = optical_commands.add_parser("fetch", help="download a new version-pinned source bundle")
+    optical_fetch.add_argument("destination", type=Path)
+    optical_fetch.add_argument("--env-file", type=Path)
+    optical_fetch.add_argument("--version", default="202603")
+    optical_fetch.add_argument("--part", default="default")
+    optical_audit = optical_commands.add_parser("audit", help="audit fixed-pixel optical input support")
+    optical_audit.add_argument("manifest", type=Path)
+    optical_audit.add_argument("--output", type=Path)
+    local = commands.add_parser("local-cover", help="run frozen campaign-matched physical cover experiment")
+    local.add_argument("--output", type=Path, help="new output directory; previous outputs are never overwritten")
+    review = commands.add_parser("pneo-optical-review", help="label-free development review of glint and water inputs")
+    review.add_argument("--output", type=Path, help="new output directory; previous outputs are never overwritten")
     args = parser.parse_args(argv)
-
+    if args.command in ("local-cover", "pneo-optical-review"):
+        return r7_command(args)
+    if args.command == "optics-inputs":
+        return optics_command(args)
     if args.command == "kd490":
         return kd490_command(args)
 

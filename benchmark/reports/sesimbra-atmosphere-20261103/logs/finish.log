@@ -1,0 +1,14 @@
+Creating new file: $CACHE/optical-atmosphere-20261103/s2_radcor_fixed/glint/s2-20260702-S2B-R037_L2R_GC.nc
+Per-pixel geometry found, not yet implemented.
+Proceeding with scene average geometry values.
+Starting glint correction with base dataset rhos
+Starting glint correction with base dataset rhosu
+Finalized s2_radcor_fixed {'sensor': 'S2B_MSI', 'sza': np.float64(21.6254226589792), 'vza': np.float64(7.823660360232815), 'raa': np.float64(25.61806726305593), 'radcor_version': '1.0.0', 'ac_model': 'M', 'ac_aot_550': np.float64(0.080870785)}
+Creating new file: $CACHE/optical-atmosphere-20261103/s2_radcor_auto/glint/s2-20260702-S2B-R037_L2R_GC.nc
+Per-pixel geometry found, not yet implemented.
+Proceeding with scene average geometry values.
+Starting glint correction with base dataset rhos
+Starting glint correction with base dataset rhosu
+Finalized s2_radcor_auto {'sensor': 'S2B_MSI', 'sza': np.float64(21.6254226589792), 'vza': np.float64(7.823660360232815), 'raa': np.float64(25.61806726305593), 'radcor_version': '1.0.0', 'ac_model': 'C', 'ac_aot_550': np.float64(0.2222383955609905)}
+Finalized pneo_marine_control {'sensor': 'PNEO3', 'sza': np.float64(20.8321083205022), 'vza': np.float64(14.04319716433526), 'raa': np.float64(6.090113806970919)}
+Finalized pneo_continental {'sensor': 'PNEO3', 'sza': np.float64(20.8321083205022), 'vza': np.float64(14.04319716433526), 'raa': np.float64(6.090113806970919), 'ac_aot_550': np.float32(0.09202901), 'ac_model': 'ACOLITE-LUT-202110-MOD1'}

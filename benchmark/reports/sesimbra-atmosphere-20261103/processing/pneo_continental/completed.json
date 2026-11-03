@@ -1,0 +1,15 @@
+{
+  "branch": "pneo_continental",
+  "l2r": "$CACHE/optical-atmosphere-20261103/pneo_continental/pneo-20260708_L2R.nc",
+  "metadata": {
+    "sensor": "PNEO3",
+    "sza": 20.8321083205022,
+    "vza": 14.04319716433526,
+    "raa": 6.090113806970919,
+    "ac_aot_550": "0.09202901",
+    "ac_model": "ACOLITE-LUT-202110-MOD1"
+  },
+  "grid_matches_source": true,
+  "l1r_sha256": "0b3ed030fdacdc3ce5a6a885846af740b9ed5550dd32425b172108a6ba8715be",
+  "completion_source_sha256": "22232c19902e7bec2d587954a52b5ff453b979f6edd1008bcd09075ab088b2f2"
+}

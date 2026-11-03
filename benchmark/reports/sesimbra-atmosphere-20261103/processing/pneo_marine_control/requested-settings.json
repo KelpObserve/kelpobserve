@@ -1,0 +1,30 @@
+{
+  "output": "$CACHE/optical-atmosphere-20261103/pneo_marine_control",
+  "ancillary_data": false,
+  "dem_pressure": false,
+  "dem_pressure_resolved": false,
+  "dsf_interface_reflectance": false,
+  "dsf_residual_glint_correction": false,
+  "l2w_parameters": null,
+  "l1r_delete_netcdf": false,
+  "l2r_delete_netcdf": false,
+  "output_geolocation": true,
+  "verbosity": 2,
+  "luts": [
+    "ACOLITE-LUT-202110-MOD1",
+    "ACOLITE-LUT-202110-MOD2"
+  ],
+  "radcor_kernel_radius": 5.0,
+  "radcor_edge_extend": false,
+  "radcor_crop_centre": false,
+  "radcor_write_rhosu": true,
+  "radcor_write_rhoe": false,
+  "radcor_diagnostic_plots": false,
+  "radcor_development": false,
+  "radcor_write_rhot": false,
+  "dsf_aot_estimate": "fixed",
+  "dsf_spectrum_option": "percentile",
+  "dsf_percentile": 1.0,
+  "dsf_fixed_aot": 0.078115806,
+  "dsf_fixed_lut": "ACOLITE-LUT-202110-MOD2"
+}

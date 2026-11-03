@@ -1,0 +1,16 @@
+{
+  "branch": "s2_radcor_fixed",
+  "l2r": "$CACHE/optical-atmosphere-20261103/s2_radcor_fixed/s2-20260702-S2B-R037_L2R.nc",
+  "metadata": {
+    "sensor": "S2B_MSI",
+    "sza": 21.6254226589792,
+    "vza": 7.823660360232815,
+    "raa": 25.61806726305593,
+    "radcor_version": "1.0.0",
+    "ac_model": "M",
+    "ac_aot_550": 0.080870785
+  },
+  "grid_matches_source": true,
+  "l1r_sha256": "fbb62bfdca695378a6d5e66dd87e795aa4458ff7135da1c8b2f660e8d1972e60",
+  "completion_source_sha256": "22232c19902e7bec2d587954a52b5ff453b979f6edd1008bcd09075ab088b2f2"
+}

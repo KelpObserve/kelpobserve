@@ -1,0 +1,2738 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-11-02T15:05:41+00:00",
+  "policy": {
+    "version": "cmems-matchups-v1",
+    "status": "development input audit; existing matchup values were already inspected",
+    "site_lat_lon": [
+      38.409,
+      -9.202
+    ],
+    "max_km": 5.0,
+    "max_days": 3,
+    "selection": "nearest product-valid pixel on nearest available day; earlier day wins a date tie",
+    "product_checks": "reviewed LAND=1 schema; flags=0; finite positive in-range KD490; finite nonnegative in-range uncensored uncertainty in percent",
+    "spatial_radii_km": [
+      1.0,
+      3.0,
+      5.0
+    ],
+    "temporal_window_days": 3,
+    "uncertainty_sensitivity_caps_pct": [
+      20,
+      30,
+      50
+    ],
+    "uncertainty_cap_status": "diagnostic examples; no cap chosen as a physical acceptance rule",
+    "spatial_summary": "eligible water pixels; radii centred on reef; rings disjoint; 3x3 neighbours exclude selected pixel; no independent replicate assumption",
+    "temporal_summary": "fixed selected coordinate within +/-3 days of target; daily bins, not exact acquisition-time matchups; no independent replicate assumption",
+    "uncertainty_interpretation": "provider error bar in percent; not assigned a standard deviation or CI",
+    "application_status": "not qualified as reef IOPs; fallback and r7 scoring remain closed"
+  },
+  "subset": {
+    "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+    "product_doi": "10.48670/moi-00286",
+    "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+    "dataset_versions_listed": [
+      {
+        "label": "202603",
+        "part": "default",
+        "released_date": "2026-03-31T13:00:00.000Z",
+        "retired_date": "2026-11-24T13:00:00.000Z",
+        "arco_updated_date": "2026-10-18T13:32:06.804Z"
+      }
+    ],
+    "variables": [
+      "KD490",
+      "KD490_uncertainty",
+      "flags"
+    ],
+    "region": {
+      "minimum_longitude": -9.42,
+      "maximum_longitude": -8.98,
+      "minimum_latitude": 38.24,
+      "maximum_latitude": 38.56
+    },
+    "start": "2025-12-01",
+    "end": "2026-09-30",
+    "file": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D_2025-12-01_2026-09-30.nc",
+    "sha256": "cb3dfbcb1d97e12f3305a3ab9fb4ef2e0d74a4724c94ca9a42e557824b810462",
+    "bytes": 2813658,
+    "fetched_at": "2026-10-18T20:44:03+00:00",
+    "toolbox": "2.3.0",
+    "acknowledgement": "Generated using E.U. Copernicus Marine Service Information",
+    "data_sha256": "0f7abaf658602644e056a37ef384f0a326b233e664802a5ed7cbcb0230aeec39",
+    "catalogue_read_at": "2026-10-18T21:27:23+00:00"
+  },
+  "source_sha256": {
+    "src/kelpobserve/attenuation/cmems.py": "20643848bb860bc5da7ca43c23e9285f8a34211eb91a7fd21a79aa3fc8098d4e",
+    "src/kelpobserve/attenuation/qualification.py": "df364d9424a050c7d3e1fae1c5be0a596967ce3fded4c84a701561b21f4044c4"
+  },
+  "references": {
+    "manual": "https://documentation.marine.copernicus.eu/PUM/CMEMS-OC-PUM.pdf",
+    "manual_section": "II.4.3, issue 7.0, March 2026"
+  },
+  "targets": [
+    {
+      "role": "winter Sentinel-2 QAA cross-check",
+      "target_date": "2025-12-24",
+      "candidate": {
+        "date": "2025-12-24",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.08797667920589447,
+        "uncertainty_pct": 35.7099992018193,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2025-12-24",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.0901595801115036,
+        "uncertainty_pct": 40.38999909721315,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2025-12-24",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-23",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-25",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 38,
+          "rejected_unique_within_radius": 37,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 36,
+            "invalid_uncertainty": 36,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-22",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-26",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-21",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 18,
+          "rejected_unique_within_radius": 57,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 56,
+            "invalid_uncertainty": 56,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2025-12-27",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.08797667920589447,
+            "q25": 0.08797667920589447,
+            "median": 0.08797667920589447,
+            "q75": 0.08797667920589447,
+            "max": 0.08797667920589447
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 35.7099992018193,
+            "q25": 35.7099992018193,
+            "median": 35.7099992018193,
+            "q75": 35.7099992018193,
+            "max": 35.7099992018193
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.08797667920589447,
+            "q25": 0.08797667920589447,
+            "median": 0.08797667920589447,
+            "q75": 0.08797667920589447,
+            "max": 0.08797667920589447
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 35.7099992018193,
+            "q25": 35.7099992018193,
+            "median": 35.7099992018193,
+            "q75": 35.7099992018193,
+            "max": 35.7099992018193
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.08259798586368561,
+            "q25": 0.08474194258451462,
+            "median": 0.0946851447224617,
+            "q75": 0.10465436056256294,
+            "max": 0.13719052076339722
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 12.669999716803432,
+            "q25": 25.529999429360032,
+            "median": 30.27999932318926,
+            "q75": 35.914999197237194,
+            "max": 45.62999898009002
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.08259798586368561,
+            "q25": 0.08451491221785545,
+            "median": 0.09486055374145508,
+            "q75": 0.10465729050338268,
+            "max": 0.13719052076339722
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 12.669999716803432,
+            "q25": 23.85999946668744,
+            "median": 30.254999323748052,
+            "q75": 35.997499195393175,
+            "max": 45.62999898009002
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.08040865510702133,
+            "q25": 0.0875401496887207,
+            "median": 0.10223785042762756,
+            "q75": 0.11303967610001564,
+            "max": 0.14429649710655212
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 8.47999981045723,
+            "q25": 15.854999645613134,
+            "median": 26.859999399632215,
+            "q75": 32.07999928295612,
+            "max": 45.62999898009002
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.08040865510702133,
+            "q25": 0.08806279487907887,
+            "median": 0.1080595850944519,
+            "q75": 0.1143723577260971,
+            "max": 0.14429649710655212
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 8.47999981045723,
+            "q25": 15.364999656565487,
+            "median": 24.36499945539981,
+            "q75": 28.42499936465174,
+            "max": 34.49999922886491
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.08428788185119629,
+            "q25": 0.08931539580225945,
+            "median": 0.0939549021422863,
+            "q75": 0.09494825825095177,
+            "max": 0.1013687252998352
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 29.679999336600304,
+            "q25": 33.07249926077202,
+            "median": 35.87499919813126,
+            "q75": 38.557499138172716,
+            "max": 45.62999898009002
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 18
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 37
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 55
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2025-12-21",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.085978202521801,
+            "uncertainty_pct": 30.89999930933118,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-22",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.08308195322751999,
+            "uncertainty_pct": 69.96999843604863,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-23",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.0827457457780838,
+            "uncertainty_pct": 35.44999920763075,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-24",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.08797667920589447,
+            "uncertainty_pct": 35.7099992018193,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-25",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.07519705593585968,
+            "uncertainty_pct": 19.59999956190586,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-26",
+            "day_offset": 2,
+            "status": "eligible",
+            "kd490": 0.10402107983827591,
+            "uncertainty_pct": 12.919999711215496,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2025-12-27",
+            "day_offset": 3,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          }
+        ],
+        "kd490": {
+          "count": 6,
+          "min": 0.07519705593585968,
+          "q25": 0.08282979764044285,
+          "median": 0.08453007787466049,
+          "q75": 0.0874770600348711,
+          "max": 0.10402107983827591
+        },
+        "uncertainty_pct": {
+          "count": 6,
+          "min": 12.919999711215496,
+          "q25": 22.42499949876219,
+          "median": 33.174999258480966,
+          "q75": 35.644999203272164,
+          "max": 69.96999843604863
+        }
+      }
+    },
+    {
+      "role": "winter Sentinel-2 QAA cross-check",
+      "target_date": "2026-02-22",
+      "candidate": {
+        "date": "2026-02-22",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.2412082403898239,
+        "uncertainty_pct": 25.649999426677823,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-02-22",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.2713770866394043,
+        "uncertainty_pct": 36.149999191984534,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-02-22",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-21",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-23",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 54,
+          "rejected_unique_within_radius": 21,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 20,
+            "invalid_uncertainty": 20,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-20",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-24",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-19",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-02-25",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.2412082403898239,
+            "q25": 0.2412082403898239,
+            "median": 0.2412082403898239,
+            "q75": 0.2412082403898239,
+            "max": 0.2412082403898239
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 25.649999426677823,
+            "q25": 25.649999426677823,
+            "median": 25.649999426677823,
+            "q75": 25.649999426677823,
+            "max": 25.649999426677823
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.2412082403898239,
+            "q25": 0.2412082403898239,
+            "median": 0.2412082403898239,
+            "q75": 0.2412082403898239,
+            "max": 0.2412082403898239
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 25.649999426677823,
+            "q25": 25.649999426677823,
+            "median": 25.649999426677823,
+            "q75": 25.649999426677823,
+            "max": 25.649999426677823
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.2150842249393463,
+            "q25": 0.22807873040437698,
+            "median": 0.23969286680221558,
+            "q75": 0.2596324235200882,
+            "max": 0.31522810459136963
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 18.809999579563737,
+            "q25": 21.289999524131417,
+            "median": 26.499999407678843,
+            "q75": 38.36999914236367,
+            "max": 50.73999886587262
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.2150842249393463,
+            "q25": 0.22731111571192741,
+            "median": 0.23838874697685242,
+            "q75": 0.2604728266596794,
+            "max": 0.31522810459136963
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 18.809999579563737,
+            "q25": 21.274999524466693,
+            "median": 27.599999383091927,
+            "q75": 38.37999914214015,
+            "max": 50.73999886587262
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.19588090479373932,
+            "q25": 0.2151021584868431,
+            "median": 0.22961395978927612,
+            "q75": 0.25293904542922974,
+            "max": 0.3338778018951416
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 8.799999803304672,
+            "q25": 16.054999641142786,
+            "median": 25.919999420642853,
+            "q75": 43.41999902948737,
+            "max": 59.619998667389154
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.19588090479373932,
+            "q25": 0.21211479976773262,
+            "median": 0.21922767162322998,
+            "q75": 0.24608346074819565,
+            "max": 0.3338778018951416
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 8.799999803304672,
+            "q25": 14.739999670535326,
+            "median": 20.634999538771808,
+            "q75": 49.61499889101833,
+            "max": 59.619998667389154
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.2150842249393463,
+            "q25": 0.2238907292485237,
+            "median": 0.22807873040437698,
+            "q75": 0.2411431446671486,
+            "max": 0.28394433856010437
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 18.809999579563737,
+            "q25": 20.32999954558909,
+            "median": 23.879999466240406,
+            "q75": 35.38749920902774,
+            "max": 48.74999891035259
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 20
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 31
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 45
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-02-19",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.17415015399456024,
+            "uncertainty_pct": 16.06999964080751,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-02-20",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.23088203370571136,
+            "uncertainty_pct": 27.169999392703176,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-02-21",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.26185253262519836,
+            "uncertainty_pct": 42.469999050721526,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-02-22",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.2412082403898239,
+            "uncertainty_pct": 25.649999426677823,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-02-23",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.31503504514694214,
+            "uncertainty_pct": 21.119999527931213,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-02-24",
+            "day_offset": 2,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          },
+          {
+            "date": "2026-02-25",
+            "day_offset": 3,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          }
+        ],
+        "kd490": {
+          "count": 5,
+          "min": 0.17415015399456024,
+          "q25": 0.23088203370571136,
+          "median": 0.2412082403898239,
+          "q75": 0.26185253262519836,
+          "max": 0.31503504514694214
+        },
+        "uncertainty_pct": {
+          "count": 5,
+          "min": 16.06999964080751,
+          "q25": 21.119999527931213,
+          "median": 25.649999426677823,
+          "q75": 27.169999392703176,
+          "max": 42.469999050721526
+        }
+      }
+    },
+    {
+      "role": "July Sentinel-2 candidate",
+      "target_date": "2026-07-02",
+      "candidate": {
+        "date": "2026-07-02",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.0710151419043541,
+        "uncertainty_pct": 15.289999658241868,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-07-02",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.07083655893802643,
+        "uncertainty_pct": 21.629999516531825,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-07-02",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-01",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-03",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-06-30",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-04",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 23,
+          "rejected_unique_within_radius": 52,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 52,
+            "invalid_uncertainty": 52,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-06-29",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-05",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.0710151419043541,
+            "q25": 0.0710151419043541,
+            "median": 0.0710151419043541,
+            "q75": 0.0710151419043541,
+            "max": 0.0710151419043541
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 15.289999658241868,
+            "q25": 15.289999658241868,
+            "median": 15.289999658241868,
+            "q75": 15.289999658241868,
+            "max": 15.289999658241868
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.0710151419043541,
+            "q25": 0.0710151419043541,
+            "median": 0.0710151419043541,
+            "q75": 0.0710151419043541,
+            "max": 0.0710151419043541
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 15.289999658241868,
+            "q25": 15.289999658241868,
+            "median": 15.289999658241868,
+            "q75": 15.289999658241868,
+            "max": 15.289999658241868
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.06894876807928085,
+            "q25": 0.07167084515094757,
+            "median": 0.07413589954376221,
+            "q75": 0.07575897499918938,
+            "max": 0.14525790512561798
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 14.09999968484044,
+            "q25": 15.369999656453729,
+            "median": 16.899999622255564,
+            "q75": 27.4999993853271,
+            "max": 74.36999833770096
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.06894876807928085,
+            "q25": 0.07223044708371162,
+            "median": 0.07471168041229248,
+            "q75": 0.07578406296670437,
+            "max": 0.14525790512561798
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 14.09999968484044,
+            "q25": 15.494999653659761,
+            "median": 19.24999956972897,
+            "q75": 27.599999383091927,
+            "max": 74.36999833770096
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.06543736904859543,
+            "q25": 0.07156100496649742,
+            "median": 0.07529447972774506,
+            "q75": 0.07793183624744415,
+            "max": 0.15391163527965546
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 13.949999688193202,
+            "q25": 15.734999648295343,
+            "median": 20.939999531954527,
+            "q75": 29.019999351352453,
+            "max": 74.36999833770096
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.06543736904859543,
+            "q25": 0.07139721885323524,
+            "median": 0.07597616314888,
+            "q75": 0.07815296947956085,
+            "max": 0.15391163527965546
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 13.949999688193202,
+            "q25": 16.134999639354646,
+            "median": 21.0699995290488,
+            "q75": 31.919999286532402,
+            "max": 73.27999836206436
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.06894876807928085,
+            "q25": 0.0719558335840702,
+            "median": 0.07374796271324158,
+            "q75": 0.0753155741840601,
+            "max": 0.07580915093421936
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 15.039999663829803,
+            "q25": 15.857499645557255,
+            "median": 16.57499962951988,
+            "q75": 16.827499623876065,
+            "max": 26.02999941818416
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 25
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 43
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 46
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-06-29",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.08270266652107239,
+            "uncertainty_pct": 35.84999919869006,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-06-30",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.1403714418411255,
+            "uncertainty_pct": 37.699999157339334,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-01",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.0749736875295639,
+            "uncertainty_pct": 18.139999594539404,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-02",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.0710151419043541,
+            "uncertainty_pct": 15.289999658241868,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-03",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.0736333429813385,
+            "uncertainty_pct": 16.519999630749226,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-04",
+            "day_offset": 2,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          },
+          {
+            "date": "2026-07-05",
+            "day_offset": 3,
+            "status": "eligible",
+            "kd490": 0.07505407929420471,
+            "uncertainty_pct": 14.139999683946371,
+            "flags": 0.0,
+            "rejection_reasons": []
+          }
+        ],
+        "kd490": {
+          "count": 6,
+          "min": 0.0710151419043541,
+          "q25": 0.07396842911839485,
+          "median": 0.07501388341188431,
+          "q75": 0.08079051971435547,
+          "max": 0.1403714418411255
+        },
+        "uncertainty_pct": {
+          "count": 6,
+          "min": 14.139999683946371,
+          "q25": 15.597499651368707,
+          "median": 17.329999612644315,
+          "q75": 31.422499297652394,
+          "max": 37.699999157339334
+        }
+      }
+    },
+    {
+      "role": "July Pleiades Neo scene",
+      "target_date": "2026-07-08",
+      "candidate": {
+        "date": "2026-07-08",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.07842453569173813,
+        "uncertainty_pct": 36.47999918460846,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-07-08",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.08612222969532013,
+        "uncertainty_pct": 39.18999912403524,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-07-08",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-07",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-09",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 53,
+          "rejected_unique_within_radius": 22,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 21,
+            "invalid_uncertainty": 21,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-06",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-10",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-05",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-11",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.07842453569173813,
+            "q25": 0.07842453569173813,
+            "median": 0.07842453569173813,
+            "q75": 0.07842453569173813,
+            "max": 0.07842453569173813
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 36.47999918460846,
+            "q25": 36.47999918460846,
+            "median": 36.47999918460846,
+            "q75": 36.47999918460846,
+            "max": 36.47999918460846
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.07842453569173813,
+            "q25": 0.07842453569173813,
+            "median": 0.07842453569173813,
+            "q75": 0.07842453569173813,
+            "max": 0.07842453569173813
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 36.47999918460846,
+            "q25": 36.47999918460846,
+            "median": 36.47999918460846,
+            "q75": 36.47999918460846,
+            "max": 36.47999918460846
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.06865715980529785,
+            "q25": 0.07556188479065895,
+            "median": 0.079493947327137,
+            "q75": 0.08814721554517746,
+            "max": 0.11149861663579941
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 24.729999447241426,
+            "q25": 32.089999282732606,
+            "median": 36.47999918460846,
+            "q75": 43.96999901719391,
+            "max": 55.41999876126647
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.06865715980529785,
+            "q25": 0.07542595453560352,
+            "median": 0.08072258532047272,
+            "q75": 0.0885474868118763,
+            "max": 0.11149861663579941
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 24.729999447241426,
+            "q25": 31.649999292567372,
+            "median": 37.42499916348606,
+            "q75": 44.22499901149422,
+            "max": 55.41999876126647
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.06649832427501678,
+            "q25": 0.07027591019868851,
+            "median": 0.07780282199382782,
+            "q75": 0.0909503661096096,
+            "max": 0.11149861663579941
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 16.45999963209033,
+            "q25": 28.11999937146902,
+            "median": 34.099999237805605,
+            "q75": 41.77999906614423,
+            "max": 59.36999867297709
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.06649832427501678,
+            "q25": 0.06893820129334927,
+            "median": 0.07489725202322006,
+            "q75": 0.09391851350665092,
+            "max": 0.11073487251996994
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 16.45999963209033,
+            "q25": 24.994999441318214,
+            "median": 32.159999281167984,
+            "q75": 39.27499912213534,
+            "max": 59.36999867297709
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.06967315822839737,
+            "q25": 0.0706525631248951,
+            "median": 0.07476106658577919,
+            "q75": 0.0790711659938097,
+            "max": 0.08894775807857513
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 30.099999327212572,
+            "q25": 31.229999301955104,
+            "median": 33.81499924417585,
+            "q75": 41.259999077767134,
+            "max": 44.479999005794525
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 5
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 18
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 48
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-07-05",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.07505407929420471,
+            "uncertainty_pct": 14.139999683946371,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-06",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.0850895419716835,
+            "uncertainty_pct": 40.72999908961356,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-07",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.08332351595163345,
+            "uncertainty_pct": 30.839999310672283,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-08",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.07842453569173813,
+            "uncertainty_pct": 36.47999918460846,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-09",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.09913697838783264,
+            "uncertainty_pct": 41.13999908044934,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-10",
+            "day_offset": 2,
+            "status": "eligible",
+            "kd490": 0.11573663353919983,
+            "uncertainty_pct": 24.959999442100525,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-11",
+            "day_offset": 3,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          }
+        ],
+        "kd490": {
+          "count": 6,
+          "min": 0.07505407929420471,
+          "q25": 0.07964928075671196,
+          "median": 0.08420652896165848,
+          "q75": 0.09562511928379536,
+          "max": 0.11573663353919983
+        },
+        "uncertainty_pct": {
+          "count": 6,
+          "min": 14.139999683946371,
+          "q25": 26.429999409243464,
+          "median": 33.65999924764037,
+          "q75": 39.66749911336228,
+          "max": 41.13999908044934
+        }
+      }
+    },
+    {
+      "role": "July Sentinel-2 candidate",
+      "target_date": "2026-07-09",
+      "candidate": {
+        "date": "2026-07-09",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.09913697838783264,
+        "uncertainty_pct": 41.13999908044934,
+        "valid_within_radius": 53,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-07-09",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.08103851228952408,
+        "uncertainty_pct": 63.8999985717237,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-07-09",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 53,
+          "rejected_unique_within_radius": 22,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 21,
+            "invalid_uncertainty": 21,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-08",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-10",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-07",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-11",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-06",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-07-12",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 33,
+          "rejected_unique_within_radius": 42,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 41,
+            "invalid_uncertainty": 41,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.09913697838783264,
+            "q25": 0.09913697838783264,
+            "median": 0.09913697838783264,
+            "q75": 0.09913697838783264,
+            "max": 0.09913697838783264
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 41.13999908044934,
+            "q25": 41.13999908044934,
+            "median": 41.13999908044934,
+            "q75": 41.13999908044934,
+            "max": 41.13999908044934
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.09913697838783264,
+            "q25": 0.09913697838783264,
+            "median": 0.09913697838783264,
+            "q75": 0.09913697838783264,
+            "max": 0.09913697838783264
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 41.13999908044934,
+            "q25": 41.13999908044934,
+            "median": 41.13999908044934,
+            "q75": 41.13999908044934,
+            "max": 41.13999908044934
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.06421535462141037,
+            "q25": 0.09509702771902084,
+            "median": 0.09800664708018303,
+            "q75": 0.10299012437462807,
+            "max": 0.11110444366931915
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 15.649999650195241,
+            "q25": 26.397499409969896,
+            "median": 31.64499929267913,
+            "q75": 50.97249886067584,
+            "max": 78.64999824203551
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 17,
+            "min": 0.06421535462141037,
+            "q25": 0.09473376721143723,
+            "median": 0.0976506695151329,
+            "q75": 0.10320418328046799,
+            "max": 0.11110444366931915
+          },
+          "uncertainty_pct": {
+            "count": 17,
+            "min": 15.649999650195241,
+            "q25": 26.229999413713813,
+            "median": 31.299999300390482,
+            "q75": 54.24999878741801,
+            "max": 78.64999824203551
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 53,
+            "min": 0.06421535462141037,
+            "q25": 0.08816796541213989,
+            "median": 0.0963977724313736,
+            "q75": 0.10356168448925018,
+            "max": 0.12537938356399536
+          },
+          "uncertainty_pct": {
+            "count": 53,
+            "min": 15.649999650195241,
+            "q25": 30.27999932318926,
+            "median": 37.79999915510416,
+            "q75": 41.89999906346202,
+            "max": 78.64999824203551
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 35,
+            "min": 0.07969439029693604,
+            "q25": 0.0877675712108612,
+            "median": 0.09208203107118607,
+            "q75": 0.10966014862060547,
+            "max": 0.12537938356399536
+          },
+          "uncertainty_pct": {
+            "count": 35,
+            "min": 19.029999574646354,
+            "q25": 31.94999928586185,
+            "median": 38.10999914817512,
+            "q75": 41.83999906480312,
+            "max": 51.68999884463847
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.06421535462141037,
+            "q25": 0.09507683292031288,
+            "median": 0.09733885154128075,
+            "q75": 0.09818463586270809,
+            "max": 0.1023479476571083
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 25.529999429360032,
+            "q25": 25.79499942343682,
+            "median": 28.284999367780983,
+            "q75": 48.272498921025544,
+            "max": 78.64999824203551
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 3
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 12
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 47
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-07-06",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.0850895419716835,
+            "uncertainty_pct": 40.72999908961356,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-07",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.08332351595163345,
+            "uncertainty_pct": 30.839999310672283,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-08",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.07842453569173813,
+            "uncertainty_pct": 36.47999918460846,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-09",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.09913697838783264,
+            "uncertainty_pct": 41.13999908044934,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-10",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.11573663353919983,
+            "uncertainty_pct": 24.959999442100525,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-07-11",
+            "day_offset": 2,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          },
+          {
+            "date": "2026-07-12",
+            "day_offset": 3,
+            "status": "eligible",
+            "kd490": 0.06956193596124649,
+            "uncertainty_pct": 15.239999659359455,
+            "flags": 0.0,
+            "rejection_reasons": []
+          }
+        ],
+        "kd490": {
+          "count": 6,
+          "min": 0.06956193596124649,
+          "q25": 0.07964928075671196,
+          "median": 0.08420652896165848,
+          "q75": 0.09562511928379536,
+          "max": 0.11573663353919983
+        },
+        "uncertainty_pct": {
+          "count": 6,
+          "min": 15.239999659359455,
+          "q25": 26.429999409243464,
+          "median": 33.65999924764037,
+          "q75": 39.66749911336228,
+          "max": 41.13999908044934
+        }
+      }
+    },
+    {
+      "role": "late-August Sentinel-2 candidate",
+      "target_date": "2026-08-31",
+      "candidate": {
+        "date": "2026-08-31",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.15015706419944763,
+        "uncertainty_pct": 10.56999976374209,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-08-31",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.1559624969959259,
+        "uncertainty_pct": 12.419999722391367,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-08-31",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-08-30",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-01",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-02",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-08-28",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-03",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.15015706419944763,
+            "q25": 0.15015706419944763,
+            "median": 0.15015706419944763,
+            "q75": 0.15015706419944763,
+            "max": 0.15015706419944763
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 10.56999976374209,
+            "q25": 10.56999976374209,
+            "median": 10.56999976374209,
+            "q75": 10.56999976374209,
+            "max": 10.56999976374209
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.15015706419944763,
+            "q25": 0.15015706419944763,
+            "median": 0.15015706419944763,
+            "q75": 0.15015706419944763,
+            "max": 0.15015706419944763
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 10.56999976374209,
+            "q25": 10.56999976374209,
+            "median": 10.56999976374209,
+            "q75": 10.56999976374209,
+            "max": 10.56999976374209
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.1446966677904129,
+            "q25": 0.15154317766427994,
+            "median": 0.1589840054512024,
+            "q75": 0.16352780163288116,
+            "max": 0.1807919144630432
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 7.299999836832285,
+            "q25": 10.824999758042395,
+            "median": 13.04999970830977,
+            "q75": 20.014999552629888,
+            "max": 23.189999481663108
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.1446966677904129,
+            "q25": 0.1521410308778286,
+            "median": 0.15904133021831512,
+            "q75": 0.16391507536172867,
+            "max": 0.1807919144630432
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 7.299999836832285,
+            "q25": 11.084999752230942,
+            "median": 13.32499970216304,
+            "q75": 21.037499529775232,
+            "max": 23.189999481663108
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.13834305107593536,
+            "q25": 0.1511651799082756,
+            "median": 0.1591237634420395,
+            "q75": 0.16533365845680237,
+            "max": 0.18200482428073883
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 4.999999888241291,
+            "q25": 11.559999741613865,
+            "median": 17.80999960191548,
+            "q75": 24.66499944869429,
+            "max": 31.319999299943447
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.13834305107593536,
+            "q25": 0.15036620199680328,
+            "median": 0.1600172445178032,
+            "q75": 0.16562440618872643,
+            "max": 0.18200482428073883
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 4.999999888241291,
+            "q25": 13.804999691434205,
+            "median": 21.72999951429665,
+            "q75": 26.06749941734597,
+            "max": 31.319999299943447
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.1446966677904129,
+            "q25": 0.14727351814508438,
+            "median": 0.15154317766427994,
+            "q75": 0.1525026448071003,
+            "max": 0.1589840054512024
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 11.249999748542905,
+            "q25": 11.922499733511358,
+            "median": 12.519999720156193,
+            "q75": 13.462499699089676,
+            "max": 13.689999694004655
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 31
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 52
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": true,
+          "eligible_pixels_within_radius_meeting_cap": 55
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-08-28",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.1017560213804245,
+            "uncertainty_pct": 13.829999690875411,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-08-29",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.09306955337524414,
+            "uncertainty_pct": 45.78999897651374,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-08-30",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.10135998576879501,
+            "uncertainty_pct": 14.509999675676227,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-08-31",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.15015706419944763,
+            "uncertainty_pct": 10.56999976374209,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-01",
+            "day_offset": 1,
+            "status": "eligible",
+            "kd490": 0.14799608290195465,
+            "uncertainty_pct": 14.509999675676227,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-02",
+            "day_offset": 2,
+            "status": "eligible",
+            "kd490": 0.12575721740722656,
+            "uncertainty_pct": 66.57999851182103,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-03",
+            "day_offset": 3,
+            "status": "eligible",
+            "kd490": 0.22008831799030304,
+            "uncertainty_pct": 58.269998697564006,
+            "flags": 0.0,
+            "rejection_reasons": []
+          }
+        ],
+        "kd490": {
+          "count": 7,
+          "min": 0.09306955337524414,
+          "q25": 0.10155800357460976,
+          "median": 0.12575721740722656,
+          "q75": 0.14907657355070114,
+          "max": 0.22008831799030304
+        },
+        "uncertainty_pct": {
+          "count": 7,
+          "min": 10.56999976374209,
+          "q25": 14.169999683275819,
+          "median": 14.509999675676227,
+          "q75": 52.029998837038875,
+          "max": 66.57999851182103
+        }
+      }
+    },
+    {
+      "role": "September Pleiades Neo scene",
+      "target_date": "2026-09-03",
+      "candidate": {
+        "date": "2026-09-03",
+        "day_offset": 0,
+        "distance_km": 0.891,
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "kd490": 0.22008831799030304,
+        "uncertainty_pct": 58.269998697564006,
+        "valid_within_radius": 55,
+        "flags": 0
+      },
+      "previous_finite_only_candidate": {
+        "date": "2026-09-03",
+        "day_offset": 0,
+        "distance_km": 0.2902676776256532,
+        "latitude": 38.41145706176758,
+        "longitude": -9.203124046325684,
+        "kd490": 0.15274730324745178,
+        "uncertainty_pct": 83.8799981251359,
+        "flags": 1.0,
+        "rejection_reasons": [
+          "land"
+        ]
+      },
+      "search_days": [
+        {
+          "date": "2026-09-03",
+          "day_offset": 0,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-02",
+          "day_offset": -1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-04",
+          "day_offset": 1,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 0,
+          "rejected_unique_within_radius": 75,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 75,
+            "invalid_uncertainty": 75,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-01",
+          "day_offset": -2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-05",
+          "day_offset": 2,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-08-31",
+          "day_offset": -3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        },
+        {
+          "date": "2026-09-06",
+          "day_offset": 3,
+          "status": "available",
+          "grid_pixels_within_radius": 75,
+          "eligible_within_radius": 55,
+          "rejected_unique_within_radius": 20,
+          "rejection_reasons_overlapping": {
+            "land": 16,
+            "invalid_or_unknown_flags": 0,
+            "invalid_kd490": 18,
+            "invalid_uncertainty": 18,
+            "censored_uncertainty": 0
+          }
+        }
+      ],
+      "qualification": {
+        "status": "candidate_only",
+        "product_checks": "pass",
+        "reef_representativeness": "unestablished",
+        "r7_fallback_selected": false,
+        "reasons": [
+          "coastal 1 km footprint not independently matched to reef water",
+          "same-day daily bin does not establish an acquisition-time match",
+          "KD490 does not identify absorption and backscatter separately"
+        ]
+      },
+      "spatial_support": {
+        "within_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.22008831799030304,
+            "q25": 0.22008831799030304,
+            "median": 0.22008831799030304,
+            "q75": 0.22008831799030304,
+            "max": 0.22008831799030304
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 58.269998697564006,
+            "q25": 58.269998697564006,
+            "median": 58.269998697564006,
+            "q75": 58.269998697564006,
+            "max": 58.269998697564006
+          }
+        },
+        "ring_0_1_km": {
+          "kd490": {
+            "count": 1,
+            "min": 0.22008831799030304,
+            "q25": 0.22008831799030304,
+            "median": 0.22008831799030304,
+            "q75": 0.22008831799030304,
+            "max": 0.22008831799030304
+          },
+          "uncertainty_pct": {
+            "count": 1,
+            "min": 58.269998697564006,
+            "q25": 58.269998697564006,
+            "median": 58.269998697564006,
+            "q75": 58.269998697564006,
+            "max": 58.269998697564006
+          }
+        },
+        "within_3_km": {
+          "kd490": {
+            "count": 19,
+            "min": 0.0983864963054657,
+            "q25": 0.1974220648407936,
+            "median": 0.2110275775194168,
+            "q75": 0.21765580773353577,
+            "max": 0.22389934957027435
+          },
+          "uncertainty_pct": {
+            "count": 19,
+            "min": 11.03999975323677,
+            "q25": 18.419999588280916,
+            "median": 42.35999905318022,
+            "q75": 65.64999853260815,
+            "max": 93.09999791905284
+          }
+        },
+        "ring_1_3_km": {
+          "kd490": {
+            "count": 18,
+            "min": 0.0983864963054657,
+            "q25": 0.19218506291508675,
+            "median": 0.21085111796855927,
+            "q75": 0.21562514081597328,
+            "max": 0.22389934957027435
+          },
+          "uncertainty_pct": {
+            "count": 18,
+            "min": 11.03999975323677,
+            "q25": 17.914999599568546,
+            "median": 41.08999908156693,
+            "q75": 67.13499849941581,
+            "max": 93.09999791905284
+          }
+        },
+        "within_5_km": {
+          "kd490": {
+            "count": 55,
+            "min": 0.0983864963054657,
+            "q25": 0.18724526464939117,
+            "median": 0.20213118195533752,
+            "q75": 0.21186625957489014,
+            "max": 0.22389934957027435
+          },
+          "uncertainty_pct": {
+            "count": 55,
+            "min": 10.41999976709485,
+            "q25": 20.619999539107084,
+            "median": 30.70999931357801,
+            "q75": 56.35999874025583,
+            "max": 93.09999791905284
+          }
+        },
+        "ring_3_5_km": {
+          "kd490": {
+            "count": 36,
+            "min": 0.10515231639146805,
+            "q25": 0.1873932145535946,
+            "median": 0.19922351837158203,
+            "q75": 0.2045992948114872,
+            "max": 0.22213047742843628
+          },
+          "uncertainty_pct": {
+            "count": 36,
+            "min": 10.41999976709485,
+            "q25": 22.11999950557947,
+            "median": 29.329999344423413,
+            "q75": 48.314998920075595,
+            "max": 69.73999844118953
+          }
+        },
+        "adjacent_3x3_excluding_selected": {
+          "eligible_count": 6,
+          "kd490": {
+            "count": 6,
+            "min": 0.0983864963054657,
+            "q25": 0.21255965530872345,
+            "median": 0.21761376410722733,
+            "q75": 0.22044948488473892,
+            "max": 0.22389934957027435
+          },
+          "uncertainty_pct": {
+            "count": 6,
+            "min": 17.409999610856175,
+            "q25": 29.619999337941408,
+            "median": 42.08999905921519,
+            "q75": 69.70999844186008,
+            "max": 93.09999791905284
+          }
+        }
+      },
+      "uncertainty_sensitivity": [
+        {
+          "cap_pct": 20,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 13
+        },
+        {
+          "cap_pct": 30,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 25
+        },
+        {
+          "cap_pct": 50,
+          "fixed_candidate_meets_cap": false,
+          "eligible_pixels_within_radius_meeting_cap": 39
+        }
+      ],
+      "temporal_support": {
+        "latitude": 38.401039123535156,
+        "longitude": -9.203124046325684,
+        "days": [
+          {
+            "date": "2026-08-31",
+            "day_offset": -3,
+            "status": "eligible",
+            "kd490": 0.15015706419944763,
+            "uncertainty_pct": 10.56999976374209,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-01",
+            "day_offset": -2,
+            "status": "eligible",
+            "kd490": 0.14799608290195465,
+            "uncertainty_pct": 14.509999675676227,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-02",
+            "day_offset": -1,
+            "status": "eligible",
+            "kd490": 0.12575721740722656,
+            "uncertainty_pct": 66.57999851182103,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-03",
+            "day_offset": 0,
+            "status": "eligible",
+            "kd490": 0.22008831799030304,
+            "uncertainty_pct": 58.269998697564006,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-04",
+            "day_offset": 1,
+            "status": "rejected",
+            "kd490": null,
+            "uncertainty_pct": null,
+            "flags": 0.0,
+            "rejection_reasons": [
+              "invalid_kd490",
+              "invalid_uncertainty"
+            ]
+          },
+          {
+            "date": "2026-09-05",
+            "day_offset": 2,
+            "status": "eligible",
+            "kd490": 0.08361224085092545,
+            "uncertainty_pct": 21.779999513179064,
+            "flags": 0.0,
+            "rejection_reasons": []
+          },
+          {
+            "date": "2026-09-06",
+            "day_offset": 3,
+            "status": "eligible",
+            "kd490": 0.12442069500684738,
+            "uncertainty_pct": 43.63999902456999,
+            "flags": 0.0,
+            "rejection_reasons": []
+          }
+        ],
+        "kd490": {
+          "count": 6,
+          "min": 0.08361224085092545,
+          "q25": 0.12475482560694218,
+          "median": 0.1368766501545906,
+          "q75": 0.1496168188750744,
+          "max": 0.22008831799030304
+        },
+        "uncertainty_pct": {
+          "count": 6,
+          "min": 10.56999976374209,
+          "q25": 16.327499635051936,
+          "median": 32.709999268874526,
+          "q75": 54.6124987793155,
+          "max": 66.57999851182103
+        }
+      }
+    }
+  ],
+  "scope": "Frozen subset input audit. No habitat predictions, corrected-branch metrics or label selection."
+}

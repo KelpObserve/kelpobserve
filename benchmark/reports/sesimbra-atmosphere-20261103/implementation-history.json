@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-03T10:01:04.489077+00:00",
+  "before_scoring": true,
+  "changes": [
+    "ACOLITE direct API requires global defaults as well as sensor overrides. First RAdCor invocation stopped before output; defaults merge repaired in wrapper.",
+    "Standalone glint API requires full effective settings. First fixed-RAdCor glint call stopped before correction; original atmospheric NetCDF retained; glint resumed on a new copy.",
+    "Native arrays reproduce cached PNeo control exactly. GDAL exported ACOLITE upper-left CF coordinates with half-pixel shift. Evaluation exports now use the exact original raster affine recorded when packing, with no resampling or change to reflectance. Native coordinate contract is verified before scoring."
+  ],
+  "scientific_design_changes": false,
+  "upstream_code_changed": false
+}

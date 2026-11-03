@@ -1,0 +1,281 @@
+$ACOLITE/acolite/adjacency/radcor/radcor.py:1580: RuntimeWarning: All-NaN slice encountered
+  min_pos_diff = np.nanmin(diffs)
+Running RAdCor on scene $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+
+Scene from S2B_MSI.
+Scene dimensions: 1196x1592 (pixels)
+Got spatial resolution of 10.0 m from global attributes.
+
+uoz, uwv, pressure, wind: 0.30, 1.50, 1013.25, 2.00
+Using LUTs ACOLITE-LUT-202110-MOD1 (C), ACOLITE-LUT-202110-MOD2 (M) for RAdCor
+
+Running AOT estimation using radcor_aot_estimate=tsdsf
+Limiting TS-DSF scene to PSF coverage with radius of 5.0 km (500.5 pixels)
+Offsets to extract image centre: 499x499 pixels
+Extracted centre size: 198x594 pixels
+
+Loading TOA data for band 1: rhot_442
+    Rayleigh optical depth: 0.239 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.1061
+    Model C T_u_dif_aer 0.4616
+    Model C PSF cover 0.8278
+    Model M T_u_dif_ray 0.1061
+    Model M T_u_dif_aer 0.5545
+    Model M PSF cover 0.8580
+End band 1
+
+
+Loading TOA data for band 2: rhot_492
+    Rayleigh optical depth: 0.156 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0727
+    Model C T_u_dif_aer 0.4460
+    Model C PSF cover 0.8496
+    Model M T_u_dif_ray 0.0727
+    Model M T_u_dif_aer 0.5473
+    Model M PSF cover 0.8802
+End band 2
+
+
+Loading TOA data for band 3: rhot_559
+    Rayleigh optical depth: 0.092 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0439
+    Model C T_u_dif_aer 0.4201
+    Model C PSF cover 0.8709
+    Model M T_u_dif_ray 0.0439
+    Model M T_u_dif_aer 0.5375
+    Model M PSF cover 0.9020
+End band 3
+
+
+Loading TOA data for band 4: rhot_665
+    Rayleigh optical depth: 0.045 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0222
+    Model C T_u_dif_aer 0.3798
+    Model C PSF cover 0.8890
+    Model M T_u_dif_ray 0.0222
+    Model M T_u_dif_aer 0.5257
+    Model M PSF cover 0.9207
+End band 4
+
+
+Loading TOA data for band 5: rhot_704
+    Rayleigh optical depth: 0.036 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0176
+    Model C T_u_dif_aer 0.3655
+    Model C PSF cover 0.8933
+    Model M T_u_dif_ray 0.0176
+    Model M T_u_dif_aer 0.5224
+    Model M PSF cover 0.9249
+End band 5
+
+
+Loading TOA data for band 6: rhot_739
+    Rayleigh optical depth: 0.029 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0144
+    Model C T_u_dif_aer 0.3511
+    Model C PSF cover 0.8968
+    Model M T_u_dif_ray 0.0144
+    Model M T_u_dif_aer 0.5182
+    Model M PSF cover 0.9283
+End band 6
+
+
+Loading TOA data for band 7: rhot_780
+    Rayleigh optical depth: 0.024 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0116
+    Model C T_u_dif_aer 0.3353
+    Model C PSF cover 0.9000
+    Model M T_u_dif_ray 0.0116
+    Model M T_u_dif_aer 0.5139
+    Model M PSF cover 0.9313
+End band 7
+
+
+Loading TOA data for band 8: rhot_833
+    Rayleigh optical depth: 0.018 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0090
+    Model C T_u_dif_aer 0.3165
+    Model C PSF cover 0.9037
+    Model M T_u_dif_ray 0.0090
+    Model M T_u_dif_aer 0.5093
+    Model M PSF cover 0.9343
+End band 8
+
+
+Loading TOA data for band 8A: rhot_864
+    Rayleigh optical depth: 0.016 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0078
+    Model C T_u_dif_aer 0.3055
+    Model C PSF cover 0.9056
+    Model M T_u_dif_ray 0.0078
+    Model M T_u_dif_aer 0.5065
+    Model M PSF cover 0.9357
+End band 8A
+
+
+Loading TOA data for band 11: rhot_1610
+    Rayleigh optical depth: 0.001 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0006
+    Model C T_u_dif_aer 0.1685
+    Model C PSF cover 0.9414
+    Model M T_u_dif_ray 0.0006
+    Model M T_u_dif_aer 0.4588
+    Model M PSF cover 0.9501
+End band 11
+
+
+Loading TOA data for band 12: rhot_2186
+    Rayleigh optical depth: 0.000 (unitless)
+    Computing FFT of TOA array
+    Scene shape (1196, 1592)
+    Scene centre shape (198, 594)
+    Estimating aot550 for models C, M
+    Model C T_u_dif_ray 0.0002
+    Model C T_u_dif_aer 0.1313
+    Model C PSF cover 0.9658
+    Model M T_u_dif_ray 0.0002
+    Model M T_u_dif_aer 0.3875
+    Model M PSF cover 0.9585
+End band 12
+
+Selecting aot per model using radcor_aot_selection=lowest_positive_difference
+Band index, aot 11 0.2222383955609905
+Band index, aot 12 0.05760614508651546
+Selecting best fitting model
+    Model C estimated AOT(550): 0.2222 (band 11)
+    Model C tau_aer_550 CV: 0.3092
+    Model M estimated AOT(550): 0.0576 (band 12)
+    Model M tau_aer_550 CV: 0.5795
+
+Estimated aerosol model: C (fitted band 11)
+Estimated aerosol optical thickness at 550 nm: 0.2222
+
+Performing RAdCor correction
+taer_550: 0.2222383955609905
+Aerosol model: C
+Aerosol LUT: ACOLITE-LUT-202110-MOD1
+Reading raa from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing raa to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Reading sza from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing sza to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Reading vza from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing vza to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Reading lon from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing lon to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Reading lat from inputfile $CACHE/optical-atmosphere-20261103/inputs/s2-20260702-S2B-R037/s2-20260702-S2B-R037_L1R.nc
+Writing lat to outputfile $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Loading TOA data for band 1 (rhot_442)
+Computing fft of TOA array
+PSF cov: 0.7420391423915653
+Writing band 1
+Loading TOA data for band 2 (rhot_492)
+Computing fft of TOA array
+PSF cov: 0.7727643499513303
+Writing band 2
+Loading TOA data for band 3 (rhot_559)
+Computing fft of TOA array
+PSF cov: 0.8080196942669136
+Writing band 3
+Loading TOA data for band 4 (rhot_665)
+Computing fft of TOA array
+PSF cov: 0.8438939841239179
+Writing band 4
+Loading TOA data for band 5 (rhot_704)
+Computing fft of TOA array
+PSF cov: 0.8535329613004656
+Writing band 5
+Loading TOA data for band 6 (rhot_739)
+Computing fft of TOA array
+PSF cov: 0.861101529812611
+Writing band 6
+Loading TOA data for band 7 (rhot_780)
+Computing fft of TOA array
+PSF cov: 0.868353158795304
+Writing band 7
+Loading TOA data for band 8 (rhot_833)
+Computing fft of TOA array
+PSF cov: 0.876241073871522
+Writing band 8
+Loading TOA data for band 8A (rhot_864)
+Computing fft of TOA array
+PSF cov: 0.8802215094870689
+Writing band 8A
+Loading TOA data for band 11 (rhot_1610)
+Computing fft of TOA array
+PSF cov: 0.9358820600281577
+Writing band 11
+Loading TOA data for band 12 (rhot_2186)
+Computing fft of TOA array
+PSF cov: 0.9635932096585087
+Writing band 12
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R.nc
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_1610.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_1610.tif
+Creating new file: $CACHE/optical-atmosphere-20261103/s2_radcor_auto/glint/s2-20260702-S2B-R037_L2R_GC.nc
+Per-pixel geometry found, not yet implemented.
+Proceeding with scene average geometry values.
+Starting glint correction with base dataset rhos
+Starting glint correction with base dataset rhosu
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_442.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_492.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_559.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_665.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_833.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhos_1610.tif
+Wrote $CACHE/optical-atmosphere-20261103/s2_radcor_auto/s2-20260702-S2B-R037_L2R_rhosu_1610.tif
+Completed s2_radcor_auto {'sensor': 'S2B_MSI', 'sza': np.float64(21.6254226589792), 'vza': np.float64(7.823660360232815), 'raa': np.float64(25.61806726305593), 'radcor_version': '1.0.0', 'ac_model': 'C', 'ac_aot_550': np.float64(0.2222383955609905)}

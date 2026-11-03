@@ -1,0 +1,572 @@
+{
+  "created_at": "2026-11-02T16:02:22+00:00",
+  "schema_version": "1.0",
+  "manifest": {
+    "schema_version": "1.0",
+    "files": [
+      {
+        "file": "transp-2025-12-21-2025-12-27.nc",
+        "sha256": "6c3bd150037db75b01a4afdcfeb2e0cc612458d442195221ec0442bccc9ce478",
+        "bytes": 167628,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "KD490",
+            "KD490_uncertainty",
+            "SPM",
+            "SPM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2025-12-21T00:00:00",
+          "end_datetime": "2025-12-27T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:02+00:00"
+      },
+      {
+        "file": "transp-2026-02-19-2026-02-25.nc",
+        "sha256": "b8502e16e12f420a44735480897cd510a10dee0c53d9cd2084d93cb119f7ad8c",
+        "bytes": 167628,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "KD490",
+            "KD490_uncertainty",
+            "SPM",
+            "SPM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-02-19T00:00:00",
+          "end_datetime": "2026-02-25T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:06+00:00"
+      },
+      {
+        "file": "transp-2026-06-29-2026-07-12.nc",
+        "sha256": "09de1e6f1bc1d7305aacb357f6c250669e76deb9beef90aa61a3e194fc563115",
+        "bytes": 286162,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "KD490",
+            "KD490_uncertainty",
+            "SPM",
+            "SPM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-06-29T00:00:00",
+          "end_datetime": "2026-07-12T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:11+00:00"
+      },
+      {
+        "file": "transp-2026-08-28-2026-09-06.nc",
+        "sha256": "c2be47d8b0eba95ee2f467b5851e6b337c50243811f4b28bc9def8559aed22de",
+        "bytes": 218406,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-transp_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "KD490",
+            "KD490_uncertainty",
+            "SPM",
+            "SPM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-08-28T00:00:00",
+          "end_datetime": "2026-09-06T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:17+00:00"
+      },
+      {
+        "file": "optics-2025-12-21-2025-12-27.nc",
+        "sha256": "e8fd494d95f58f91701009c4e2a69b6327d2db9aa82e6f126ccc1a53b8c6ace0",
+        "bytes": 167628,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "BBP",
+            "BBP_uncertainty",
+            "CDM",
+            "CDM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2025-12-21T00:00:00",
+          "end_datetime": "2025-12-27T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:22+00:00"
+      },
+      {
+        "file": "optics-2026-02-19-2026-02-25.nc",
+        "sha256": "fdcf32234d128f0937a6b4647e45aa9d9bf4f2d6ffca7b70da0d69787e5e8d54",
+        "bytes": 167628,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "BBP",
+            "BBP_uncertainty",
+            "CDM",
+            "CDM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-02-19T00:00:00",
+          "end_datetime": "2026-02-25T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:25+00:00"
+      },
+      {
+        "file": "optics-2026-06-29-2026-07-12.nc",
+        "sha256": "65a1579a3f3f1209db88fbcdeec6fe7539fbb070191907adf19b6a505996d205",
+        "bytes": 286162,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "BBP",
+            "BBP_uncertainty",
+            "CDM",
+            "CDM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-06-29T00:00:00",
+          "end_datetime": "2026-07-12T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:29+00:00"
+      },
+      {
+        "file": "optics-2026-08-28-2026-09-06.nc",
+        "sha256": "55cee9a9c119fdf80275379367cc9f1e30df25c5d44b91cd2fb68487764652fa",
+        "bytes": 218406,
+        "request": {
+          "dataset_id": "cmems_obs-oc_atl_bgc-optics_my_l3-multi-1km_P1D",
+          "dataset_version": "202603",
+          "dataset_part": "default",
+          "variables": [
+            "BBP",
+            "BBP_uncertainty",
+            "CDM",
+            "CDM_uncertainty",
+            "flags"
+          ],
+          "minimum_longitude": -9.42,
+          "maximum_longitude": -8.98,
+          "minimum_latitude": 38.24,
+          "maximum_latitude": 38.56,
+          "start_datetime": "2026-08-28T00:00:00",
+          "end_datetime": "2026-09-06T23:59:59",
+          "coordinates_selection_method": "inside",
+          "disable_progress_bar": true
+        },
+        "product": "OCEANCOLOUR_ATL_BGC_L3_MY_009_113",
+        "toolbox": "2.3.0",
+        "fetched_at": "2026-11-02T15:28:34+00:00"
+      }
+    ]
+  },
+  "manifest_sha256": "06ccd5cc8e2286469ee9d2457187d7fcea8df10e4b360fc52e5c3ab5b4a7ec32",
+  "source_sha256": {
+    "optical_bundle.py": "76084a0a95f90b088544ea692570266f6b4905543005917074a90847835a720b",
+    "cmems.py": "20643848bb860bc5da7ca43c23e9285f8a34211eb91a7fd21a79aa3fc8098d4e",
+    "qualification.py": "df364d9424a050c7d3e1fae1c5be0a596967ce3fded4c84a701561b21f4044c4"
+  },
+  "selection": "same coordinates and target date as frozen KD490 qualification; no per-variable reselection",
+  "uncertainty_interpretation": "provider percentage error bars; no Gaussian or independent-error assumption",
+  "targets": [
+    {
+      "date": "2025-12-24",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.08797667920589447,
+          "uncertainty_pct": 35.7099992018193,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 1.9755146503448486,
+          "uncertainty_pct": 42.809999043121934,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.0111439423635602,
+          "uncertainty_pct": 38.56999913789332,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.051266465336084366,
+          "uncertainty_pct": 58.619998689740896,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 55,
+      "kd490_original_frozen": 0.08797667920589447,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-02-22",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.2412082403898239,
+          "uncertainty_pct": 25.649999426677823,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 2.7153255939483643,
+          "uncertainty_pct": 30.919999308884144,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.006628517527133226,
+          "uncertainty_pct": 17.439999610185623,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.1786806434392929,
+          "uncertainty_pct": 41.71999906748533,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 55,
+      "kd490_original_frozen": 0.2412082403898239,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-07-02",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.0710151419043541,
+          "uncertainty_pct": 15.289999658241868,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 0.8010436296463013,
+          "uncertainty_pct": 45.81999897584319,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.00408646697178483,
+          "uncertainty_pct": 19.78999955765903,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.03673909977078438,
+          "uncertainty_pct": 36.59999918192625,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 55,
+      "kd490_original_frozen": 0.0710151419043541,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-07-08",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.07842453569173813,
+          "uncertainty_pct": 36.47999918460846,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 0.26815348863601685,
+          "uncertainty_pct": 60.83999864012003,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.0006013141828589141,
+          "uncertainty_pct": 19.519999563694,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.07953668385744095,
+          "uncertainty_pct": 56.93999872729182,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 48,
+      "kd490_original_frozen": 0.07842453569173813,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-07-09",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.09913697838783264,
+          "uncertainty_pct": 41.13999908044934,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 0.3610718846321106,
+          "uncertainty_pct": 49.75999888777733,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.003436949336901307,
+          "uncertainty_pct": 40.97999908402562,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.04879830405116081,
+          "uncertainty_pct": 62.22999860905111,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 53,
+      "kd490_original_frozen": 0.09913697838783264,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-08-31",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.15015706419944763,
+          "uncertainty_pct": 10.56999976374209,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 0.6472763419151306,
+          "uncertainty_pct": 39.91999910771847,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.003678582375869155,
+          "uncertainty_pct": 46.00999897159636,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.11064465343952179,
+          "uncertainty_pct": 40.80999908782542,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 53,
+      "kd490_original_frozen": 0.15015706419944763,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    },
+    {
+      "date": "2026-09-03",
+      "latitude": 38.401039123535156,
+      "longitude": -9.203124046325684,
+      "distance_km": 0.891,
+      "variables": {
+        "KD490": {
+          "value": 0.22008831799030304,
+          "uncertainty_pct": 58.269998697564006,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 490
+        },
+        "SPM": {
+          "value": 1.1729531288146973,
+          "uncertainty_pct": 49.709998888894916,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "g/m3",
+          "wavelength_nm": null
+        },
+        "BBP": {
+          "value": 0.0032607577741146088,
+          "uncertainty_pct": 39.99999910593033,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        },
+        "CDM": {
+          "value": 0.02974187582731247,
+          "uncertainty_pct": 59.99999865889549,
+          "flags": 0.0,
+          "product_checks_passed": true,
+          "units": "m-1",
+          "wavelength_nm": 443
+        }
+      },
+      "joint_product_valid_at_fixed_pixel": true,
+      "joint_product_valid_pixels_within_5km": 50,
+      "kd490_original_frozen": 0.22008831799030304,
+      "kd490_relative_change_pct": 0.0,
+      "status": "candidate_only",
+      "reef_representativeness": "unestablished"
+    }
+  ],
+  "scope": "Product checks and source comparison only. No water inversion or habitat scores.",
+  "remaining_requirements": [
+    "reef representativeness",
+    "spectral slopes and phytoplankton absorption",
+    "joint product consistency and correlated errors",
+    "registered fallback and score rules"
+  ]
+}

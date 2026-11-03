@@ -1,0 +1,44 @@
+Running acolite for $CACHE/optical-atmosphere-20261103/inputs/pneo-20260708/pneo-20260708_L1R.nc
+default uoz: 0.30 uwv: 1.50 pressure: 1013.25
+current uoz: 0.30 uwv: 1.50 pressure: 1013.25
+Using DSF atmospheric correction
+Writing lon
+Wrote lon (2817, 4920)
+Writing lat
+Wrote lat (2817, 4920)
+Loading LUTs ['ACOLITE-LUT-202110-MOD1', 'ACOLITE-LUT-202110-MOD2']
+Loading LUTs took 1.1 s
+[[[[0.07811581]]]] ACOLITE-LUT-202110-MOD2
+User specified aot 0.078 and model ACOLITE-LUT-202110-MOD2
+use_revlut False
+Wrote rhot_439 (2817, 4920)
+Computing surface reflectance BlueCoastal 439 0.998
+Wrote rhos_439 (1, 1, 2817, 4920)
+PNEO3/BBlueCoastal took 1.0s (StdLUT)
+Wrote rhot_486 (2817, 4920)
+Computing surface reflectance Blue 486 0.985
+Wrote rhos_486 (1, 1, 2817, 4920)
+PNEO3/BBlue took 1.1s (StdLUT)
+Wrote rhot_563 (2817, 4920)
+Computing surface reflectance Green 563 0.930
+Wrote rhos_563 (1, 1, 2817, 4920)
+PNEO3/BGreen took 0.9s (StdLUT)
+Wrote rhot_655 (2817, 4920)
+Computing surface reflectance Red 655 0.941
+Wrote rhos_655 (1, 1, 2817, 4920)
+PNEO3/BRed took 1.0s (StdLUT)
+Wrote rhot_723 (2817, 4920)
+Computing surface reflectance RedEdge 723 0.915
+Wrote rhos_723 (1, 1, 2817, 4920)
+PNEO3/BRedEdge took 1.0s (StdLUT)
+Wrote rhot_826 (2817, 4920)
+Computing surface reflectance NIR 826 0.944
+Wrote rhos_826 (1, 1, 2817, 4920)
+PNEO3/BNIR took 0.9s (StdLUT)
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R.nc
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R_rhos_439.tif
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R_rhos_486.tif
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R_rhos_563.tif
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R_rhos_655.tif
+Wrote $CACHE/optical-atmosphere-20261103/pneo_marine_control/pneo-20260708_L2R_rhos_826.tif
+Completed pneo_marine_control {'sensor': 'PNEO3', 'sza': np.float64(20.8321083205022), 'vza': np.float64(14.04319716433526), 'raa': np.float64(6.090113806970919)}

@@ -1,0 +1,114 @@
+{
+  "s2-20260702-S2B-R037:V1": {
+    "id": "s2-20260702-S2B-R037",
+    "date": "2026-07-02",
+    "sensor": "sentinel2",
+    "campaign": "july",
+    "variant": "V1",
+    "solar_zenith_deg": 21.6254226589792,
+    "wavelengths_nm": [
+      492.0,
+      559.0
+    ],
+    "acquisition_level_m": 1.393,
+    "eligible_events": 30
+  },
+  "s2-20260702-S2B-R037:V0": {
+    "id": "s2-20260702-S2B-R037",
+    "date": "2026-07-02",
+    "sensor": "sentinel2",
+    "campaign": "july",
+    "variant": "V0",
+    "solar_zenith_deg": 21.6254226589792,
+    "wavelengths_nm": [
+      492.0,
+      559.0
+    ],
+    "acquisition_level_m": 1.393,
+    "eligible_events": 30
+  },
+  "s2-20260831-S2B-R037:V1": {
+    "id": "s2-20260831-S2B-R037",
+    "date": "2026-08-31",
+    "sensor": "sentinel2",
+    "campaign": "september",
+    "variant": "V1",
+    "solar_zenith_deg": 33.4838767009657,
+    "wavelengths_nm": [
+      492.0,
+      559.0
+    ],
+    "acquisition_level_m": 0.987,
+    "eligible_events": 22
+  },
+  "s2-20260831-S2B-R037:V0": {
+    "id": "s2-20260831-S2B-R037",
+    "date": "2026-08-31",
+    "sensor": "sentinel2",
+    "campaign": "september",
+    "variant": "V0",
+    "solar_zenith_deg": 33.4838767009657,
+    "wavelengths_nm": [
+      492.0,
+      559.0
+    ],
+    "acquisition_level_m": 0.987,
+    "eligible_events": 22
+  },
+  "pneo-20260708:V1": {
+    "id": "pneo-20260708",
+    "date": "2026-07-08",
+    "sensor": "pleiades_neo",
+    "campaign": "july",
+    "variant": "V1",
+    "solar_zenith_deg": 20.8321083205022,
+    "wavelengths_nm": [
+      486.0,
+      563.0
+    ],
+    "acquisition_level_m": 1.6,
+    "eligible_events": 30
+  },
+  "pneo-20260708:V0": {
+    "id": "pneo-20260708",
+    "date": "2026-07-08",
+    "sensor": "pleiades_neo",
+    "campaign": "july",
+    "variant": "V0",
+    "solar_zenith_deg": 20.8321083205022,
+    "wavelengths_nm": [
+      486.0,
+      563.0
+    ],
+    "acquisition_level_m": 1.6,
+    "eligible_events": 30
+  },
+  "pneo-20260903:V1": {
+    "id": "pneo-20260903",
+    "date": "2026-09-03",
+    "sensor": "pleiades_neo",
+    "campaign": "september",
+    "variant": "V1",
+    "solar_zenith_deg": 33.54681443691902,
+    "wavelengths_nm": [
+      486.0,
+      563.0
+    ],
+    "acquisition_level_m": 0.835,
+    "eligible_events": 22
+  },
+  "pneo-20260903:V0": {
+    "id": "pneo-20260903",
+    "date": "2026-09-03",
+    "sensor": "pleiades_neo",
+    "campaign": "september",
+    "variant": "V0",
+    "solar_zenith_deg": 33.54681443691902,
+    "wavelengths_nm": [
+      486.0,
+      563.0
+    ],
+    "acquisition_level_m": 0.835,
+    "eligible_events": 22
+  }
+}

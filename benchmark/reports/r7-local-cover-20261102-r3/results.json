@@ -1,0 +1,2404 @@
+{
+  "started_at": "2026-11-02T16:54:43+00:00",
+  "completed_at": "2026-11-02T16:54:50+00:00",
+  "registration_frozen_at": "2026-11-02T16:47:23+00:00",
+  "protocol": {
+    "scenes": [
+      {
+        "id": "s2-20260702-S2B-R037",
+        "date": "2026-07-02",
+        "sensor": "sentinel2",
+        "campaign": "july"
+      },
+      {
+        "id": "s2-20260831-S2B-R037",
+        "date": "2026-08-31",
+        "sensor": "sentinel2",
+        "campaign": "september"
+      },
+      {
+        "id": "pneo-20260708",
+        "date": "2026-07-08",
+        "sensor": "pleiades_neo",
+        "campaign": "july"
+      },
+      {
+        "id": "pneo-20260903",
+        "date": "2026-09-03",
+        "sensor": "pleiades_neo",
+        "campaign": "september"
+      }
+    ],
+    "primary_radiometry": "V1",
+    "radiometry_variants": [
+      "V1",
+      "V0"
+    ],
+    "primary_background": "understory",
+    "backgrounds": [
+      "understory",
+      "bare"
+    ],
+    "spectral_quantiles": [
+      "median",
+      "p25",
+      "p75"
+    ],
+    "water_shapes": [
+      "median",
+      "2025-12-24",
+      "2026-02-22"
+    ],
+    "water_magnitude_scenarios": "KD490 * (1 + step * provider_percentage_error/100), step=-1,0,+1; no confidence-level interpretation",
+    "depth_shifts_m": [
+      -2.0,
+      0.0,
+      2.0
+    ],
+    "depth_scenario_basis": "Declared sensitivity bracket given prior 1-4 m depth-label/lidar residuals; no calibrated depth distribution. Canopy-height effects are only approximated by effective-depth perturbation.",
+    "fraction_grid_size": 1001,
+    "primary_rhos_tolerance": 0.001,
+    "rhos_tolerances": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "tolerance_basis": "Diagnostic reflectance compatibility: earlier r3 clean-scene adjacent-pixel scales were about 0.0009-0.0010 rhos. This fixed tolerance is not validated sensor error, a probability, or an application cover threshold.",
+    "min_training_units": 8,
+    "min_training_per_stratum": 3,
+    "ridge_alpha": 1.0,
+    "seed": 42,
+    "bootstrap_draws": 2000,
+    "comparison": "Equal-unit MAE/bias/RMSE on identical units with baseline predictions; supplementary equal-transect paired differences with descriptive bootstrap and leave-one-group-out range.",
+    "primary_spectra": "E5s sensor-convolved pooled taxon-balanced kelp median; equal mean of turf/coralline_crust/red_foliose medians. Fixed before scoring. Spectral quartiles applied coherently per class are stress scenarios, not measured joint draws.",
+    "bands": "Blue and green only, actual raster centres for water coefficients and sensor-convolved E5s endmembers. Centre-band approximation retained explicitly. No red/NIR seabed information assumed at these depths.",
+    "selection": "Unchanged r1 pixel/area masks. Supported-subset analysis allowed despite v1 whole-scene coverage failure. Mixed-transect and mixed-stratum cells excluded; all exclusions reported.",
+    "fallback": "Only the product-qualified same-day fixed KD490 neighbour. Missing source or metadata stops that run; no pixel/date fallback selected by performance. BBP/CDM not jointly fitted.",
+    "application_verdict": "Continuous development results only. No application cover-error or minimum-coverage threshold has been specified; no map-ready claim. A close best fit must not be presented as a valid retrieval when nominal reflectance compatibility fails.",
+    "registration_policy": "Protocol and code locked in run files before any new real-cover score. Subsequent corrections retain failed runs and an explicit amendment. Old registrations and outputs unchanged."
+  },
+  "groups": {
+    "sentinel2|july|10m|V1": {
+      "total_units": 18,
+      "eligible_units": 14,
+      "exclusions": {
+        "masked": 4
+      },
+      "best_fit_diagnostic": {
+        "n": 14,
+        "mae_pp": 57.61904761904763,
+        "bias_pp": 57.61904761904763,
+        "rmse_pp": 66.2935990110755
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 14,
+      "median_max_abs_residual_rhos": 0.010994856951054285,
+      "paired_vs_depth": {
+        "n": 14,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 30.110194983508205,
+        "equal_transect_delta_pp": 27.182390880191132,
+        "descriptive_cluster_interval_95": [
+          16.749971484811397,
+          47.306809535870656
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          32.398600577881,
+          32.028390510341026,
+          17.120181552351372
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 14,
+          "mae_pp": 57.61904761904763,
+          "bias_pp": 57.61904761904763,
+          "rmse_pp": 66.2935990110755
+        },
+        "depth": {
+          "n": 14,
+          "mae_pp": 27.508852635539416,
+          "bias_pp": 1.2065747663358084,
+          "rmse_pp": 35.00065493993386
+        },
+        "mean": {
+          "n": 14,
+          "mae_pp": 34.150432900432904,
+          "bias_pp": 2.042748917748917,
+          "rmse_pp": 37.71418986267504
+        },
+        "raw": {
+          "n": 14,
+          "mae_pp": 32.3221386565076,
+          "bias_pp": 2.027087062360716,
+          "rmse_pp": 38.461687688789695
+        },
+        "raw_depth": {
+          "n": 14,
+          "mae_pp": 29.10005215681949,
+          "bias_pp": 1.4818517612041207,
+          "rmse_pp": 35.74673933864339
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 66.66666666666667,
+            "bias_pp": 66.66666666666667,
+            "rmse_pp": 72.99162813486063
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 5,
+          "best_fit": {
+            "n": 5,
+            "mae_pp": 41.333333333333336,
+            "bias_pp": 41.333333333333336,
+            "rmse_pp": 52.11099265563414
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "sentinel2|july|10m|V0": {
+      "total_units": 18,
+      "eligible_units": 14,
+      "exclusions": {
+        "masked": 4
+      },
+      "best_fit_diagnostic": {
+        "n": 14,
+        "mae_pp": 57.61904761904763,
+        "bias_pp": 57.61904761904763,
+        "rmse_pp": 66.2935990110755
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 14,
+      "median_max_abs_residual_rhos": 0.016790074198443528,
+      "paired_vs_depth": {
+        "n": 14,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 30.110194983508205,
+        "equal_transect_delta_pp": 27.182390880191132,
+        "descriptive_cluster_interval_95": [
+          16.749971484811397,
+          47.306809535870656
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          32.398600577881,
+          32.028390510341026,
+          17.120181552351372
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 14,
+          "mae_pp": 57.61904761904763,
+          "bias_pp": 57.61904761904763,
+          "rmse_pp": 66.2935990110755
+        },
+        "depth": {
+          "n": 14,
+          "mae_pp": 27.508852635539416,
+          "bias_pp": 1.2065747663358084,
+          "rmse_pp": 35.00065493993386
+        },
+        "mean": {
+          "n": 14,
+          "mae_pp": 34.150432900432904,
+          "bias_pp": 2.042748917748917,
+          "rmse_pp": 37.71418986267504
+        },
+        "raw": {
+          "n": 14,
+          "mae_pp": 35.05757192567786,
+          "bias_pp": 9.689950882877762,
+          "rmse_pp": 44.64298260533431
+        },
+        "raw_depth": {
+          "n": 14,
+          "mae_pp": 31.13786748842893,
+          "bias_pp": 9.343883738072178,
+          "rmse_pp": 41.59045608958091
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 66.66666666666667,
+            "bias_pp": 66.66666666666667,
+            "rmse_pp": 72.99162813486063
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 5,
+          "best_fit": {
+            "n": 5,
+            "mae_pp": 41.333333333333336,
+            "bias_pp": 41.333333333333336,
+            "rmse_pp": 52.11099265563414
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "sentinel2|september|10m|V1": {
+      "total_units": 13,
+      "eligible_units": 12,
+      "exclusions": {
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 12,
+        "mae_pp": 6.527777777777779,
+        "bias_pp": -6.527777777777779,
+        "rmse_pp": 10.177817200311813
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 12,
+      "median_max_abs_residual_rhos": 0.006592289693066838,
+      "paired_vs_depth": {
+        "n": 4,
+        "transects": 1,
+        "mae_delta_physics_minus_depth_pp": -0.8656217391103078,
+        "equal_transect_delta_pp": -0.8656217391103078,
+        "descriptive_cluster_interval_95": null,
+        "interval_status": "not_estimable_single_transect",
+        "leave_one_transect_out_delta_pp": [
+          null
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 4,
+          "mae_pp": 1.875,
+          "bias_pp": -1.875,
+          "rmse_pp": 2.7950849718747373
+        },
+        "depth": {
+          "n": 4,
+          "mae_pp": 2.740621739110308,
+          "bias_pp": 1.1056923406859485,
+          "rmse_pp": 3.0746204758557947
+        },
+        "mean": {
+          "n": 4,
+          "mae_pp": 6.979166666666668,
+          "bias_pp": 6.979166666666668,
+          "rmse_pp": 7.280497397919398
+        },
+        "raw": {
+          "n": 4,
+          "mae_pp": 2.6776974547400543,
+          "bias_pp": -0.5882115050709891,
+          "rmse_pp": 3.2716161515021986
+        },
+        "raw_depth": {
+          "n": 4,
+          "mae_pp": 2.6164367894561216,
+          "bias_pp": -0.6706131583515886,
+          "rmse_pp": 3.236521791385108
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "best_fit": {
+            "n": 8,
+            "mae_pp": 2.1875,
+            "bias_pp": -2.1875,
+            "rmse_pp": 3.1868871959954905
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 4,
+          "best_fit": {
+            "n": 4,
+            "mae_pp": 15.208333333333336,
+            "bias_pp": -15.208333333333336,
+            "rmse_pp": 17.042634446847966
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "sentinel2|september|10m|V0": {
+      "total_units": 13,
+      "eligible_units": 12,
+      "exclusions": {
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 12,
+        "mae_pp": 19.097222222222218,
+        "bias_pp": 16.180555555555554,
+        "rmse_pp": 36.550359728685244
+      },
+      "compatible_units": 3,
+      "compatible_share_of_eligible": 0.25,
+      "compatible_diagnostic": {
+        "n": 3,
+        "mae_pp": 68.91111111111111,
+        "bias_pp": 68.91111111111111,
+        "rmse_pp": 74.09941770151572
+      },
+      "boundary_units": 9,
+      "median_max_abs_residual_rhos": 0.0033979903741943995,
+      "paired_vs_depth": {
+        "n": 4,
+        "transects": 1,
+        "mae_delta_physics_minus_depth_pp": -0.8656217391103078,
+        "equal_transect_delta_pp": -0.8656217391103078,
+        "descriptive_cluster_interval_95": null,
+        "interval_status": "not_estimable_single_transect",
+        "leave_one_transect_out_delta_pp": [
+          null
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 4,
+          "mae_pp": 1.875,
+          "bias_pp": -1.875,
+          "rmse_pp": 2.7950849718747373
+        },
+        "depth": {
+          "n": 4,
+          "mae_pp": 2.740621739110308,
+          "bias_pp": 1.1056923406859485,
+          "rmse_pp": 3.0746204758557947
+        },
+        "mean": {
+          "n": 4,
+          "mae_pp": 6.979166666666668,
+          "bias_pp": 6.979166666666668,
+          "rmse_pp": 7.280497397919398
+        },
+        "raw": {
+          "n": 4,
+          "mae_pp": 3.7772083702886707,
+          "bias_pp": 3.764753990778474,
+          "rmse_pp": 4.382108719144085
+        },
+        "raw_depth": {
+          "n": 4,
+          "mae_pp": 3.011400346182614,
+          "bias_pp": 0.7847787981110366,
+          "rmse_pp": 3.666575283618966
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "best_fit": {
+            "n": 8,
+            "mae_pp": 2.1875,
+            "bias_pp": -2.1875,
+            "rmse_pp": 3.1868871959954905
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 4,
+          "best_fit": {
+            "n": 4,
+            "mae_pp": 52.91666666666666,
+            "bias_pp": 52.91666666666666,
+            "rmse_pp": 63.14644795147933
+          },
+          "compatible_units": 3
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 1,
+        "0.001": 3,
+        "0.002": 4
+      }
+    },
+    "pleiades_neo|july|native|V1": {
+      "total_units": 30,
+      "eligible_units": 29,
+      "exclusions": {
+        "masked": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 29,
+        "mae_pp": 49.6551724137931,
+        "bias_pp": -49.6551724137931,
+        "rmse_pp": 61.41997877810972
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 29,
+      "median_max_abs_residual_rhos": 0.017529831559290273,
+      "paired_vs_depth": {
+        "n": 29,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 27.29868813422167,
+        "equal_transect_delta_pp": 26.79382429966965,
+        "descriptive_cluster_interval_95": [
+          12.152773097661077,
+          41.16024218082546
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          26.656507639243273,
+          19.610615359091746,
+          34.114349900673936
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 29,
+          "mae_pp": 49.6551724137931,
+          "bias_pp": -49.6551724137931,
+          "rmse_pp": 61.41997877810972
+        },
+        "depth": {
+          "n": 29,
+          "mae_pp": 22.356484279571433,
+          "bias_pp": -0.30458852085490956,
+          "rmse_pp": 29.272919412076753
+        },
+        "mean": {
+          "n": 29,
+          "mae_pp": 34.867513611615244,
+          "bias_pp": -0.33393829401088776,
+          "rmse_pp": 37.58497107389677
+        },
+        "raw": {
+          "n": 29,
+          "mae_pp": 37.784887666345476,
+          "bias_pp": -0.5699427044578751,
+          "rmse_pp": 41.36517709869649
+        },
+        "raw_depth": {
+          "n": 29,
+          "mae_pp": 24.199776604109626,
+          "bias_pp": -0.7027192663046529,
+          "rmse_pp": 31.105263019646934
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 15,
+          "best_fit": {
+            "n": 15,
+            "mae_pp": 26.0,
+            "bias_pp": -26.0,
+            "rmse_pp": 38.55731664245668
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 14,
+          "best_fit": {
+            "n": 14,
+            "mae_pp": 75.0,
+            "bias_pp": -75.0,
+            "rmse_pp": 78.87603293414655
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "pleiades_neo|july|10m|V1": {
+      "total_units": 18,
+      "eligible_units": 18,
+      "exclusions": {},
+      "best_fit_diagnostic": {
+        "n": 18,
+        "mae_pp": 47.22222222222222,
+        "bias_pp": -47.22222222222222,
+        "rmse_pp": 58.975303473174996
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 18,
+      "median_max_abs_residual_rhos": 0.01757332684160008,
+      "paired_vs_depth": {
+        "n": 18,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 14.934980709972232,
+        "equal_transect_delta_pp": 17.524537175518834,
+        "descriptive_cluster_interval_95": [
+          -14.466415476239598,
+          34.89442609919678
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          10.214005311478589,
+          8.839592713679865,
+          33.520013501398054
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 18,
+          "mae_pp": 47.22222222222222,
+          "bias_pp": -47.22222222222222,
+          "rmse_pp": 58.975303473174996
+        },
+        "depth": {
+          "n": 18,
+          "mae_pp": 32.28724151225,
+          "bias_pp": 1.075238465473256,
+          "rmse_pp": 40.721700323729
+        },
+        "mean": {
+          "n": 18,
+          "mae_pp": 38.474056807390134,
+          "bias_pp": 2.0386557886557872,
+          "rmse_pp": 42.801499256914106
+        },
+        "raw": {
+          "n": 18,
+          "mae_pp": 40.34515081454467,
+          "bias_pp": 4.0457122238795655,
+          "rmse_pp": 47.44364854784173
+        },
+        "raw_depth": {
+          "n": 18,
+          "mae_pp": 34.87360407996656,
+          "bias_pp": 2.9376976682840192,
+          "rmse_pp": 42.663834375871005
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 33.333333333333336,
+            "bias_pp": -33.333333333333336,
+            "rmse_pp": 44.659203356580875
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 61.111111111111114,
+            "bias_pp": -61.111111111111114,
+            "rmse_pp": 70.43953715820206
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "pleiades_neo|july|native|V0": {
+      "total_units": 30,
+      "eligible_units": 29,
+      "exclusions": {
+        "masked": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 29,
+        "mae_pp": 49.50689655172414,
+        "bias_pp": -15.713793103448275,
+        "rmse_pp": 60.72725627897587
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 26,
+      "median_max_abs_residual_rhos": 0.006935320057683233,
+      "paired_vs_depth": {
+        "n": 29,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 27.1504122721527,
+        "equal_transect_delta_pp": 27.159750225595577,
+        "descriptive_cluster_interval_95": [
+          17.068457620522413,
+          36.98024218082546
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          32.20539652813216,
+          22.249504247980635,
+          27.02434990067394
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 29,
+          "mae_pp": 49.50689655172414,
+          "bias_pp": -15.713793103448275,
+          "rmse_pp": 60.72725627897587
+        },
+        "depth": {
+          "n": 29,
+          "mae_pp": 22.356484279571433,
+          "bias_pp": -0.30458852085490956,
+          "rmse_pp": 29.272919412076753
+        },
+        "mean": {
+          "n": 29,
+          "mae_pp": 34.867513611615244,
+          "bias_pp": -0.33393829401088776,
+          "rmse_pp": 37.58497107389677
+        },
+        "raw": {
+          "n": 29,
+          "mae_pp": 35.699071942182535,
+          "bias_pp": 0.676175108085654,
+          "rmse_pp": 39.533793963021346
+        },
+        "raw_depth": {
+          "n": 29,
+          "mae_pp": 21.898986900514036,
+          "bias_pp": 0.10838232960578913,
+          "rmse_pp": 28.87650911765383
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 15,
+          "best_fit": {
+            "n": 15,
+            "mae_pp": 36.96666666666667,
+            "bias_pp": 21.7,
+            "rmse_pp": 50.780737817929875
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 14,
+          "best_fit": {
+            "n": 14,
+            "mae_pp": 62.94285714285714,
+            "bias_pp": -55.800000000000004,
+            "rmse_pp": 69.82935322218424
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 2
+      }
+    },
+    "pleiades_neo|july|10m|V0": {
+      "total_units": 18,
+      "eligible_units": 18,
+      "exclusions": {},
+      "best_fit_diagnostic": {
+        "n": 18,
+        "mae_pp": 61.09444444444445,
+        "bias_pp": 2.8500000000000005,
+        "rmse_pp": 68.28339864757903
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 15,
+      "median_max_abs_residual_rhos": 0.006947389356291713,
+      "paired_vs_depth": {
+        "n": 18,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": 28.80720293219445,
+        "equal_transect_delta_pp": 27.984854635836296,
+        "descriptive_cluster_interval_95": [
+          12.145600903599325,
+          44.86109276586345
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          35.90448150195478,
+          19.54673557082272,
+          28.50334683473139
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 18,
+          "mae_pp": 61.09444444444445,
+          "bias_pp": 2.8500000000000005,
+          "rmse_pp": 68.28339864757903
+        },
+        "depth": {
+          "n": 18,
+          "mae_pp": 32.28724151225,
+          "bias_pp": 1.075238465473256,
+          "rmse_pp": 40.721700323729
+        },
+        "mean": {
+          "n": 18,
+          "mae_pp": 38.474056807390134,
+          "bias_pp": 2.0386557886557872,
+          "rmse_pp": 42.801499256914106
+        },
+        "raw": {
+          "n": 18,
+          "mae_pp": 32.616606586506855,
+          "bias_pp": 4.3818127110999905,
+          "rmse_pp": 38.29717671629079
+        },
+        "raw_depth": {
+          "n": 18,
+          "mae_pp": 38.15038510237599,
+          "bias_pp": 10.602858305551422,
+          "rmse_pp": 45.93710769655269
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 57.77777777777778,
+            "bias_pp": 55.55555555555556,
+            "rmse_pp": 66.62498697102228
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 64.4111111111111,
+            "bias_pp": -49.855555555555554,
+            "rmse_pp": 69.90247615671069
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 1
+      }
+    },
+    "pleiades_neo|september|native|V1": {
+      "total_units": 22,
+      "eligible_units": 18,
+      "exclusions": {
+        "masked": 2,
+        "missing_cover": 1,
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 18,
+        "mae_pp": 8.333333333333334,
+        "bias_pp": -8.333333333333334,
+        "rmse_pp": 18.929694486000912
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 18,
+      "median_max_abs_residual_rhos": 0.025237270074276924,
+      "paired_vs_depth": {
+        "n": 18,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": -1.311707983712399,
+        "equal_transect_delta_pp": -1.0216661616046288,
+        "descriptive_cluster_interval_95": [
+          -2.7619170942512503,
+          0.7293378685908234
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          -1.897168176702355,
+          -0.1515406952813183,
+          -1.0162896128302132
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 18,
+          "mae_pp": 8.333333333333334,
+          "bias_pp": -8.333333333333334,
+          "rmse_pp": 18.929694486000912
+        },
+        "depth": {
+          "n": 18,
+          "mae_pp": 9.645041317045733,
+          "bias_pp": -1.3229221607899593,
+          "rmse_pp": 17.962493928269442
+        },
+        "mean": {
+          "n": 18,
+          "mae_pp": 10.88888888888889,
+          "bias_pp": 0.6153846153846155,
+          "rmse_pp": 18.570033759962687
+        },
+        "raw": {
+          "n": 18,
+          "mae_pp": 16.174622856476606,
+          "bias_pp": 5.693576194901981,
+          "rmse_pp": 24.932041586252073
+        },
+        "raw_depth": {
+          "n": 18,
+          "mae_pp": 15.543635062067994,
+          "bias_pp": 4.697097542399134,
+          "rmse_pp": 24.40432866646664
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 2.7777777777777777,
+            "bias_pp": -2.7777777777777777,
+            "rmse_pp": 3.7267799624996494
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 13.88888888888889,
+            "bias_pp": -13.88888888888889,
+            "rmse_pp": 26.509956200978113
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "pleiades_neo|september|10m|V1": {
+      "total_units": 13,
+      "eligible_units": 12,
+      "exclusions": {
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 12,
+        "mae_pp": 6.527777777777779,
+        "bias_pp": -6.527777777777779,
+        "rmse_pp": 10.177817200311813
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 12,
+      "median_max_abs_residual_rhos": 0.025059463111242637,
+      "paired_vs_depth": {
+        "n": 4,
+        "transects": 1,
+        "mae_delta_physics_minus_depth_pp": -0.8656217391103083,
+        "equal_transect_delta_pp": -0.8656217391103083,
+        "descriptive_cluster_interval_95": null,
+        "interval_status": "not_estimable_single_transect",
+        "leave_one_transect_out_delta_pp": [
+          null
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 4,
+          "mae_pp": 1.875,
+          "bias_pp": -1.875,
+          "rmse_pp": 2.7950849718747373
+        },
+        "depth": {
+          "n": 4,
+          "mae_pp": 2.7406217391103085,
+          "bias_pp": 1.1056923406859493,
+          "rmse_pp": 3.0746204758557947
+        },
+        "mean": {
+          "n": 4,
+          "mae_pp": 6.979166666666668,
+          "bias_pp": 6.979166666666668,
+          "rmse_pp": 7.280497397919398
+        },
+        "raw": {
+          "n": 4,
+          "mae_pp": 2.217480874020003,
+          "bias_pp": 2.217480874020003,
+          "rmse_pp": 2.4731736405640268
+        },
+        "raw_depth": {
+          "n": 4,
+          "mae_pp": 1.8205165391648654,
+          "bias_pp": 0.9036563987235364,
+          "rmse_pp": 2.219612976447558
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "best_fit": {
+            "n": 8,
+            "mae_pp": 2.1875,
+            "bias_pp": -2.1875,
+            "rmse_pp": 3.1868871959954905
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 4,
+          "best_fit": {
+            "n": 4,
+            "mae_pp": 15.208333333333336,
+            "bias_pp": -15.208333333333336,
+            "rmse_pp": 17.042634446847966
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 0
+      }
+    },
+    "pleiades_neo|september|native|V0": {
+      "total_units": 22,
+      "eligible_units": 18,
+      "exclusions": {
+        "masked": 2,
+        "missing_cover": 1,
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 18,
+        "mae_pp": 6.738888888888889,
+        "bias_pp": -4.838888888888889,
+        "rmse_pp": 10.461702644513569
+      },
+      "compatible_units": 0,
+      "compatible_share_of_eligible": 0.0,
+      "compatible_diagnostic": {
+        "n": 0,
+        "mae_pp": null,
+        "bias_pp": null,
+        "rmse_pp": null
+      },
+      "boundary_units": 16,
+      "median_max_abs_residual_rhos": 0.009217366919635888,
+      "paired_vs_depth": {
+        "n": 18,
+        "transects": 3,
+        "mae_delta_physics_minus_depth_pp": -2.906152428156844,
+        "equal_transect_delta_pp": -2.934999494937962,
+        "descriptive_cluster_interval_95": [
+          -5.010662131409177,
+          -1.03241925915346
+        ],
+        "interval_status": "descriptive",
+        "leave_one_transect_out_delta_pp": [
+          -1.897168176702355,
+          -3.0215406952813186,
+          -3.8862896128302133
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 18,
+          "mae_pp": 6.738888888888889,
+          "bias_pp": -4.838888888888889,
+          "rmse_pp": 10.461702644513569
+        },
+        "depth": {
+          "n": 18,
+          "mae_pp": 9.645041317045733,
+          "bias_pp": -1.3229221607899593,
+          "rmse_pp": 17.962493928269442
+        },
+        "mean": {
+          "n": 18,
+          "mae_pp": 10.88888888888889,
+          "bias_pp": 0.6153846153846155,
+          "rmse_pp": 18.570033759962687
+        },
+        "raw": {
+          "n": 18,
+          "mae_pp": 10.431803361809935,
+          "bias_pp": -3.0072265029787197,
+          "rmse_pp": 19.206729406426533
+        },
+        "raw_depth": {
+          "n": 18,
+          "mae_pp": 8.942425147412711,
+          "bias_pp": -3.611234647944416,
+          "rmse_pp": 17.15148744395466
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 2.7777777777777777,
+            "bias_pp": -2.7777777777777777,
+            "rmse_pp": 3.7267799624996494
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 9,
+          "best_fit": {
+            "n": 9,
+            "mae_pp": 10.7,
+            "bias_pp": -6.8999999999999995,
+            "rmse_pp": 14.318015070377442
+          },
+          "compatible_units": 0
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 0,
+        "0.001": 0,
+        "0.002": 2
+      }
+    },
+    "pleiades_neo|september|10m|V0": {
+      "total_units": 13,
+      "eligible_units": 12,
+      "exclusions": {
+        "nonwater": 1
+      },
+      "best_fit_diagnostic": {
+        "n": 12,
+        "mae_pp": 13.327777777777778,
+        "bias_pp": 8.888888888888888,
+        "rmse_pp": 29.02106833676885
+      },
+      "compatible_units": 2,
+      "compatible_share_of_eligible": 0.16666666666666666,
+      "compatible_diagnostic": {
+        "n": 2,
+        "mae_pp": 46.233333333333334,
+        "bias_pp": 43.766666666666666,
+        "rmse_pp": 63.6635077750372
+      },
+      "boundary_units": 10,
+      "median_max_abs_residual_rhos": 0.010392914734407286,
+      "paired_vs_depth": {
+        "n": 4,
+        "transects": 1,
+        "mae_delta_physics_minus_depth_pp": -0.8656217391103083,
+        "equal_transect_delta_pp": -0.8656217391103083,
+        "descriptive_cluster_interval_95": null,
+        "interval_status": "not_estimable_single_transect",
+        "leave_one_transect_out_delta_pp": [
+          null
+        ],
+        "limitation": "At most three transect-number groups; bootstrap interval is descriptive, not confirmatory."
+      },
+      "compatible_paired_vs_depth": {
+        "n": 0
+      },
+      "matched_scores": {
+        "physical_best_fit": {
+          "n": 4,
+          "mae_pp": 1.875,
+          "bias_pp": -1.875,
+          "rmse_pp": 2.7950849718747373
+        },
+        "depth": {
+          "n": 4,
+          "mae_pp": 2.7406217391103085,
+          "bias_pp": 1.1056923406859493,
+          "rmse_pp": 3.0746204758557947
+        },
+        "mean": {
+          "n": 4,
+          "mae_pp": 6.979166666666668,
+          "bias_pp": 6.979166666666668,
+          "rmse_pp": 7.280497397919398
+        },
+        "raw": {
+          "n": 4,
+          "mae_pp": 2.318091207625861,
+          "bias_pp": 1.1366812560465913,
+          "rmse_pp": 2.822919983261898
+        },
+        "raw_depth": {
+          "n": 4,
+          "mae_pp": 2.1445971227236624,
+          "bias_pp": -0.10485990597707917,
+          "rmse_pp": 2.95160029499603
+        }
+      },
+      "by_stratum": {
+        "deep": {
+          "units": 8,
+          "best_fit": {
+            "n": 8,
+            "mae_pp": 2.1875,
+            "bias_pp": -2.1875,
+            "rmse_pp": 3.1868871959954905
+          },
+          "compatible_units": 0
+        },
+        "shallow": {
+          "units": 4,
+          "best_fit": {
+            "n": 4,
+            "mae_pp": 35.608333333333334,
+            "bias_pp": 31.041666666666664,
+            "rmse_pp": 50.06350689097022
+          },
+          "compatible_units": 2
+        }
+      },
+      "compatibility_by_tolerance": {
+        "0.0005": 1,
+        "0.001": 2,
+        "0.002": 2
+      }
+    }
+  },
+  "folds": {
+    "sentinel2|july|10m|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          2,
+          9,
+          10
+        ],
+        "train_indices": [
+          5,
+          6,
+          7,
+          8,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 4
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          5,
+          6,
+          11,
+          12,
+          13
+        ],
+        "train_indices": [
+          2,
+          7,
+          8,
+          9,
+          10,
+          14,
+          15,
+          16,
+          17
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 6,
+          "shallow": 3
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          7,
+          8,
+          14,
+          15,
+          16,
+          17
+        ],
+        "train_indices": [
+          2,
+          5,
+          6,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 3
+        }
+      }
+    ],
+    "sentinel2|july|10m|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          20,
+          27,
+          28
+        ],
+        "train_indices": [
+          23,
+          24,
+          25,
+          26,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 4
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          23,
+          24,
+          29,
+          30,
+          31
+        ],
+        "train_indices": [
+          20,
+          25,
+          26,
+          27,
+          28,
+          32,
+          33,
+          34,
+          35
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 6,
+          "shallow": 3
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          25,
+          26,
+          32,
+          33,
+          34,
+          35
+        ],
+        "train_indices": [
+          20,
+          23,
+          24,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 3
+        }
+      }
+    ],
+    "sentinel2|september|10m|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          39,
+          40,
+          41
+        ],
+        "train_indices": [
+          37,
+          38,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          37,
+          38,
+          42,
+          43,
+          44
+        ],
+        "train_indices": [
+          39,
+          40,
+          41,
+          45,
+          46,
+          47,
+          48
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          45,
+          46,
+          47,
+          48
+        ],
+        "train_indices": [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 4
+        }
+      }
+    ],
+    "sentinel2|september|10m|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          52,
+          53,
+          54
+        ],
+        "train_indices": [
+          50,
+          51,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          50,
+          51,
+          55,
+          56,
+          57
+        ],
+        "train_indices": [
+          52,
+          53,
+          54,
+          58,
+          59,
+          60,
+          61
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          58,
+          59,
+          60,
+          61
+        ],
+        "train_indices": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 4
+        }
+      }
+    ],
+    "pleiades_neo|july|native|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          62,
+          63,
+          64,
+          65,
+          66,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "train_indices": [
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          89,
+          90,
+          91
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 9
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          67,
+          68,
+          69,
+          70,
+          71,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "train_indices": [
+          62,
+          63,
+          64,
+          65,
+          66,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          87,
+          89,
+          90,
+          91
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 9
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          87,
+          89,
+          90,
+          91
+        ],
+        "train_indices": [
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 10
+        }
+      }
+    ],
+    "pleiades_neo|july|10m|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          92,
+          94,
+          95,
+          101,
+          102
+        ],
+        "train_indices": [
+          93,
+          96,
+          97,
+          98,
+          99,
+          100,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 6
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          96,
+          97,
+          98,
+          103,
+          104,
+          105
+        ],
+        "train_indices": [
+          92,
+          93,
+          94,
+          95,
+          99,
+          100,
+          101,
+          102,
+          106,
+          107,
+          108,
+          109
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 6,
+          "shallow": 6
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          93,
+          99,
+          100,
+          106,
+          107,
+          108,
+          109
+        ],
+        "train_indices": [
+          92,
+          94,
+          95,
+          96,
+          97,
+          98,
+          101,
+          102,
+          103,
+          104,
+          105
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 6
+        }
+      }
+    ],
+    "pleiades_neo|july|native|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          110,
+          111,
+          112,
+          113,
+          114,
+          125,
+          126,
+          127,
+          128,
+          129
+        ],
+        "train_indices": [
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          137,
+          138,
+          139
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 9
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          115,
+          116,
+          117,
+          118,
+          119,
+          130,
+          131,
+          132,
+          133,
+          134
+        ],
+        "train_indices": [
+          110,
+          111,
+          112,
+          113,
+          114,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          135,
+          137,
+          138,
+          139
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 9
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          120,
+          121,
+          122,
+          123,
+          124,
+          135,
+          137,
+          138,
+          139
+        ],
+        "train_indices": [
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 10,
+          "shallow": 10
+        }
+      }
+    ],
+    "pleiades_neo|july|10m|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          140,
+          142,
+          143,
+          149,
+          150
+        ],
+        "train_indices": [
+          141,
+          144,
+          145,
+          146,
+          147,
+          148,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 6
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          144,
+          145,
+          146,
+          151,
+          152,
+          153
+        ],
+        "train_indices": [
+          140,
+          141,
+          142,
+          143,
+          147,
+          148,
+          149,
+          150,
+          154,
+          155,
+          156,
+          157
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 6,
+          "shallow": 6
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          141,
+          147,
+          148,
+          154,
+          155,
+          156,
+          157
+        ],
+        "train_indices": [
+          140,
+          142,
+          143,
+          144,
+          145,
+          146,
+          149,
+          150,
+          151,
+          152,
+          153
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 6
+        }
+      }
+    ],
+    "pleiades_neo|september|native|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          169,
+          170,
+          171,
+          172,
+          173
+        ],
+        "train_indices": [
+          159,
+          160,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          174,
+          175,
+          176,
+          178
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 9,
+          "shallow": 4
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          159,
+          160,
+          162,
+          163,
+          174,
+          175,
+          176,
+          178
+        ],
+        "train_indices": [
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 5
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          164,
+          165,
+          166,
+          167,
+          168
+        ],
+        "train_indices": [
+          159,
+          160,
+          162,
+          163,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          178
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 9
+        }
+      }
+    ],
+    "pleiades_neo|september|10m|V1": [
+      {
+        "transect": 1,
+        "held_indices": [
+          183,
+          184,
+          185
+        ],
+        "train_indices": [
+          181,
+          182,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          181,
+          182,
+          186,
+          187,
+          188
+        ],
+        "train_indices": [
+          183,
+          184,
+          185,
+          189,
+          190,
+          191,
+          192
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          189,
+          190,
+          191,
+          192
+        ],
+        "train_indices": [
+          181,
+          182,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 4
+        }
+      }
+    ],
+    "pleiades_neo|september|native|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          204,
+          205,
+          206,
+          207,
+          208
+        ],
+        "train_indices": [
+          194,
+          195,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          209,
+          210,
+          211,
+          213
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 9,
+          "shallow": 4
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          194,
+          195,
+          197,
+          198,
+          209,
+          210,
+          211,
+          213
+        ],
+        "train_indices": [
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 5
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          199,
+          200,
+          201,
+          202,
+          203
+        ],
+        "train_indices": [
+          194,
+          195,
+          197,
+          198,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          213
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 9
+        }
+      }
+    ],
+    "pleiades_neo|september|10m|V0": [
+      {
+        "transect": 1,
+        "held_indices": [
+          218,
+          219,
+          220
+        ],
+        "train_indices": [
+          216,
+          217,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 7,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 2,
+        "held_indices": [
+          216,
+          217,
+          221,
+          222,
+          223
+        ],
+        "train_indices": [
+          218,
+          219,
+          220,
+          224,
+          225,
+          226,
+          227
+        ],
+        "purged_indices": [],
+        "sufficient": false,
+        "training_by_stratum": {
+          "deep": 5,
+          "shallow": 2
+        }
+      },
+      {
+        "transect": 3,
+        "held_indices": [
+          224,
+          225,
+          226,
+          227
+        ],
+        "train_indices": [
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223
+        ],
+        "purged_indices": [],
+        "sufficient": true,
+        "training_by_stratum": {
+          "deep": 4,
+          "shallow": 4
+        }
+      }
+    ]
+  },
+  "positive_control": {
+    "n": 240,
+    "maximum_cover_error_pp": 0.0,
+    "scope": "Own-model, exact-water/depth/endmember numerical control; no independent physical validation."
+  },
+  "verdict_scope": "Continuous development evidence; no application release gate or transfer claim."
+}

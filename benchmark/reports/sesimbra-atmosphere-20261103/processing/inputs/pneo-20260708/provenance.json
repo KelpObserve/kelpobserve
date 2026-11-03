@@ -1,0 +1,53 @@
+{
+  "scene": "pneo-20260708",
+  "input_files": {
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_439.tif": {
+      "sha256": "4865e0252243fb384e92f481147aed5ad0f14f3243c1fb75d74da698c451be36",
+      "dataset": "rhot_439"
+    },
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_486.tif": {
+      "sha256": "0d85c13c0d28689e292d4035f07633e9f9e9fde1b3eaa4f457253e2e975381e3",
+      "dataset": "rhot_486"
+    },
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_563.tif": {
+      "sha256": "19f08445004d2be0d65723d6903d91c25fae01bf6d1d5701dbbd47595fd237d3",
+      "dataset": "rhot_563"
+    },
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_655.tif": {
+      "sha256": "77e68c94235fcf7225b72b4e464cdfbf38e4270833f63d2d01a155618d468042",
+      "dataset": "rhot_655"
+    },
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_723.tif": {
+      "sha256": "6b827283a46b532a2519176bc86dac7a209ae46f135ca039c14290bcc6dcb19a",
+      "dataset": "rhot_723"
+    },
+    "$CACHE/acolite/pneo-20260708/PNEO3_2026_07_08_11_38_15_L2R_rhot_826.tif": {
+      "sha256": "5e03cfbe1634b52d14c11d691957544975a59d093e58658f0cf7269b931cc5ec",
+      "dataset": "rhot_826"
+    }
+  },
+  "window": [
+    0,
+    0,
+    4920,
+    2817
+  ],
+  "shape": [
+    2817,
+    4920
+  ],
+  "transform": [
+    1.1999999999999977,
+    0.0,
+    480119.4,
+    0.0,
+    -1.2000000000000661,
+    4253124.6,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "crs": "EPSG:32629",
+  "all_arrays_exact": true,
+  "l1r_sha256": "0b3ed030fdacdc3ce5a6a885846af740b9ed5550dd32425b172108a6ba8715be"
+}
