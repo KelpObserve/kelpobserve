@@ -1,0 +1,35 @@
+{
+  "evaluation": "Separate July and September leave-one-quadrat-out; no cross-month training or tuning.",
+  "target": "CCMAR quadrat cover percent, not a fraction of presence points.",
+  "input_manifest_sha256": "7aa50a178d00794fcf4e52467789a5d0d0f3f3d38cc9722210ba2ba541ba1e86",
+  "models": {
+    "ridge": "Pipeline(steps=[('standardscaler', StandardScaler()), ('ridge', Ridge())])",
+    "random_forest": "RandomForestRegressor(max_depth=3, min_samples_leaf=5, n_estimators=300,\n                      n_jobs=1, random_state=42)",
+    "extra_trees": "ExtraTreesRegressor(max_depth=3, min_samples_leaf=5, n_estimators=300, n_jobs=1,\n                    random_state=42)",
+    "svr": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('svr', SVR(C=10.0, epsilon=5.0))])",
+    "pls": "Pipeline(steps=[('standardscaler', StandardScaler()),\n                ('plsregression', PLSRegression(max_iter=1000, scale=False))])"
+  },
+  "baselines": "Training-fold mean and median, recalculated for each held-out quadrat.",
+  "preprocessing": "StandardScaler inside each fold; trees unscaled. No clipping for primary metrics.",
+  "calibration": "Frozen unlabelled full-scene low-NIR calibration includes held-out image areas, not cover labels.",
+  "subsets": {
+    "all_cover": "All observed covers; satellite models and baselines.",
+    "matched_depth": "Common cover+depth observations for mean, median, depth, 5x5 stats and single pixel.",
+    "quality_filtered": "September sensitivity: measured cover+depth and existing inventory quality eligibility."
+  },
+  "background": "Empty training covers only. Global per-band mean subtraction; local stratum/transect reference with global fallback and leave-self-out training references. Only band means are shifted.",
+  "limitations": [
+    "Small spatially dependent samples; overlapping windows; no new-location or new-date validation.",
+    "Multiple models examined on repeatedly inspected outcomes; exploratory comparisons, no validated winner.",
+    "Depth/position QC flags retained in primary samples and exposed by quality-filtered sensitivity.",
+    "Depth stratum and transect indirectly inform local background preprocessing.",
+    "Native 1.2m pixel exceeds 0.5m quadrat; 3x3 and 5x5 span 3.6m and 6m.",
+    "July REFLECTANCE/RAYLEIGH and September BASIC/NONE products differ radiometrically."
+  ],
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.1",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.1"
+  }
+}
