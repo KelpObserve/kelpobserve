@@ -10,6 +10,14 @@ The registered benchmark, v1, was frozen on 20 September 2026. Its reference is 
 
 The optics prerequisite is E5s, which carried kelp spectral libraries through Sesimbra's water, with the water optics that the registered analysis E2c fitted on two winter Sentinel-2 scenes using the quasi-analytical algorithm (QAA) with a forced 560 nm reference. E2c's results are inputs here; E2c itself is not replayed. The [r7 development experiment](benchmark/docs/revision-r7.md), executed on 2 November, uses product-qualified Copernicus KD490 to test direct physical cover retrieval against each campaign’s own observations. No primary S2 or PNeo retrieval was spectrally compatible; the earlier results are retained.
 
+## Monthly leave-one-out evaluation
+
+A separate exploratory analysis evaluates kelp-cover regression independently
+within July and September. Its methods, results, plots, limitations and commands
+are documented in the [monthly evaluation README](benchmark/docs/monthly/README.md).
+The registered experiments, physical-retrieval analyses and replay workflow below
+remain available unchanged.
+
 ## Replays
 
 Each experiment was replayed on 2 November 2026 in a fresh workspace, with Python 3.12.12 and the package versions pinned in `requirements-replay.txt`. Every output was compared file by file with the archived run.

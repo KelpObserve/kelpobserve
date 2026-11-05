@@ -1,0 +1,12 @@
+{
+  "source_sha256": {
+    "$DATA/ccmar-diving/sept/TNA_Aquaserv_KelpData2026.xlsx": "87f4b768cf6ec2ac10f7c2b585518ec79eadab52703df684b820207b76fcdf09",
+    "$DATA/ccmar-diving/sept/Transects kelp AQUASERV Jun-Sep 2026.gpkg": "70439b4957120af74c1b7bbabbdf0324b83609938abef5a07a945cdff40c8e0a",
+    "$DATA/ccmar-diving/kelp_data/TNA_Aquaserv_KelpData2026.xlsx": "5951304b554f5a8497f11cfce9b4f8a705a6b7090fdaf897c9c5f7ad5dab4654",
+    "$DATA/ccmar-diving/transects/TransectsArr\u00e1bida2026.gpkg": "8d3893bc57714d17bdc01eaade27683e5483f4d2ee9711e7aad3c2039b5f6ba5",
+    "$DATA/external/emodnet_hr_lidar_sesimbra.tif": "8a4eb09a8770671932c1f582b5447b3fafe800355bc97facc88bba22f9cdf4ca"
+  },
+  "inventory_created_at": "2026-09-20T12:38:01.261873+00:00",
+  "inventory_runner_sha256": "764e80c07798c4dedfcf3a6e56ea0c007b3078e6c6f8bf9f01e21f90e23539bd",
+  "note": "Source records retained for observation and quality-flag provenance. They do not define an evaluation split."
+}

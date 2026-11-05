@@ -1219,6 +1219,28 @@ library commit.
 | [results.md](results.md) | Registered July and September results |
 | [revision-r1.md](revision-r1.md) to [revision-r6.md](revision-r6.md) | The exploratory re-analyses (r2 is a draft protocol in `registration/`) |
 
+## 11. Separate monthly leave-one-out evaluation
+
+This additional exploratory analysis predicts kelp cover separately within July
+and September. It preserves the registered experiments, their archived results,
+and the r7 physical-retrieval work above. It uses delivered PNEO features and
+empirical Lyzenga indices; it does not use the physical optical correction as a
+regression input.
+
+Mean cover is 48.0% in July (30 scored quadrats) and 11.2% in September (29).
+Monthly leave-one-out tests prediction among quadrats in the same survey; it does
+not establish transfer across months. On the matched cover/depth subsets (July
+n=30, September n=25), depth-only MAE is 24.91 versus median 39.00 in July, while
+September median MAE is 6.80 versus depth 9.08. These scores must not be compared
+as if they used the original evaluation protocol or the r7 retrieval method.
+
+The [separate monthly report](monthly-evaluation.md) contains the complete design,
+models, two prediction figures, results, limitations and reproduction commands.
+[Monthly result tables](monthly-results.md) distinguish all-cover, matched-depth
+and quality-filtered subsets. The findings do not establish a clear kelp-specific
+spectral signal; depth and other scene effects could confound predictions. More
+observations across months and independent locations are needed for generalization.
+
 ## Glossary
 
 - **ACOLITE.** The atmospheric-correction processor used for both sensors.

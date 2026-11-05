@@ -137,7 +137,12 @@ def main(argv: list[str] | None = None) -> int:
     local.add_argument("--output", type=Path, help="new output directory; previous outputs are never overwritten")
     review = commands.add_parser("pneo-optical-review", help="label-free development review of glint and water inputs")
     review.add_argument("--output", type=Path, help="new output directory; previous outputs are never overwritten")
+    from kelpobserve.monthly import cli as monthly_cli
+
+    monthly_cli.register(commands)
     args = parser.parse_args(argv)
+    if args.command == "monthly":
+        return monthly_cli.run(args)
     if args.command in ("local-cover", "pneo-optical-review"):
         return r7_command(args)
     if args.command == "optics-inputs":
