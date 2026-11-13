@@ -97,22 +97,29 @@ No candidate was selected using these results, and no fit was retuned.
    along, which fits the 10–30 m offsets these flags imply; the CCMAR query that could have
    supplied corrected positions was closed unsent on 2026-09-24.
 6. **The September images looked through different water, not only at less kelp.** This
-   was added on 2026-09-27, after the results, from the CCMAR sonde casts. It is context,
-   not a registered analysis (`kelp_observe/docs/aquaserve/sesimbra-sonde-context.md`).
+   was added on 2026-09-27, after the results, from the CCMAR sonde casts, and revised on
+   2026-11-13 to take its attenuation values from Copernicus Marine KD490
+   ([matchup audit](https://github.com/KelpObserve/kelpobserve/blob/main/benchmark/docs/cmems-matchup-qualification.md),
+   2 November 2026). It is context, not a registered analysis
+   (`kelp_observe/docs/aquaserve/sesimbra-sonde-context.md`).
    - **The casts match the images:** they were taken on 7 July and 2 September, a day
      before each Pléiades Neo image.
    - **July:** the water was stratified, with 15.2 °C at 15–17 m below a 2.5 °C
      thermocline near 5 m.
-   - **September:** the water was mixed and 17.2 °C at the same depth. Chlorophyll
-     fluorescence there was about five times July's, and phycoerythrin about three times.
+   - **September:** the water was mixed and 17.2 °C at the same depth.
+   - **Satellite attenuation was higher in September:** KD490 at the nearest valid 1 km
+     pixel, 0.9 km from the reef, was 0.078 m⁻¹ on 8 July and 0.220 m⁻¹ on 3 September
+     (provider uncertainties 36% and 58%), and 0.071 and 0.150 m⁻¹ on the Sentinel-2
+     dates of 2 July and 31 August.
    - **The shallow cast stopped at 5.9 m,** so the shallow stratum is less well
-     characterised; there the rise was smaller (0.13 to 0.21 RFU for chlorophyll).
+     characterised.
 
    Less clear water changes the spectral predictors independently of cover. The depth-only
    model is immune to that, yet its September error is among the largest (46 points on the
    grid, 50 natively), so the seasonal decline alone explains most of the level shift. For
    the spectral candidates, a change in water clarity is a plausible second contributor, of
-   unknown sign. The sonde has no light sensor, so it cannot be quantified.
+   unknown sign. The sonde has no light sensor and the satellite pixel is not the reef, so
+   it cannot be quantified.
 
 ## What would change the answer
 

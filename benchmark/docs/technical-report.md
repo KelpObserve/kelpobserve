@@ -1,6 +1,6 @@
 # Sesimbra kelp-cover benchmark: technical report
 
-Updated 10 October 2026. Covers the registered experiment (v1, executed 20 September
+Updated 10 October 2026; the water item of section 5 was revised on 13 November 2026. Covers the registered experiment (v1, executed 20 September
 2026), five exploratory re-analyses, r1 and r3–r6 (2 October 2026; r2
 remains a draft), and the historical-habitat classification experiments of 9–10 October
 2026. Sections 6.6–6.10 report the classification results and the available Clay
@@ -375,10 +375,12 @@ Right: the sealed July fits applied once to September.*
 - **Depth-only, best in July, is worst in September,** because the July depth gradient
   no longer holds.
 - **The water also changed.** CCMAR sonde casts a day before each Pléiades Neo image
-  show stratified water in July and mixed water in September, with chlorophyll
-  fluorescence about five times higher at 15–17 m. That can shift the spectral
-  predictors independently of cover. The sonde has no light sensor, so the effect
-  cannot be quantified.
+  show stratified water in July and mixed water in September. Copernicus Marine KD490
+  at the nearest valid 1 km pixel, 0.9 km from the reef ([matchup audit](cmems-matchup-qualification.md)),
+  was 0.078 m⁻¹ on 8 July and 0.220 m⁻¹ on 3 September, with provider uncertainties
+  of 36% and 58%. A change in water clarity can shift the spectral predictors
+  independently of cover. The sonde has no light sensor and the satellite pixel is
+  not the reef, so the effect cannot be quantified.
 
 **Limits of the registered result.**
 

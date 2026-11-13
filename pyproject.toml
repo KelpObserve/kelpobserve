@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kelpobserve"
-version = "1.0.0"
+version = "1.1.0"
 description = "Reproduction archive of the KelpObserve Sesimbra analyses: the registered kelp-cover benchmark, its revisions, the optics prerequisites and their replay"
 readme = "README.md"
 license = "Apache-2.0"
@@ -46,7 +46,7 @@ kelpobserve = "kelpobserve.cli:main"
 
 [project.urls]
 Repository = "https://github.com/KelpObserve/kelpobserve"
-Archive = "https://doi.org/10.5281/zenodo.23478585"
+Archive = "https://doi.org/10.5281/zenodo.24199216"
 Dataset = "https://doi.org/10.5281/zenodo.23282075"
 Videos = "https://doi.org/10.5281/zenodo.23350632"
 "Dataset software" = "https://github.com/KelpObserve/arrabida-dataset"

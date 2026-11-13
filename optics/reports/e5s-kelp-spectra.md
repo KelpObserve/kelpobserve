@@ -198,7 +198,7 @@ this spread, are the numbers to rely on.
   separable per pixel from these spectra. What the imagery can carry is kelp against
   bare rock or sand, and a change in average reflectance where canopy cover changes a
   lot. The Sesimbra benchmark's negative result is consistent with this.
-- **Library:** `sd-data-ingest/oceanstream/coastal/spectra.py` loads all six libraries.
+- **Library:** `src/kelpobserve/coastal/spectra.py` loads all six libraries.
   The Baltic defaults stay: brown and red agree within about 20 %, and bare is
   conservative.
 
