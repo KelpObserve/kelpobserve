@@ -1,0 +1,19 @@
+{
+  "description": "Frozen quadrat observations and derived PNEO features for separate monthly evaluation; no imagery included.",
+  "sources": {
+    "outputs/pneo_window_comparison_20261102/features_targets.csv": "7f470ee281711d71033e1aeeaaf1f72b96c59466e5e33f5b13fb3ffbbcfc535b",
+    "outputs/pneo_cover_loocv_20261102/depth_comparison_inputs.csv": "734d25fbaab9abcb9da15a507f1d8b06d7a28916f19eb1d51d126837ee034160",
+    "outputs/pneo_cover_loocv_20261102/extraction_provenance.json": "8e4c9b2acb3e463458af02b87f5ea8a525d2d925d5b02d9b5947b7fe9062d286"
+  },
+  "files": {
+    "features.csv": "a78f04df329b553661d758a26f6f031a42f05dbde58e6f1c25a221ce5a8dd87e",
+    "field_schema.json": "732495ecd7f82d70135d2538228e440ea36ce642bab50f36a8a9e87177ba95cd",
+    "field_sources.json": "c2d3f5710ad678cb127481b769fc0d28d74ad6460cc2f212b22f185bdde41ffe",
+    "observations.csv": "b1cb393f04e4eafc38e4b79ab4cf84f9b47616daf5082226876f550870eefd99",
+    "pneo_sources.json": "1b1948ba829efce2dd9174c317af5869951b6c218e4fa41d5e3011b8a26e6d2b",
+    "source_records.csv": "41051efc2e810219846064dae7e14a806dad9cef92a2225a88c6c944e1513050"
+  },
+  "depth": "Lidar plus acquisition water level: July 1.6 m; September 0.835 m. No imputation.",
+  "quality_eligible": "Existing inventory flag; retains date, position and depth QC exclusions as a sensitivity only; not a training/test split.",
+  "feature_precision": "Original 5x5 extraction values retained; nested-window re-extraction agreed within 1e-6. Six bands ordered R,G,B,NIR,RE,DB."
+}

@@ -1,0 +1,71 @@
+{
+  "year": 2026,
+  "taxon_mapping": {
+    "target": "saccorhiza polyschides",
+    "absence": "EMPTY",
+    "note": "Only these two values occur. Any other value stops the inventory rather than silently counting as kelp."
+  },
+  "campaigns": {
+    "june": {
+      "month": 6,
+      "plausible_survey_dates": [
+        "2026-06-02"
+      ],
+      "strata": {
+        "workbook": {
+          "8": "shallow",
+          "15": "deep",
+          "16": "deep"
+        },
+        "transects": {
+          "8m": "shallow",
+          "15m": "deep",
+          "16m": "deep"
+        }
+      },
+      "pneo": null
+    },
+    "july": {
+      "month": 7,
+      "plausible_survey_dates": [
+        "2026-07-07",
+        "2026-07-08"
+      ],
+      "strata": {
+        "workbook": {
+          "7": "shallow",
+          "16": "deep"
+        },
+        "transects": {
+          "7m": "shallow",
+          "17m": "deep"
+        }
+      },
+      "pneo": "july",
+      "survey_dates_by_stratum": {
+        "deep": "2026-07-07",
+        "shallow": "2026-07-08"
+      },
+      "dive_time_zone": "Europe/Lisbon, UTC+1 (WEST)"
+    },
+    "september": {
+      "month": 9,
+      "plausible_survey_dates": [
+        "2026-09-01",
+        "2026-09-02"
+      ],
+      "strata": {
+        "workbook": {
+          "6": "shallow",
+          "15": "deep"
+        },
+        "transects": {
+          "7m": "shallow",
+          "17m": "deep"
+        }
+      },
+      "pneo": "september",
+      "cover_scoring": "Visual estimate in the water during the transect dives, probably on 1 September. Photo quadrats were taken separately on 2 September."
+    }
+  }
+}

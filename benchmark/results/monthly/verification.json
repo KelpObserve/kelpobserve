@@ -1,0 +1,45 @@
+{
+  "tolerance": {
+    "atol": 1e-07,
+    "rtol": 1e-07
+  },
+  "comparisons": [
+    {
+      "source": "pneo_cover_loocv_20261102/loo_predictions.csv",
+      "checked_predictions": 320,
+      "max_absolute_difference": 3.694822225952521e-13
+    },
+    {
+      "source": "pneo_cover_loocv_20261102/depth_comparison_predictions.csv",
+      "checked_predictions": 228,
+      "max_absolute_difference": 2.2737367544323206e-13
+    },
+    {
+      "source": "pneo_window_comparison_20261102/predictions.csv",
+      "checked_predictions": 1120,
+      "max_absolute_difference": 4.405364961712621e-13
+    },
+    {
+      "source": "pneo_regressor_comparison_20261102/predictions.csv",
+      "checked_predictions": 413,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source": "pneo_empty_background_20261102/predictions.csv",
+      "checked_predictions": 472,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "source": "pneo_single_pixel_depth_comparison_20261102/predictions.csv",
+      "checked_predictions": 169,
+      "max_absolute_difference": 1.4210854715202004e-13
+    },
+    {
+      "source": "pneo_cover_loocv_20261102/median_vs_depth_predictions.csv",
+      "checked_predictions": 110,
+      "max_absolute_difference": 1.4210854715202004e-14
+    }
+  ],
+  "total_comparisons": 2832,
+  "note": "Overlapping experiment families repeat some comparisons. Earlier experiment artifacts were used only for migration verification, not as runtime inputs."
+}
